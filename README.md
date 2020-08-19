@@ -1,2 +1,2 @@
 # waktusolat
- Aplikasi Jadwal Waktu Solat Mesjid
+ Aplikasi Waktu Solat Mesjid
