@@ -1,5 +1,4 @@
-<?php
-	
+<?php	
 	// Prayer Times Calculator, Sample Usage
 	// By: Hamid Zarrabi-Zadeh
 	// Inputs : $method, $year, $latitude, $longitude, $timeZone
@@ -20,7 +19,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>WAKTU SOLAT</title>
+	<title>Waktu Solat</title>
 </head>
 
 <!-- Bootstrap CSS -->
@@ -32,7 +31,7 @@
 <link rel="stylesheet" href="./assets/vendor/fontawesome/css/solid.css">
 
 <link href="./assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
-
+<!--
 <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -49,7 +48,7 @@
         }
       }
     </style>
-
+-->
 <!-- Custom styles for this template -->
 <link href="./assets/css/style.css" rel="stylesheet">
 <!-- Hijri Calendar JS -->
@@ -67,12 +66,12 @@
   		var m = today.getMinutes();
   		var s = today.getSeconds();
   		// Variable untuk bulan masehi
-      var tahun = today.getFullYear();
-      var bulan = today.getMonth();
-      var month = today.getMonth();
-      var tanggal = today.getDate();
-      var hari = today.getDay();      	
-      // Variable to add zero in front of numbers < 10
+		var tahun = today.getFullYear();
+		var bulan = today.getMonth();
+		var month = today.getMonth();
+		var tanggal = today.getDate();
+		var hari = today.getDay();      	
+		// Variable to add zero in front of numbers < 10
   		h = checkTime(h);
   		m = checkTime(m);
   		s = checkTime(s);
@@ -127,40 +126,44 @@
       //----------------------- Copyright Block ----------------------
   		// By: Hendra Dwi Putra
     	  
-      // Variable nama solat
-      var solatShubuh = "Shubuh";
-      var solatSyuruq = "Syuruq";
-      var solatDzuhur = "Dzuhur";
-      var solatAshar = "Ashar";
-      var solatMaghrib = "Maghrib";
-      var solatIsya = "Isya";
-      document.getElementById('prayer1').innerHTML = solatShubuh;
-      document.getElementById('prayer2').innerHTML = solatSyuruq;
-      document.getElementById('prayer3').innerHTML = solatDzuhur;
-      document.getElementById('prayer4').innerHTML = solatAshar;
-      document.getElementById('prayer5').innerHTML = solatMaghrib;
-      document.getElementById('prayer6').innerHTML = solatIsya;      
-      // Ambil 2 digit pertama jam solat dan dikonversi ke dalam menit 
+		// Variable nama solat
+		var solatShubuh = "Shubuh";
+		var solatSyuruq = "Syuruq";
+		var solatDzuhur = "Dzuhur";
+		var solatAshar = "Ashar";
+		var solatMaghrib = "Maghrib";
+		var solatIsya = "Isya";
+		document.getElementById('prayer1').innerHTML = solatShubuh;
+		document.getElementById('prayer2').innerHTML = solatSyuruq;
+		document.getElementById('prayer3').innerHTML = solatDzuhur;
+		document.getElementById('prayer4').innerHTML = solatAshar;
+		document.getElementById('prayer5').innerHTML = solatMaghrib;
+		document.getElementById('prayer6').innerHTML = solatIsya;  
+		
+		// Ambil 2 digit pertama jam solat dan dikonversi ke dalam menit 
   		var hr0 = '<?php echo substr($times[0],0,2)*60; ?>';
   		var hr1 = '<?php echo substr($times[1],0,2)*60; ?>';
   		var hr2 = '<?php echo substr($times[2],0,2)*60; ?>';
   		var hr3 = '<?php echo substr($times[3],0,2)*60; ?>';
   		var hr5 = '<?php echo substr($times[5],0,2)*60; ?>';
   		var hr6 = '<?php echo substr($times[6],0,2)*60; ?>';
+		
   		// Ambil 2 digit terakhir menit solat
-		  var min0 = '<?php echo substr($times[0],3,4); ?>'; // Waktu shubuh dalam menit
-		  var min1 = '<?php echo substr($times[1],3,4); ?>'; // Waktu syuruq dalam menit 
-		  var min2 = '<?php echo substr($times[2],3,4); ?>'; // Waktu dzuhur dalam menit  
-		  var min3 = '<?php echo substr($times[3],3,4); ?>'; // Waktu ashar dalam menit  
-		  var min5 = '<?php echo substr($times[5],3,4); ?>'; // Waktu maghrib dalam menit 
-		  var min6 = '<?php echo substr($times[6],3,4); ?>'; // Waktu isya dalam menit
-		  // Menjumlah 2 digit Jam yang sudah dikonversi ke menit dan menambahkan nya dengan 2 digit Menit untuk menentukan waktu solat
+		var min0 = '<?php echo substr($times[0],3,4); ?>'; // Waktu shubuh dalam menit
+		var min1 = '<?php echo substr($times[1],3,4); ?>'; // Waktu syuruq dalam menit 
+		var min2 = '<?php echo substr($times[2],3,4); ?>'; // Waktu dzuhur dalam menit  
+		var min3 = '<?php echo substr($times[3],3,4); ?>'; // Waktu ashar dalam menit  
+		var min5 = '<?php echo substr($times[5],3,4); ?>'; // Waktu maghrib dalam menit 
+		var min6 = '<?php echo substr($times[6],3,4); ?>'; // Waktu isya dalam menit
+		
+		// Menjumlah 2 digit Jam yang sudah dikonversi ke menit dan menambahkan nya dengan 2 digit Menit untuk menentukan waktu solat
   		var waktushubuh = Number(hr0) + Number(min0);
   		var waktusyuruq = Number(hr1) + Number(min1);
   		var waktudzuhur = Number(hr2) + Number(min2);
   		var waktuashar = Number(hr3)  + Number(min3);
   		var waktumaghrib = Number(hr5) + Number(min5);
-  		var waktuisya = Number(hr6)  + Number(min6);		  		
+  		var waktuisya = Number(hr6)  + Number(min6);	
+		
   		// Mengambil waktu solat dari file PrayTime.php
   		var shubuh = '<?php echo $times[0]; ?>';
   		var syuruq = '<?php echo $times[1]; ?>';
@@ -168,13 +171,14 @@
   		var ashar = '<?php echo $times[3]; ?>';
   		var maghrib = '<?php echo $times[5]; ?>';
   		var isya = '<?php echo $times[6]; ?>'; 
-      // Menampilkan waktu solat ke html
-      document.getElementById("shubuh").innerHTML = shubuh;
-      document.getElementById("syuruq").innerHTML = syuruq;
-      document.getElementById("dzuhur").innerHTML = dzuhur;
-      document.getElementById("ashar").innerHTML = ashar;
-      document.getElementById("maghrib").innerHTML = maghrib;
-      document.getElementById("isya").innerHTML = isya;      
+		
+		// Menampilkan waktu solat ke html
+		document.getElementById("shubuh").innerHTML = shubuh;
+		document.getElementById("syuruq").innerHTML = syuruq;
+		document.getElementById("dzuhur").innerHTML = dzuhur;
+		document.getElementById("ashar").innerHTML = ashar;
+		document.getElementById("maghrib").innerHTML = maghrib;
+		document.getElementById("isya").innerHTML = isya;      
       
   		// Penambahan waktu solat dalam bilangan menit,digunakan untuk timer sholat yang sudah masuk
   		var timershubuh = 30;
@@ -183,6 +187,7 @@
   		var timerashar = 30;
   		var timermaghrib = 30;
   		var timerisya = 30;
+		
   		// Menentukan batas waktu solat ke solat yang lain nya  		
   		var batasshubuh = Number(waktushubuh) + Number(timershubuh);
   		var batassyuruq = Number(waktusyuruq) + Number(timersyuruq);
@@ -194,191 +199,191 @@
   		// Konversi Jam dan menit ke menit
   		var currentminute = (h * 60) + Number(m);  
   		// Durasi adzan dalam hitungan menit	  
-      var durasiadzan = 5;	
-      // Deklarasi variabel CSS
-      var selected = "class='selected'";
+		var durasiadzan = 5;	
+		// Deklarasi variabel CSS
+		var selected = "class='selected'";
 
   		if (currentminute <= waktushubuh) {
-        var nextprayer = "Shubuh";
-        var nextcounter = shubuh;  
-        var starttime = waktushubuh;
-        var endtime = batasshubuh;  
-        var durasiiqomah = 10;
-        var nextdate = tanggal;
-        var label = "Adzan " + nextprayer;
-        var hr = '<?php echo substr($times[0],0,2); ?>';
-        var min = '<?php echo substr($times[0],3,4); ?>';        
-        document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + solatShubuh + "</h3>";
-        document.getElementById('shubuh').innerHTML = "<h3 " + selected + ">" + shubuh + "</h3>";
+			var nextprayer = "Shubuh";
+			var nextcounter = shubuh;  
+			var starttime = waktushubuh;
+			var endtime = batasshubuh;  
+			var durasiiqomah = 10;
+			var nextdate = tanggal;
+			var label = "Adzan " + nextprayer;
+			var hr = '<?php echo substr($times[0],0,2); ?>';
+			var min = '<?php echo substr($times[0],3,4); ?>';        
+			document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + solatShubuh + "</h3>";
+			document.getElementById('shubuh').innerHTML = "<h3 " + selected + ">" + shubuh + "</h3>";
         
-      } else if (batasshubuh >= currentminute) {
+		} else if (batasshubuh >= currentminute) {
   			var nextprayer = "Shubuh";
   			var nextcounter = shubuh;
   			var starttime = waktushubuh;
-        var endtime = batasshubuh; 
-        var durasiiqomah = 10;    
-        var nextdate = tanggal;
-        var label = "Adzan " + nextprayer;
-        var hr = '<?php echo substr($times[0],0,2); ?>';
-        var min = '<?php echo substr($times[0],3,4); ?>';
-        document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + solatShubuh + "</h3>";
-        document.getElementById('shubuh').innerHTML = "<h3 " + selected + ">" + shubuh + "</h3>";
+			var endtime = batasshubuh; 
+			var durasiiqomah = 10;    
+			var nextdate = tanggal;
+			var label = "Adzan " + nextprayer;
+			var hr = '<?php echo substr($times[0],0,2); ?>';
+			var min = '<?php echo substr($times[0],3,4); ?>';
+			document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + solatShubuh + "</h3>";
+			document.getElementById('shubuh').innerHTML = "<h3 " + selected + ">" + shubuh + "</h3>";
         
   		} else if (currentminute <= waktusyuruq) {
   			var nextprayer = "Syuruq";
   			var nextcounter = syuruq;  
   			var starttime = waktusyuruq;
-        var endtime = batassyuruq;  
-        var durasiiqomah = 0;  
-        var nextdate = tanggal;
-        var label = "Memasuki waktu " + nextprayer;
-        document.getElementById('prayer2').innerHTML = "<h3 " + selected + ">" + solatSyuruq + "</h3>";
-        document.getElementById('syuruq').innerHTML = "<h3 " + selected + ">" + syuruq + "</h3>";
+			var endtime = batassyuruq;  
+			var durasiiqomah = 0;  
+			var nextdate = tanggal;
+			var label = "Memasuki waktu " + nextprayer;
+			document.getElementById('prayer2').innerHTML = "<h3 " + selected + ">" + solatSyuruq + "</h3>";
+			document.getElementById('syuruq').innerHTML = "<h3 " + selected + ">" + syuruq + "</h3>";
        
-      } else if (batassyuruq >= currentminute) {
-        var nextprayer = "Syuruq";
-        var nextcounter = syuruq;    
-        var starttime = waktusyuruq;
-        var endtime = batassyuruq;  	
-        var durasiiqomah = 0;  
-        var nextdate = tanggal;
-        var label = "Memasuki waktu " + nextprayer;
-        document.getElementById('prayer2').innerHTML = "<h3 " + selected + ">" + solatSyuruq + "</h3>";
-        document.getElementById('syuruq').innerHTML = "<h3 " + selected + ">" + syuruq + "</h3>";	
+		} else if (batassyuruq >= currentminute) {
+			var nextprayer = "Syuruq";
+			var nextcounter = syuruq;    
+			var starttime = waktusyuruq;
+			var endtime = batassyuruq;  	
+			var durasiiqomah = 0;  
+			var nextdate = tanggal;
+			var label = "Memasuki waktu " + nextprayer;
+			document.getElementById('prayer2').innerHTML = "<h3 " + selected + ">" + solatSyuruq + "</h3>";
+			document.getElementById('syuruq').innerHTML = "<h3 " + selected + ">" + syuruq + "</h3>";	
         
-  		} else if (currentminute <= waktudzuhur) {
+		} else if (currentminute <= waktudzuhur) {
   			var nextprayer = "Dzuhur";
   			var nextcounter = dzuhur;  	
   			var starttime = waktudzuhur;
-        var endtime = batasdzuhur;   
-        var durasiiqomah = 10;  
-        var nextdate = tanggal;
-        var label = "Adzan " + nextprayer;
-        var hr = '<?php echo substr($times[2],0,2); ?>';
-        var min = '<?php echo substr($times[2],3,4); ?>';        
-        document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + solatDzuhur + "</h3>";
-        document.getElementById('dzuhur').innerHTML = "<h3 " + selected + ">" + dzuhur + "</h3>";
+			var endtime = batasdzuhur;   
+			var durasiiqomah = 10;  
+			var nextdate = tanggal;
+			var label = "Adzan " + nextprayer;
+			var hr = '<?php echo substr($times[2],0,2); ?>';
+			var min = '<?php echo substr($times[2],3,4); ?>';        
+			document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + solatDzuhur + "</h3>";
+			document.getElementById('dzuhur').innerHTML = "<h3 " + selected + ">" + dzuhur + "</h3>";
         
   		} else if (batasdzuhur >= currentminute) {
-        var nextprayer = "Dzuhur";
-        var nextcounter = dzuhur;    
-        var starttime = waktudzuhur;
-        var endtime = batasdzuhur; 
-        var durasiiqomah = 10;  
-        var nextdate = tanggal;
-        var label = "Adzan " + nextprayer;
-        var hr = '<?php echo substr($times[2],0,2); ?>';
-        var min = '<?php echo substr($times[2],3,4); ?>';        
-        document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + solatDzuhur + "</h3>";
-        document.getElementById('dzuhur').innerHTML = "<h3 " + selected + ">" + dzuhur + "</h3>";
+			var nextprayer = "Dzuhur";
+			var nextcounter = dzuhur;    
+			var starttime = waktudzuhur;
+			var endtime = batasdzuhur; 
+			var durasiiqomah = 10;  
+			var nextdate = tanggal;
+			var label = "Adzan " + nextprayer;
+			var hr = '<?php echo substr($times[2],0,2); ?>';
+			var min = '<?php echo substr($times[2],3,4); ?>';        
+			document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + solatDzuhur + "</h3>";
+			document.getElementById('dzuhur').innerHTML = "<h3 " + selected + ">" + dzuhur + "</h3>";
         
-      } else if (currentminute <= waktuashar) {
+		} else if (currentminute <= waktuashar) {
   			var nextprayer = "Ashar";
   			var nextcounter = ashar;  	
   			var starttime = waktuashar;
-        var endtime = batasashar; 	
-        var durasiiqomah = 5;
-        var nextdate = tanggal;
-        var label = "Adzan " + nextprayer;
-        var hr = '<?php echo substr($times[3],0,2); ?>';
-        var min = '<?php echo substr($times[3],3,4); ?>';
-        document.getElementById('prayer4').innerHTML = "<h3 " + selected + ">" + solatAshar + "</h3>";
-        document.getElementById('ashar').innerHTML = "<h3 " + selected + ">" + ashar + "</h3>";
+			var endtime = batasashar; 	
+			var durasiiqomah = 5;
+			var nextdate = tanggal;
+			var label = "Adzan " + nextprayer;
+			var hr = '<?php echo substr($times[3],0,2); ?>';
+			var min = '<?php echo substr($times[3],3,4); ?>';
+			document.getElementById('prayer4').innerHTML = "<h3 " + selected + ">" + solatAshar + "</h3>";
+			document.getElementById('ashar').innerHTML = "<h3 " + selected + ">" + ashar + "</h3>";
         	
   		} else if (batasashar >= currentminute) {
-        var nextprayer = "Ashar";
-        var nextcounter = ashar;    
-        var starttime = waktuashar;
-        var endtime = batasashar; 
-        var durasiiqomah = 5;
-        var nextdate = tanggal;
-        var label = "Adzan " + nextprayer;
-        var hr = '<?php echo substr($times[3],0,2); ?>';
-        var min = '<?php echo substr($times[3],3,4); ?>';
-        document.getElementById('prayer4').innerHTML = "<h3 " + selected + ">" + solatAshar + "</h3>";
-        document.getElementById('ashar').innerHTML = "<h3 " + selected + ">" + ashar + "</h3>";
+			var nextprayer = "Ashar";
+			var nextcounter = ashar;    
+			var starttime = waktuashar;
+			var endtime = batasashar; 
+			var durasiiqomah = 5;
+			var nextdate = tanggal;
+			var label = "Adzan " + nextprayer;
+			var hr = '<?php echo substr($times[3],0,2); ?>';
+			var min = '<?php echo substr($times[3],3,4); ?>';
+			document.getElementById('prayer4').innerHTML = "<h3 " + selected + ">" + solatAshar + "</h3>";
+			document.getElementById('ashar').innerHTML = "<h3 " + selected + ">" + ashar + "</h3>";
        
-      } else if (currentminute <= waktumaghrib) {
+		} else if (currentminute <= waktumaghrib) {
   			var nextprayer = "Maghrib";
   			var nextcounter = maghrib; 
   			var starttime = waktumaghrib;
-        var endtime = batasmaghrib;   
-        var durasiiqomah = 5; 
-        var nextdate = tanggal;
-        var label = "Adzan " + nextprayer;
-        var hr = '<?php echo substr($times[5],0,2); ?>';
-        var min = '<?php echo substr($times[5],3,4); ?>';
-        document.getElementById('prayer5').innerHTML = "<h3 " + selected + ">" + solatMaghrib + "</h3>";
-        document.getElementById('maghrib').innerHTML = "<h3 " + selected + ">" + maghrib + "</h3>";
+			var endtime = batasmaghrib;   
+			var durasiiqomah = 5; 
+			var nextdate = tanggal;
+			var label = "Adzan " + nextprayer;
+			var hr = '<?php echo substr($times[5],0,2); ?>';
+			var min = '<?php echo substr($times[5],3,4); ?>';
+			document.getElementById('prayer5').innerHTML = "<h3 " + selected + ">" + solatMaghrib + "</h3>";
+			document.getElementById('maghrib').innerHTML = "<h3 " + selected + ">" + maghrib + "</h3>";
         		
   		} else if (batasmaghrib >= currentminute) {
-        var nextprayer = "Maghrib";
-        var nextcounter = maghrib;    
-        var starttime = waktumaghrib;
-        var endtime = batasmaghrib; 
-        var durasiiqomah = 5;
-        var nextdate = tanggal;
-        var label = "Adzan " + nextprayer;
-        var hr = '<?php echo substr($times[5],0,2); ?>';
-        var min = '<?php echo substr($times[5],3,4); ?>';
-        document.getElementById('prayer5').innerHTML = "<h3 " + selected + ">" + solatMaghrib + "</h3>";
-        document.getElementById('maghrib').innerHTML = "<h3 " + selected + ">" + maghrib + "</h3>";
+			var nextprayer = "Maghrib";
+			var nextcounter = maghrib;    
+			var starttime = waktumaghrib;
+			var endtime = batasmaghrib; 
+			var durasiiqomah = 5;
+			var nextdate = tanggal;
+			var label = "Adzan " + nextprayer;
+			var hr = '<?php echo substr($times[5],0,2); ?>';
+			var min = '<?php echo substr($times[5],3,4); ?>';
+			document.getElementById('prayer5').innerHTML = "<h3 " + selected + ">" + solatMaghrib + "</h3>";
+			document.getElementById('maghrib').innerHTML = "<h3 " + selected + ">" + maghrib + "</h3>";
         
-      } else if (currentminute <= waktuisya) {
+		} else if (currentminute <= waktuisya) {
   			var nextprayer = "Isya";
   			var nextcounter = isya; 
   			var starttime = waktuisya;
-        var endtime = batasisya;   
-        var durasiiqomah = 10;  	
-        var nextdate = tanggal;
-        var label = "Adzan " + nextprayer;
-        var hr = '<?php echo substr($times[6],0,2); ?>';
-        var min = '<?php echo substr($times[6],3,4); ?>';
-        document.getElementById('prayer6').innerHTML = "<h3 " + selected + ">" + solatIsya + "</h3>";
-        document.getElementById('isya').innerHTML = "<h3 " + selected + ">" + isya + "</h3>";
+			var endtime = batasisya;   
+			var durasiiqomah = 10;  	
+			var nextdate = tanggal;
+			var label = "Adzan " + nextprayer;
+			var hr = '<?php echo substr($times[6],0,2); ?>';
+			var min = '<?php echo substr($times[6],3,4); ?>';
+			document.getElementById('prayer6').innerHTML = "<h3 " + selected + ">" + solatIsya + "</h3>";
+			document.getElementById('isya').innerHTML = "<h3 " + selected + ">" + isya + "</h3>";
         		
   		} else if (batasisya >= currentminute) {
-        var nextprayer = "Isya";
-        var nextcounter = isya;    
-        var starttime = waktuisya;
-        var endtime = batasisya; 
-        var durasiiqomah = 10; 
-        var nextdate = tanggal;
-        var label = "Adzan " + nextprayer;
-        var hr = '<?php echo substr($times[6],0,2); ?>';
-        var min = '<?php echo substr($times[6],3,4); ?>';
-        document.getElementById('prayer6').innerHTML = "<h3 " + selected + ">" + solatIsya + "</h3>";
-        document.getElementById('isya').innerHTML = "<h3 " + selected + ">" + isya + "</h3>";
+			var nextprayer = "Isya";
+			var nextcounter = isya;    
+			var starttime = waktuisya;
+			var endtime = batasisya; 
+			var durasiiqomah = 10; 
+			var nextdate = tanggal;
+			var label = "Adzan " + nextprayer;
+			var hr = '<?php echo substr($times[6],0,2); ?>';
+			var min = '<?php echo substr($times[6],3,4); ?>';
+			document.getElementById('prayer6').innerHTML = "<h3 " + selected + ">" + solatIsya + "</h3>";
+			document.getElementById('isya').innerHTML = "<h3 " + selected + ">" + isya + "</h3>";
        
-      } else if (batasisya <= currentminute) {
-        var nextprayer = "Shubuh";
-        var nextcounter = shubuh;
-        var nextdate = tanggal + 1;
-        var label = "Adzan " + nextprayer;
-        document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + solatShubuh + "</h3>";
-        document.getElementById('shubuh').innerHTML = "<h3 " + selected + ">" + shubuh + "</h3>";
+		} else if (batasisya <= currentminute) {
+			var nextprayer = "Shubuh";
+			var nextcounter = shubuh;
+			var nextdate = tanggal + 1;
+			var label = "Adzan " + nextprayer;
+			document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + solatShubuh + "</h3>";
+			document.getElementById('shubuh').innerHTML = "<h3 " + selected + ">" + shubuh + "</h3>";
         
-      } 
+		} 
 
-      // Pengaturan waktu iqomah dan awal solat berjamaah.
-      var adzan_to_iqomah = Number(starttime) + Number(durasiadzan);
-      var iqomah_to_solat = Number(adzan_to_iqomah) + Number(durasiiqomah);
+		// Pengaturan waktu iqomah dan awal solat berjamaah.
+		var adzan_to_iqomah = Number(starttime) + Number(durasiadzan);
+		var iqomah_to_solat = Number(adzan_to_iqomah) + Number(durasiiqomah);
 
   		// Kombinasi kalender masehi dah hijriah
-      document.getElementById('penanggalan').innerHTML = hari + ", " + tanggal + " " + bulan + " " + tahun + " <i class='far fa-calendar-alt'></i> " + writeIslamicDate(-1) + "H";
+		document.getElementById('penanggalan').innerHTML = hari + ", " + tanggal + " " + bulan + " " + tahun + " <i class='far fa-calendar-alt'></i> " + writeIslamicDate(-1) + "H";
 
-      // Output Dynamic time
-      document.getElementById('jam').innerHTML = h + ":" + m + ":" + s;
-      var t = setTimeout(startTime, 500);
+		// Output Dynamic time
+		document.getElementById('jam').innerHTML = h + ":" + m + ":" + s + " <a href='#'><i class='fas fa-cog'></i></a>";
+		var t = setTimeout(startTime, 500);
 
-		  //----------------------- Copyright Block ----------------------
-		  // https://www.geeksforgeeks.org/create-countdown-timer-using-javascript/		
-		  // Countdown Timer	  
-      var countDownDate = new Date(month + " " + nextdate + "," + tahun + " " + nextcounter + ":00").getTime();   
-      //var countDownDate = new Date(month + " " + "17" + "," + tahun + " " + nextcounter + ":00").getTime();   		
+		//----------------------- Copyright Block ----------------------
+		// https://www.geeksforgeeks.org/create-countdown-timer-using-javascript/		
+		// Countdown Timer	  
+		var countDownDate = new Date(month + " " + nextdate + "," + tahun + " " + nextcounter + ":00").getTime();   
+		//var countDownDate = new Date(month + " " + "17" + "," + tahun + " " + nextcounter + ":00").getTime();   		
 		  
-      // Update the count down every 1 second
-		  var x = setInterval(function() {
+		// Update the count down every 1 second
+		var x = setInterval(function() {
 
   		// Get today's date and time
   		var now = new Date().getTime();
@@ -387,106 +392,50 @@
   		var distance = countDownDate - now;
 
   		// Time calculations for hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24)); 
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24)); 
   		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  		// Display the result in the element with id="timer"
-  		document.getElementById("timer").innerHTML = nextprayer + " " + hours + "h " + minutes + "m " + seconds + "s";  
-      
-  		// Memunculkan notifikasi adzan
-      // By: Hendra Dwi Putra
-
-      //if (distance < 0) {
-            
-        //var deadline = new Date("Aug 18, 2020 14:40:00").getTime();   
-            document.getElementById("label1").innerHTML = label;        
-            var deadline1 = new Date(month + " " + nextdate + "," + tahun + " " + "00:" + durasiadzan + ":00").getTime();  
-
-            var z = setInterval(function() { 
-
-            var now1 = new Date().getTime(); 
-            var t = deadline1 - now1; 
-            var minutes1 = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
-            var seconds1 = Math.floor((t % (1000 * 60)) / 1000); 
-          
-            minutes1 = checkTime(minutes2);
-            seconds1 = checkTime(seconds2);
-            
-            
-            
-            if (t < 0) { 
-              clearInterval(y); 
-              document.getElementById("label1").innerHTML = "";              
-            }              
-            }, 1000); 
-      //}
-
-
-/*
+  		// Counter mundur waktu solat
+  		document.getElementById("timer").innerHTML = nextprayer + " " + hours + "h " + minutes + "m " + seconds + "s"; 			
+        		
+		// By: Hendra Dwi Putra			
+		// Memunculkan notifikasi adzan
         if (distance < 0) {
           clearInterval(x);
-          document.getElementById("timer").innerHTML = "";
-         
+          document.getElementById("timer").innerHTML = label;         
         }
-*/
+		// Memunculkan notifikasi dan hitung mundur iqomah		
         if (currentminute >= adzan_to_iqomah) {
+			document.getElementById("timer").innerHTML = "";
             var time = hr + ":" + (Number(min) + Number(durasiadzan) + Number(durasiiqomah));
-            //var deadline = new Date("Aug 17, 2020 8:30:00").getTime();           
+            //var deadline = new Date("Aug 19, 2020 11:45:00").getTime();           
             var deadline = new Date(month + " " + nextdate + "," + tahun + " " + time + ":00").getTime();  
 
             var y = setInterval(function() { 
-
-            var now = new Date().getTime(); 
-            var t = deadline - now; 
-            var minutes2 = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
-            var seconds2 = Math.floor((t % (1000 * 60)) / 1000); 
+				var now = new Date().getTime(); 
+				var t = deadline - now; 
+				var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
+				var seconds = Math.floor((t % (1000 * 60)) / 1000); 
           
-            minutes2 = checkTime(minutes2);
-            seconds2 = checkTime(seconds2);
+				minutes = checkTime(minutes);
+				seconds = checkTime(seconds);
             
-            document.getElementById("label1").innerHTML = "IQOMAH " + minutes2 + ":" + seconds2;
+				document.getElementById("reminder").innerHTML = "IQOMAH " + minutes + ":" + seconds;
             
-            if (t < 0) { 
-              clearInterval(y); 
-              //document.getElementById("label1").innerHTML = "Telah masuk waktu solat";              
-            }              
+				if (t < 0) { 
+					clearInterval(y); 
+					document.getElementById("reminder").innerHTML = "Telah masuk waktu solat"; 
+				}              
+				// Problem, label tidak otomatis hilang...
+				if (currentminute <= waktuashar) {
+					document.getElementById("reminder").innerHTML = ""; 
+				}
             }, 1000); 
           }
-
- 
-              
-        /*
-        if ((distance < 0) && (currentminute >= adzan_to_iqomah)) {
-          var time = hr + ":" + (Number(min) + Number(durasiadzan) + Number(durasiiqomah));
-          //var deadline = new Date("Aug 17, 2020 8:30:00").getTime();           
-          var deadline = new Date(month + " " + nextdate + "," + tahun + " " + time + ":00").getTime();  
-
-          var y = setInterval(function() { 
-
-            var now = new Date().getTime(); 
-            var t = deadline - now; 
-            var minutes2 = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
-            var seconds2 = Math.floor((t % (1000 * 60)) / 1000); 
-          
-            minutes2 = checkTime(minutes2);
-            seconds2 = checkTime(seconds2);
-            
-            document.getElementById("timer").innerHTML = "Iqomah " + minutes2 + ":" + seconds2;
-            
-            if (t < 0) { 
-              clearInterval(y); 
-              document.getElementById("timer").innerHTML = "Telah masuk waktu solat";              
-            }              
-          }, 1000); 
-          
-        }  */    
-
 		  }, 1000);      
-
 	   }
-
 
 	   //----------------------- Copyright Block ----------------------
 	   // http://w3schools.com/js/tryit.asp?filename=tryjs_timing_clock

@@ -1,7 +1,6 @@
 
-
 <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top header-transparent">   
+<header id="header" class="fixed-top header-transparent">   
       <div class="row justify-content-center">
         <div class="col-xl-11 d-flex align-items-center">
 
@@ -12,21 +11,15 @@
           
           <nav class="nav-menu d-none d-lg-block">
             <ul>              
-              <li><p id="timer">[TIMER]</p></li> <!-- Prayer counter -->
-              <li><p id="label1" class="text1"></p></li> <!--Adzan reminder-->                                         
+				<li><p id="timer">[TIMER]</p></li><!-- Prayer counter -->
+				<li><p id="reminder" class="reminder"></p></li> <!--Adzan & Iqomah Reminder-->    				
             </ul>                               
-          </nav><!-- .nav-menu -->        
-         <!-- 
-          <div class="alert alert-success" role="alert">
-            <h3 class="alert-heading">IQOMAH</h3>
-            <p>05:10</p>
-          </div>
-          -->
+          </nav><!-- .nav-menu -->      
+
         </div>        
       </div>
-  </header>
+</header>
 <!-- ======= Header ======= -->
-
 
 <!-- ======= Intro ======= -->
   <section id="intro">
@@ -114,8 +107,7 @@
 <!-- ======= Footer ======= -->
   <footer id="footer"> 
     <div class="container-fluid">   
-      <div class="top">
-      
+      <div class="top">      
 
         <div class="row">
           <div class="col-lg-2 col-md-2 info">
@@ -123,7 +115,7 @@
           </div>                 
 
           <div class="col-lg-10 col-md-10 info">
-            <h3 class="running-text" id="message"></h3>
+            <h3 class="running-text"><marquee scrollamount="5">Total saldo bulan Agustus 2020 Rp. 5.000.000,- *** HP mohon dinonaktifkan *** Gunakan masker sebelum masuk ke Mesjid ***</marquee></h3>
           </div>
         </div>
 
