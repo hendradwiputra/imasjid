@@ -9,12 +9,7 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-.solat-container {
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 
 body {
   
@@ -69,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #header .logo {
   font-size: 40px;
-  color: #fff;
+  color: #f7dc6f;
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -77,14 +72,14 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: 3px;
   padding-left: 8px;
-  border-left: 8px solid #2ecc71;
+  border-left: 8px solid #ffd152;
 }
 
 #header .address {
   font-size: 18px;
   padding-top: 2px;  
-  color: #2ecc71;
-  letter-spacing: 2px;
+  color: #fff;
+  letter-spacing: 1px;
  
 }
 
@@ -92,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 18px;
   padding-top: 2px;  
   color: #fff;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   
 }
 
@@ -127,6 +122,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #f7dc6f;  
   padding-right: 10px;
   padding-left: 10px;
+  
 }
 
 .nav-menu .reminder {
@@ -396,7 +392,7 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-#footer h3 .selected {
+#footer h3 .selected{
   font-size: 34px;  
   line-height: 1;
   font-family: "Montserrat", sans-serif;
@@ -405,30 +401,24 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center; 
   color: #2b2e42;
   background-color: #f7dc6f;   
-  
+  border-left: 8px solid #efeae1;
 }
 
-#footer .jam {  
+#footer .jam {
+  color: #ffd152;
   font-size: 40px;
-  letter-spacing: 3px;
-  position: absolute;
-  right: 90;
-  bottom: 140px;   
-  background-color: #000; 
-  z-index: 2;
-  padding: 5px;
+
 }
 
 #footer .running-text{
-  font-size: 33px;  
+  font-size: 32px;  
   line-height: 1;
   font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  letter-spacing: 3px;  
-  text-align: center;
+  font-weight: 700;     
   color: #dfccae;
-  margin-bottom: 5px;
-  background-color: #2c2a2b;   
+  margin-top: 2px;
+  background-color: #584b4f;   
+  
 }
 
 #footer .copyright {
