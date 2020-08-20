@@ -19,7 +19,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Waktu Solat</title>
+	<title>Adzan</title>
 </head>
 
 <!-- Bootstrap CSS -->
@@ -243,7 +243,7 @@
   			var nextcounter = dzuhur;  	
   			var starttime = waktudzuhur;
 			var endtime = batasdzuhur;   
-			var durasiiqomah = 10;  
+			var durasiiqomah = 5;  
 			var nextdate = tanggal;
 			var label = "Adzan " + nextprayer;
 			var hr = '<?php echo substr($times[2],0,2); ?>';
@@ -257,14 +257,14 @@
 			var nextcounter = dzuhur;    
 			var starttime = waktudzuhur;
 			var endtime = batasdzuhur; 
-			var durasiiqomah = 10;  
+			var durasiiqomah = 5;  
 			var nextdate = tanggal;
 			var label = "Adzan " + nextprayer;
 			var hr = '<?php echo substr($times[2],0,2); ?>';
 			var min = '<?php echo substr($times[2],3,4); ?>';        
 			document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + solatDzuhur + "</h3>";
 			document.getElementById('dzuhur').innerHTML = "<h3 " + selected + ">" + dzuhur + "</h3>";
-			
+
         
 		} else if (currentminute <= waktuashar) {
   			var nextprayer = "Ashar";
@@ -392,60 +392,38 @@
   		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   		// Counter mundur waktu solat
-  		document.getElementById("timer").innerHTML = nextprayer + " " + hours + "h " + minutes + "m " + seconds + "s"; 			
+  		
+  		document.getElementById("timer").innerHTML = nextprayer + " " + hours + "h " + minutes + "m " + seconds + "s";; 
         		
 		// By: Hendra Dwi Putra			
 		// Memunculkan notifikasi adzan
         if (distance < 0) {
           clearInterval(x);
-          document.getElementById("timer").innerHTML = label;         
-        }
-        
-        document.getElementById("message").innerHTML = distance; 
-        // Menghitung durasi adzan dan berpindah ke counter iqomah jika adzan telah selesai
-        var nextprayer1 = "Shubuh";
-        if (solatSyuruq == nextprayer1) {
-        	document.getElementById("message").innerHTML = "Waktu " + nextprayer1; 
-        } else {
-        	document.getElementById("message").innerHTML = "Adzan " + nextprayer1; 
-        	if (currentminute >= adzan_to_iqomah) {
-				var currentminute = (h * 60) + Number(m); 
-            	var time = hr + ":" + (Number(min) + Number(durasiadzan) + Number(durasiiqomah));
-            	//var deadline = new Date("Aug 19, 2020 11:45:00").getTime();           
-            	var deadline = new Date(month + " " + nextdate + "," + tahun + " " + time + ":00").getTime();  
+          document.getElementById("timer").innerHTML = label; 
+        }  
 
-            	var y = setInterval(function() { 
-					var now = new Date().getTime(); 
-					var t = deadline - now; 
-					var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
-					var seconds = Math.floor((t % (1000 * 60)) / 1000); 
-          
-					minutes = checkTime(minutes);
-					seconds = checkTime(seconds);
-            
-					document.getElementById("message").innerHTML = "IQOMAH " + minutes + ":" + seconds;
-            
-					if (t < 0) { 
-						clearInterval(y); 
-						document.getElementById("message").innerHTML = "Memasuki Waktu Solat"; 
-					}              
-				
-            	}, 1000); 
-          	}
+        }, 1000);
 
-        }
-        	
+		
+
+		if (currentminute >= adzan_to_iqomah) {
+			var label = "IQOMAH";
+			document.getElementById("timer").innerHTML = label;  
+		}
+
+		if (currentminute >= iqomah_to_solat) {
+			var label = "Telah masuk waktu solat";
+			document.getElementById("timer").innerHTML = label;  
+		}
+
+		
+
+		
 
 
-		// Memunculkan notifikasi dan hitung mundur iqomah	
-		/*
-		if (solatSyuruq == nextprayer) {
-			document.getElementById("timer").innerHTML = "Memasuki Waktu Solat";
-		} 
-		*/
-		/*
-        if (currentminute >= adzan_to_iqomah) {
-			
+          /*
+          // Memunculkan notifikasi iqomah dan hitung mundur menuju jam solat
+          if (currentminute >= adzan_to_iqomah) {			 
             var time = hr + ":" + (Number(min) + Number(durasiadzan) + Number(durasiiqomah));
             //var deadline = new Date("Aug 19, 2020 11:45:00").getTime();           
             var deadline = new Date(month + " " + nextdate + "," + tahun + " " + time + ":00").getTime();  
@@ -458,28 +436,25 @@
           
 				minutes = checkTime(minutes);
 				seconds = checkTime(seconds);
-            
-				document.getElementById("timer").innerHTML = "IQOMAH " + minutes + ":" + seconds;
-            
+            	
+            	document.getElementById("timer").innerHTML = "IQOMAH " + minutes + ":" + seconds;
+            	            
 				if (t < 0) { 
 					clearInterval(y); 
 					document.getElementById("timer").innerHTML = "Memasuki Waktu Solat"; 
 				}              
 				
             }, 1000); 
-          }
-
+        	}
 			*/
 
-		  }, 1000);      
-
-			var create_date = "2020";
+         	var create_date = "2020";
 			if (create_date == tahun) {
 				var copyright_years = create_date;
 			} else {
 				var copyright_years = create_date + " - " + tahun;
 			}
-			document.getElementById("copyright").innerHTML = copyright_years + " &copy Mesjid Raya Nurul Mubarok. Hak Cipta Dilindungi";
+			document.getElementById("copyright").innerHTML = "Aplikasi <strong>Adzan</strong><small> ver-1.0</small> " + "<i class='far fa-copyright'></i>" + " Mesjid Raya Nurul Mubarok " + copyright_years + " <i class='fas fa-ellipsis-v'></i> " + "Pengaturan" + " <i class='fas fa-ellipsis-v'></i> ";
 	   }
 
 	   //----------------------- Copyright Block ----------------------
