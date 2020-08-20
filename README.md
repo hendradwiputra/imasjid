@@ -1,2 +1,2 @@
 # waktusolat
-<u>Aplikasi Waktu Solat Mesjid</u>
+Aplikasi Waktu Solat Mesjid
