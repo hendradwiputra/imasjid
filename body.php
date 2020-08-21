@@ -105,7 +105,7 @@
 
 <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="container-fluid">
+    <div class="intro-container">
         
         <div class="row">          
 
@@ -154,7 +154,7 @@
 
         </div>
 
-        <div class="copyright" id="copyright"></div>           
+        <div class="copyright" id="copyright"></div>   
         
     </div>
   </footer>
