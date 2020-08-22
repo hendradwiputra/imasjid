@@ -110,7 +110,7 @@
         <div class="row">          
 
           <div class="col-xl-10 col-lg-10 col-md-10">
-            <h3 class="running-text"><marquee scrollamount="5">Total saldo bulan Agustus 2020 Rp. 5.000.000 *** HP mohon dinonaktifkan *** Gunakan masker sebelum masuk ke Mesjid</marquee></h3>
+            <h3 class="running-text"><marquee scrollamount="5">*** Total saldo bulan Agustus 2020 Rp. 5.000.000 *** HP mohon dinonaktifkan *** Gunakan masker sebelum masuk ke Mesjid</marquee></h3>
           </div>
 
           <div class="col-md-2 col-sm-2">
@@ -154,7 +154,10 @@
 
         </div>
 
-        <div class="copyright" id="copyright"></div>   
+        <div class="row">
+          <div class="copyright col-md-10" id="copyright"></div>   
+          <div class="menu col-md-2"><i class="fas fa-wrench"></i><a href="#"> Pengaturan </a></div>
+        </div>
         
     </div>
   </footer>

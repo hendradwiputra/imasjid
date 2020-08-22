@@ -19,11 +19,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Adzan</title>
+	<title>iMesjid</title>
 </head>
 
 <!-- Google Fonts -->
-<!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">-->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css"> 
@@ -61,6 +61,16 @@
   		h = checkTime(h);
   		m = checkTime(m);
   		s = checkTime(s);
+
+  		// Copyright
+        var create_date = "2020";
+		if (create_date == tahun) {
+			var copyright_years = create_date;
+		} else {
+			var copyright_years = create_date + " - " + tahun;
+		}
+		
+		document.getElementById("copyright").innerHTML = " " + "<i class='fas fa-info'></i><strong>Mesjid<small><strong>v1.0</strong></small> " + "<i class='far fa-copyright'></i>" + " Mesjid Raya Nurul Mubarok " + copyright_years + "</strong>";
   //--------------------------------------------------------------
 
   //----------------------- Copyright Block ----------------------
@@ -238,13 +248,13 @@
 			var durasiadzan = 0;	
 			var durasiiqomah = 0;  
 			var nextdate = tanggal;
-			var label = "Memasuki Waktu " + nextprayer;
+			var label = "WAKTU " + nextprayer;
 			document.getElementById('prayer2').innerHTML = "<h3 " + selected + ">" + solatSyuruq + "</h3>";
 			document.getElementById('syuruq').innerHTML = "<h3 " + selected + ">" + syuruq + "</h3>";	
 			
         
 		} else if (currentminute <= waktudzuhur) {
-			if (hari = "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; } else { var nextprayer = "Dzuhur"; var durasiiqomah = 5; }  			
+			if (hari == "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; } else { var nextprayer = "Dzuhur"; var durasiiqomah = 5; }  			
   			var nextcounter = dzuhur;  	
   			var starttime = waktudzuhur;
 			var endtime = batasdzuhur;   			 
@@ -257,7 +267,7 @@
 			
         
   		} else if (batasdzuhur >= currentminute) {
-			if (hari = "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; } else { var nextprayer = "Dzuhur"; var durasiiqomah = 5; } 
+			if (hari == "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; } else { var nextprayer = "Dzuhur"; var durasiiqomah = 5; } 
 			var nextcounter = dzuhur;    
 			var starttime = waktudzuhur;
 			var endtime = batasdzuhur; 
@@ -409,6 +419,7 @@
         }, 1000);
 		
 		// Mengganti Label Adzan dengan Iqomah		
+
 		if (currentminute >= adzan_to_iqomah) {
 			var time = hr + ":" + (Number(min) + Number(durasiadzan) + Number(durasiiqomah));
             //var deadline = new Date("Aug 21, 2020 11:25:00").getTime();           
@@ -424,8 +435,8 @@
 				seconds = checkTime(seconds);
             	
             	var label = "IQOMAH " + minutes + ":" + seconds;
-				document.getElementById("timer").innerHTML = label;   
-
+				document.getElementById("timer").innerHTML = label; 
+				
 				if (t < 0) { 
 					clearInterval(y); 
 					var label = "WAKTU " + nextprayer; 
@@ -436,15 +447,7 @@
 			 
 		}
 
-		// Copyright
-        var create_date = "2020";
-		if (create_date == tahun) {
-			var copyright_years = create_date;
-		} else {
-			var copyright_years = create_date + " - " + tahun;
-		}
 		
-		document.getElementById("copyright").innerHTML = "Aplikasi <strong>Adzan</strong><small> ver-1.0</small> " + "<i class='far fa-copyright'></i>" + " Mesjid Raya Nurul Mubarok " + copyright_years + " <i class='fas fa-ellipsis-v'></i> " + "Pengaturan" + " <i class='fas fa-ellipsis-v'></i> ";
 	   }
 
 	   //----------------------- Copyright Block ----------------------
