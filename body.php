@@ -1,11 +1,13 @@
+<?php include('form.php'); ?>
 
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top header-transparent">
       <div class="row justify-content-center">
         <div class="col-xl-11 col-lg-11 col-md-11 d-flex align-items-center">
 
-          <span class="logo mr-auto">Mesjid Raya Nurul Mubarok
-            <p class="address">Kompleks PT. RAPP Townsite 2 Baru</p>
+          <span class="logo mr-auto">
+            <p class="nama" id="label_nama">Masjid Raya Nurul Mubarok</p>
+            <p class="alamat" id="label_alamat">Kompleks PT. RAPP Townsite 2 Baru</p>
             <p class="tanggal" id="penanggalan">[KALENDER]</p>
           </span>
 
@@ -107,21 +109,17 @@
   <footer id="footer">
     <div class="intro-container">
         
-        <div class="row">          
-
+        <div class="row">
           <div class="col-xl-10 col-lg-10 col-md-10">
-            <h3 class="running-text"><marquee scrollamount="5">*** Total saldo bulan Agustus 2020 Rp. 5.000.000 *** HP mohon dinonaktifkan *** Gunakan masker sebelum masuk ke Mesjid</marquee></h3>
+            <h3 class="running-text"><marquee scrollamount="7" id="label_runningtext">*** Total saldo bulan Agustus 2020 Rp. 5.000.000 *** HP mohon dinonaktifkan *** Gunakan masker sebelum masuk ke Mesjid</marquee></h3>
           </div>
 
           <div class="col-md-2 col-sm-2">
             <h3 id="jam" class="jam"></h3>
-          </div>
-        
+          </div>        
         </div>
-
       
         <div class="row">
-
           <div class="col-xl-2 col-lg-2 col-md-3">
             <h3 id="prayer1"></h3>
             <h3 id="shubuh"></h3>
@@ -151,16 +149,14 @@
             <h3 id="prayer6"></h3>
             <h3 id="isya"></h3>
           </div>
-
         </div>
 
         <div class="row">
           <div class="copyright col-md-10" id="copyright"></div>   
-          <div class="menu col-md-2"><i class="fas fa-wrench"></i><a href="#"> Pengaturan </a></div>
+          <div class="menu col-md-2"><?php $label = ""; echo $label; ?><i class="fas fa-wrench"></i><a href="form.php" data-toggle="modal" data-target="#exampleModal"> <strong>Pengaturan</strong> </a></div>
         </div>
         
     </div>
   </footer>
 <!-- ======= Footer ======= -->
-
 

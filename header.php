@@ -6,7 +6,7 @@
 	include('PrayTime.php');
 	
 	if (!isset($method) || !isset($year) )
-		list($method, $year, $latitude, $longitude, $timeZone) = array(3, 2020, 0.406393, 101.845164, 7);	
+		list($method, $year, $latitude, $longitude, $timeZone) = array(5, 2020, 0.406393, 101.845164, 7);	
 
 		$prayTime = new PrayTime($method);
 		$day = date('d M Y');
@@ -19,7 +19,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>iMesjid</title>
+	<title>iMasjid</title>
 </head>
 
 <!-- Google Fonts -->
@@ -62,7 +62,7 @@
   		m = checkTime(m);
   		s = checkTime(s);
 
-  		// Copyright
+  		// Footer
         var create_date = "2020";
 		if (create_date == tahun) {
 			var copyright_years = create_date;
@@ -70,7 +70,7 @@
 			var copyright_years = create_date + " - " + tahun;
 		}
 		
-		document.getElementById("copyright").innerHTML = " " + "<i class='fas fa-info'></i><strong>Mesjid<small><strong>v1.0</strong></small> " + "<i class='far fa-copyright'></i>" + " Mesjid Raya Nurul Mubarok " + copyright_years + "</strong>";
+		document.getElementById("copyright").innerHTML = " " + "<i class='fas fa-info'></i><strong>Masjid<small><strong>v1.0</strong></small> " + "<i class='far fa-copyright'></i>" + " Masjid Raya Nurul Mubarok " + copyright_years + "</strong>";
   //--------------------------------------------------------------
 
   //----------------------- Copyright Block ----------------------
@@ -206,7 +206,7 @@
 			var endtime = batasshubuh;  
 			var durasiiqomah = 10;
 			var nextdate = tanggal;
-			var label = "Adzan " + nextprayer;
+			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[0],0,2); ?>';
 			var min = '<?php echo substr($times[0],3,4); ?>';        
 			document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + solatShubuh + "</h3>";
@@ -220,7 +220,7 @@
 			var endtime = batasshubuh; 
 			var durasiiqomah = 10;    
 			var nextdate = tanggal;
-			var label = "Adzan " + nextprayer;
+			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[0],0,2); ?>';
 			var min = '<?php echo substr($times[0],3,4); ?>';
 			document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + solatShubuh + "</h3>";
@@ -235,7 +235,7 @@
 			var durasiadzan = 0;
 			var durasiiqomah = 0;  
 			var nextdate = tanggal;
-			var label = "Memasuki Waktu " + nextprayer;
+			var label = "WAKTU " + nextprayer;
 			document.getElementById('prayer2').innerHTML = "<h3 " + selected + ">" + solatSyuruq + "</h3>";
 			document.getElementById('syuruq').innerHTML = "<h3 " + selected + ">" + syuruq + "</h3>";
 			
@@ -254,12 +254,14 @@
 			
         
 		} else if (currentminute <= waktudzuhur) {
-			if (hari == "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; } else { var nextprayer = "Dzuhur"; var durasiiqomah = 5; }  			
+			if (hari == "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; } else { var nextprayer = "Dzuhur"; var durasiiqomah = 5; }  
+			//var nextprayer = "Dzuhur";			
   			var nextcounter = dzuhur;  	
   			var starttime = waktudzuhur;
-			var endtime = batasdzuhur;   			 
+			var endtime = batasdzuhur;
+			var durasiiqomah = 5;   			 
 			var nextdate = tanggal;
-			var label = "Adzan " + nextprayer;
+			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[2],0,2); ?>';
 			var min = '<?php echo substr($times[2],3,4); ?>';        
 			document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + solatDzuhur + "</h3>";
@@ -268,12 +270,13 @@
         
   		} else if (batasdzuhur >= currentminute) {
 			if (hari == "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; } else { var nextprayer = "Dzuhur"; var durasiiqomah = 5; } 
+			var nextprayer = "Dzuhur";
 			var nextcounter = dzuhur;    
 			var starttime = waktudzuhur;
 			var endtime = batasdzuhur; 
 			var durasiiqomah = 5;  
 			var nextdate = tanggal;
-			var label = "Adzan " + nextprayer;
+			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[2],0,2); ?>';
 			var min = '<?php echo substr($times[2],3,4); ?>';        
 			document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + solatDzuhur + "</h3>";
@@ -287,12 +290,12 @@
 			var endtime = batasashar; 	
 			var durasiiqomah = 5;
 			var nextdate = tanggal;
-			var label = "Adzan " + nextprayer;
+			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[3],0,2); ?>';
 			var min = '<?php echo substr($times[3],3,4); ?>';
 			document.getElementById('prayer4').innerHTML = "<h3 " + selected + ">" + solatAshar + "</h3>";
 			document.getElementById('ashar').innerHTML = "<h3 " + selected + ">" + ashar + "</h3>";
-			
+		
         	
   		} else if (batasashar >= currentminute) {
 			var nextprayer = "Ashar";
@@ -301,7 +304,7 @@
 			var endtime = batasashar; 
 			var durasiiqomah = 5;
 			var nextdate = tanggal;
-			var label = "Adzan " + nextprayer;
+			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[3],0,2); ?>';
 			var min = '<?php echo substr($times[3],3,4); ?>';
 			document.getElementById('prayer4').innerHTML = "<h3 " + selected + ">" + solatAshar + "</h3>";
@@ -315,7 +318,7 @@
 			var endtime = batasmaghrib;   
 			var durasiiqomah = 5; 
 			var nextdate = tanggal;
-			var label = "Adzan " + nextprayer;
+			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[5],0,2); ?>';
 			var min = '<?php echo substr($times[5],3,4); ?>';
 			document.getElementById('prayer5').innerHTML = "<h3 " + selected + ">" + solatMaghrib + "</h3>";
@@ -329,7 +332,7 @@
 			var endtime = batasmaghrib; 
 			var durasiiqomah = 5;
 			var nextdate = tanggal;
-			var label = "Adzan " + nextprayer;
+			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[5],0,2); ?>';
 			var min = '<?php echo substr($times[5],3,4); ?>';
 			document.getElementById('prayer5').innerHTML = "<h3 " + selected + ">" + solatMaghrib + "</h3>";
@@ -343,7 +346,7 @@
 			var endtime = batasisya;   
 			var durasiiqomah = 10;  	
 			var nextdate = tanggal;
-			var label = "Adzan " + nextprayer;
+			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[6],0,2); ?>';
 			var min = '<?php echo substr($times[6],3,4); ?>';
 			document.getElementById('prayer6').innerHTML = "<h3 " + selected + ">" + solatIsya + "</h3>";
@@ -357,7 +360,7 @@
 			var endtime = batasisya; 
 			var durasiiqomah = 10; 
 			var nextdate = tanggal;
-			var label = "Adzan " + nextprayer;
+			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[6],0,2); ?>';
 			var min = '<?php echo substr($times[6],3,4); ?>';
 			document.getElementById('prayer6').innerHTML = "<h3 " + selected + ">" + solatIsya + "</h3>";
@@ -368,7 +371,7 @@
 			var nextprayer = "Shubuh";
 			var nextcounter = shubuh;
 			var nextdate = tanggal + 1;
-			var label = "Adzan " + nextprayer;
+			var label = "ADZAN " + nextprayer;
 			document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + solatShubuh + "</h3>";
 			document.getElementById('shubuh').innerHTML = "<h3 " + selected + ">" + shubuh + "</h3>";			
         
@@ -394,7 +397,7 @@
 		var x = setInterval(function() {
 
   			// Get today's date and time
-  			var now = new Date().getTime();
+  			var now = new Date().getTime();  			
   	
   			// Find the distance between now and the count down date
   			var distance = countDownDate - now;
@@ -405,8 +408,12 @@
   			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+  			hours = checkTime(hours);
+  			minutes = checkTime(minutes);
+  			seconds = checkTime(seconds);
+
   			// Hitung mundur waktu solat berikut nya  		
-  			document.getElementById("timer").innerHTML = nextprayer + " " + hours + "h " + minutes + "m " + seconds + "s";; 
+  			document.getElementById("timer").innerHTML = nextprayer + " " + hours + ":" + minutes + ":" + seconds; 
         	
         	//----------------------- Copyright Block ----------------------	
 			// By: Hendra Dwi Putra			
@@ -415,12 +422,13 @@
           		clearInterval(x);
           		document.getElementById("timer").innerHTML = label; 
         	}  
-
         }, 1000);
 		
 		// Mengganti Label Adzan dengan Iqomah		
-
-		if (currentminute >= adzan_to_iqomah) {
+		if (solatSyuruq == nextprayer) {
+			document.getElementById("timer").innerHTML = label;
+		} else {
+			if (currentminute >= adzan_to_iqomah) {
 			var time = hr + ":" + (Number(min) + Number(durasiadzan) + Number(durasiiqomah));
             //var deadline = new Date("Aug 21, 2020 11:25:00").getTime();           
             var deadline = new Date(month + " " + nextdate + "," + tahun + " " + time + ":00").getTime();  
@@ -441,13 +449,12 @@
 					clearInterval(y); 
 					var label = "WAKTU " + nextprayer; 
 					document.getElementById("timer").innerHTML = label;
-				}              
-				
-            }, 1000); 
-			 
+				}				
+            }, 1000); 			 
+			}
 		}
 
-		
+				
 	   }
 
 	   //----------------------- Copyright Block ----------------------
