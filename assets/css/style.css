@@ -13,13 +13,12 @@
 
 body {
   
-  font-family: "Open Sans", sans-serif; 
-  background-color: #000;
+  font-family: "Open Sans", sans-serif;  
   
 }
 
 a {
-  color: #18d26e;
+  color: #2b2e42;
   transition: 0.5s;
 }
 
@@ -64,6 +63,19 @@ h1, h2, h3, h4, h5, h6 {
 
 #header .logo {
   font-size: 40px;
+  color: #f7dc6f;  
+  line-height: 1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin: 0;
+  padding: 0;
+  padding-left: 8px;
+  border-left: 8px solid #ffd152;
+}
+
+#header .nama {
+  font-size: 40px;
   color: #f7dc6f;
   margin: 0;
   padding: 0;
@@ -71,16 +83,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   letter-spacing: 3px;
-  padding-left: 8px;
-  border-left: 8px solid #ffd152;
+  
 }
 
-#header .address {
+#header .alamat {
   font-size: 18px;
   padding-top: 2px;  
   color: #fff;
   letter-spacing: 1px;
- 
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
 
 #header .tanggal {
@@ -88,7 +100,8 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 2px;  
   color: #fff;
   letter-spacing: 1px;
-  
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
 
 #header .logo a {
@@ -116,7 +129,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   color: #2b2e42;
   transition: 0.3s;
-  font-size: 37px;
+  font-size: 40px;
   font-family: "Montserrat", sans-serif;  
   font-weight: 600;
   background-color: #f7dc6f;  
@@ -451,7 +464,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #footer a:hover {
   font-weight: 700;
-  color: #2c2a2b;
+  color: #ffd152;
+  background-color: #343233;
 }
 
 /*--------------------------------------------------------------
