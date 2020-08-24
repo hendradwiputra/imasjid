@@ -419,15 +419,20 @@
 			// By: Hendra Dwi Putra			
 			// Mengganti Nama Solat Berikut nya dengan Label Adzan
         	if (distance < 0) {
-          		clearInterval(x);
-          		document.getElementById("timer").innerHTML = label; 
+          		clearInterval(x); 
+          		if (nextprayer == solatSyuruq) { //-->new line
+          			document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
+          		} else {
+          			document.getElementById("timer").innerHTML = label; 
+          		}
+          		
         	}  
         }, 1000);
 		
 		// Mengganti Label Adzan dengan Iqomah		
-		if (solatSyuruq == nextprayer) {
-			document.getElementById("timer").innerHTML = label;
-		} else {
+		//if (solatSyuruq == nextprayer) {
+		//	document.getElementById("timer").innerHTML = label;
+		//} else {
 			if (currentminute >= adzan_to_iqomah) {
 			var time = hr + ":" + (Number(min) + Number(durasiadzan) + Number(durasiiqomah));
             //var deadline = new Date("Aug 21, 2020 11:25:00").getTime();           
@@ -442,17 +447,25 @@
 				minutes = checkTime(minutes);
 				seconds = checkTime(seconds);
             	
-            	var label = "IQOMAH " + minutes + ":" + seconds;
-				document.getElementById("timer").innerHTML = label; 
+            	if (nextprayer == solatSyuruq) { //-->new line
+            		document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
+            	} else {
+            		var label = "IQOMAH " + minutes + ":" + seconds;
+					document.getElementById("timer").innerHTML = label; 
+            	}            	
 				
 				if (t < 0) { 
 					clearInterval(y); 
-					var label = "WAKTU " + nextprayer; 
-					document.getElementById("timer").innerHTML = label;
+					if (nextprayer == solatSyuruq) { //-->new line
+            			document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
+            		} else {
+						var label = "WAKTU " + nextprayer; 
+						document.getElementById("timer").innerHTML = label;
+					}
 				}				
             }, 1000); 			 
 			}
-		}
+		//}
 
 				
 	   }

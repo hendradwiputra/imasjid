@@ -30,7 +30,7 @@
         <!--<ol class="carousel-indicators"></ol>-->
         <div class="carousel-inner" role="listbox">
 
-          <div class="carousel-item active" style="background-image: url(./images/01.jpg)">
+          <div class="carousel-item active" style="background-image: url(./images/kaaba-01.jpg)">
             <div class="carousel-container">
               <div class="container">
                 <h2 class="animate__animated animate__fadeInDown">Membaca Surat Al Kahfi</h2>
@@ -40,7 +40,7 @@
             </div>
           </div>
 
-          <div class="carousel-item" style="background-image: url(./images/02.jpg)">
+          <div class="carousel-item" style="background-image: url(./images/kaaba-02.jpg)">
             <div class="carousel-container">
               <div class="container">
                 <h2 class="animate__animated animate__fadeInDown">Jangan Memutuskan Tali Silaturahmi</h2>
@@ -50,7 +50,7 @@
             </div>
           </div>
 
-          <div class="carousel-item" style="background-image: url(./images/03.jpg)">
+          <div class="carousel-item" style="background-image: url(./images/madina-03.jpg)">
             <div class="carousel-container">
               <div class="container">
                 <h2 class="animate__animated animate__fadeInDown">Di Balik Musibah</h2>
@@ -60,7 +60,7 @@
             </div>
           </div>
 
-          <div class="carousel-item" style="background-image: url(./images/04.jpg)">
+          <div class="carousel-item" style="background-image: url(./images/madina-02.jpg)">
             <div class="carousel-container">
               <div class="container">
                 <h2 class="animate__animated animate__fadeInDown">Istiqomah Ya</h2>
@@ -70,7 +70,7 @@
             </div>
           </div>
 
-          <div class="carousel-item" style="background-image: url(./images/05.jpg)">
+          <div class="carousel-item" style="background-image: url(./images/arafah-01.jpg)">
             <div class="carousel-container">
               <div class="container">
                 <h2 class="animate__animated animate__fadeInDown">Jangan Mencela Seorang Muslim</h2>
@@ -79,11 +79,29 @@
             </div>
           </div>
 
-          <div class="carousel-item" style="background-image: url(./images/06.jpg)">
+          <div class="carousel-item" style="background-image: url(./images/arafah-02.jpg)">
             <div class="carousel-container">
               <div class="container">
                 <h2 class="animate__animated animate__fadeInDown">Ridha Allah Pada Ridha Orangtua</h2>
                 <p class="animate__animated animate__fadeInUp">"Ridha Allah terdapat pada ridha orangtua, sedang murka Allah terdapat pada murka orangtua."<br>(HR. At-Thabrani | Shahih Al Jaami 3507)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(./images/quran-01.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown"></h2>
+                <p class="animate__animated animate__fadeInUp"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(./images/al-aqso-02.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown"></h2>
+                <p class="animate__animated animate__fadeInUp"></p>
               </div>
             </div>
           </div>
