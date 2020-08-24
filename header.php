@@ -420,7 +420,8 @@
 			// Mengganti Nama Solat Berikut nya dengan Label Adzan
         	if (distance < 0) {
           		clearInterval(x); 
-          		if (nextprayer == solatSyuruq) { //-->new line
+          		//if (nextprayer == solatSyuruq) { //-->new line
+          		if (durasiadzan == 0 ) { // command ini untuk mengabaikan perintah adzan untuk solat syuruq
           			document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
           		} else {
           			document.getElementById("timer").innerHTML = label; 
@@ -447,8 +448,10 @@
 				minutes = checkTime(minutes);
 				seconds = checkTime(seconds);
             	
-            	if (nextprayer == solatSyuruq) { //-->new line
+            	//if (nextprayer == solatSyuruq) { //-->new line
+            	if (durasiiqomah == 0) { // command ini untuk mengabaikan waktu iqomah untuk solat syuruq dan jum'at
             		document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
+            	
             	} else {
             		var label = "IQOMAH " + minutes + ":" + seconds;
 					document.getElementById("timer").innerHTML = label; 
@@ -456,9 +459,10 @@
 				
 				if (t < 0) { 
 					clearInterval(y); 
-					if (nextprayer == solatSyuruq) { //-->new line
+					//if (nextprayer == solatSyuruq) { //-->new line
+					if (durasiiqomah == 0) { // ganti label ke solat berikut nya jika timer sudah terpenuhi
             			document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
-            		} else {
+					} else {
 						var label = "WAKTU " + nextprayer; 
 						document.getElementById("timer").innerHTML = label;
 					}
