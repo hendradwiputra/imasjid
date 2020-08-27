@@ -1,0 +1,9 @@
+{
+    "nama_masjid":"Masjid Raya Nurul Mubarok",
+    "alamat_masjid":"Kompleks RAPP Townsite 2 Baru",
+    "pets":[
+        { "animal":"dog", "name":"Fido" },
+        { "animal":"cat", "name":"Felix" },
+        { "animal":"hamster", "name":"Lightning" }
+    ]
+}

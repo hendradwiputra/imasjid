@@ -6,14 +6,14 @@
         <div class="col-xl-11 col-lg-11 col-md-11 d-flex align-items-center">
 
           <span class="logo mr-auto">
-            <p class="nama" id="label_nama">Masjid Raya Nurul Mubarok</p>
-            <p class="alamat" id="label_alamat">Kompleks PT. RAPP Townsite 2 Baru</p>
+            <p class="nama" id="NamaMasjid"></p>
+            <p class="alamat" id="AlamatMasjid"></p>
             <p class="tanggal" id="penanggalan">[KALENDER]</p>
           </span>
 
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-				      <li><p id="timer">[TIMER]</p></li><!-- Prayer counter -->
+				      <li><p id="timer">[TIMER]</p></li><!--Prayer counter-->
             </ul>
           </nav><!-- .nav-menu -->
 
@@ -129,7 +129,7 @@
         
         <div class="row">
           <div class="col-xl-10 col-lg-10 col-md-10">
-            <h3 class="running-text"><marquee scrollamount="7" id="label_runningtext">*** Total saldo bulan Agustus 2020 Rp. 5.000.000 *** HP mohon dinonaktifkan *** Gunakan masker sebelum masuk ke Mesjid</marquee></h3>
+            <h3 class="running-text"><marquee scrollamount="7" id="running_text"></marquee></h3>
           </div>
 
           <div class="col-md-2 col-sm-2">

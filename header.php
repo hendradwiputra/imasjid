@@ -61,17 +61,41 @@
   		h = checkTime(h);
   		m = checkTime(m);
   		s = checkTime(s);
-
-  		// Footer
-        var create_date = "2020";
-		if (create_date == tahun) {
-			var copyright_years = create_date;
-		} else {
-			var copyright_years = create_date + " - " + tahun;
-		}
-		
-		document.getElementById("copyright").innerHTML = " " + "<i class='fas fa-info'></i><strong>Masjid<small><strong>v1.0</strong></small> " + "<i class='far fa-copyright'></i>" + " Masjid Raya Nurul Mubarok " + copyright_years + "</strong>";
+  		
   //--------------------------------------------------------------
+  		/*
+  		var configuration = {
+  			"nama_masjid"  		:  "Masjid Raya Nurul Mubarok",
+  			"alamat_masjid"   	:  "Kompleks PT. RAPP Townsite 2 Baru",
+  			"running_text"   	:  "*** Total saldo bulan Agustus 2020 Rp. 5.000.000 *** HP mohon dinonaktifkan *** Gunakan masker sebelum masuk ke Mesjid",
+  			"running_text_speed": "7", 
+  			"durasiadzan"		:  "5",
+  			"iqomah_shubuh"		:  "10",
+  			"iqomah_dzuhur"		:  "5",
+  			"iqomah_ashar"		:  "5",
+  			"iqomah_maghrib"	:  "5",
+  			"iqomah_isya"		:  "10",
+  			"koreksi_hijriah"	:  "-1"
+  			
+		}
+
+
+		document.getElementById("nama_masjid").innerHTML = configuration.nama_masjid;
+		document.getElementById("alamat_masjid").innerHTML = configuration.alamat_masjid;
+		document.getElementById("running_text").innerHTML = configuration.running_text;
+		*/
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+  			if (this.readyState == 4 && this.status == 200) {
+    			var myObj = JSON.parse(this.responseText);
+    			document.getElementById("NamaMasjid").innerHTML = myObj.nama_masjid;
+    			document.getElementById("AlamatMasjid").innerHTML = myObj.alamat_masjid;
+  			}
+		};
+		xmlhttp.open("GET", "database.txt", true);
+		xmlhttp.send();
+
+		
 
   //----------------------- Copyright Block ----------------------
   // By: Hendra Dwi Putra
@@ -89,18 +113,18 @@
 
       	// Convert nama bulan ke Indonesia
       	switch(bulan) {
-        	case 0: bulan = "Jan"; break;
-        	case 1: bulan = "Feb"; break;
-        	case 2: bulan = "Mar"; break;
-        	case 3: bulan = "Apr"; break;
+        	case 0: bulan = "Januari"; break;
+        	case 1: bulan = "Februari"; break;
+        	case 2: bulan = "Maret"; break;
+        	case 3: bulan = "April"; break;
         	case 4: bulan = "Mei"; break;
-        	case 5: bulan = "Jun"; break;
-        	case 6: bulan = "Jul"; break;
-        	case 7: bulan = "Agu"; break;
-        	case 8: bulan = "Sepr"; break;
-        	case 9: bulan = "Okt"; break;
-        	case 10: bulan = "Nov"; break;
-        	case 11: bulan = "Des"; break;
+        	case 5: bulan = "Juni"; break;
+        	case 6: bulan = "Juli"; break;
+        	case 7: bulan = "Agustus"; break;
+        	case 8: bulan = "September"; break;
+        	case 9: bulan = "Oktober"; break;
+        	case 10: bulan = "November"; break;
+        	case 11: bulan = "Desember"; break;
       	}
 
       	// Convert nama bulan ke English
@@ -178,7 +202,7 @@
       
   		// Penambahan waktu solat dalam bilangan menit,digunakan untuk timer sholat yang sudah masuk
   		var timershubuh = 30;
-  		var timersyuruq = 30;
+  		var timersyuruq = 47;
   		var timerdzuhur = 30;
   		var timerashar = 30;
   		var timermaghrib = 30;
@@ -422,7 +446,7 @@
           		clearInterval(x); 
           		//if (nextprayer == solatSyuruq) { //-->new line
           		if (durasiadzan == 0 ) { // command ini untuk mengabaikan perintah adzan untuk solat syuruq
-          			document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
+          			document.getElementById("timer").innerHTML = "WAKTU1 " + nextprayer; 
           		} else {
           			document.getElementById("timer").innerHTML = label; 
           		}
@@ -431,10 +455,7 @@
         }, 1000);
 		
 		// Mengganti Label Adzan dengan Iqomah		
-		//if (solatSyuruq == nextprayer) {
-		//	document.getElementById("timer").innerHTML = label;
-		//} else {
-			if (currentminute >= adzan_to_iqomah) {
+		if (currentminute >= adzan_to_iqomah) {
 			var time = hr + ":" + (Number(min) + Number(durasiadzan) + Number(durasiiqomah));
             //var deadline = new Date("Aug 21, 2020 11:25:00").getTime();           
             var deadline = new Date(month + " " + nextdate + "," + tahun + " " + time + ":00").getTime();  
@@ -450,28 +471,50 @@
             	
             	//if (nextprayer == solatSyuruq) { //-->new line
             	if (durasiiqomah == 0) { // command ini untuk mengabaikan waktu iqomah untuk solat syuruq dan jum'at
-            		document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
+            		document.getElementById("timer").innerHTML = "WAKTU2 " + nextprayer; 
             	
             	} else {
             		var label = "IQOMAH " + minutes + ":" + seconds;
 					document.getElementById("timer").innerHTML = label; 
-            	}            	
-				
-				if (t < 0) { 
-					clearInterval(y); 
-					//if (nextprayer == solatSyuruq) { //-->new line
-					if (durasiiqomah == 0) { // ganti label ke solat berikut nya jika timer sudah terpenuhi
-            			document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
-					} else {
+
+					
+            	}  
+
+            	if (t < 0) {
+						clearInterval(y); 
 						var label = "WAKTU " + nextprayer; 
 						document.getElementById("timer").innerHTML = label;
-					}
-				}				
-            }, 1000); 			 
-			}
-		//}
-
+					}        	
 				
+				/*
+				if (durasiiqomah == 0) {
+					document.getElementById("timer").innerHTML = ""; 
+				} else { 
+				  if (t < 0) { 
+					clearInterval(y); 
+					//if (nextprayer == solatSyuruq) { //-->new line
+					//if (durasiiqomah == 0) { // ganti label ke solat berikut nya jika timer sudah terpenuhi
+            		//	document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
+					//} else {
+						var label = "WAKTU " + nextprayer; 
+						document.getElementById("timer").innerHTML = label;
+					//}
+					}
+				}	*/			
+            }, 1000); 			 
+		}	
+		
+
+		// Footer
+        var create_date = "2020";
+		if (create_date == tahun) {
+			var copyright_years = create_date;
+		} else {
+			var copyright_years = create_date + " - " + tahun;
+		}
+		
+		document.getElementById("copyright").innerHTML = " " + "<i class='fas fa-info'></i><strong>Masjid<small><strong> 1.0</strong></small> " + "<i class='far fa-copyright'></i>" + " " + copyright_years + "</strong>";
+		
 	   }
 
 	   //----------------------- Copyright Block ----------------------
@@ -481,6 +524,8 @@
   		  if (i < 10) {i = "0" + i}; 
   		  return i;
 	   }    
+
+	   
 	
 </script>
 <body onload="startTime()">
