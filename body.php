@@ -6,8 +6,8 @@
         <div class="col-xl-11 col-lg-11 col-md-11 d-flex align-items-center">
 
           <span class="logo mr-auto">
-            <p class="nama" id="NamaMasjid"></p>
-            <p class="alamat" id="AlamatMasjid"></p>
+            <p class="nama" id="nama_masjid">[Nama Masjid]</p>
+            <p class="alamat" id="alamat_masjid">[Alamat Masjid]</p>
             <p class="tanggal" id="penanggalan">[KALENDER]</p>
           </span>
 
@@ -39,17 +39,7 @@
               </div>
             </div>
           </div>
-
-          <div class="carousel-item" style="background-image: url(./images/kaaba-02.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Jangan Memutuskan Tali Silaturahmi</h2>
-                <p class="animate__animated animate__fadeInUp">"Tidak akan masuk surga orang yang memutuskan tali silaturahmi."<br>(HR. Bukhari 5984 dan Muslim 2556)</p>
-
-              </div>
-            </div>
-          </div>
-
+          
           <div class="carousel-item" style="background-image: url(./images/madina-03.jpg)">
             <div class="carousel-container">
               <div class="container">
@@ -60,51 +50,7 @@
             </div>
           </div>
 
-          <div class="carousel-item" style="background-image: url(./images/madina-02.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Istiqomah Ya</h2>
-                <p class="animate__animated animate__fadeInUp">"Amalan yang paling dicintai Allah adalah yang rutin dilakukan meskipun sedikit."<br>(HR. Bukhari 6464 dan Muslim 783)</p>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item" style="background-image: url(./images/arafah-01.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Jangan Mencela Seorang Muslim</h2>
-                <p class="animate__animated animate__fadeInUp">"Mencela seorang muslim adalah kefasikan sedang membunuhnya adalah kekafiran."<br>(HR. Ahmad | Shahih Al Jaami 3595)</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item" style="background-image: url(./images/arafah-02.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Ridha Allah Pada Ridha Orangtua</h2>
-                <p class="animate__animated animate__fadeInUp">"Ridha Allah terdapat pada ridha orangtua, sedang murka Allah terdapat pada murka orangtua."<br>(HR. At-Thabrani | Shahih Al Jaami 3507)</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item" style="background-image: url(./images/quran-01.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <h2 class="animate__animated animate__fadeInDown"></h2>
-                <p class="animate__animated animate__fadeInUp"></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item" style="background-image: url(./images/al-aqso-02.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <h2 class="animate__animated animate__fadeInDown"></h2>
-                <p class="animate__animated animate__fadeInUp"></p>
-              </div>
-            </div>
-          </div>
+         
 
         </div>
 
@@ -129,7 +75,7 @@
         
         <div class="row">
           <div class="col-xl-10 col-lg-10 col-md-10">
-            <h3 class="running-text"><marquee scrollamount="7" id="running_text"></marquee></h3>
+            <h3 class="running-text"><marquee scrollamount="7" id="running_text">[Running Text]</marquee></h3>
           </div>
 
           <div class="col-md-2 col-sm-2">

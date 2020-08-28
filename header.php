@@ -43,28 +43,6 @@
 <script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-
-	let requestURL = 'data.json';
-    	let request = new XMLHttpRequest();
-    		request.open('GET', requestURL);
-    		request.responseType = 'json';
-    		request.send();
-
-		request.onload = function() {
-      		const loadData = request.response;
-      		populateData(loadData);
-      		
-    	}
-
-    	function populateData(jsonObj) {
-      		const NamaMasjid = document.createElement('nama_masjid');
-      		NamaMasjid.textContent = jsonObj['nama_masjid'];
-      		p.appendChild(NamaMasjid);
-
-      		
-    	}
-
-
 	//----------------------- Copyright Block ----------------------
 	// http://w3schools.com/js/tryit.asp?filename=tryjs_timing_clock
 	function startTime() {
@@ -100,24 +78,23 @@
   			"koreksi_hijriah"	:  "-1"
   			
 		}
+
+
 		document.getElementById("nama_masjid").innerHTML = configuration.nama_masjid;
 		document.getElementById("alamat_masjid").innerHTML = configuration.alamat_masjid;
 		document.getElementById("running_text").innerHTML = configuration.running_text;
 		*/
-		/*
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = function() {
   			if (this.readyState == 4 && this.status == 200) {
     			var myObj = JSON.parse(this.responseText);
-    			document.getElementById("NamaMasjid").innerHTML = myObj.nama_masjid;
-    			document.getElementById("AlamatMasjid").innerHTML = myObj.alamat_masjid;
-    			document.getElementById("RunningText").innerHTML = myObj.running_text;
-    			//document.getElementById("Title").innerHTML = myObj.['slide'][1];
+    			document.getElementById("nama_masjid").innerHTML = myObj.nama_masjid;
+    			document.getElementById("alamat_masjid").innerHTML = myObj.alamat_masjid;
+    			document.getElementById("running_text").innerHTML = myObj.running_text;
   			}
 		};
-		xmlhttp.open("GET", "data.json", true);
+		xmlhttp.open("GET", "database.json", true);
 		xmlhttp.send();
-		*/
 
 		
 
@@ -226,7 +203,7 @@
       
   		// Penambahan waktu solat dalam bilangan menit,digunakan untuk timer sholat yang sudah masuk
   		var timershubuh = 30;
-  		var timersyuruq = 47;
+  		var timersyuruq = 20;
   		var timerdzuhur = 30;
   		var timerashar = 30;
   		var timermaghrib = 30;
@@ -283,7 +260,7 @@
 			var durasiadzan = 0;
 			var durasiiqomah = 0;  
 			var nextdate = tanggal;
-			var label = "WAKTU " + nextprayer;
+			//var label = "WAKTU0 " + nextprayer;
 			document.getElementById('prayer2').innerHTML = "<h3 " + selected + ">" + solatSyuruq + "</h3>";
 			document.getElementById('syuruq').innerHTML = "<h3 " + selected + ">" + syuruq + "</h3>";
 			
@@ -296,7 +273,7 @@
 			var durasiadzan = 0;	
 			var durasiiqomah = 0;  
 			var nextdate = tanggal;
-			var label = "WAKTU " + nextprayer;
+			//var label = "WAKTU0 " + nextprayer;
 			document.getElementById('prayer2').innerHTML = "<h3 " + selected + ">" + solatSyuruq + "</h3>";
 			document.getElementById('syuruq').innerHTML = "<h3 " + selected + ">" + syuruq + "</h3>";	
 			
@@ -307,7 +284,7 @@
   			var nextcounter = dzuhur;  	
   			var starttime = waktudzuhur;
 			var endtime = batasdzuhur;
-			var durasiiqomah = 5;   			 
+			//var durasiiqomah = 5;   			 
 			var nextdate = tanggal;
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[2],0,2); ?>';
@@ -318,11 +295,11 @@
         
   		} else if (batasdzuhur >= currentminute) {
 			if (hari == "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; } else { var nextprayer = "Dzuhur"; var durasiiqomah = 5; } 
-			var nextprayer = "Dzuhur";
+			//var nextprayer = "Dzuhur";
 			var nextcounter = dzuhur;    
 			var starttime = waktudzuhur;
 			var endtime = batasdzuhur; 
-			var durasiiqomah = 5;  
+			//var durasiiqomah = 5;  
 			var nextdate = tanggal;
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[2],0,2); ?>';
@@ -464,14 +441,13 @@
   			document.getElementById("timer").innerHTML = nextprayer + " " + hours + ":" + minutes + ":" + seconds; 
         	
         	//----------------------- Copyright Block ----------------------	
-			// By: Hendra Dwi Putra		
-
-			// Mengganti nama solat dengan label adzan
+			// By: Hendra Dwi Putra			
+			// Mengganti Nama Solat Berikut nya dengan Label Adzan
         	if (distance < 0) {
           		clearInterval(x); 
           		//if (nextprayer == solatSyuruq) { //-->new line
           		if (durasiadzan == 0 ) { // command ini untuk mengabaikan perintah adzan untuk solat syuruq
-          			document.getElementById("timer").innerHTML = "WAKTU1 " + nextprayer; 
+          			document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
           		} else {
           			document.getElementById("timer").innerHTML = label; 
           		}
@@ -479,11 +455,12 @@
         	}  
         }, 1000);
 		
+			
 		// Mengganti label adzan dengan iqomah		
 		if (currentminute >= adzan_to_iqomah) {
 
 			if (durasiiqomah == 0) { // command ini untuk mengabaikan waktu iqomah untuk solat syuruq dan jum'at
-            		document.getElementById("timer").innerHTML = "WAKTU2 " + nextprayer; 
+            		document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
             	
             } else {
 
@@ -512,7 +489,6 @@
             	}, 1000); 			 
             }		
 		}	
-		
 
 		// Footer
         var create_date = "2020";
