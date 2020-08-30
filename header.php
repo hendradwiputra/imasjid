@@ -1,7 +1,4 @@
 <?php	
-	// Prayer Times Calculator, Sample Usage
-	// By: Hamid Zarrabi-Zadeh
-	// Inputs : $method, $year, $latitude, $longitude, $timeZone
 			
 	include('PrayTime.php');
 	
@@ -61,26 +58,7 @@
   		h = checkTime(h);
   		m = checkTime(m);
   		s = checkTime(s);
-  		
-  //--------------------------------------------------------------
-  // https://www.w3schools.com/js/js_json_parse.asp
-  /*
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function() {
-  			if (this.readyState == 4 && this.status == 200) {
-    			var myObj = JSON.parse(this.responseText);
-    				document.getElementById("NamaMasjid").innerHTML = myObj.nama_masjid;
-    				document.getElementById("AlamatMasjid").innerHTML = myObj.alamat_masjid;
-    				document.getElementById("RunningText").innerHTML = myObj.running_text;
-    				
-    				document.getElementById("Title").innerHTML = myObj.slideshow[0].title;
-    				document.getElementById("Content").innerHTML = myObj.slideshow[0.].content;
-  			}
-		};
-		xmlhttp.open("GET", "data.json", true);
-		xmlhttp.send();
-	*/
-		
+ 		
 
   //----------------------- Copyright Block ----------------------
   // By: Hendra Dwi Putra
@@ -188,7 +166,7 @@
   		// Penambahan waktu solat dalam bilangan menit,digunakan untuk timer sholat yang sudah masuk
   		var timershubuh = 30;
   		var timersyuruq = 20;
-  		var timerdzuhur = 30;
+  		var timerdzuhur = 40;
   		var timerashar = 30;
   		var timermaghrib = 30;
   		var timerisya = 30;
@@ -261,12 +239,11 @@
 			
         
 		} else if (currentminute <= waktudzuhur) {
-			if (hari == "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; } else { var nextprayer = "Dzuhur"; var durasiiqomah = 5; }  						
+			if (hari == "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; var label = "WAKTU " + nextprayer;} else { var nextprayer = "Dzuhur"; var durasiiqomah = 5; var label = "ADZAN " + nextprayer;}  		
   			var nextcounter = dzuhur;  	
   			var starttime = waktudzuhur;
-			var endtime = batasdzuhur;  			 
-			var nextdate = tanggal;
-			var label = "ADZAN " + nextprayer;
+			var endtime = batasdzuhur;			 
+			var nextdate = tanggal;			
 			var hr = '<?php echo substr($times[2],0,2); ?>';
 			var min = '<?php echo substr($times[2],3,4); ?>';        
 			document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + solatDzuhur + "</h3>";
@@ -274,12 +251,11 @@
 			
         
   		} else if (batasdzuhur >= currentminute) {
-			if (hari == "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; } else { var nextprayer = "Dzuhur"; var durasiiqomah = 5; } 
+			if (hari == "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; var label = "WAKTU " + nextprayer;} else { var nextprayer = "Dzuhur"; var durasiiqomah = 5; var label = "ADZAN " + nextprayer;} 
 			var nextcounter = dzuhur;    
 			var starttime = waktudzuhur;
 			var endtime = batasdzuhur; 
-			var nextdate = tanggal;
-			var label = "ADZAN " + nextprayer;
+			var nextdate = tanggal;			
 			var hr = '<?php echo substr($times[2],0,2); ?>';
 			var min = '<?php echo substr($times[2],3,4); ?>';        
 			document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + solatDzuhur + "</h3>";
@@ -422,7 +398,8 @@
 			// By: Hendra Dwi Putra			
 			// Mengganti Nama Solat Berikut nya dengan Label Adzan
         	if (distance < 0) {
-          		clearInterval(x);
+          		clearInterval(x); 
+          		//if (nextprayer == solatSyuruq) { //-->new line
           		if (durasiadzan == 0 ) { // command ini untuk mengabaikan perintah adzan untuk solat syuruq
           			document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
           		} else {

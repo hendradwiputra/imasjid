@@ -1,20 +1,6 @@
-<?php include('form.php'); ?>
-
-<script>
-
-  $.ajax({
-    url: "loaddata.php",
-    type: "POST",
-    cache: false,
-    
-    success: function(data){
-      //alert(data);
-      $('#name').html(data); 
-      
-    }
-  });
-
-</script>
+<?php include('edit.php'); ?>
+<?php include('retrieveData.php'); ?>
+<?php include('view.php'); ?>
 
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top header-transparent">
@@ -22,14 +8,14 @@
         <div class="col-xl-11 col-lg-11 col-md-11 d-flex align-items-center">
 
           <span class="logo mr-auto">
-            <p class="nama" id="name" name="name">Nama Masjid</p>
-            <p class="alamat" id="address" name="address">Alamat Masjid</p>
+            <p class="nama" id="nama_masjid"><?php echo $nama_masjid; ?></p>
+            <p class="alamat" id="alamat_masjid"><?php echo $alamat_masjid; ?></p>
             <p class="tanggal" id="penanggalan">[KALENDER]</p>
           </span>
 
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-              <li><p id="timer">[TIMER]</p></li><!--Prayer counter-->
+				      <li><p id="timer">[TIMER]</p></li><!--Prayer counter-->
             </ul>
           </nav><!-- .nav-menu -->
 
@@ -46,11 +32,11 @@
         <!--<ol class="carousel-indicators"></ol>-->
         <div class="carousel-inner" role="listbox">
 
-          <div class="carousel-item active" style="background-image: url(./images/kaaba-01.jpg)">
+          <div class="carousel-item active" style="background-image: url(./images/quran-01.jpg)">
             <div class="carousel-container">
               <div class="container">
-                <h2 class="animate__animated animate__fadeInDown" id="Title">[Title]</h2>
-                <p class="animate__animated animate__fadeInUp" id="Content">[Content]</p>
+                <h2 class="animate__animated animate__fadeInDown">Membaca Surat Al Kahfi</h2>
+                <p class="animate__animated animate__fadeInUp">"Barang siapa membaca surat Al Kahfi pada hari Jum'at, dia akan disinari cahaya di antara dua Jum'at." <br>(HR. An Nasa'i dan Baihaqi)</p>
 
               </div>
             </div>
@@ -64,9 +50,7 @@
 
               </div>
             </div>
-          </div>
-
-         
+          </div>         
 
         </div>
 
@@ -91,7 +75,7 @@
         
         <div class="row">
           <div class="col-xl-10 col-lg-10 col-md-10">
-            <h3 class="running-text"><marquee scrollamount="7" id="RunningText">[Running Text]</marquee></h3>
+            <h3 class="running-text"><marquee scrollamount="7" id="running_text"><?php echo $running_text; ?></marquee></h3>
           </div>
 
           <div class="col-md-2 col-sm-2">
@@ -133,16 +117,10 @@
 
         <div class="row">
           <div class="copyright col-md-10" id="copyright"></div>   
-          <div class="menu col-md-2"><?php $label = ""; echo $label; ?><i class="fas fa-wrench"></i><a href="form.php" data-toggle="modal" data-target="#exampleModal"> <strong>Pengaturan</strong> </a></div>
-        </div>
-
-        <div class="row">
-          <table class="table table-bordered table-sm" >
+          <div class="menu col-md-2">
+            <a href="edit.php" data-toggle="modal" data-target="#edit"> <strong>[Edit]</strong> </a>
+          </div>
           
-          <tbody id="table">
-      
-          </tbody>
-          </table>
         </div>
         
     </div>
