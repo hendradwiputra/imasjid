@@ -1,6 +1,5 @@
 <?php include('edit.php'); ?>
 <?php include('retrieveData.php'); ?>
-<?php include('view.php'); ?>
 
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top header-transparent">
