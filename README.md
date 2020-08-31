@@ -10,6 +10,8 @@ Pengembangan aplikasi ini menggunakan PHP, Javascript dan SQLite.
 
 #Cara penggunaan:
 Ubah latitude dan longitude yang ada di file header.php sesuai kordinat masing2.
+enable kan extension=php_sqlite3.dll di file php.ini.
+
 
 #Pending Tasks:
 1. Create PHP AJAX Form untuk edit & simpan data tanpa harus refresh browser.
