@@ -24,20 +24,24 @@
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css"> 
-
 <!-- FontAwesome -->
 <link rel="stylesheet" href="./assets/vendor/fontawesome/css/fontawesome.css"> 
 <link rel="stylesheet" href="./assets/vendor/fontawesome/css/regular.css">
 <link rel="stylesheet" href="./assets/vendor/fontawesome/css/solid.css">
-
+<!-- Ionicons -->
 <link href="./assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
-
 <!-- Custom styles for this template -->
 <link href="./assets/css/style.css" rel="stylesheet">
-<!-- Hijri Calendar JS -->
-<script type="text/javascript" src="./assets/js/hijricalendar.js"></script>
+
+<!-- Jquery -->
+<script src="./assets/js/jquery-3.5.1.slim.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- Hijri Calendar JS -->
+<script type="text/javascript" src="./assets/js/hijricalendar.js"></script>
+<!-- Template Main JS File -->
+<script src="./assets/js/main.js"></script>
+
 
 <script type="text/javascript">
 	//----------------------- Copyright Block ----------------------
@@ -110,12 +114,12 @@
   		// By: Hendra Dwi Putra
     	  
 		// Variable nama solat
-		var solatShubuh = "Shubuh";
-		var solatSyuruq = "Syuruq";
-		var solatDzuhur = "Dzuhur";
-		var solatAshar = "Ashar";
-		var solatMaghrib = "Maghrib";
-		var solatIsya = "Isya";
+		var solatShubuh = "SHUBUH";
+		var solatSyuruq = "SYURUQ";
+		var solatDzuhur = "DZUHUR";
+		var solatAshar = "ASHAR";
+		var solatMaghrib = "MAGHRIB";
+		var solatIsya = "ISYA";
 		document.getElementById('prayer1').innerHTML = solatShubuh;
 		document.getElementById('prayer2').innerHTML = solatSyuruq;
 		document.getElementById('prayer3').innerHTML = solatDzuhur;
@@ -392,7 +396,7 @@
   			seconds = checkTime(seconds);
 
   			// Hitung mundur waktu solat berikut nya  		
-  			document.getElementById("timer").innerHTML = nextprayer + " " + hours + ":" + minutes + ":" + seconds; 
+  			document.getElementById("timer").innerHTML = nextprayer.toUpperCase() + " " + hours + ":" + minutes + ":" + seconds; 
         	
         	//----------------------- Copyright Block ----------------------	
 			// By: Hendra Dwi Putra			
@@ -401,7 +405,7 @@
           		clearInterval(x); 
           		//if (nextprayer == solatSyuruq) { //-->new line
           		if (durasiadzan == 0 ) { // command ini untuk mengabaikan perintah adzan untuk solat syuruq
-          			document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
+          			document.getElementById("timer").innerHTML = "WAKTU " + nextprayer.toUpperCase(); 
           		} else {
           			document.getElementById("timer").innerHTML = label; 
           		}          		
@@ -412,7 +416,7 @@
 		if (currentminute >= adzan_to_iqomah) {
 
 			if (durasiiqomah == 0) { // command ini untuk mengabaikan waktu iqomah untuk solat syuruq dan jum'at
-            		document.getElementById("timer").innerHTML = "WAKTU " + nextprayer; 
+            		document.getElementById("timer").innerHTML = "WAKTU " + nextprayer.toUpperCase(); 
             	
             } else {
 
@@ -435,7 +439,7 @@
 
             		if (t < 0) {
 						clearInterval(y); 
-						var label = "WAKTU " + nextprayer; 
+						var label = "WAKTU " + nextprayer.toUpperCase(); 
 						document.getElementById("timer").innerHTML = label;
 					}    								
             	}, 1000); 			 
