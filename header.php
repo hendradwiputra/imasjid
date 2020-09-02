@@ -3,7 +3,7 @@
 	include('PrayTime.php');
 	
 	if (!isset($method) || !isset($year) )
-		list($method, $year, $latitude, $longitude, $timeZone) = array(5, 2020, 0.406393, 101.845164, 7);	
+		list($method, $year, $latitude, $longitude, $timeZone) = array(5, 2020, 0.406393, 101.845164, +7);	
 
 		$prayTime = new PrayTime($method);
 		$day = date('d M Y');
