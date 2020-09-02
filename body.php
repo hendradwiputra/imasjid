@@ -5,7 +5,7 @@
 
 ?>
 
-
+<form method="post">
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top header-transparent">
       <div class="row justify-content-center">
@@ -131,28 +131,16 @@
   </footer>
 <!-- ======= Footer ======= -->
 
+</form>
+
 <script>
-
-  $(document).ready(function() {
-
-   
+  $(document).ready(function() {   
     $("#aboutBtn").click(function(){
       $("#aboutModal").modal();
-    });
+    });  
     
-    //$(document).on('click', '.editBtn', function(){ 
-     
     $("#editBtn").click(function(){
-      $("#editModal").modal();
-        $('#nama_masjid').val($_POST["nama_masjid"]); 
-        
-    }); 
-
-    
-
-      
-
-
+      $("#editModal").modal();       
+    });
   });
-
 </script>

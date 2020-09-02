@@ -11,6 +11,15 @@
       $nama_masjid = $row['nama_masjid'];
       $alamat_masjid = $row['alamat_masjid'];
       $running_text = $row['running_text'];
+      $koreksi_hijriah = $row['koreksi_hijriah'];
+      $durasi_adzan = $row['durasi_adzan'];
+      $iqomah_shubuh = $row['iqomah_shubuh'];
+      $iqomah_dzuhur = $row['iqomah_dzuhur'];
+      $iqomah_ashar = $row['iqomah_ashar'];
+      $iqomah_maghrib = $row['iqomah_maghrib'];
+      $iqomah_isya = $row['iqomah_isya'];
+      
+
   }
     
   $db->close();
