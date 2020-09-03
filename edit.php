@@ -164,7 +164,7 @@
       <div class="modal-footer">
         <input type="hidden" name="id" id="id" class="form-control" value="<?php echo $id; ?>">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-        <button type="button" class="btn btn-primary">Simpan</button>
+        <button type="button" class="btn btn-primary" id="simpan">Simpan</button>
       </div>
     </div>
   </div>

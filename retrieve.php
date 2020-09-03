@@ -1,12 +1,12 @@
 <?php
+	//https://www.tutlane.com/tutorial/sqlite/sqlite-php-tutorial
 	
-	// include Database connection file 
 	include("db_connection.php");
  		
 	$sql = "SELECT * from settings";
   $query = $db->query($sql);  
 
-  while($row = $query->fetchArray(SQLITE3_ASSOC) ) {
+  while($row = $query->fetchArray()) {
       $id = $row['id'];
       $nama_masjid = $row['nama_masjid'];
       $alamat_masjid = $row['alamat_masjid'];

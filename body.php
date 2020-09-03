@@ -1,8 +1,7 @@
 <?php 
   include('about.php');
   include('edit.php');
-  include('retrieve.php'); 
-
+  include('retrieve.php');   
 ?>
 
 <form method="post">
@@ -142,5 +141,22 @@
     $("#editBtn").click(function(){
       $("#editModal").modal();       
     });
+
+    //$("#simpan").click(function(){
+
+    $(document).on("click", "#simpan", function() { 
+      var nama_masjid = $('#nama_masjid').val();
+      $.ajax({
+        url:'update.php',
+        method:'POST',
+        data:{
+            nama_masjid:nama_masjid
+        },
+        success:function(response){
+          alert(response);
+        }
+      })      
+    });
+
   });
 </script>
