@@ -1,14 +1,18 @@
 <?php	
 			
 	include('PrayTime.php');
+	include("db_connection.php");
+	include('retrieve.php'); 
+
+	$day1 = date('Y');	
 	
 	if (!isset($method) || !isset($year) )
-		list($method, $year, $latitude, $longitude, $timeZone) = array(5, 2020, 0.406393, 101.845164, +7);	
+		list($method, $year, $latitude, $longitude, $timeZone) = array($metode_perhitungan, $day1, $garis_lintang, $garis_bujur, $zona_waktu);
 
-		$prayTime = new PrayTime($method);
+		$prayTime = new PrayTime($method);	
 		$day = date('d M Y');
 		$date = strtotime($year);
-		$times = $prayTime->getPrayerTimes($date, $latitude, $longitude, $timeZone);
+		$times = $prayTime->getPrayerTimes($date, $latitude, $longitude, $timeZone);		
 ?>
 
 <!doctype html>
@@ -445,8 +449,7 @@
             	}, 1000); 			 
             }		
 		}	
-
-		// Footer
+		
         var create_date = "2020";
 		if (create_date == tahun) {
 			var copyright_years = create_date;
@@ -454,7 +457,7 @@
 			var copyright_years = create_date + " - " + tahun;
 		}
 		
-		document.getElementById("copyright").innerHTML = " " + "<i class='fas fa-info'></i><strong>Masjid<small><strong> 1.0</strong></small> " + "<i class='far fa-copyright'></i>" + " " + copyright_years + "</strong>";
+		document.getElementById("copyright").innerHTML = " " + "<i class='fas fa-info'></i><strong>Masjid<small><strong> 1.0</strong></small> " + "<i class='far fa-copyright'></i>" + " " +'<?php echo $nama_masjid; ?>' + " " + copyright_years + "</strong>";
 		
 	   }
 

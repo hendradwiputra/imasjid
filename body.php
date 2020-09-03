@@ -4,7 +4,6 @@
   include('retrieve.php');   
 ?>
 
-<form method="post">
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top header-transparent">
       <div class="row justify-content-center">
@@ -76,7 +75,7 @@
         
         <div class="row">
           <div class="col-xl-10 col-lg-10 col-md-10">
-            <h3 class="running-text"><marquee scrollamount="7" id="running_text"><?php echo $running_text; ?></marquee></h3>
+            <h3 class="running-text"><marquee scrollamount="<?php echo $kecepatan_teks; ?>" id="running_text"><?php echo $running_text; ?></marquee></h3>
           </div>
 
           <div class="col-md-2 col-sm-2">
@@ -130,8 +129,6 @@
   </footer>
 <!-- ======= Footer ======= -->
 
-</form>
-
 <script>
   $(document).ready(function() {   
     $("#aboutBtn").click(function(){
@@ -141,9 +138,7 @@
     $("#editBtn").click(function(){
       $("#editModal").modal();       
     });
-
-    //$("#simpan").click(function(){
-
+    
     $(document).on("click", "#simpan", function() { 
       var nama_masjid = $('#nama_masjid').val();
       $.ajax({

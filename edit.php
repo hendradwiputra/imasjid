@@ -1,5 +1,6 @@
 <?php include('retrieve.php'); ?>
 
+<form method="post">
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -53,16 +54,16 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label>Latitude</label><input type="text" name="latitude" id="latitude" class="form-control col-md-3" value="<?php echo $latitude; ?>">
+                  <label>Garis Lintang</label><input type="text" name="garis_lintang" id="garis_lintang" class="form-control col-md-3" value="<?php echo $garis_lintang; ?>">
                 </div>
                 <div class="form-group">
-                  <label>Longitude</label><input type="text" name="longitude" id="longitude" class="form-control col-md-3 " value="<?php echo $longitude; ?>">
+                  <label>Garis Bujur</label><input type="text" name="garis_bujur" id="garis_bujur" class="form-control col-md-3 " value="<?php echo $garis_bujur; ?>">
                 </div>
                 <div class="form-group">
-                  <label>Timezone</label>
-                  <select name="timezone" class="form-control col-md-2">
-                    <option <?php if ($timezone==+7) echo 'selected = "selected"'; ?>>+7</option>
-                    <option <?php if ($timezone==+8) echo 'selected = "selected"'; ?>>+8</option>                   
+                  <label>Zona Waktu</label>
+                  <select name="zona_waktu" class="form-control col-md-2">
+                    <option <?php if ($zona_waktu==+7) echo 'selected = "selected"'; ?>>+7</option>
+                    <option <?php if ($zona_waktu==+8) echo 'selected = "selected"'; ?>>+8</option>                   
                   </select>
                 </div>
 
@@ -71,12 +72,8 @@
               <div class="tab-pane fade" id="v-pills-menu2" role="tabpanel" aria-labelledby="v-pills-menu2-tab">
                 <div class="input-group">
                   <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-                    <label class="custom-file-label" for="inputGroupFile04">Pilih file</label>
-                  </div>
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Upload</button>
-                  </div>
+                    <label>##### <strong>Under Construction</strong> #####</label>
+                  </div>                  
                 </div>
               </div>
 
@@ -164,9 +161,9 @@
       <div class="modal-footer">
         <input type="hidden" name="id" id="id" class="form-control" value="<?php echo $id; ?>">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-        <button type="button" class="btn btn-primary" id="simpan">Simpan</button>
+        <button type="button" class="btn btn-primary" id="simpan" name="submit_data">Simpan</button>
       </div>
     </div>
   </div>
 </div>
-
+</form>

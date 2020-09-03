@@ -19,9 +19,9 @@
       $iqomah_ashar = $row['iqomah_ashar'];
       $iqomah_maghrib = $row['iqomah_maghrib'];
       $iqomah_isya = $row['iqomah_isya'];
-      $latitude = $row['latitude'];
-      $longitude = $row['longitude'];
-      $timezone = $row['timezone'];
+      $garis_lintang = $row['garis_lintang'];
+      $garis_bujur = $row['garis_bujur'];
+      $zona_waktu = $row['zona_waktu'];
       $metode_perhitungan = $row['metode_perhitungan'];
   }
     
