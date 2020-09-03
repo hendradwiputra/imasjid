@@ -139,18 +139,11 @@
       $("#editModal").modal();       
     });
     
+
     $(document).on("click", "#simpan", function() { 
-      var nama_masjid = $('#nama_masjid').val();
-      $.ajax({
-        url:'update.php',
-        method:'POST',
-        data:{
-            nama_masjid:nama_masjid
-        },
-        success:function(response){
-          alert(response);
-        }
-      })      
+      $.ajax({url: "update.php", success: function(result){
+        $("#div1").html(result);
+      }});
     });
 
   });
