@@ -58,12 +58,25 @@
       $("#editModal").modal();       
     });
     
+    //https://steemit.com/utopian-io/@sogata/how-to-insert-data-to-mysql-from-php-using-jquery-ajax
+    $("#simpan").click(function(){
 
-    $(document).on("click", "#simpan", function() { 
-      $.ajax({url: "update.php", success: function(result){
-        $("#div1").html(result);
-      }});
+    	var nama_masjid = $("#nama_masjid").val();
+    	alert(nama_masjid);
+
+    	$.ajax({
+                url:'update.php',
+                method:'POST',
+                data:{
+                	nama_masjid:nama_masjid                	
+                },
+                	success:function(data){
+                	alert(data);
+                }
+        });    
+
     });
+    
 
   });
 </script>

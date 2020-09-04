@@ -5,23 +5,18 @@
 
   $message = ""; // initial message
 
-
   $id = $_POST['id'];
   $nama_masjid = $_POST['nama_masjid'];
-
-
 	
+  
 	$sql = "UPDATE settings set nama_masjid=$nama_masjid WHERE id=$id";  
   $query = $db->exec($sql);
-
-
-
+/*
   if( $db->exec($query) ){
     $message = "Data is updated successfully.";
   }else{
     $message = "Sorry, Data is not updated.";
   }
-
 
   $sql2 = "SELECT * from settings";
   $query2 = $db->query($sql2);
@@ -44,7 +39,7 @@
       $zona_waktu = $row['zona_waktu'];
       $metode_perhitungan = $row['metode_perhitungan'];
   }
-
+  */
   $db->close();
 
 ?>
