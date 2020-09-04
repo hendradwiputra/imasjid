@@ -40,6 +40,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+label {
+  font-weight: 700;
+}
+
 /* Menambahkan Efek Blinker */
 @keyframes blinker {
   50% {opacity: 0;}
@@ -76,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #header .nama {
   font-size: 40px;
-  color: #f7dc6f;
+  color: #ffd152;
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -405,20 +409,20 @@ h1, h2, h3, h4, h5, h6 {
   color: #dfccae;
   margin-top: 0px;
   margin-bottom: 0px;
-
 }
 
 #footer h3 .selected{
-  font-size: 34px;  
+  font-size: 37px;  
   line-height: 1;
   font-family: "Montserrat", sans-serif;
-  font-weight: 700;
+  font-weight: bold;
   letter-spacing: 1px;  
   text-align: center; 
   color: #2b2e42;
   background-color: #f7dc6f;   
   border-left: 8px solid #efeae1;
 }
+
 
 #footer .jam {
   color: #ffd152;
