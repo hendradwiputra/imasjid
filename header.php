@@ -40,7 +40,7 @@
 <link href="./assets/css/style.css" rel="stylesheet">
 
 <!-- Jquery -->
-<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/jquery-3.5.1.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!-- Hijri Calendar JS -->
@@ -62,16 +62,14 @@
     $("#simpan").click(function(){
 
     	var nama_masjid = $("#nama_masjid").val();
-    	var koreksi_hijriah = $("#koreksi_hijriah").val();
-
-    	//alert(koreksi_hijriah);
-
+    	
+    	//alert(nama_masjid);//
+    	
     	$.ajax({
                 url:'update.php',
-                method:'POST',
+                type:'POST',
                 data:{
-                	nama_masjid:nama_masjid,
-                	koreksi_hijriah,koreksi_hijriah                	
+                	nama_masjid:nama_masjid            	
                 },
                 	success:function(data){
                 	alert(data);
@@ -437,8 +435,13 @@
   			minutes = checkTime(minutes);
   			seconds = checkTime(seconds);
 
-  			// Hitung mundur waktu solat berikut nya  		
-  			document.getElementById("timer").innerHTML = nextprayer.toUpperCase() + " " + hours + ":" + minutes + ":" + seconds; 
+  			// Hitung mundur waktu solat berikut nya  
+  			if (hours == 0) {
+  				document.getElementById("timer").innerHTML = nextprayer.toUpperCase() + " - " + minutes + "<small>menit</small>" + seconds; 
+  			} else {
+  				document.getElementById("timer").innerHTML = nextprayer.toUpperCase() + " - " + hours + ":" + minutes + ":" + seconds; 
+  			}	
+  			
         	
         	//----------------------- Copyright Block ----------------------	
 			// By: Hendra Dwi Putra			
@@ -476,7 +479,7 @@
 					minutes = checkTime(minutes);
 					seconds = checkTime(seconds);            	         	
 
-            		var label = "IQOMAH " + minutes + ":" + seconds;
+            		var label = "IQOMAH - " + minutes + ":" + seconds;
 					document.getElementById("timer").innerHTML = label; 
 
             		if (t < 0) {
@@ -511,4 +514,4 @@
 	
 </script>
 <body onload="startTime()">
-	<form method="post">
+	

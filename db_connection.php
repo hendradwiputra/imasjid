@@ -1,7 +1,6 @@
 <?php
 
-	$db = "./sqlite/data.db";
-	$db = new SQLite3($db);
+	$db = new SQLite3('./sqlite/data.db');
 
 	if(!$db) {
       echo $db->lastErrorMsg();

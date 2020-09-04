@@ -1,21 +1,20 @@
 <?php
-  // https://www.tutlane.com/tutorial/sqlite/sqlite-php-tutorial
-	
+  // https://www.tutlane.com/tutorial/sqlite/sqlite-php-tutorial	
 	include("db_connection.php");
 
-  $message = ""; // initial message
+  //$message = ""; // initial message
 
   //$id = $_POST['id'];
-  //$nama_masjid = $_POST['nama_masjid'];
-	
+  //$nama_masjid = $_POST['nama_masjid'];	
   
-	$sql = "UPDATE settings set nama_masjid=$_POST['nama_masjid'] WHERE id=$_POST['id']";  
+	//$sql = "UPDATE settings set nama_masjid='$nama_masjid' WHERE id=1";  
+  $sql = "UPDATE settings set nama_masjid = '". $_POST['nama_masjid'] . "'";  
   $query = $db->exec($sql);
-/*
+
   if( $db->exec($query) ){
-    $message = "Data is updated successfully.";
+    echo "Data is updated successfully.";
   }else{
-    $message = "Sorry, Data is not updated.";
+    echo "Sorry, Data is not updated.";
   }
 
   $sql2 = "SELECT * from settings";
@@ -39,7 +38,7 @@
       $zona_waktu = $row['zona_waktu'];
       $metode_perhitungan = $row['metode_perhitungan'];
   }
-  */
+  
   $db->close();
 
 ?>
