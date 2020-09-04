@@ -1,8 +1,10 @@
 <?php	
-			
+
 	include('PrayTime.php');
 	include("db_connection.php");
 	include('retrieve.php'); 
+	include('about.php');
+  	include('edit.php');  
 
 	$day1 = date('Y');	
 	
@@ -45,6 +47,26 @@
 <script type="text/javascript" src="./assets/js/hijricalendar.js"></script>
 <!-- Template Main JS File -->
 <script src="./assets/js/main.js"></script>
+
+<script>
+  $(document).ready(function() {   
+    $("#aboutBtn").click(function(){
+      $("#aboutModal").modal();
+    }); 
+    
+    $("#editBtn").click(function(){
+      $("#editModal").modal();       
+    });
+    
+
+    $(document).on("click", "#simpan", function() { 
+      $.ajax({url: "update.php", success: function(result){
+        $("#div1").html(result);
+      }});
+    });
+
+  });
+</script>
 
 
 <script type="text/javascript">

@@ -1,4 +1,3 @@
-<?php include('retrieve.php'); ?>
 
 <form method="post">
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -82,6 +81,7 @@
                   <label for="exampleFormControlSelect1">Durasi Adzan <small class="text-muted">(Hitungan menit)</small></label>
                   <select name="durasi_adzan" class="form-control col-md-2">
                     <option <?php if ($durasi_adzan==3) echo 'selected = "selected"'; ?>>3</option>
+                    <option <?php if ($durasi_adzan==4) echo 'selected = "selected"'; ?>>4</option>
                     <option <?php if ($durasi_adzan==5) echo 'selected = "selected"'; ?>>5</option>
                     <option <?php if ($durasi_adzan==10) echo 'selected = "selected"'; ?>>10</option>                    
                   </select>
@@ -142,9 +142,11 @@
                   <label for="exampleFormControlSelect1">Atur Kecepatan Teks</label>
                   <select name="kecepatan_teks" class="form-control col-md-2">
                     <option <?php if ($kecepatan_teks==5) echo 'selected = "selected"'; ?>>5</option>
+                    <option <?php if ($kecepatan_teks==6) echo 'selected = "selected"'; ?>>6</option>
                     <option <?php if ($kecepatan_teks==7) echo 'selected = "selected"'; ?>>7</option>
-                    <option <?php if ($kecepatan_teks==10) echo 'selected = "selected"'; ?>>10</option>
-                    <option <?php if ($kecepatan_teks==15) echo 'selected = "selected"'; ?>>15</option>                    
+                    <option <?php if ($kecepatan_teks==8) echo 'selected = "selected"'; ?>>8</option>
+                    <option <?php if ($kecepatan_teks==9) echo 'selected = "selected"'; ?>>9</option>
+                    <option <?php if ($kecepatan_teks==10) echo 'selected = "selected"'; ?>>10</option>                    
                   </select>
                 </div>
                 <div class="form-group">
@@ -161,7 +163,7 @@
       <div class="modal-footer">
         <input type="hidden" name="id" id="id" class="form-control" value="<?php echo $id; ?>">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-        <button type="button" class="btn btn-primary" id="simpan" name="submit_data">Simpan</button>
+        <button type="button" class="btn btn-primary" id="simpan">Simpan</button>
       </div>
     </div>
   </div>

@@ -1,8 +1,3 @@
-<?php 
-  include('about.php');
-  include('edit.php');
-  include('retrieve.php');   
-?>
 
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top header-transparent">
@@ -129,22 +124,3 @@
   </footer>
 <!-- ======= Footer ======= -->
 
-<script>
-  $(document).ready(function() {   
-    $("#aboutBtn").click(function(){
-      $("#aboutModal").modal();
-    });  
-    
-    $("#editBtn").click(function(){
-      $("#editModal").modal();       
-    });
-    
-
-    $(document).on("click", "#simpan", function() { 
-      $.ajax({url: "update.php", success: function(result){
-        $("#div1").html(result);
-      }});
-    });
-
-  });
-</script>
