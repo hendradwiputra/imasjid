@@ -40,7 +40,7 @@
 <link href="./assets/css/style.css" rel="stylesheet">
 
 <!-- Jquery -->
-<script src="./assets/js/jquery-3.5.1.slim.min.js"></script>
+<script src="./assets/js/jquery.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!-- Hijri Calendar JS -->
@@ -62,13 +62,16 @@
     $("#simpan").click(function(){
 
     	var nama_masjid = $("#nama_masjid").val();
-    	alert(nama_masjid);
+    	var koreksi_hijriah = $("#koreksi_hijriah").val();
+
+    	//alert(koreksi_hijriah);
 
     	$.ajax({
                 url:'update.php',
                 method:'POST',
                 data:{
-                	nama_masjid:nama_masjid                	
+                	nama_masjid:nama_masjid,
+                	koreksi_hijriah,koreksi_hijriah                	
                 },
                 	success:function(data){
                 	alert(data);
@@ -508,3 +511,4 @@
 	
 </script>
 <body onload="startTime()">
+	<form method="post">

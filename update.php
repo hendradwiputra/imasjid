@@ -5,11 +5,11 @@
 
   $message = ""; // initial message
 
-  $id = $_POST['id'];
-  $nama_masjid = $_POST['nama_masjid'];
+  //$id = $_POST['id'];
+  //$nama_masjid = $_POST['nama_masjid'];
 	
   
-	$sql = "UPDATE settings set nama_masjid=$nama_masjid WHERE id=$id";  
+	$sql = "UPDATE settings set nama_masjid=$_POST['nama_masjid'] WHERE id=$_POST['id']";  
   $query = $db->exec($sql);
 /*
   if( $db->exec($query) ){
