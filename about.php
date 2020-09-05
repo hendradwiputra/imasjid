@@ -27,24 +27,11 @@
                 </div>
               </div>
           </div>
-        </fieldset>
+        </fieldset>       
 
         <fieldset class="form-group">
           <div class="row">
-            <legend class="col-form-label col-sm-4 pt-0"><strong>Contributor</strong></legend>
-              <div class="col-sm-8">
-                <div class="form-check">
-                  <small class="form-check-label" for="gridRadios1">
-                    
-                  </small>
-                </div>               
-              </div>
-          </div>
-        </fieldset>
-
-        <fieldset class="form-group">
-          <div class="row">
-            <legend class="col-form-label col-sm-4 pt-0"><strong>Copyright</strong></legend>
+            <legend class="col-form-label col-sm-4 pt-0"><strong>Credits</strong></legend>
               <div class="col-sm-8">
                 <div class="form-check">
                   <small class="form-check-label" for="gridRadios1">

@@ -32,17 +32,17 @@
                 </div>
                 <div class="form-group">
                   <label>Koreksi Tanggal Hijriah</label>
-                  <select name="koreksi_hijriah" class="form-control col-md-2">
-                      <option <?php if ($koreksi_hijriah==-2) echo 'selected = "selected"'; ?> >-2</option>
-                      <option <?php if ($koreksi_hijriah==-1) echo 'selected = "selected"'; ?>>-1</option>     
-                      <option <?php if ($koreksi_hijriah==-0) echo 'selected = "selected"'; ?>>0</option>  
-                      <option <?php if ($koreksi_hijriah==1) echo 'selected = "selected"'; ?>>1</option> 
-                      <option <?php if ($koreksi_hijriah==2) echo 'selected = "selected"'; ?>>2</option>                               
+                  <select name="koreksi_hijriah" id="koreksi_hijriah" class="form-control col-md-2">
+                      <option <?php if ($koreksi_hijriah==-2) echo 'selected = "selected"'; ?> value="-2">-2</option>
+                      <option <?php if ($koreksi_hijriah==-1) echo 'selected = "selected"'; ?> value="-1">-1</option>     
+                      <option <?php if ($koreksi_hijriah==-0) echo 'selected = "selected"'; ?> value="0">0</option>  
+                      <option <?php if ($koreksi_hijriah==1) echo 'selected = "selected"'; ?> value="1">1</option> 
+                      <option <?php if ($koreksi_hijriah==2) echo 'selected = "selected"'; ?> value="2">2</option>                               
                   </select>
                 </div>
                 <div class="form-group">
                   <label>Metode Perhitungan</label>
-                  <select name="metode_perhitungan" class="form-control col-md-8">
+                  <select name="metode_perhitungan" id="metode_perhitungan" class="form-control col-md-8">
                       <option <?php if ($metode_perhitungan==0) echo 'selected = "selected"'; ?> value="0">Ithna Ashari</option>
                       <option <?php if ($metode_perhitungan==1) echo 'selected = "selected"'; ?> value="1">University of Islamic Sciences, Karachi</option>     
                       <option <?php if ($metode_perhitungan==2) echo 'selected = "selected"'; ?> value="2">Islamic Society of North America (ISNA)</option>  
@@ -60,9 +60,9 @@
                 </div>
                 <div class="form-group">
                   <label>Zona Waktu</label>
-                  <select name="zona_waktu" class="form-control col-md-2">
-                    <option <?php if ($zona_waktu==+7) echo 'selected = "selected"'; ?>>+7</option>
-                    <option <?php if ($zona_waktu==+8) echo 'selected = "selected"'; ?>>+8</option>                   
+                  <select name="zona_waktu" id="zona_waktu" class="form-control col-md-2">
+                    <option <?php if ($zona_waktu==+7) echo 'selected = "selected"'; ?> value="+7">+7</option>
+                    <option <?php if ($zona_waktu==+8) echo 'selected = "selected"'; ?> value="+8">+8</option>                   
                   </select>
                 </div>
 
@@ -79,11 +79,11 @@
               <div class="tab-pane fade" id="v-pills-menu3" role="tabpanel" aria-labelledby="v-pills-menu3-tab">
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Durasi Adzan <small class="text-muted">(Hitungan menit)</small></label>
-                  <select name="durasi_adzan" class="form-control col-md-2">
-                    <option <?php if ($durasi_adzan==3) echo 'selected = "selected"'; ?>>3</option>
-                    <option <?php if ($durasi_adzan==4) echo 'selected = "selected"'; ?>>4</option>
-                    <option <?php if ($durasi_adzan==5) echo 'selected = "selected"'; ?>>5</option>
-                    <option <?php if ($durasi_adzan==10) echo 'selected = "selected"'; ?>>10</option>                    
+                  <select name="durasi_adzan" id="durasi_adzan" class="form-control col-md-2">
+                    <option <?php if ($durasi_adzan==3) echo 'selected = "selected"'; ?> value="3">3</option>
+                    <option <?php if ($durasi_adzan==4) echo 'selected = "selected"'; ?> value="4">4</option>
+                    <option <?php if ($durasi_adzan==5) echo 'selected = "selected"'; ?> value="5">5</option>
+                    <option <?php if ($durasi_adzan==10) echo 'selected = "selected"'; ?> value="10">10</option>                    
                   </select>
                 </div>
 
@@ -91,46 +91,46 @@
                 <div class="form-row">                  
                   <div class="form-group col-md-2">
                     <label for="exampleFormControlSelect1">Shubuh</label>
-                    <select name="iqomah_shubuh" class="form-control">
-                      <option <?php if ($iqomah_shubuh==1) echo 'selected = "selected"'; ?>>1</option>
-                      <option <?php if ($iqomah_shubuh==5) echo 'selected = "selected"'; ?>>5</option>
-                      <option <?php if ($iqomah_shubuh==10) echo 'selected = "selected"'; ?>>10</option>
-                      <option <?php if ($iqomah_shubuh==15) echo 'selected = "selected"'; ?>>15</option>  
-                      <option <?php if ($iqomah_shubuh==20) echo 'selected = "selected"'; ?>>20</option>  
-                      <option <?php if ($iqomah_shubuh==25) echo 'selected = "selected"'; ?>>25</option> 
-                      <option <?php if ($iqomah_shubuh==30) echo 'selected = "selected"'; ?>>30</option>                                       
+                    <select name="iqomah_shubuh" id="iqomah_shubuh" class="form-control">
+                      <option <?php if ($iqomah_shubuh==1) echo 'selected = "selected"'; ?> value="1">1</option>
+                      <option <?php if ($iqomah_shubuh==5) echo 'selected = "selected"'; ?> value="5">5</option>
+                      <option <?php if ($iqomah_shubuh==10) echo 'selected = "selected"'; ?> value="10">10</option>
+                      <option <?php if ($iqomah_shubuh==15) echo 'selected = "selected"'; ?> value="15">15</option>  
+                      <option <?php if ($iqomah_shubuh==20) echo 'selected = "selected"'; ?> value="20">20</option>  
+                      <option <?php if ($iqomah_shubuh==25) echo 'selected = "selected"'; ?> value="25">25</option> 
+                      <option <?php if ($iqomah_shubuh==30) echo 'selected = "selected"'; ?> value="30">30</option>                                       
                     </select>
                   </div>
                   <div class="form-group col-md-2">
                     <label for="exampleFormControlSelect1">Dzuhur</label>
-                    <select name="iqomah_dzuhur" class="form-control">
-                      <option <?php if ($iqomah_dzuhur==1) echo 'selected = "selected"'; ?>>1</option>
-                      <option <?php if ($iqomah_dzuhur==5) echo 'selected = "selected"'; ?>>5</option>
-                      <option <?php if ($iqomah_dzuhur==10) echo 'selected = "selected"'; ?>>10</option>                                  
+                    <select name="iqomah_dzuhur" id="iqomah_dzuhur" class="form-control">
+                      <option <?php if ($iqomah_dzuhur==1) echo 'selected = "selected"'; ?> value="1">1</option>
+                      <option <?php if ($iqomah_dzuhur==5) echo 'selected = "selected"'; ?> value="5">5</option>
+                      <option <?php if ($iqomah_dzuhur==10) echo 'selected = "selected"'; ?> value="10">10</option>                                  
                     </select>
                   </div>
                   <div class="form-group col-md-2">
                     <label for="exampleFormControlSelect1">Ashar</label>
-                    <select name="iqomah_ashar" class="form-control">
-                      <option <?php if ($iqomah_ashar==1) echo 'selected = "selected"'; ?>>1</option>
-                      <option <?php if ($iqomah_ashar==5) echo 'selected = "selected"'; ?>>5</option>
-                      <option <?php if ($iqomah_ashar==10) echo 'selected = "selected"'; ?>>10</option>                                  
+                    <select name="iqomah_ashar" id="iqomah_ashar" class="form-control">
+                      <option <?php if ($iqomah_ashar==1) echo 'selected = "selected"'; ?> value="1">1</option>
+                      <option <?php if ($iqomah_ashar==5) echo 'selected = "selected"'; ?> value="5">5</option>
+                      <option <?php if ($iqomah_ashar==10) echo 'selected = "selected"'; ?> value="10">10</option>                                  
                     </select>
                   </div>
                   <div class="form-group col-md-2">
                     <label for="exampleFormControlSelect1">Maghrib</label>
-                    <select name="iqomah_maghrib" class="form-control">
-                      <option <?php if ($iqomah_maghrib==1) echo 'selected = "selected"'; ?>>1</option>
-                      <option <?php if ($iqomah_maghrib==5) echo 'selected = "selected"'; ?>>5</option>
-                      <option <?php if ($iqomah_maghrib==10) echo 'selected = "selected"'; ?>>10</option>                                    
+                    <select name="iqomah_maghrib" id="iqomah_maghrib" class="form-control">
+                      <option <?php if ($iqomah_maghrib==1) echo 'selected = "selected"'; ?> value="1">1</option>
+                      <option <?php if ($iqomah_maghrib==5) echo 'selected = "selected"'; ?> value="5">5</option>
+                      <option <?php if ($iqomah_maghrib==10) echo 'selected = "selected"'; ?> value="10">10</option>                             
                     </select>
                   </div>
                   <div class="form-group col-md-2">
                     <label for="exampleFormControlSelect1">Isya</label>
-                    <select name="iqomah_isya" class="form-control">
-                      <option <?php if ($iqomah_isya==1) echo 'selected = "selected"'; ?>>1</option>
-                      <option <?php if ($iqomah_isya==5) echo 'selected = "selected"'; ?>>5</option>
-                      <option <?php if ($iqomah_isya==10) echo 'selected = "selected"'; ?>>10</option>                                    
+                    <select name="iqomah_isya" id="iqomah_isya" class="form-control">
+                      <option <?php if ($iqomah_isya==1) echo 'selected = "selected"'; ?> value="1">1</option>
+                      <option <?php if ($iqomah_isya==5) echo 'selected = "selected"'; ?> value="5">5</option>
+                      <option <?php if ($iqomah_isya==10) echo 'selected = "selected"'; ?> value="10">10</option>                                    
                     </select>
                   </div>
                 </div>
@@ -140,13 +140,13 @@
               <div class="tab-pane fade" id="v-pills-menu4" role="tabpanel" aria-labelledby="v-pills-menu4-tab">
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Atur Kecepatan Teks</label>
-                  <select name="kecepatan_teks" class="form-control col-md-2">
-                    <option <?php if ($kecepatan_teks==5) echo 'selected = "selected"'; ?>>5</option>
-                    <option <?php if ($kecepatan_teks==6) echo 'selected = "selected"'; ?>>6</option>
-                    <option <?php if ($kecepatan_teks==7) echo 'selected = "selected"'; ?>>7</option>
-                    <option <?php if ($kecepatan_teks==8) echo 'selected = "selected"'; ?>>8</option>
-                    <option <?php if ($kecepatan_teks==9) echo 'selected = "selected"'; ?>>9</option>
-                    <option <?php if ($kecepatan_teks==10) echo 'selected = "selected"'; ?>>10</option>                    
+                  <select name="kecepatan_teks" id="kecepatan_teks" class="form-control col-md-2">
+                    <option <?php if ($kecepatan_teks==5) echo 'selected = "selected"'; ?> value="5">5</option>
+                    <option <?php if ($kecepatan_teks==6) echo 'selected = "selected"'; ?> value="6">6</option>
+                    <option <?php if ($kecepatan_teks==7) echo 'selected = "selected"'; ?> value="7">7</option>
+                    <option <?php if ($kecepatan_teks==8) echo 'selected = "selected"'; ?> value="8">8</option>
+                    <option <?php if ($kecepatan_teks==9) echo 'selected = "selected"'; ?> value="9">9</option>
+                    <option <?php if ($kecepatan_teks==10) echo 'selected = "selected"'; ?> value="10">10</option>                    
                   </select>
                 </div>
                 <div class="form-group">
