@@ -133,7 +133,7 @@ label {
   position: relative;
   color: #2b2e42;
   transition: 0.3s;
-  font-size: 40px;
+  font-size: 35px;
   font-family: "Montserrat", sans-serif;  
   font-weight: 600;
   background-color: #f7dc6f;  
@@ -412,7 +412,7 @@ label {
 }
 
 #footer h3 .selected{
-  font-size: 37px;  
+  font-size: 35px;  
   line-height: 1;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
