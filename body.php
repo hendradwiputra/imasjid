@@ -8,8 +8,8 @@
         <div class="col-xl-11 col-lg-11 col-md-11 d-flex align-items-center">
 
           <span class="logo mr-auto">
-            <p class="nama" ><?php echo $nama_masjid; ?></p>
-            <p class="alamat" ><?php echo $alamat_masjid; ?></p>
+            <p class="nama" id="NamaMasjid"><?php echo $nama_masjid; ?></p>
+            <p class="alamat" id="AlamatMasjid"><?php echo $alamat_masjid; ?></p>
             <p class="tanggal" id="penanggalan">[KALENDER]</p>
           </span>
 
@@ -73,7 +73,7 @@
         
         <div class="row">
           <div class="col-xl-10 col-lg-10 col-md-10">
-            <h3 class="running-text"><marquee scrollamount="<?php echo $kecepatan_teks; ?>" id="running_teks"><?php echo $running_teks; ?></marquee></h3>
+            <h3 class="running-text"><marquee scrollamount="<?php echo $kecepatan_teks; ?>" id="RunningTeks"><?php echo $running_teks; ?></marquee></h3>
           </div>
 
           <div class="col-md-2 col-sm-2">

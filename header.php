@@ -1,17 +1,6 @@
 <?php	
-
 	include('PrayTime.php');
-	include('retrieve.php'); 
-	
-	$day1 = date('Y');	
-	
-	if (!isset($method) || !isset($year) )
-		list($method, $year, $latitude, $longitude, $timeZone) = array($metode_perhitungan, $day1, $garis_lintang, $garis_bujur, $zona_waktu);
-
-		$prayTime = new PrayTime($method);	
-		$day = date('d M Y');
-		$date = strtotime($year);
-		$times = $prayTime->getPrayerTimes($date, $latitude, $longitude, $timeZone);		
+	include('retrieve.php'); 		
 ?>
 
 <!doctype html>
@@ -53,9 +42,8 @@
     
     $("#editBtn").click(function(){
       $("#editModal").modal();       
-    });
+    }); 
     
-    //https://steemit.com/utopian-io/@sogata/how-to-insert-data-to-mysql-from-php-using-jquery-ajax
     $("#simpan").click(function(){
 
     	var nama_masjid = $("#nama_masjid").val();
@@ -96,7 +84,10 @@
                 },
                 	success:function(data){
                 		alert(data);
-                		$('#nama_masjid').val(data.nama_masjid); 
+                		$("#NamaMasjid").text('' + nama_masjid);
+                		$("#AlamatMasjid").text('' + alamat_masjid);
+                		$("#RunningTeks").text('' + running_teks);
+                		$("#KoreksiHijriah").text('' + koreksi_hijriah);   
                 	
                 		$('#editModal').modal('hide');
                 }
@@ -107,6 +98,18 @@
 
   });
 </script>
+
+<?php
+	$day1 = date('Y');	
+	
+	if (!isset($method) || !isset($year) )
+		list($method, $year, $latitude, $longitude, $timeZone) = array($metode_perhitungan, $day1, $garis_lintang, $garis_bujur, $zona_waktu);
+
+		$prayTime = new PrayTime($method);	
+		$day = date('d M Y');
+		$date = strtotime($year);
+		$times = $prayTime->getPrayerTimes($date, $latitude, $longitude, $timeZone);	
+?>
 
 
 <script type="text/javascript">
@@ -430,8 +433,8 @@
 		var adzan_to_iqomah = Number(starttime) + Number(durasiadzan);
 		var iqomah_to_solat = Number(adzan_to_iqomah) + Number(durasiiqomah);
 
-  		// Kombinasi kalender masehi dah hijriah
-		document.getElementById('penanggalan').innerHTML = hari + ", " + tanggal + " " + bulan + " " + tahun + " <i class='far fa-calendar-alt'></i> " + writeIslamicDate(-1) + "H";
+  		// Kombinasi kalender masehi dah hijriah  		
+		document.getElementById('penanggalan').innerHTML = hari + ", " + tanggal + " " + bulan + " " + tahun + " <i class='far fa-calendar-alt'></i> " + writeIslamicDate(<?php echo $koreksi_hijriah; ?>) + "H";
 
 		// Output Dynamic time
 		document.getElementById('jam').innerHTML = h + ":" + m + ":" + s;
@@ -474,7 +477,6 @@
 			// Mengganti Nama Solat Berikut nya dengan Label Adzan
         	if (distance < 0) {
           		clearInterval(x); 
-          		//if (nextprayer == solatSyuruq) { //-->new line
           		if (durasiadzan == 0 ) { // command ini untuk mengabaikan perintah adzan untuk solat syuruq
           			document.getElementById("timer").innerHTML = "WAKTU " + nextprayer.toUpperCase(); 
           		} else {
