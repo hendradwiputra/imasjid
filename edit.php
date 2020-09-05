@@ -151,7 +151,7 @@
                 </div>
                 <div class="form-group">
                   <label>Teks Berjalan</label>
-                  <textarea class="form-control" id="running_text" name="running_text" rows="4"><?php echo $running_text; ?></textarea>
+                  <textarea class="form-control" id="running_teks" name="running_teks" rows="4"><?php echo $running_teks; ?></textarea>
                 </div>
               </div>
 

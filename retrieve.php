@@ -1,17 +1,16 @@
 <?php
-	//https://www.tutlane.com/tutorial/sqlite/sqlite-php-tutorial
-	
-	include("db_connection.php");
- 		
-	$sql = "SELECT * from settings";
-  $query = $db->query($sql);  
+  include("db_connection.php");
+  
+	$sql = "SELECT * FROM settings";
+  $result = $conn->query($sql);
 
-  while($row = $query->fetchArray()) {
+  if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
       $id = $row['id'];
       $nama_masjid = $row['nama_masjid'];
       $alamat_masjid = $row['alamat_masjid'];
       $kecepatan_teks = $row['kecepatan_teks'];
-      $running_text = $row['running_text'];
+      $running_teks = $row['running_teks'];
       $koreksi_hijriah = $row['koreksi_hijriah'];
       $durasi_adzan = $row['durasi_adzan'];
       $iqomah_shubuh = $row['iqomah_shubuh'];
@@ -23,8 +22,9 @@
       $garis_bujur = $row['garis_bujur'];
       $zona_waktu = $row['zona_waktu'];
       $metode_perhitungan = $row['metode_perhitungan'];
+    }
   }
-    
-  $db->close();
 
+  $conn->close();
+ 
 ?>

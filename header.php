@@ -1,11 +1,9 @@
 <?php	
 
 	include('PrayTime.php');
-	include("db_connection.php");
+	
 	include('retrieve.php'); 
-	include('about.php');
-  	include('edit.php');  
-
+	
 	$day1 = date('Y');	
 	
 	if (!isset($method) || !isset($year) )
@@ -62,14 +60,15 @@
     $("#simpan").click(function(){
 
     	var nama_masjid = $("#nama_masjid").val();
-    	
+    	var alamat_masjid = $("#alamat_masjid").val();
     	//alert(nama_masjid);//
     	
     	$.ajax({
                 url:'update.php',
                 type:'POST',
                 data:{
-                	nama_masjid:nama_masjid            	
+                	nama_masjid:nama_masjid,
+                	alamat_masjid:alamat_masjid            	
                 },
                 	success:function(data){
                 	alert(data);
@@ -210,7 +209,7 @@
   		// Penambahan waktu solat dalam bilangan menit,digunakan untuk timer sholat yang sudah masuk
   		var timershubuh = 30;
   		var timersyuruq = 20;
-  		var timerdzuhur = 40;
+  		var timerdzuhur = 30;
   		var timerashar = 30;
   		var timermaghrib = 30;
   		var timerisya = 30;
@@ -226,7 +225,7 @@
   		// Konversi Jam dan menit ke menit
   		var currentminute = (h * 60) + Number(m);  
   		// Durasi adzan dalam hitungan menit	  
-		var durasiadzan = 5;	
+		var durasiadzan = <?php echo $durasi_adzan; ?>;	
 		// Deklarasi variabel CSS
 		var selected = "class='selected'";
 
@@ -235,7 +234,7 @@
 			var nextcounter = shubuh;  
 			var starttime = waktushubuh;
 			var endtime = batasshubuh;  
-			var durasiiqomah = 10;
+			var durasiiqomah = <?php echo $iqomah_shubuh; ?>;
 			var nextdate = tanggal;
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[0],0,2); ?>';
@@ -249,7 +248,7 @@
   			var nextcounter = shubuh;
   			var starttime = waktushubuh;
 			var endtime = batasshubuh; 
-			var durasiiqomah = 10;    
+			var durasiiqomah = <?php echo $iqomah_shubuh; ?>;    
 			var nextdate = tanggal;
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[0],0,2); ?>';
@@ -283,7 +282,7 @@
 			
         
 		} else if (currentminute <= waktudzuhur) {
-			if (hari == "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; var label = "WAKTU " + nextprayer;} else { var nextprayer = "Dzuhur"; var durasiiqomah = 5; var label = "ADZAN " + nextprayer;}  		
+			if (hari == "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; var label = "WAKTU " + nextprayer;} else { var nextprayer = "Dzuhur"; var durasiiqomah = <?php echo $iqomah_dzuhur; ?>; var label = "ADZAN " + nextprayer;}  		
   			var nextcounter = dzuhur;  	
   			var starttime = waktudzuhur;
 			var endtime = batasdzuhur;			 
@@ -295,7 +294,7 @@
 			
         
   		} else if (batasdzuhur >= currentminute) {
-			if (hari == "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; var label = "WAKTU " + nextprayer;} else { var nextprayer = "Dzuhur"; var durasiiqomah = 5; var label = "ADZAN " + nextprayer;} 
+			if (hari == "Jum'at") { var nextprayer = "Jum'at"; var durasiiqomah = 0; var label = "WAKTU " + nextprayer;} else { var nextprayer = "Dzuhur"; var durasiiqomah = <?php echo $iqomah_dzuhur; ?>; var label = "ADZAN " + nextprayer;} 
 			var nextcounter = dzuhur;    
 			var starttime = waktudzuhur;
 			var endtime = batasdzuhur; 
@@ -311,7 +310,7 @@
   			var nextcounter = ashar;  	
   			var starttime = waktuashar;
 			var endtime = batasashar; 	
-			var durasiiqomah = 5;
+			var durasiiqomah = <?php echo $iqomah_ashar; ?>;
 			var nextdate = tanggal;
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[3],0,2); ?>';
@@ -325,7 +324,7 @@
 			var nextcounter = ashar;    
 			var starttime = waktuashar;
 			var endtime = batasashar; 
-			var durasiiqomah = 5;
+			var durasiiqomah = <?php echo $iqomah_ashar; ?>;
 			var nextdate = tanggal;
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[3],0,2); ?>';
@@ -339,7 +338,7 @@
   			var nextcounter = maghrib; 
   			var starttime = waktumaghrib;
 			var endtime = batasmaghrib;   
-			var durasiiqomah = 5; 
+			var durasiiqomah = <?php echo $iqomah_maghrib; ?>; 
 			var nextdate = tanggal;
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[5],0,2); ?>';
@@ -353,7 +352,7 @@
 			var nextcounter = maghrib;    
 			var starttime = waktumaghrib;
 			var endtime = batasmaghrib; 
-			var durasiiqomah = 5;
+			var durasiiqomah = <?php echo $iqomah_maghrib; ?>;
 			var nextdate = tanggal;
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[5],0,2); ?>';
@@ -367,7 +366,7 @@
   			var nextcounter = isya; 
   			var starttime = waktuisya;
 			var endtime = batasisya;   
-			var durasiiqomah = 10;  	
+			var durasiiqomah = <?php echo $iqomah_isya; ?>;  	
 			var nextdate = tanggal;
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[6],0,2); ?>';
@@ -381,7 +380,7 @@
 			var nextcounter = isya;    
 			var starttime = waktuisya;
 			var endtime = batasisya; 
-			var durasiiqomah = 10; 
+			var durasiiqomah = <?php echo $iqomah_isya; ?>; 
 			var nextdate = tanggal;
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[6],0,2); ?>';
@@ -437,7 +436,7 @@
 
   			// Hitung mundur waktu solat berikut nya  
   			if (hours == 0) {
-  				document.getElementById("timer").innerHTML = nextprayer.toUpperCase() + " - " + minutes + "<small>menit</small>" + seconds; 
+  				document.getElementById("timer").innerHTML = nextprayer.toUpperCase() + " - " + minutes + "<small>min</small>" + seconds + "<small>sec</small>"; 
   			} else {
   				document.getElementById("timer").innerHTML = nextprayer.toUpperCase() + " - " + hours + ":" + minutes + ":" + seconds; 
   			}	

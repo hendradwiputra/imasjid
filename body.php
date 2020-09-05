@@ -1,4 +1,7 @@
-
+<?php
+  include('about.php');
+  include('edit.php');  
+?>
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top header-transparent">
       <div class="row justify-content-center">
@@ -70,7 +73,7 @@
         
         <div class="row">
           <div class="col-xl-10 col-lg-10 col-md-10">
-            <h3 class="running-text"><marquee scrollamount="<?php echo $kecepatan_teks; ?>" id="running_text"><?php echo $running_text; ?></marquee></h3>
+            <h3 class="running-text"><marquee scrollamount="<?php echo $kecepatan_teks; ?>" id="running_teks"><?php echo $running_teks; ?></marquee></h3>
           </div>
 
           <div class="col-md-2 col-sm-2">

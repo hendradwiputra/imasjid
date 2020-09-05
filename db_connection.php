@@ -1,8 +1,14 @@
 <?php
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "masjid";
 
-	$db = new SQLite3('./sqlite/data.db');
+	// Create connection
+	$conn = new mysqli($servername, $username, $password,$dbname);
 
-	if(!$db) {
-      echo $db->lastErrorMsg();
-   	} 	
+	// Check connection
+	if ($conn->connect_error) {
+  		die("Connection failed: " . $conn->connect_error);
+	}
 ?>
