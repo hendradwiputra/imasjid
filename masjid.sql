@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2020 at 08:44 AM
+-- Generation Time: Sep 07, 2020 at 07:11 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -25,11 +25,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(2) NOT NULL,
+  `filename` varchar(50) NOT NULL,
+  `image` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `settings`
 --
 
 CREATE TABLE `settings` (
-  `id` int(11) NOT NULL,
+  `no` int(11) NOT NULL,
   `nama_masjid` varchar(100) NOT NULL,
   `alamat_masjid` varchar(100) NOT NULL,
   `running_teks` varchar(255) NOT NULL,
@@ -51,28 +63,40 @@ CREATE TABLE `settings` (
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`id`, `nama_masjid`, `alamat_masjid`, `running_teks`, `kecepatan_teks`, `koreksi_hijriah`, `metode_perhitungan`, `durasi_adzan`, `iqomah_shubuh`, `iqomah_dzuhur`, `iqomah_ashar`, `iqomah_maghrib`, `iqomah_isya`, `garis_lintang`, `garis_bujur`, `zona_waktu`) VALUES
-(1, 'Nurul', 'Kompleks RAPP Townsite 2 Baru', 'Anak-anak jangan ribut # Hp nonaktifkan', 10, -1, 5, 5, 10, 5, 5, 5, 10, '0.406393', '101.845164', '+7');
+INSERT INTO `settings` (`no`, `nama_masjid`, `alamat_masjid`, `running_teks`, `kecepatan_teks`, `koreksi_hijriah`, `metode_perhitungan`, `durasi_adzan`, `iqomah_shubuh`, `iqomah_dzuhur`, `iqomah_ashar`, `iqomah_maghrib`, `iqomah_isya`, `garis_lintang`, `garis_bujur`, `zona_waktu`) VALUES
+(1, 'Masjid Raya Nurul Mubarok', 'Kompleks PT. RAPP Townsite 2 Baru', 'Jamaah agar selalu menggunakan masker ketika solat di Masjid # Anak-anak jangan ribut # Hp mohon dinonaktifkan # Patuhi protokol kesehatan #', 7, -1, 5, 5, 10, 5, 5, 5, 10, '0.406393', '101.845164', '+7');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `settings`
 --
 ALTER TABLE `settings`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`no`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

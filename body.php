@@ -29,7 +29,7 @@
     <div class="intro-container">
       <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel" data-interval="10000">
 
-        <!--<ol class="carousel-indicators"></ol>-->
+        <ol class="carousel-indicators"></ol>
         <div class="carousel-inner" role="listbox">
 
           <div class="carousel-item active" style="background-image: url(./images/quran-01.jpg)">

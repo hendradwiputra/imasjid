@@ -24,7 +24,6 @@
 <link href="./assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="./assets/css/style.css" rel="stylesheet">
-
 <!-- Jquery -->
 <script src="./assets/js/jquery-3.5.1.min.js"></script>
 <!-- Bootstrap JS -->
@@ -35,14 +34,19 @@
 <script src="./assets/js/main.js"></script>
 
 <script>
-  $(document).ready(function() {   
+  $(document).ready(function() {       
+
     $("#aboutBtn").click(function(){
       $("#aboutModal").modal();
     }); 
     
     $("#editBtn").click(function(){
       $("#editModal").modal();       
-    }); 
+    });   
+
+    $("#upload").click(function(){
+      alert ('Upload Button');
+    })  
     
     $("#simpan").click(function(){
 
@@ -87,7 +91,8 @@
                 		$("#NamaMasjid").text('' + nama_masjid);
                 		$("#AlamatMasjid").text('' + alamat_masjid);
                 		$("#RunningTeks").text('' + running_teks);
-                		$("#KoreksiHijriah").text('' + koreksi_hijriah);   
+                		$("#KoreksiHijriah").text('' + koreksi_hijriah);
+                    $("#KecepatanTeks").text('' + kecepatan_teks);
                 	
                 		$('#editModal').modal('hide');
                 }
@@ -434,7 +439,7 @@
 		var iqomah_to_solat = Number(adzan_to_iqomah) + Number(durasiiqomah);
 
   		// Kombinasi kalender masehi dah hijriah  		
-		document.getElementById('penanggalan').innerHTML = hari + ", " + tanggal + " " + bulan + " " + tahun + " <i class='far fa-calendar-alt'></i> " + writeIslamicDate(<?php echo $koreksi_hijriah; ?>) + "H";
+		document.getElementById('penanggalan').innerHTML = hari + ", " + tanggal + " " + bulan + " " + tahun + " <i class='far fa-calendar-alt'></i> " + writeIslamicDate(<?php echo $koreksi_hijriah; ?>) + " H";
 
 		// Output Dynamic time
 		document.getElementById('jam').innerHTML = h + ":" + m + ":" + s;
@@ -526,7 +531,7 @@
 			var copyright_years = create_date + " - " + tahun;
 		}
 		
-		document.getElementById("copyright").innerHTML = " " + "<i class='fas fa-info'></i><strong>Masjid<small><strong> 1.0</strong></small> " + "<i class='far fa-copyright'></i>" + " " +'<?php echo $nama_masjid; ?>' + " " + copyright_years + "</strong>";
+		document.getElementById("copyright").innerHTML = " " + "<i class='fas fa-info'></i><strong>Masjid<small><strong> 1.0</strong></small> " + "<i class='far fa-copyright'></i>" + " " + copyright_years + "</strong>";
 		
 	   }
 

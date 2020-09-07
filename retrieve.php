@@ -6,7 +6,7 @@
 
   if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-      $id = $row['id'];
+      $no = $row['no'];
       $nama_masjid = $row['nama_masjid'];
       $alamat_masjid = $row['alamat_masjid'];
       $kecepatan_teks = $row['kecepatan_teks'];

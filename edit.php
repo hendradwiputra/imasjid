@@ -1,10 +1,10 @@
 
 <form method="post">
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Pengaturan</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><strong>Menu Pengaturan</strong></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -15,7 +15,7 @@
           <div class="col-3">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <a class="nav-link active" id="v-pills-menu1-tab" data-toggle="pill" href="#v-pills-menu1" role="tab" aria-controls="v-pills-menu1" aria-selected="true">Pengaturan</a>
-              <a class="nav-link" id="v-pills-menu2-tab" data-toggle="pill" href="#v-pills-menu2" role="tab" aria-controls="v-pills-menu2" aria-selected="false">Tampilan</a>
+              <a class="nav-link" id="v-pills-menu2-tab" data-toggle="pill" href="#v-pills-menu2" role="tab" aria-controls="v-pills-menu2" aria-selected="false">Upload</a>
               <a class="nav-link" id="v-pills-menu3-tab" data-toggle="pill" href="#v-pills-menu3" role="tab" aria-controls="v-pills-menu3" aria-selected="false">Notifikasi</a>
               <a class="nav-link" id="v-pills-menu4-tab" data-toggle="pill" href="#v-pills-menu4" role="tab" aria-controls="v-pills-menu4" aria-selected="false">Teks Berjalan</a>
             </div>
@@ -69,11 +69,30 @@
               </div>
 
               <div class="tab-pane fade" id="v-pills-menu2" role="tabpanel" aria-labelledby="v-pills-menu2-tab">
-                <div class="input-group">
-                  <div class="custom-file">
-                    <label>##### <strong>Under Construction</strong> #####</label>
-                  </div>                  
+                 <div class="form-group">
+                  <label for="exampleFormControlSelect1">Upload Gambar</label>
+                  <div class="input-group mb-3">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="inputGroupFile02" name="fileName">
+                      <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Pilih File</label>
+                    </div>
+                    <div class="input-group-append">
+                      <span type="button" class="input-group-text" id="upload">Upload</span>
+                    </div>
+                  </div>  
                 </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Gallery</label>
+                  <div class="media">
+                    <?php include('images.php'); ?>
+                    
+                  </div>
+                  <div class="input-group mb-3">
+                    
+                  </div>  
+                </div>
+                
               </div>
 
               <div class="tab-pane fade" id="v-pills-menu3" role="tabpanel" aria-labelledby="v-pills-menu3-tab">
@@ -161,7 +180,7 @@
       </div>
 
       <div class="modal-footer">
-        <input type="hidden" name="id" id="id" class="form-control" value="<?php echo $id; ?>">
+        <input type="hidden" name="no" id="no" class="form-control" value="<?php echo $no; ?>">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
         <button type="button" class="btn btn-primary" id="simpan">Simpan</button>
       </div>
@@ -169,3 +188,14 @@
   </div>
 </div>
 </form>
+
+<script type="text/javascript">
+  // Copyright Block
+  // https://stackoverflow.com/questions/48613992/bootstrap-4-file-input-doesnt-show-the-file-name
+  $('#inputGroupFile02').on('change',function(){
+      //get the file name
+      var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+      //replace the "Choose a file" label
+      $(this).next('.custom-file-label').html(fileName);
+  })
+</script>
