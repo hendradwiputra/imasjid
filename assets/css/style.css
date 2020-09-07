@@ -49,7 +49,11 @@ label {
   50% {opacity: 0;}
 }
 
-
+.image-preview{
+    display:none;
+    width : 195px;
+    height : 130px;
+}
 
 /*--------------------------------------------------------------
 # Header
@@ -412,7 +416,7 @@ label {
 }
 
 #footer h3 .selected{
-  font-size: 35px;  
+  font-size: 33px;  
   line-height: 1;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
