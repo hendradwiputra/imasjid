@@ -34,7 +34,7 @@
 <script src="./assets/js/main.js"></script>
 
 <script>
-  $(document).ready(function() {       
+  $(document).ready(function() {     
 
     $("#aboutBtn").click(function(){
       $("#aboutModal").modal();

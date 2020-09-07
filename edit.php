@@ -16,11 +16,13 @@
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <a class="nav-link active" id="v-pills-menu1-tab" data-toggle="pill" href="#v-pills-menu1" role="tab" aria-controls="v-pills-menu1" aria-selected="true">Pengaturan</a>
               <a class="nav-link" id="v-pills-menu2-tab" data-toggle="pill" href="#v-pills-menu2" role="tab" aria-controls="v-pills-menu2" aria-selected="false">Upload</a>
-              <a class="nav-link" id="v-pills-menu3-tab" data-toggle="pill" href="#v-pills-menu3" role="tab" aria-controls="v-pills-menu3" aria-selected="false">Notifikasi</a>
-              <a class="nav-link" id="v-pills-menu4-tab" data-toggle="pill" href="#v-pills-menu4" role="tab" aria-controls="v-pills-menu4" aria-selected="false">Teks Berjalan</a>
+              <a class="nav-link" id="v-pills-menu3-tab" data-toggle="pill" href="#v-pills-menu3" role="tab" aria-controls="v-pills-menu3" aria-selected="false">Slide</a>
+              <a class="nav-link" id="v-pills-menu4-tab" data-toggle="pill" href="#v-pills-menu4" role="tab" aria-controls="v-pills-menu4" aria-selected="false">Notifikasi</a>
+              <a class="nav-link" id="v-pills-menu5-tab" data-toggle="pill" href="#v-pills-menu5" role="tab" aria-controls="v-pills-menu5" aria-selected="false">Teks Berjalan</a>
             </div>
           </div>
 
+          <!-- Menu1 -->
           <div class="col-9">
             <div class="tab-content" id="v-pills-tabContent">
               <div class="tab-pane fade show active" id="v-pills-menu1" role="tabpanel" aria-labelledby="v-pills-menu1-tab">
@@ -65,37 +67,39 @@
                     <option <?php if ($zona_waktu==+8) echo 'selected = "selected"'; ?> value="+8">+8</option>                   
                   </select>
                 </div>
-
               </div>
+              <!-- End Menu1 -->
 
+              <!-- Menu2 -->
               <div class="tab-pane fade" id="v-pills-menu2" role="tabpanel" aria-labelledby="v-pills-menu2-tab">
                  <div class="form-group">
-                  <label for="exampleFormControlSelect1">Upload Gambar</label>
-                  <div class="input-group mb-3">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="inputGroupFile02" name="fileName">
-                      <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Pilih File</label>
-                    </div>
-                    <div class="input-group-append">
-                      <span type="button" class="input-group-text" id="upload">Upload</span>
-                    </div>
-                  </div>  
+                  <label for="exampleFormControlSelect1">Upload Gambar</label>                  
+                  <div><img id="image-preview" alt="image preview"/ class="image-preview border border-dark"></div><br>               
+                  <input type="file" class="btn btn-sm btn-outline-primary" id="image-source" onchange="previewImage();"/>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Gallery</label>
                   <div class="media">
-                    <?php include('images.php'); ?>
-                    
-                  </div>
-                  <div class="input-group mb-3">
-                    
-                  </div>  
-                </div>
-                
+                    <?php include('images.php'); ?>                    
+                  </div> 
+                </div>                
               </div>
+              <!-- End Menu2 -->
 
+              <!-- Menu3 -->
               <div class="tab-pane fade" id="v-pills-menu3" role="tabpanel" aria-labelledby="v-pills-menu3-tab">
+                 <div class="form-group">
+                  <label for="exampleFormControlSelect1">Pengaturan Slide</label>
+                   
+                </div>
+
+                                
+              </div>
+              <!-- End Menu3 -->
+
+              <!-- Menu4 -->
+              <div class="tab-pane fade" id="v-pills-menu4" role="tabpanel" aria-labelledby="v-pills-menu4-tab">
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Durasi Adzan <small class="text-muted">(Hitungan menit)</small></label>
                   <select name="durasi_adzan" id="durasi_adzan" class="form-control col-md-2">
@@ -155,8 +159,10 @@
                 </div>
               </div>
               </div>
+              <!-- End Menu4 -->
 
-              <div class="tab-pane fade" id="v-pills-menu4" role="tabpanel" aria-labelledby="v-pills-menu4-tab">
+              <!-- Menu5 -->
+              <div class="tab-pane fade" id="v-pills-menu5" role="tabpanel" aria-labelledby="v-pills-menu5-tab">
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Atur Kecepatan Teks</label>
                   <select name="kecepatan_teks" id="kecepatan_teks" class="form-control col-md-2">
@@ -173,6 +179,7 @@
                   <textarea class="form-control" id="running_teks" name="running_teks" rows="4"><?php echo $running_teks; ?></textarea>
                 </div>
               </div>
+              <!-- End Menu5 -->
 
             </div>
           </div>
@@ -190,12 +197,14 @@
 </form>
 
 <script type="text/javascript">
-  // Copyright Block
-  // https://stackoverflow.com/questions/48613992/bootstrap-4-file-input-doesnt-show-the-file-name
-  $('#inputGroupFile02').on('change',function(){
-      //get the file name
-      var fileName = $(this).val().replace('C:\\fakepath\\', " ");
-      //replace the "Choose a file" label
-      $(this).next('.custom-file-label').html(fileName);
-  })
+  // https://agung-setiawan.com/preview-image-before-upload/
+    function previewImage() {
+      document.getElementById("image-preview").style.display = "block";
+      var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image-source").files[0]);
+ 
+      oFReader.onload = function(oFREvent) {
+        document.getElementById("image-preview").src = oFREvent.target.result;
+      };
+    };   
 </script>
