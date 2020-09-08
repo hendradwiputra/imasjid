@@ -1,4 +1,3 @@
-
 /**
 * Template Name: BizPage - v3.1.0
 * Template URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
@@ -50,9 +49,19 @@ label {
 }
 
 .image-preview{
-    display:none;
-    width : 195px;
-    height : 130px;
+  display:none;
+  width : 195px;
+  height : 130px;
+}
+
+.image-slide-preview {
+  width: 195px;
+  height: 130px;
+}
+
+.modal-content {
+    /* 80% of window height */
+    height: 80%;
 }
 
 /*--------------------------------------------------------------
@@ -467,7 +476,7 @@ label {
 }
 
 #footer a {
-	color: #2c2a2b;
+  color: #2c2a2b;
 }
 
 #footer a:hover {
@@ -479,6 +488,3 @@ label {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-
-
-
