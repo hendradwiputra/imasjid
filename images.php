@@ -1,5 +1,5 @@
 <?php
-        $image_dir = "./images/";
+        $image_dir = "./assets/images/";
         $images = [];
         if(!$dir = opendir($image_dir)){
             die("Cannot open $image_dir");

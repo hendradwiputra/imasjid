@@ -1,5 +1,5 @@
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -70,13 +70,18 @@
               </div>
               <!-- End Menu1 -->
 
-              <!-- Menu2 -->
+              <!-- Menu2 -->             
               <div class="tab-pane fade" id="v-pills-menu2" role="tabpanel" aria-labelledby="v-pills-menu2-tab">
+                 <form method='post' action='' enctype="multipart/form-data">
                  <div class="form-group">
                   <label for="exampleFormControlSelect1">Upload Gambar</label>                  
-                  <div><img id="image-preview" alt="image preview"/ class="image-preview border border-dark"></div><br>               
-                  <input type="file" class="btn btn-sm btn-outline-primary" id="image-source" onchange="previewImage();"/>
+                  <div>
+                    <img id="image-preview" alt="image preview" class="image-preview border border-dark">
+                  </div><br>
+                  <button type="button" class="btn btn-outline-primary" id="uploadBtn">Upload</button>              
+                  <input type="file" name="file" class="btn btn-sm btn-outline-primary" id="file" onchange="previewImage();"/>
                 </div>
+                </form>
 
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Gallery</label>
@@ -90,11 +95,31 @@
               <!-- Menu3 -->
               <div class="tab-pane fade" id="v-pills-menu3" role="tabpanel" aria-labelledby="v-pills-menu3-tab">
                  <div class="form-group">
-                  <label for="exampleFormControlSelect1">Pengaturan Slide</label>
-                   
+                  <label for="exampleFormControlSelect1">Durasi Pergantian Slide</label>
+                  <select name="durasi_slide" id="durasi_slide" class="form-control col-md-2">
+                    <option <?php if ($durasi_slide==6000) echo 'selected = "selected"'; ?> value="6000">6 Detik</option>
+                    <option <?php if ($durasi_slide==9000) echo 'selected = "selected"'; ?> value="9000">9 Detik</option>
+                    <option <?php if ($durasi_slide==12000) echo 'selected = "selected"'; ?> value="12000">12 Detik</option>
+                    <option <?php if ($durasi_slide==15000) echo 'selected = "selected"'; ?> value="15000">15 Detik</option>
+                    <option <?php if ($durasi_slide==18000) echo 'selected = "selected"'; ?> value="18000">18 Detik</option>
+                    <option <?php if ($durasi_slide==21000) echo 'selected = "selected"'; ?> value="21000">21 Detik</option>              
+                  </select> 
+                </div> 
+
+                <div class="form-group">
+                  <div class="media">
+                    <img src="./assets/images/quran-01.jpg" class="align-self-start mr-3 image-slide-preview" alt="...">
+                    <div class="media-body">
+                      <h5 class="mt-0">[Title]</h5>
+                      <p>[Content-1]</p>
+                      <p>[Content-2]</p>
+                      <p>[Content-3]</p>
+                      <p>[Content-4]</p>
+                      <p>[Content-5]</p>
+                    </div>
+                  </div>
                 </div>
 
-                                
               </div>
               <!-- End Menu3 -->
 
@@ -188,8 +213,8 @@
 
       <div class="modal-footer">
         <input type="hidden" name="no" id="no" class="form-control" value="<?php echo $no; ?>">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-        <button type="button" class="btn btn-primary" id="simpan">Simpan</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Tutup</button>
+        <button type="button" class="btn btn-sm btn-outline-primary" id="simpan">Simpan</button>
       </div>
     </div>
   </div>
@@ -201,7 +226,7 @@
     function previewImage() {
       document.getElementById("image-preview").style.display = "block";
       var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("image-source").files[0]);
+        oFReader.readAsDataURL(document.getElementById("file").files[0]);
  
       oFReader.onload = function(oFREvent) {
         document.getElementById("image-preview").src = oFREvent.target.result;

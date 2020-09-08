@@ -11,6 +11,7 @@
       $alamat_masjid = $row['alamat_masjid'];
       $kecepatan_teks = $row['kecepatan_teks'];
       $running_teks = $row['running_teks'];
+      $durasi_slide = $row['durasi_slide'];
       $koreksi_hijriah = $row['koreksi_hijriah'];
       $durasi_adzan = $row['durasi_adzan'];
       $iqomah_shubuh = $row['iqomah_shubuh'];
@@ -25,6 +26,24 @@
     }
   }
 
+  /*
+  $sql2 = "SELECT * FROM slide";
+  $result2 = $conn->query($sql2);
+
+  if ($result2->num_rows > 0) {
+    while($row2 = $result2->fetch_assoc()) {
+      $id = $row2['id'];
+      $title = $row2['title'];
+      $content1 = $row2['content1'];
+      $content2 = $row2['content2'];
+      $content3 = $row2['content3'];
+      $content4 = $row2['content4'];
+      $content5 = $row2['content5'];
+      $id_image = $row2['id_image'];
+      
+    }
+  }
+  */
   $conn->close();
  
 ?>

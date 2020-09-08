@@ -1,4 +1,7 @@
 <?php	
+  $url1=$_SERVER['REQUEST_URI'];
+  header("Refresh: 300; URL=$url1");
+  
 	include('PrayTime.php');
 	include('retrieve.php'); 		
 ?>
@@ -34,7 +37,31 @@
 <script src="./assets/js/main.js"></script>
 
 <script>
-  $(document).ready(function() {     
+  $(document).ready(function() {      
+
+    $('#uploadBtn').click(function() {      
+              
+      var fd = new FormData();
+      var files = $('#file')[0].files[0];
+      fd.append('file',files);
+
+      $.ajax({
+          url: 'upload.php',
+          type: 'post',
+          data: fd,
+          contentType: false,
+          processData: false,
+          success: function(response){
+              if (response != 0) {
+                  alert('File berhasil diupload');
+              }else{
+                  alert('file not uploaded');
+              }
+          }
+      });
+                
+    });
+
 
     $("#aboutBtn").click(function(){
       $("#aboutModal").modal();
@@ -43,10 +70,6 @@
     $("#editBtn").click(function(){
       $("#editModal").modal();       
     });   
-
-    $("#upload").click(function(){
-      alert ('Upload Button');
-    })  
     
     $("#simpan").click(function(){
 
@@ -54,6 +77,7 @@
     	var alamat_masjid = $("#alamat_masjid").val();
     	var running_teks = $("#running_teks").val();
     	var kecepatan_teks = $("#kecepatan_teks").val();
+      var durasi_slide = $("#durasi_slide").val();
     	var koreksi_hijriah = $("#koreksi_hijriah").val();
     	var durasi_adzan = $("#durasi_adzan").val();
     	var iqomah_shubuh = $("#iqomah_shubuh").val();
@@ -74,6 +98,7 @@
                 	alamat_masjid:alamat_masjid,
                 	running_teks:running_teks,
                 	kecepatan_teks:kecepatan_teks,
+                  durasi_slide:durasi_slide,
                 	koreksi_hijriah:koreksi_hijriah,
                 	durasi_adzan:durasi_adzan,
                 	iqomah_shubuh:iqomah_shubuh,
@@ -95,6 +120,7 @@
                     $("#KecepatanTeks").text('' + kecepatan_teks);
                 	
                 		$('#editModal').modal('hide');
+                    
                 }
         });    
 

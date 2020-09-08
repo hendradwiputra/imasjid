@@ -1,4 +1,5 @@
 <?php
+    
   include('about.php');
   include('edit.php');  
 ?>
@@ -27,7 +28,7 @@
 <!-- ======= Intro ======= -->
   <section id="intro">
     <div class="intro-container">
-      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel" data-interval="10000">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel" data-interval="<?php echo $durasi_slide; ?>">
 
         <ol class="carousel-indicators"></ol>
         <div class="carousel-inner" role="listbox">
@@ -35,8 +36,8 @@
           <div class="carousel-item active" style="background-image: url(./images/quran-01.jpg)">
             <div class="carousel-container">
               <div class="container">
-                <h2 class="animate__animated animate__fadeInDown"></h2>
-                <p class="animate__animated animate__fadeInUp"></p>
+                <h2 class="animate__animated animate__fadeInDown">Mati itu pasti</h2>
+                <p class="animate__animated animate__fadeInUp">"Maka apabila telah <strong>tiba ajal</strong> mereka (waktu yang telah ditentukan), <strong>tidaklah mereka dapat mengundurkannya barang sesaat pun dan tidak pula mereka dapat mendahulukan nya."</strong><br>[Q.S. An-Nahl:61]</p>
               </div>
             </div>
           </div>
@@ -44,8 +45,8 @@
           <div class="carousel-item" style="background-image: url(./images/madina-03.jpg)">
             <div class="carousel-container">
               <div class="container">
-                <h2 class="animate__animated animate__fadeInDown"></h2>
-                <p class="animate__animated animate__fadeInUp"></p>
+                <h2 class="animate__animated animate__fadeInDown">Seakan-akan engkau melihat-Nya</h2>
+                <p class="animate__animated animate__fadeInUp">KAJIAN SENIN<br>7 September 2020<br>Pukul : 19:00<br>Bersama <strong>Ust. Muhammad Nuzul Dzikri</strong></p>
               </div>
             </div>
           </div>         

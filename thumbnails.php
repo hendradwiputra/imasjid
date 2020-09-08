@@ -1,5 +1,5 @@
 <?php
- $image_dir = "images/";
+ $image_dir = "./assets/images/";
 /* */
 $img = $_GET['image'];
 $size = 200;

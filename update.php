@@ -7,6 +7,7 @@
 
     $sql = "UPDATE settings set nama_masjid = '". $_POST['nama_masjid']. "',alamat_masjid = '".$_POST['alamat_masjid']."',";
     $sql.= "running_teks = '". $_POST['running_teks']. "',kecepatan_teks = '". $_POST['kecepatan_teks']. "',";
+    $sql.= "durasi_slide = '". $_POST['durasi_slide']. "',";
     $sql.= "koreksi_hijriah = '".$_POST['koreksi_hijriah']."',durasi_adzan = '".$_POST['durasi_adzan']."',";
     $sql.= "iqomah_shubuh = '".$_POST['iqomah_shubuh']."',iqomah_dzuhur = '".$_POST['iqomah_dzuhur']."',";
     $sql.= "iqomah_ashar = '".$_POST['iqomah_ashar']."',iqomah_maghrib = '".$_POST['iqomah_maghrib']."',";
@@ -34,6 +35,7 @@
       $alamat_masjid = $row['alamat_masjid'];
       $kecepatan_teks = $row['kecepatan_teks'];
       $running_teks = $row['running_teks'];
+      $durasi_slide = $row['durasi_slide'];
       $koreksi_hijriah = $row['koreksi_hijriah'];
       $durasi_adzan = $row['durasi_adzan'];
       $iqomah_shubuh = $row['iqomah_shubuh'];
