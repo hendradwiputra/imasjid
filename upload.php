@@ -13,7 +13,7 @@
     // Valid image extensions
     $image_ext = array("jpg","png","jpeg","gif");
   
-    //$response = 0;
+    $response = 0;
     if (in_array($file_extension,$image_ext)) {
       // Convert to base64 
       $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']) );
@@ -22,24 +22,16 @@
       // Insert record
       $sql = "insert into images (name,image) values('".$name."','".$image."')";           
       $result = $conn->query($sql);      
-
+      
       if(move_uploaded_file($_FILES['file']['tmp_name'],$target_file)){
         $response = $target_file;
       }
     }
-    // Load data
-    $sql = "SELECT * FROM images";
-    $result = $conn->query($sql);
+    echo $response;
 
-    if ($result->num_rows > 0) {
-      while($row = $result->fetch_assoc()) {
-        $id = $row['id'];
-        $name = $row['name'];
-        $image = $row['image'];
-      }
-    }
+
 
   //}
 
-  echo $response;
+ 
   ?>

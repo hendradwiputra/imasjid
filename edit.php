@@ -86,7 +86,7 @@
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Gallery</label>
                   <div class="media">
-                    <?php include('images.php'); ?>                    
+                    <?php include('view_images.php'); ?>                    
                   </div> 
                 </div>                
               </div>
