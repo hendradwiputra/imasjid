@@ -16,7 +16,7 @@
 			echo "<td valign='bottom' colspan='2' class='text-center'><a href='$id'><img src='assets/images/$filename' width='195px' height='130px'></a></td>";
 
 			$count++;
-            if($count >=3){
+            if($count >=4){
                 echo "</tr><tr>";                
                 $count = 0;
             }   
