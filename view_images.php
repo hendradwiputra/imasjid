@@ -13,7 +13,7 @@
 			$filename = $data['name'];
 			$image = $data['image'];
 
-			echo "<td valign='bottom' colspan='2' class='text-center'><a href='$id'><img src='assets/images/$filename' width='195px' height='130px'></a></td>";
+			echo "<td valign='bottom' colspan='2'><a href='$id'><img src='assets/images/$filename' width='195px' height='130px'></a></td>";
 
 			$count++;
             if($count >=4){

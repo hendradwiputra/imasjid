@@ -1,4 +1,3 @@
-
 <form method="post" enctype="multipart/form-data">
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable" role="document">
@@ -74,7 +73,7 @@
               <div class="tab-pane fade" id="v-pills-menu2" role="tabpanel" aria-labelledby="v-pills-menu2-tab">
                  <form method='post' action='' enctype="multipart/form-data">
                  <div class="form-group">
-                  <label for="exampleFormControlSelect1">Upload Gambar</label>                  
+                  <label for="exampleFormControlSelect1">Pilih Gambar</label>                  
                   <div>
                     <img id="image-preview" alt="image preview" class="image-preview border border-dark">
                   </div><br>
@@ -94,7 +93,7 @@
 
               <!-- Menu3 -->
               <div class="tab-pane fade" id="v-pills-menu3" role="tabpanel" aria-labelledby="v-pills-menu3-tab">
-                 <div class="form-group">
+                <div class="form-group">
                   <label for="exampleFormControlSelect1">Durasi Pergantian Slide</label>
                   <select name="durasi_slide" id="durasi_slide" class="form-control col-md-2">
                     <option <?php if ($durasi_slide==6000) echo 'selected = "selected"'; ?> value="6000">6 Detik</option>
@@ -105,21 +104,39 @@
                     <option <?php if ($durasi_slide==21000) echo 'selected = "selected"'; ?> value="21000">21 Detik</option>              
                   </select> 
                 </div> 
-
+                <hr>
                 <div class="form-group">
-                  <div class="media">
-                    <img src="./assets/images/quran-01.jpg" class="align-self-start mr-3 image-slide-preview" alt="...">
-                    <div class="media-body">
-                      <h5 class="mt-0">[Title]</h5>
-                      <p>[Content-1]</p>
-                      <p>[Content-2]</p>
-                      <p>[Content-3]</p>
-                      <p>[Content-4]</p>
-                      <p>[Content-5]</p>
-                    </div>
-                  </div>
+                  <label for="exampleFormControlSelect1">Pilih Slide</label>
+                  <select name="durasi_slide" id="durasi_slide" class="form-control col-md-2">
+                    <option value="slide1">Slide 1</option>
+                    <option value="slide2">Slide 2</option>
+                    <option value="slide3">Slide 3</option>
+                    <option value="slide4">Slide 4</option>
+                    <option value="slide5">Slide 5</option>
+                    <option value="slide6">Slide 6</option>              
+                  </select> 
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Pilih Gambar</label><br>
+                  <?php include('dir_images.php'); ?>
                 </div>
 
+                <div class="form-group">           
+                  <div class="form-group">
+                    <label>Judul</label><input type="text" name="nama_masjid" id="nama_masjid" class="form-control" value="<?php //echo $nama_masjid; ?>">
+                  </div>
+  
+                  <div class="form-group">
+                    <label>Isi</label>
+                    <textarea class="form-control" rows="5"></textarea>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">Aktif</label>
+                  </div>
+
+                </div>
               </div>
               <!-- End Menu3 -->
 
@@ -134,7 +151,7 @@
                     <option <?php if ($durasi_adzan==10) echo 'selected = "selected"'; ?> value="10">10</option>                    
                   </select>
                 </div>
-
+                <hr>
                 <div class="form-group"><label for="exampleFormControlSelect1">Jarak Adzan ke Iqomah <small class="text-muted">(Hitungan menit)</small></label>                
                 <div class="form-row">                  
                   <div class="form-group col-md-2">
@@ -201,7 +218,7 @@
                 </div>
                 <div class="form-group">
                   <label>Teks Berjalan</label>
-                  <textarea class="form-control" id="running_teks" name="running_teks" rows="4"><?php echo $running_teks; ?></textarea>
+                  <textarea class="form-control" id="running_teks" name="running_teks" rows="6"><?php echo $running_teks; ?></textarea>
                 </div>
               </div>
               <!-- End Menu5 -->
