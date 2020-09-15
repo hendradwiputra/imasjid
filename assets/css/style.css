@@ -12,7 +12,8 @@
 
 body {
   
-  font-family: "Open Sans", sans-serif;  
+  /*font-family: "Open Sans", sans-serif;  */
+  font-family: "Montserrat", sans-serif;
   
 }
 
@@ -61,8 +62,10 @@ label {
 
 .modal-content {
     /* 80% of window height */
-    height: 80%;
+    height: 90%;
 }
+
+
 
 /*--------------------------------------------------------------
 # Header
@@ -154,18 +157,6 @@ label {
   padding-left: 10px;
   
 }
-
-.nav-menu .reminder {
-  display: block;
-  position: absolute;
-  transition: 0.3s;
-  font-weight: 600
-  font-size: 40px;
-  top: 10px; /* 10 */
-  right: 28px; /* 28 */
-  /*animation: blinker 1s linear infinite;  */
-}
-
 
 .nav-menu ul {
   margin: 0;
@@ -279,7 +270,7 @@ label {
 --------------------------------------------------------------*/
 #intro {
   width: 100%;
-  height: 81vh;  
+  height: 100vh;  
   /*background: #000;*/
   overflow: hidden;
   position: relative;
@@ -343,6 +334,7 @@ label {
   margin: 0 auto 30px auto;
   color: #fff;
   font-size: 35px;
+  font-weight: 500;
 }
 
 @media (min-width: 1024px) {
@@ -401,12 +393,122 @@ label {
   cursor: pointer;
 }
 
+
+/*--------------------------------------------------------------
+# Clock
+--------------------------------------------------------------*/
+#clock {
+  padding-top: 0px;
+  position: relative;
+  background: rgb(0, 0, 0);   
+}
+ 
+#clock .left { 
+  background: rgba(0, 0, 0, 0.6);  
+  color: #fff; 
+  position: absolute;  
+  bottom: 150px;
+  z-index: 2;  
+  height: 60px;
+  width: 220px;
+  left: 0px;
+  margin: 5px 10px 0px -5px;
+  padding: 5px 10px 5px;
+} 
+
+#clock .right { 
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff; 
+  position: absolute;  
+  bottom: 150px;
+  z-index: 2;  
+  height: 50px;
+  width: 430px;
+  right: 0px; 
+  padding: 5px 5px 5px;
+} 
+
+#clock h2 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+#clock h3 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+/*--------------------------------------------------------------
+# Running-Text
+--------------------------------------------------------------*/
+#text {
+  padding-top: 0px;
+  position: relative;
+  background: rgb(120, 175, 159);   
+}
+ 
+#text .running-text { 
+  background: rgba(120, 175, 159, 0.3);  
+  color: #fff; 
+  position: absolute;  
+  bottom: 100px;
+  z-index: 2;  
+  height: 50px;
+  width: 100%;  
+} 
+
+#text .running-text h3 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+/*--------------------------------------------------------------
+# Prayer Section
+--------------------------------------------------------------*/
+#prayer {
+  padding-top: 0px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.6);
+}
+ 
+#prayer h3 { 
+  background: rgba(0, 0, 0, 0.6); 
+  color: #fff; 
+  position: absolute;  
+  bottom: 40px;
+  z-index: 2;  
+  height: 60px;
+  margin-bottom: 0px;
+  font-weight: 700;
+  font-size: 35px;
+  text-align: center;
+  
+} 
+
+#prayer h2 { 
+  background: rgba(0, 0, 0, 0.6);  
+  color: #fff; 
+  position: absolute;  
+  bottom: 0px;
+  z-index: 2; 
+  margin-bottom: 0px;
+  font-weight: 700;
+  font-size: 55px;
+  text-align: center;  
+ 
+} 
+
+#prayer .selected {
+  color: rgba(120, 175, 159, 0.6);  
+}
+
+
+
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-#footer { 
-  /*width: 100%;*/
-  /*height: 15vh; */   
+#footer {   
   overflow: hidden;
   position: relative;
   background-color: #343233;
@@ -419,7 +521,8 @@ label {
   font-weight: 700;
   letter-spacing: 1px;  
   text-align: center;
-  color: #dfccae;
+  color: #1B2631;
+  background-color: #78af9f;
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -431,9 +534,9 @@ label {
   font-weight: bold;
   letter-spacing: 1px;  
   text-align: center; 
-  color: #2b2e42;
+  color: #1B2631;
   background-color: #f7dc6f;   
-  border-left: 8px solid #efeae1;
+  border-left: 8px solid #78af9f;
 }
 
 
