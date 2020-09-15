@@ -70,18 +70,22 @@
               <!-- End Menu1 -->
 
               <!-- Menu2 -->             
-              <div class="tab-pane fade" id="v-pills-menu2" role="tabpanel" aria-labelledby="v-pills-menu2-tab">
-                 <form method='post' action='' enctype="multipart/form-data">
+              <div class="tab-pane fade" id="v-pills-menu2" role="tabpanel" aria-labelledby="v-pills-menu2-tab">                 
                  <div class="form-group">
-                  <label for="exampleFormControlSelect1">Pilih Gambar</label>                  
+                  <label>Pilih Gambar</label>                  
                   <div>
                     <img id="image-preview" alt="image preview" class="image-preview border border-dark">
-                  </div><br>
-                  <button type="button" class="btn btn-outline-primary" id="uploadBtn">Upload</button>              
-                  <input type="file" name="file" class="btn btn-sm btn-outline-primary" id="file" onchange="previewImage();"/>
+                  </div>                             
+                  <input type="file" name="file" id="file" class="btn btn-sm btn-outline-primary"  onchange="previewImage();"/>                  
                 </div>
-                </form>
-
+                <div class="form-group">
+                  <label>Keterangan</label>
+                  <input type="text" name="description" id="description" class="form-control col-md-8">
+                </div>
+                <div class="form-group">
+                  <button type="button" class="btn btn-outline-primary" id="uploadBtn">Upload</button>  
+                </div>                
+                <hr>
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Gallery</label>
                   <div class="media">
@@ -107,7 +111,8 @@
                 <hr>
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Pilih Slide</label>
-                  <select name="durasi_slide" id="durasi_slide" class="form-control col-md-2">
+                  <select name="durasi_slide" id="durasi_slide" class="form-control col-md-3">
+                    <option>-- Pilih Slide --</option>
                     <option value="slide1">Slide 1</option>
                     <option value="slide2">Slide 2</option>
                     <option value="slide3">Slide 3</option>
@@ -157,7 +162,7 @@
                   <div class="form-group col-md-2">
                     <label for="exampleFormControlSelect1">Shubuh</label>
                     <select name="iqomah_shubuh" id="iqomah_shubuh" class="form-control">
-                      <option <?php if ($iqomah_shubuh==1) echo 'selected = "selected"'; ?> value="1">1</option>
+                      <option <?php if ($iqomah_shubuh==0) echo 'selected = "selected"'; ?> value="0">0</option>
                       <option <?php if ($iqomah_shubuh==5) echo 'selected = "selected"'; ?> value="5">5</option>
                       <option <?php if ($iqomah_shubuh==10) echo 'selected = "selected"'; ?> value="10">10</option>
                       <option <?php if ($iqomah_shubuh==15) echo 'selected = "selected"'; ?> value="15">15</option>  
@@ -169,7 +174,7 @@
                   <div class="form-group col-md-2">
                     <label for="exampleFormControlSelect1">Dzuhur</label>
                     <select name="iqomah_dzuhur" id="iqomah_dzuhur" class="form-control">
-                      <option <?php if ($iqomah_dzuhur==1) echo 'selected = "selected"'; ?> value="1">1</option>
+                      <option <?php if ($iqomah_dzuhur==0) echo 'selected = "selected"'; ?> value="0">0</option>
                       <option <?php if ($iqomah_dzuhur==5) echo 'selected = "selected"'; ?> value="5">5</option>
                       <option <?php if ($iqomah_dzuhur==10) echo 'selected = "selected"'; ?> value="10">10</option>                                  
                     </select>
@@ -177,7 +182,7 @@
                   <div class="form-group col-md-2">
                     <label for="exampleFormControlSelect1">Ashar</label>
                     <select name="iqomah_ashar" id="iqomah_ashar" class="form-control">
-                      <option <?php if ($iqomah_ashar==1) echo 'selected = "selected"'; ?> value="1">1</option>
+                      <option <?php if ($iqomah_ashar==0) echo 'selected = "selected"'; ?> value="0">0</option>
                       <option <?php if ($iqomah_ashar==5) echo 'selected = "selected"'; ?> value="5">5</option>
                       <option <?php if ($iqomah_ashar==10) echo 'selected = "selected"'; ?> value="10">10</option>                                  
                     </select>
@@ -185,7 +190,7 @@
                   <div class="form-group col-md-2">
                     <label for="exampleFormControlSelect1">Maghrib</label>
                     <select name="iqomah_maghrib" id="iqomah_maghrib" class="form-control">
-                      <option <?php if ($iqomah_maghrib==1) echo 'selected = "selected"'; ?> value="1">1</option>
+                      <option <?php if ($iqomah_maghrib==0) echo 'selected = "selected"'; ?> value="0">0</option>
                       <option <?php if ($iqomah_maghrib==5) echo 'selected = "selected"'; ?> value="5">5</option>
                       <option <?php if ($iqomah_maghrib==10) echo 'selected = "selected"'; ?> value="10">10</option>                             
                     </select>
@@ -193,9 +198,13 @@
                   <div class="form-group col-md-2">
                     <label for="exampleFormControlSelect1">Isya</label>
                     <select name="iqomah_isya" id="iqomah_isya" class="form-control">
-                      <option <?php if ($iqomah_isya==1) echo 'selected = "selected"'; ?> value="1">1</option>
+                      <option <?php if ($iqomah_isya==0) echo 'selected = "selected"'; ?> value="0">0</option>
                       <option <?php if ($iqomah_isya==5) echo 'selected = "selected"'; ?> value="5">5</option>
-                      <option <?php if ($iqomah_isya==10) echo 'selected = "selected"'; ?> value="10">10</option>                                    
+                      <option <?php if ($iqomah_isya==10) echo 'selected = "selected"'; ?> value="10">10</option>
+                      <option <?php if ($iqomah_isya==15) echo 'selected = "selected"'; ?> value="15">15</option>  
+                      <option <?php if ($iqomah_isya==20) echo 'selected = "selected"'; ?> value="20">20</option>  
+                      <option <?php if ($iqomah_isya==25) echo 'selected = "selected"'; ?> value="25">25</option> 
+                      <option <?php if ($iqomah_isya==30) echo 'selected = "selected"'; ?> value="30">30</option>                                      
                     </select>
                   </div>
                 </div>

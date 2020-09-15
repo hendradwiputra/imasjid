@@ -7,113 +7,93 @@
 <header id="header" class="fixed-top header-transparent">
       <div class="row justify-content-center">
         <div class="col-xl-11 col-lg-11 col-md-11 d-flex align-items-center">
-
           <span class="logo mr-auto">
             <p class="nama" id="NamaMasjid"><?php echo $nama_masjid; ?></p>
             <p class="alamat" id="AlamatMasjid"><?php echo $alamat_masjid; ?></p>
             <p class="tanggal" id="penanggalan">[KALENDER]</p>
           </span>
-
-          <nav class="nav-menu d-none d-lg-block">
-            <ul>
-				      <li><p id="timer">[TIMER]</p></li><!--Prayer counter-->
-            </ul>
-          </nav><!-- .nav-menu -->
-
         </div>
       </div>
 </header>
 <!-- ======= Header ======= -->
 
 <!-- ======= Intro ======= -->
-  <section id="intro">
+<section id="intro">
     <div class="intro-container">
       <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel" data-interval="<?php echo $durasi_slide; ?>">
-
         <ol class="carousel-indicators"></ol>
         <div class="carousel-inner" role="listbox">
-
-          <div class="carousel-item active" style="background-image: url(./images/quran-01.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Mati itu pasti</h2>
-                <p class="animate__animated animate__fadeInUp">"Maka apabila telah <strong>tiba ajal</strong> mereka (waktu yang telah ditentukan), <strong>tidaklah mereka dapat mengundurkannya barang sesaat pun dan tidak pula mereka dapat mendahulukan nya."</strong><br>[Q.S. An-Nahl:61]</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="carousel-item" style="background-image: url(./images/madina-03.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Seakan-akan engkau melihat-Nya</h2>
-                <p class="animate__animated animate__fadeInUp">KAJIAN SENIN<br>7 September 2020<br>Pukul : 19:00<br>Bersama <strong>Ust. Muhammad Nuzul Dzikri</strong></p>
-              </div>
-            </div>
-          </div>         
-
-        </div>
-        <!--
-        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-
-        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-        -->
-
+          <?php include('view_slides.php'); ?>
+        </div>     
     </div>
-  </section>
+</section>
 <!-- ======= Intro ======= -->
 
+<!-- ======= Clock Section ======= -->
+<section id="clock">
+  <div class="intro-container">               
+      <div class="left">
+        <h2 id="jam">[CLOCK]</h2>            
+      </div>    
+      <div class="right">
+        <h3 id="timer">[TIMER]</h3>            
+      </div> 
+  </div>
+</section>
+<!-- Clock Section -->
+
+<!-- ======= Running Text Section ======= -->
+<section id="text">
+  <div class="intro-container">               
+      <div class="running-text">          
+          <h3><marquee scrollamount="<?php echo $kecepatan_teks; ?>" id="RunningTeks"><?php echo $running_teks; ?></marquee></h3>        
+      </div>
+  </div>
+</section>
+<!-- Running Text Section -->
+
+
+<!-- ======= Running Text Section ======= -->
+<section id="prayer">
+  <div class="container-fluid"> 
+    <div class="row">
+
+      <div class="col-md-2">
+        <h3 id="prayer1"></h3>
+        <h2 id="shubuh"></h2>
+      </div>    
+      <div class="col-md-2">
+        <h3 id="prayer2"></h3>  
+        <h2 id="syuruq"></h2>     
+      </div>
+      <div class="col-md-2">
+        <h3 id="prayer3"></h3> 
+        <h2 id="dzuhur"></h2>           
+      </div> 
+      <div class="col-md-2">
+        <h3 id="prayer4"></h3>
+        <h2 id="ashar"></h2>           
+      </div>
+      <div class="col-md-2">
+        <h3 id="prayer5"></h3>
+        <h2 id="maghrib"></h2>         
+      </div>
+      <div class="col-md-2">
+        <h3 id="prayer6"></h3> 
+        <h2 id="isya"></h2>          
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Running Text Section -->
+
+
 <!-- ======= Footer ======= -->
-  <footer id="footer">
+<!--  <footer id="footer">
     <div class="intro-container">
         
-        <div class="row">
-          <div class="col-xl-10 col-lg-10 col-md-10">
-            <h3 class="running-text"><marquee scrollamount="<?php echo $kecepatan_teks; ?>" id="RunningTeks"><?php echo $running_teks; ?></marquee></h3>
-          </div>
-
-          <div class="col-md-2 col-sm-2">
-            <h3 id="jam" class="jam"></h3>
-          </div>        
-        </div>
-      
-        <div class="row">
-          <div class="col-xl-2 col-lg-2 col-md-3">
-            <h3 id="prayer1"></h3>
-            <h3 id="shubuh"></h3>
-          </div>
-
-          <div class="col-xl-2 col-lg-2 col-md-3">
-            <h3 id="prayer2"></h3>
-            <h3 id="syuruq"></h3>
-          </div>
-
-          <div class="col-xl-2 col-lg-2 col-md-3">
-            <h3 id="prayer3"></h3>
-            <h3 id="dzuhur"></h3>
-          </div>
-
-          <div class="col-xl-2 col-lg-2 col-md-3">
-            <h3 id="prayer4"></h3>
-            <h3 id="ashar"></h3>
-          </div>
-
-          <div class="col-xl-2 col-lg-2 col-md-3">
-            <h3 id="prayer5"></h3>
-            <h3 id="maghrib"></h3>
-          </div>
-
-          <div class="col-xl-2 col-lg-2 col-md-3">
-            <h3 id="prayer6"></h3>
-            <h3 id="isya"></h3>
-          </div>
-        </div>
-
+        
         <div class="row">
           <div class="copyright col-md-10" id="copyright"></div>   
           <div class="menu col-md-2">
@@ -125,5 +105,5 @@
         </div>
         
     </div>
-  </footer>
+  </footer>-->
 <!-- ======= Footer ======= -->

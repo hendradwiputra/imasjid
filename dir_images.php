@@ -11,13 +11,13 @@
             }
         }        
         
-        echo "<table id='gallery' width='100%' align = 'left'><tr>";
+        echo "<table id='gallery' cellpadding=5 width='100%' align = 'left'><tr>";
         $count = 0;
         foreach ($images as  $value) {           
-            echo "<td valign='bottom' colspan='2'><a href='#'><img src='thumbnails.php?image=".$value."' height='60px' width='100px'></a>\n<a href='".$image_dir.$value."'></a></td>";
+            echo "<td valign='bottom'><a href='#'><img src='thumbnails.php?image=".$value."' height='80px' width='120px'></a>\n<a href='".$image_dir.$value."'></a></td>";
                     
             $count++;
-            if($count >=4){
+            if($count >=6){
                 echo "</tr><tr>";                
                 $count = 0;
             }            
