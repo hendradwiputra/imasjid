@@ -299,7 +299,7 @@
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[0],0,2); ?>';
 			var min = '<?php echo substr($times[0],3,4); ?>';        
-			document.getElementById('prayer1').innerHTML = "<p " + selected + ">" + solatShubuh + "</p>";
+			document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + solatShubuh + "</h3>";
 			document.getElementById('shubuh').innerHTML = "<h2 " + selected + ">" + shubuh + "</h2>";
 			
         
@@ -313,7 +313,7 @@
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[0],0,2); ?>';
 			var min = '<?php echo substr($times[0],3,4); ?>';
-			document.getElementById('prayer1').innerHTML = "<p " + selected + ">" + solatShubuh + "</p>";
+			document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + solatShubuh + "</h3>";
 			document.getElementById('shubuh').innerHTML = "<h2 " + selected + ">" + shubuh + "</h2>";
 			
         
@@ -325,7 +325,7 @@
 			var durasiadzan = 0;
 			var durasiiqomah = 0;  
 			var nextdate = tanggal;
-			document.getElementById('prayer2').innerHTML = "<p " + selected + ">" + solatSyuruq + "</p>";
+			document.getElementById('prayer2').innerHTML = "<h3 " + selected + ">" + solatSyuruq + "</h3>";
 			document.getElementById('syuruq').innerHTML = "<h2 " + selected + ">" + syuruq + "</h2>";
 			
        
@@ -337,7 +337,7 @@
 			var durasiadzan = 0;	
 			var durasiiqomah = 0;  
 			var nextdate = tanggal;
-			document.getElementById('prayer2').innerHTML = "<p " + selected + ">" + solatSyuruq + "</p>";
+			document.getElementById('prayer2').innerHTML = "<h3 " + selected + ">" + solatSyuruq + "</h3>";
 			document.getElementById('syuruq').innerHTML = "<h2 " + selected + ">" + syuruq + "</h2>";	
 			
         
@@ -349,7 +349,7 @@
 			var nextdate = tanggal;			
 			var hr = '<?php echo substr($times[2],0,2); ?>';
 			var min = '<?php echo substr($times[2],3,4); ?>';        
-			document.getElementById('prayer3').innerHTML = "<p " + selected + ">" + solatDzuhur + "</p>";
+			document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + solatDzuhur + "</h3>";
 			document.getElementById('dzuhur').innerHTML = "<h2 " + selected + ">" + dzuhur + "</h2>";
 			
         
@@ -361,7 +361,7 @@
 			var nextdate = tanggal;			
 			var hr = '<?php echo substr($times[2],0,2); ?>';
 			var min = '<?php echo substr($times[2],3,4); ?>';        
-			document.getElementById('prayer3').innerHTML = "<p " + selected + ">" + solatDzuhur + "</p>";
+			document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + solatDzuhur + "</h3>";
 			document.getElementById('dzuhur').innerHTML = "<h2 " + selected + ">" + dzuhur + "</h2>";
 
         
@@ -375,7 +375,7 @@
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[3],0,2); ?>';
 			var min = '<?php echo substr($times[3],3,4); ?>';
-			document.getElementById('prayer4').innerHTML = "<p " + selected + ">" + solatAshar + "</p>";
+			document.getElementById('prayer4').innerHTML = "<h3 " + selected + ">" + solatAshar + "</h3>";
 			document.getElementById('ashar').innerHTML = "<h2 " + selected + ">" + ashar + "</h2>";
 		
         	
@@ -389,7 +389,7 @@
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[3],0,2); ?>';
 			var min = '<?php echo substr($times[3],3,4); ?>';
-			document.getElementById('prayer4').innerHTML = "<p " + selected + ">" + solatAshar + "</p>";
+			document.getElementById('prayer4').innerHTML = "<h3 " + selected + ">" + solatAshar + "</h3>";
 			document.getElementById('ashar').innerHTML = "<h2 " + selected + ">" + ashar + "</h2>";
 			
        
@@ -403,7 +403,7 @@
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[5],0,2); ?>';
 			var min = '<?php echo substr($times[5],3,4); ?>';
-			document.getElementById('prayer5').innerHTML = "<p " + selected + ">" + solatMaghrib + "</p>";
+			document.getElementById('prayer5').innerHTML = "<h3 " + selected + ">" + solatMaghrib + "</h3>";
 			document.getElementById('maghrib').innerHTML = "<h2 " + selected + ">" + maghrib + "</h2>";
 			
         		
@@ -417,7 +417,7 @@
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[5],0,2); ?>';
 			var min = '<?php echo substr($times[5],3,4); ?>';
-			document.getElementById('prayer5').innerHTML = "<p " + selected + ">" + solatMaghrib + "</p>";
+			document.getElementById('prayer5').innerHTML = "<h3 " + selected + ">" + solatMaghrib + "</h3>";
 			document.getElementById('maghrib').innerHTML = "<h2 " + selected + ">" + maghrib + "</h2>";
 			
         
@@ -431,7 +431,7 @@
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[6],0,2); ?>';
 			var min = '<?php echo substr($times[6],3,4); ?>';
-			document.getElementById('prayer6').innerHTML = "<p " + selected + ">" + solatIsya + "</p>";
+			document.getElementById('prayer6').innerHTML = "<h3 " + selected + ">" + solatIsya + "</h3>";
 			document.getElementById('isya').innerHTML = "<h2 " + selected + ">" + isya + "</h2>";
 			
         		
@@ -445,7 +445,7 @@
 			var label = "ADZAN " + nextprayer;
 			var hr = '<?php echo substr($times[6],0,2); ?>';
 			var min = '<?php echo substr($times[6],3,4); ?>';
-			document.getElementById('prayer6').innerHTML = "<p " + selected + ">" + solatIsya + "</p>";
+			document.getElementById('prayer6').innerHTML = "<h3 " + selected + ">" + solatIsya + "</h3>";
 			document.getElementById('isya').innerHTML = "<h2 " + selected + ">" + isya + "</h2>";
 			
        
@@ -454,7 +454,7 @@
 			var nextcounter = shubuh;
 			var nextdate = tanggal + 1;
 			var label = "ADZAN " + nextprayer;
-			document.getElementById('prayer1').innerHTML = "<p " + selected + ">" + solatShubuh + "</p>";
+			document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + solatShubuh + "</h3>";
 			document.getElementById('shubuh').innerHTML = "<h2 " + selected + ">" + shubuh + "</h2>";			
         
 		} 

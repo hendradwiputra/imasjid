@@ -52,58 +52,17 @@
 </section>
 <!-- Running Text Section -->
 
-
-<!-- ======= Running Text Section ======= -->
+<!-- ======= Prayer Section ======= -->
 <section id="prayer">
-  <div class="container-fluid"> 
-    <div class="row">
-
-      <div class="col-md-2">
-        <h3 id="prayer1"></h3>
-        <h2 id="shubuh"></h2>
-      </div>    
-      <div class="col-md-2">
-        <h3 id="prayer2"></h3>  
-        <h2 id="syuruq"></h2>     
-      </div>
-      <div class="col-md-2">
-        <h3 id="prayer3"></h3> 
-        <h2 id="dzuhur"></h2>           
-      </div> 
-      <div class="col-md-2">
-        <h3 id="prayer4"></h3>
-        <h2 id="ashar"></h2>           
-      </div>
-      <div class="col-md-2">
-        <h3 id="prayer5"></h3>
-        <h2 id="maghrib"></h2>         
-      </div>
-      <div class="col-md-2">
-        <h3 id="prayer6"></h3> 
-        <h2 id="isya"></h2>          
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- Running Text Section -->
-
-
-<!-- ======= Footer ======= -->
-<!--  <footer id="footer">
-    <div class="intro-container">
-        
-        
-        <div class="row">
-          <div class="copyright col-md-10" id="copyright"></div>   
-          <div class="menu col-md-2">
-            <input type="hidden" name="id" id="id">  
-            <a href="#" id="editBtn"><strong>[Edit]</strong></a>
-            <a href="#" id="aboutBtn"><strong>[About]</strong></a>
-          </div>
-          
+    <div class="intro-container">        
+        <div class="d-flex bg1 justify-content-around">
+            <div class="p-2"><h3 id="prayer1"></h3><h2 id="shubuh"></h2></div>
+            <div class="p-2"><h3 id="prayer2"></h3><h2 id="syuruq"></h2></div>
+            <div class="p-2"><h3 id="prayer3"></h3><h2 id="dzuhur"></h2></div>
+            <div class="p-2"><h3 id="prayer4"></h3><h2 id="ashar"></h2></div>
+            <div class="p-2"><h3 id="prayer5"></h3><h2 id="maghrib"></h2></div>
+            <div class="p-2"><h3 id="prayer6"></h3><h2 id="isya"></h2></div>
         </div>
-        
     </div>
-  </footer>-->
-<!-- ======= Footer ======= -->
+</section>
+<!-- ======= Prayer Section ======= -->
