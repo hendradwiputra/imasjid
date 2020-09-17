@@ -398,7 +398,7 @@ label {
 }
  
 #clock .left { 
-  background: rgba(120, 175, 159, 0.2);  
+  background: rgba(120, 175, 159, 0.3);  
   color: #fff; 
   position: absolute;  
   bottom: 50px;
@@ -407,11 +407,11 @@ label {
   width: 220px;
   left: 0px;
   margin: 5px 10px 0px -5px;
-  padding: 5px 10px 5px;
+  padding-left: 8px;
 } 
 
 #clock .right { 
-  background: rgba(120, 175, 159, 0.2);
+  background: rgba(120, 175, 159, 0.3);
   color: #fff; 
   position: absolute;  
   bottom: 50px;
@@ -419,7 +419,7 @@ label {
   height: 50px;
   width: 430px;
   right: 0px; 
-  padding: 5px 5px 5px;
+  padding-left: 8px;
 } 
 
 #clock h2 {
@@ -461,7 +461,6 @@ label {
 --------------------------------------------------------------*/
 #prayer .bg1 {
   background: rgba(120, 175, 159, 0.7);
-  /*height: 135px;  */
 }
 
 #prayer h3 {  
@@ -484,7 +483,7 @@ label {
 
 #prayer .selected {
   color: #fff;
-  background: rgba(120, 175, 159, 1);
+  background: rgba(0,112,112);
   padding: 0px 20px 0px;  
   padding-top: 0px;
 }
