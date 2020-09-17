@@ -432,6 +432,33 @@ label {
   font-weight: 700;
 }
 
+
+/*--------------------------------------------------------------
+# Counter
+--------------------------------------------------------------*/
+#counter {
+  padding-top: 0px;
+  position: relative;
+  background: rgb(120, 175, 159);   
+}
+
+#counter .text { 
+  background: rgba(120, 175, 159, 0.9);  
+  color: #fff; 
+  position: absolute;  
+  bottom: 200px;
+  z-index: 2;  
+  height: 50vh;
+  width: 70%; 
+  text-align: center;
+  
+} 
+
+#counter .text h2 {
+  font-size: 80px;
+  font-weight: 700;
+}
+
 /*--------------------------------------------------------------
 # Running-Text
 --------------------------------------------------------------*/
@@ -489,91 +516,3 @@ label {
 }
 
 
-
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-#footer {   
-  overflow: hidden;
-  position: relative;
-  background-color: #343233;
-}
-
-#footer h3 {
-  font-size: 35px;  
-  line-height: 1;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  letter-spacing: 1px;  
-  text-align: center;
-  color: #1B2631;
-  background-color: #78af9f;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-#footer h3 .selected{
-  font-size: 33px;  
-  line-height: 1;
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  letter-spacing: 1px;  
-  text-align: center; 
-  color: #1B2631;
-  background-color: #f7dc6f;   
-  border-left: 8px solid #78af9f;
-}
-
-
-#footer .jam {
-  color: #ffd152;
-  font-size: 40px;
-  border-bottom: 2px solid #dfccae;
-}
-
-#footer .running-text{
-  font-size: 32px;  
-  line-height: 1;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;     
-  color: #dfccae;
-  margin-top: 1px;
-  background-color: #584b4f;   
-  
-}
-
-#footer .copyright {
-  font-size: 14px;   
-  color: #2c2a2b;
-  text-align: left;
-  background-color: #efeae1;
-  font-family: "Montserrat", sans-serif;  
-  padding-left: 25px;
-  
-}
-
-#footer .menu {
-  font-size: 14px;   
-  color: #2c2a2b;  
-  background-color: #efeae1;
-  font-family: "Montserrat", sans-serif;  
-  text-align: right;
-  letter-spacing: 1px; 
-  padding-right: 25px;
-  
-}
-
-#footer a {
-  color: #2c2a2b;
-}
-
-#footer a:hover {
-  font-weight: 700;
-  color: #ffd152;
-  background-color: #343233;
-}
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
