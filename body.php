@@ -1,7 +1,8 @@
 <?php
     
-  include('about.php');
-  include('edit.php');  
+  //include('about.php');
+  //include('edit.php');  
+  //include('../scripts/retrieve.php'); 
 ?>
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top header-transparent">
@@ -23,7 +24,7 @@
       <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel" data-interval="<?php echo $durasi_slide; ?>">
         <ol class="carousel-indicators"></ol>
         <div class="carousel-inner" role="listbox">
-          <?php include('view_slides.php'); ?>
+          <?php include('./settings/view_slides.php'); ?>
         </div>     
     </div>
 </section>

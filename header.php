@@ -2,8 +2,8 @@
   $url1=$_SERVER['REQUEST_URI'];
   header("Refresh: 300; URL=$url1");
   
-	include('PrayTime.php');
-	include('retrieve.php'); 		
+	include('./scripts/PrayTime.php');
+	include('./scripts/retrieve.php'); 	
 ?>
 
 <!doctype html>
