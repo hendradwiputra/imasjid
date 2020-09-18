@@ -13,5 +13,4 @@ Aplikasi ini menggunakan calculation method dari praytimes.org dan sudah di cust
 </ul>
 
 <h2>Catatan Penting</h2>
-<p>Aplikasi ini <strong><u>BEBAS</u></strong> dipakai/dikembangkan oleh siapa saja dengan harapan saya bisa mendapatkan pahala jariyah dari aplikasi ini.
-<p><strong><u>DILARANG</u></strong> memperjualbelikan aplikasi ini.</p>
+<p>Aplikasi ini <strong><u>BEBAS</u></strong> dipakai/dikembangkan oleh siapa saja dengan harapan saya bisa mendapatkan pahala jariyah dari aplikasi ini.<strong><u>DILARANG</u></strong> memperjualbelikan aplikasi ini.
