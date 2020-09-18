@@ -32,7 +32,7 @@
       		echo "<td>$isi</td>";
       		echo "<td><img src='../assets/images/$image' width='120px' height='80px'></td>";
       		echo "<td></td>";
-      		echo "<td><a href=''>Edit</a></td>";
+      		echo "<td><input type='button' name='edit' value='Edit' id='$no' class='btn btn-success btn-sm edit_data'></td>";
       		echo "</tr>";
       	}				
 	}	

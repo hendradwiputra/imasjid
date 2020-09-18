@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../assets/vendor/fontawesome/css/brands.css">
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+<!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">-->
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css"> 
@@ -82,6 +82,7 @@
         .card-header {
             background: rgba(120, 175, 159, 0.3);
             color: #007070;
+            font-weight: 500;
         }
 
         .list-group-item.active {  
@@ -94,6 +95,11 @@
 
 <script>
   $(document).ready(function() { 
+
+    $(document).on('click', '.edit_data', function() { 
+        var no = $("#no").val();
+        alert('Edit Btn' + no);
+    });
 
     $("#slideBtn").click(function(){
       $("#slideModal").modal();       
