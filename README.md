@@ -1,5 +1,5 @@
 # Aplikasi Waktu Solat (iMasjid)
-Aplikasi ini memakai formula dari praytimes.org.
+<strong>Aplikasi ini memakai formula dari praytimes.org</strong>
 Aplikasi ini masih dalam tahap pengembangan dan bebas dipakai dimana saja.
 90% pengembangannya sudah selesai, tinggal buat menu input untuk tambah dan edit data.
 
