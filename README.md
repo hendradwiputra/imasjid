@@ -1,13 +1,5 @@
-# Aplikasi Waktu Solat (iMasjid)
-<strong>Aplikasi ini memakai formula dari praytimes.org</strong>
-Aplikasi ini masih dalam tahap pengembangan dan bebas dipakai dimana saja.
-90% pengembangannya sudah selesai, tinggal buat menu input untuk tambah dan edit data.
+<h1>Jam Sholat Masjid</h1>
 
-Semoga bisa menjadi pahala jariyah bagi kita semua yg mau mengembangkan aplikasi ini..
-
-#Notes:
-Pengembangan aplikasi ini menggunakan PHP, Javascript dan MySQL.
-
-#Cara penggunaan:
-Ubah latitude dan longitude yang ada di file header.php sesuai kordinat masing2.
+<h4>Code</h4>
+<p>PrayTime.php is originally created by <strong>Hamid Zarrabi-Zadeh</strong> and code can be downloaded from <a href="http://praytimes.org/code">http://praytimes.org/code</a></p>
 
