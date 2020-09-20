@@ -94,25 +94,65 @@
 
 
 <script>
-  $(document).ready(function() { 
-
-    $(document).on('click', '.edit_data', function() { 
-        var no = $("#no").val();
-        alert('Edit Btn' + no);
+$(document).ready(function() { 
+    // Slides
+    $.ajax({
+        url: "view_slides.php",
+        type: "POST",
+        cache: false,
+        success: function(dataResult){
+            $('#table').html(dataResult); 
+        }
     });
 
-    $("#slideBtn").click(function(){
-      $("#slideModal").modal();       
-    });       
+    $("#addSlide").click(function(){
+      $("#slideModal").modal('show');       
+    });      
 
-    $('#uploadBtn').click(function() {    
-              
+    $(document).on('click', '.edit_data', function() {         
+        var no = $(this).attr("id");
+        $.ajax({
+            url:"fetch.php",
+            method:"POST",
+            data:{no:no},
+            dataType:"json",
+            success:function(data) {
+                $('#no').val(data.no);
+                $('#slide').val(data.slide);
+                $('#judul').val(data.judul);  
+                $('#isi').val(data.isi);
+                $('#slideModal').modal('show');
+            }
+        });        
+    }); 
+
+    $("#saveSlide").click(function(){
+        var judul = $("#judul").val();        
+        var isi = $("#isi").val(); 
+        $.ajax({
+                url:'updateSlide.php',
+                type:'POST',
+                data:{
+                    //no:no,
+                    judul:judul, 
+                    isi:isi
+                },
+                success:function(data){
+                    alert(data);
+                    $('#slideModal').modal('hide');
+                }
+            });      
+    });
+
+    //
+
+    $('#uploadBtn').click(function() {              
       var fd = new FormData();
       var files = $('#file')[0].files[0];
       fd.append('file',files);
 
       $.ajax({
-          url: '../scripts/upload.php',
+          url: 'upload.php',
           type: 'post',
           data: fd,
           contentType: false,
@@ -121,11 +161,11 @@
               if (response != 0) {
                   alert('File berhasil diupload');
               }else{
-                  alert('file not uploaded');
+                  alert('File gagal diupload');
               }
           }
       });                
-    });
+    });    
     
     $("#simpan").click(function(){
 
@@ -147,7 +187,7 @@
         var metode_perhitungan = $("#metode_perhitungan").val();        
         
         $.ajax({
-                url:'../scripts/update.php',
+                url:'update.php',
                 type:'POST',
                 data:{
                     nama_masjid:nama_masjid,
@@ -173,14 +213,12 @@
                         $("#AlamatMasjid").text('' + alamat_masjid);
                         $("#RunningTeks").text('' + running_teks);
                         $("#KoreksiHijriah").text('' + koreksi_hijriah);
-                        $("#KecepatanTeks").text('' + kecepatan_teks);                    
-                        //$('#editModal').modal('hide');                    
+                        $("#KecepatanTeks").text('' + kecepatan_teks);                     
                 }
-        });    
-
+        });
     });        
 
-  });
+});
 </script>
 
 </head>

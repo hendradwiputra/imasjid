@@ -216,10 +216,22 @@
                   </select> 
                 </div>
                 <div class="form-group float-right">
-                  <button type="button" class="btn btn-success" id="slideBtn">Tambah Slide</button>            
+                  <button type="button" class="btn btn-success" id="addSlide">Tambah Slide</button>     
                 </div>
-                <div class="form-group">
-                  <?php include('view_slides.php'); ?>                  
+                <div class="form-group">  
+                  <table class="table table-sm table-responsive">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Judul</th>
+                        <th>Isi</th>
+                        <th>Gambar</th>
+                        <th>Aktif</th>
+                        <th colspan="2"></th>
+                      </tr>
+                    </thead>
+                    <tbody id="table"></tbody>                  
+                  </table>          
                 </div>
               </div>
             </div>
