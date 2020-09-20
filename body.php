@@ -1,9 +1,3 @@
-<?php
-    
-  //include('about.php');
-  //include('edit.php');  
-  //include('../scripts/retrieve.php'); 
-?>
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top header-transparent">
       <div class="row justify-content-center">
@@ -14,6 +8,12 @@
             <p class="tanggal" id="penanggalan">[KALENDER]</p>
           </span>
         </div>
+        <nav class="nav-menu d-none d-lg-block">
+            <ul>              
+              <li><a href="#" onClick="window.open('./settings');"><i class="fas fa-cog"></i></a></li>
+            </ul>
+          </nav><!-- .nav-menu -->
+
       </div>
 </header>
 <!-- ======= Header ======= -->
@@ -24,11 +24,23 @@
       <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel" data-interval="<?php echo $durasi_slide; ?>">
         <ol class="carousel-indicators"></ol>
         <div class="carousel-inner" role="listbox">
-          <?php include('./settings/view_slides.php'); ?>
+          <?php include('./settings/slideshow.php'); ?>
         </div>     
     </div>
 </section>
 <!-- ======= Intro ======= -->
+
+<!-- ======= Time Counter Section ======= -->
+<!--
+<section id="counter">
+  <div class="intro-container ">               
+      <div class="text">
+          <h2>Menjelang Adzan</h2>   
+      </div>          
+  </div>
+</section>
+-->
+<!-- ======= Time Counter Section ======= -->
 
 <!-- ======= Clock Section ======= -->
 <section id="clock">
