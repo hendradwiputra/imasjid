@@ -38,19 +38,20 @@ $(document).ready(function() {
     });
 
     $("#addSlide").click(function(){
-      $("#slideModal").modal('show');       
+        $('#insert_form')[0].reset();
+        $("#slideModal").modal('show'); 
+
     });      
 
     $(document).on('click', '.edit_data', function() {         
-        var no = $(this).attr("id");
+        var slide_id = $(this).attr("id");
         $.ajax({
             url:"fetch.php",
             method:"POST",
-            data:{no:no},
+            data:{slide_id:slide_id},
             dataType:"json",
             success:function(data) {
-                $('#no').val(data.no);
-                $('#slide').val(data.slide);
+                $('#slide_id').val(data.slide_id);
                 $('#judul').val(data.judul);  
                 $('#isi1').val(data.isi1);
                 $('#isi2').val(data.isi2);
@@ -63,31 +64,32 @@ $(document).ready(function() {
     }); 
 
     $("#saveSlide").click(function(){
-        var no = $("#no").val();
-        var slide = $("#slide").val();
+        
+        var slide_id = $("#slide_id").val();
         var judul = $("#judul").val();        
         var isi1 = $("#isi1").val();
         var isi2 = $("#isi2").val(); 
         var isi3 = $("#isi3").val(); 
         var isi4 = $("#isi4").val();  
-        var image_id = $("#image_id").val();
+        
         
         $.ajax({
                 url:'updateSlide.php',
                 type:'POST',
                 data:{
-                    no:no,
-                    slide:slide,
+                    slide_id:slide_id,
                     judul:judul, 
                     isi1:isi1,
                     isi2:isi2,
                     isi3:isi3,
-                    isi4:isi4,
-                    image_id:image_id
+                    isi4:isi4
+                   
                 },
                 success:function(data){
-                    alert(data);
+                    //alert(data);
+                    $('#insert_form')[0].reset();                     
                     $('#slideModal').modal('hide');
+                    $('#table').html(data);                    
                 }
             });      
     });

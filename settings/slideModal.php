@@ -1,5 +1,5 @@
 <!-- Modal -->
-<form method="POST" enctype="multipart/form-data" >
+<form method="POST" enctype="multipart/form-data" id="insert_form">
 <div class="modal fade" id="slideModal">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
@@ -27,14 +27,17 @@
         <div class="form-group">
           <textarea class="form-control" name="isi4" id="isi4" rows="3"></textarea>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" name="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Aktif</label>
-          <input type="hidden" name="no" id="no">          
+        <div class="form-group">
+          <label>Pilih Gambar </label>
+          <input type="file" name="file" id="file" class="btn btn-sm btn-outline-success" onchange="previewImage();"/>          
+        </div>
+        <div class="form-group">
+          <img id="image-preview" alt="image preview" class="image-preview border border-dark">
         </div>
       </div>
       
-      <div class="modal-footer">         
+      <div class="modal-footer">
+        <input type="hidden" name="slide_id" id="slide_id">      
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
         <button type="button" class="btn btn-success" id="saveSlide">Simpan</button>
       </div>
@@ -42,3 +45,16 @@
   </div>
 </div>
 </form>
+
+<script type="text/javascript">
+    // https://agung-setiawan.com/preview-image-before-upload/
+    function previewImage() {
+      document.getElementById("image-preview").style.display = "block";
+      var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("file").files[0]);
+ 
+      oFReader.onload = function(oFREvent) {
+        document.getElementById("image-preview").src = oFREvent.target.result;
+      };
+    };   
+</script>

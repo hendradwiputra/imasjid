@@ -11,7 +11,7 @@
           <a class="list-group-item list-group-item-action active" id="list-pengaturan-list" data-toggle="list" href="#list-pengaturan" role="tab" aria-controls="pengaturan">Pengaturan</a>
           <a class="list-group-item list-group-item-action" id="list-notifikasi-list" data-toggle="list" href="#list-notifikasi" role="tab" aria-controls="notifikasi">Notifikasi</a>
           <a class="list-group-item list-group-item-action" id="list-teks-list" data-toggle="list" href="#list-teks" role="tab" aria-controls="teks">Teks Berjalan</a>
-          <a class="list-group-item list-group-item-action" id="list-upload-list" data-toggle="list" href="#list-upload" role="tab" aria-controls="upload">Upload</a>
+          <!--<a class="list-group-item list-group-item-action" id="list-upload-list" data-toggle="list" href="#list-upload" role="tab" aria-controls="upload">Upload</a>-->
           <a class="list-group-item list-group-item-action" id="list-slides-list" data-toggle="list" href="#list-slides" role="tab" aria-controls="slides">Slide</a>
           <a class="list-group-item list-group-item-action" id="list-about-list" data-toggle="list" href="#list-about" role="tab" aria-controls="about">Tentang Aplikasi</a>
         </div>
@@ -169,7 +169,7 @@
           </div>
           <!-- Teks Berjalan -->          
 
-          <!-- Upload -->
+          <!-- Upload 
           <div class="tab-pane fade" id="list-upload" role="tabpanel" aria-labelledby="list-upload-list">
             <div class="card">
             <h5 class="card-header">Upload Gambar</h5>
@@ -196,7 +196,7 @@
                 </div>       
               </div>
             </div>
-          </div>
+          </div>-->
           <!-- Upload -->
 
           <!-- Slide -->
@@ -251,10 +251,8 @@
                   <p><i class="fab fa-github"></i> https://github.com/hendradwiputra/imasjid</p>                  
                 </div>
                 <br>
-                <h4>Code</h4>
-                <p>PrayTime.php is originally created by <strong>Hamid Zarrabi-Zadeh</strong> and code can be downloaded from <a href="http://praytimes.org/code">http://praytimes.org/code</a></p>
-                <br>
-                <h4>Catatan</h4>
+                
+                <h4>Copyright</h4>
                 <p>Aplikasi ini <strong>bebas</strong> dipakai/dikembangkan oleh siapa saja. <strong>Dilarang</strong> memperjualbelikan aplikasi ini.</p>
             </div>
             </div>
