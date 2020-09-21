@@ -3,7 +3,7 @@
   header("Refresh: 300; URL=$url1");
   
 	include('./scripts/PrayTime.php');
-	include('./scripts/retrieve.php'); 	
+	include('./scripts/view_settings.php'); 	
 ?>
 
 <!doctype html>
@@ -35,100 +35,6 @@
 <script type="text/javascript" src="./assets/js/hijricalendar.js"></script>
 <!-- Template Main JS File -->
 <script src="./assets/js/main.js"></script>
-
-<script>
-  $(document).ready(function() {      
-
-    $('#uploadBtn').click(function() {     
-              
-      var fd = new FormData();
-      var files = $('#file')[0].files[0];
-      fd.append('file',files);
-
-      $.ajax({
-          url: 'upload.php',
-          type: 'post',
-          data: fd,
-          contentType: false,
-          processData: false,
-          success: function(response){
-              if (response != 0) {
-                  alert('File berhasil diupload');
-              }else{
-                  alert('file not uploaded');
-              }
-          }
-      });
-                
-    });
-
-
-    $("#aboutBtn").click(function(){
-      $("#aboutModal").modal();
-    }); 
-    
-    $("#editBtn").click(function(){
-      $("#editModal").modal();       
-    });   
-    
-    $("#simpan").click(function(){
-
-    	var nama_masjid = $("#nama_masjid").val();
-    	var alamat_masjid = $("#alamat_masjid").val();
-    	var running_teks = $("#running_teks").val();
-    	var kecepatan_teks = $("#kecepatan_teks").val();
-      var durasi_slide = $("#durasi_slide").val();
-    	var koreksi_hijriah = $("#koreksi_hijriah").val();
-    	var durasi_adzan = $("#durasi_adzan").val();
-    	var iqomah_shubuh = $("#iqomah_shubuh").val();
-    	var iqomah_dzuhur = $("#iqomah_dzuhur").val();
-    	var iqomah_ashar = $("#iqomah_ashar").val();
-    	var iqomah_maghrib = $("#iqomah_maghrib").val();
-    	var iqomah_isya = $("#iqomah_isya").val();
-    	var garis_lintang = $("#garis_lintang").val();
-    	var garis_bujur = $("#garis_bujur").val();
-    	var zona_waktu = $("#zona_waktu").val();
-    	var metode_perhitungan = $("#metode_perhitungan").val();    	
-    	
-    	$.ajax({
-                url:'update.php',
-                type:'POST',
-                data:{
-                	nama_masjid:nama_masjid,
-                	alamat_masjid:alamat_masjid,
-                	running_teks:running_teks,
-                	kecepatan_teks:kecepatan_teks,
-                  durasi_slide:durasi_slide,
-                	koreksi_hijriah:koreksi_hijriah,
-                	durasi_adzan:durasi_adzan,
-                	iqomah_shubuh:iqomah_shubuh,
-                	iqomah_dzuhur:iqomah_dzuhur,
-                	iqomah_ashar:iqomah_ashar,
-                	iqomah_maghrib:iqomah_maghrib,
-                	iqomah_isya:iqomah_isya,
-                	garis_lintang:garis_lintang,
-                	garis_bujur:garis_bujur,
-                	zona_waktu:zona_waktu,
-                	metode_perhitungan:metode_perhitungan
-                },
-                	success:function(data){
-                		alert(data);
-                		$("#NamaMasjid").text('' + nama_masjid);
-                		$("#AlamatMasjid").text('' + alamat_masjid);
-                		$("#RunningTeks").text('' + running_teks);
-                		$("#KoreksiHijriah").text('' + koreksi_hijriah);
-                    $("#KecepatanTeks").text('' + kecepatan_teks);
-                	
-                		$('#editModal').modal('hide');
-                    
-                }
-        });    
-
-    });
-    
-
-  });
-</script>
 
 <?php
 	$day1 = date('Y');	

@@ -3,8 +3,8 @@
       <div class="row justify-content-center">
         <div class="col-xl-11 col-lg-11 col-md-11 d-flex align-items-center">
           <span class="logo mr-auto">
-            <p class="nama" id="NamaMasjid"><?php echo $nama_masjid; ?></p>
-            <p class="alamat" id="AlamatMasjid"><?php echo $alamat_masjid; ?></p>
+            <p class="nama"><?php echo $nama_masjid; ?></p>
+            <p class="alamat"><?php echo $alamat_masjid; ?></p>
             <p class="tanggal" id="penanggalan">[KALENDER]</p>
           </span>
         </div>
@@ -30,18 +30,6 @@
 </section>
 <!-- ======= Intro ======= -->
 
-<!-- ======= Time Counter Section ======= -->
-<!--
-<section id="counter">
-  <div class="intro-container ">               
-      <div class="text">
-          <h2>Menjelang Adzan</h2>   
-      </div>          
-  </div>
-</section>
--->
-<!-- ======= Time Counter Section ======= -->
-
 <!-- ======= Clock Section ======= -->
 <section id="clock">
   <div class="intro-container">               
@@ -59,7 +47,7 @@
 <section id="text">
   <div class="intro-container">               
       <div class="running-text">          
-          <h3><marquee scrollamount="<?php echo $kecepatan_teks; ?>" id="RunningTeks"><?php echo $running_teks; ?></marquee></h3>        
+          <h3><marquee scrollamount="<?php echo $kecepatan_teks; ?>"><?php echo $running_teks; ?></marquee></h3>        
       </div>
   </div>
 </section>
