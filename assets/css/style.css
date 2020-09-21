@@ -44,22 +44,6 @@ label {
   font-weight: 700;
 }
 
-.image-preview{
-  display:none;
-  width : 195px;
-  height : 130px;
-}
-
-.image-slide-preview {
-  width: 195px;
-  height: 130px;
-}
-
-.modal-content {
-    /* 80% of window height */
-    height: 90%;
-}
-
 
 
 /*--------------------------------------------------------------

@@ -1,0 +1,41 @@
+
+.sidebar .nav-link {
+    color: #333;
+}
+
+.sidebar .nav-link.active {
+    color: #0d6efd;
+}
+               
+.card-header {
+    background: rgba(120, 175, 159, 0.3);
+    color: #007070;
+    font-weight: 500;
+}
+
+.list-group-item.active {  
+    background-color: #007070;
+    border-color: #78af9f;
+}
+
+
+.image-preview{
+  display:none;
+  width : 195px;
+  height : 130px;
+}
+
+.image-slide-preview {
+  width: 195px;
+  height: 130px;
+}
+
+.modal-content {
+    /* 80% of window height */
+    height: 90%;
+}
+
+
+label {
+  font-weight: 700;
+}
