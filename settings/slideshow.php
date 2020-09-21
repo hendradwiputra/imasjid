@@ -2,7 +2,7 @@
 
  	include("./scripts/db_connection.php");
 
-	$sql = "SELECT t1.name,t2.judul,t2.isi FROM images t1 INNER JOIN slides t2 ON t1.id = t2.image_id";
+	$sql = "SELECT t1.name,t2.* FROM images t1 INNER JOIN slides t2 ON t1.id = t2.image_id";
 	$result = $conn->query($sql);
 	
 	$count = 0;
@@ -10,8 +10,10 @@
 		foreach ($result as $data) { 
 			$image = $data['name'];
 			$judul = $data['judul'];
-			$isi = $data['isi'];
-		
+			$isi1 = $data['isi1'];
+			$isi2 = $data['isi2'];
+			$isi3 = $data['isi3'];
+			$isi4 = $data['isi4'];
 
 			if ($count == 0) { $class = 'carousel-item active';} else { $class = 'carousel-item'; }
 

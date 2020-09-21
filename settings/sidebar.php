@@ -1,8 +1,8 @@
 <?php 
-  include('../scripts/retrieve.php'); 
+  include('../scripts/view_settings.php'); 
   include('slideModal.php'); 
 ?>
-<form method="post" enctype="multipart/form-data">
+<form method="POST" enctype="multipart/form-data">
   <div class="container-fluid">
     <h1 class="card-header">iMasjid</h1><br>
     <div class="row">      
@@ -64,7 +64,7 @@
                   <select name="zona_waktu" id="zona_waktu" class="form-control col-md-2">
                     <option <?php if ($zona_waktu==+7) echo 'selected = "selected"'; ?> value="+7">+7</option>
                     <option <?php if ($zona_waktu==+8) echo 'selected = "selected"'; ?> value="+8">+8</option>                   
-                  </select>
+                  </select>                  
                 </div>
               </div>
             </div>                       
@@ -235,7 +235,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>          
           <!-- Slide --> 
 
           <!-- Tentang Aplikasi -->
@@ -263,7 +263,8 @@
 
           <br>
           <div class="form-group">
-            <button type="button" class="btn btn-outline-success" id="simpan">Simpan</button>            
+            <input type="hidden" name="setting_id" id="setting_id" value="<?php echo $setting_id; ?>">
+            <button type="button" class="btn btn-outline-success" id="saveSetting">Simpan</button>         
           </div>
 
         </div>

@@ -16,88 +16,20 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css"> 
 
+<!-- Custom styles for this template -->
+<link href="../assets/css/style2.css" rel="stylesheet">
+
 <!-- Jquery -->
 <script src="../assets/js/jquery-3.5.1.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-<style>
-        .sidebar {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 100;
-            padding: 90px 0 0;
-            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            z-index: 99;
-        }
-
-        @media (max-width: 767.98px) {
-            .sidebar {
-                top: 11.5rem;
-                padding: 0;
-            }
-        }
-            
-        .navbar {
-            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .1);
-        }
-
-        @media (min-width: 767.98px) {
-            .navbar {
-                top: 0;
-                position: sticky;
-                z-index: 999;
-            }
-        }
-
-        .sidebar .nav-link {
-            color: #333;
-        }
-
-        .sidebar .nav-link.active {
-            color: #0d6efd;
-        }
-
-        label {
-            font-weight: 700;
-        }
-
-        .image-preview{
-            display:none;
-            width : 195px;
-            height : 130px;
-        }
-
-        .image-slide-preview {
-            width: 195px;
-            height: 130px;
-        }
-
-        .card-body {
-            height: 90%;
-        }
-
-        .card-header {
-            background: rgba(120, 175, 159, 0.3);
-            color: #007070;
-            font-weight: 500;
-        }
-
-        .list-group-item.active {  
-            background-color: #007070;
-            border-color: #78af9f;
-        }
-        
-    </style>
-
 
 <script>
 $(document).ready(function() { 
-    // Slides
+    // Slides Table
     $.ajax({
-        url: "view_slides.php",
+        url: 'view_slides.php',
         type: "POST",
         cache: false,
         success: function(dataResult){
@@ -120,22 +52,38 @@ $(document).ready(function() {
                 $('#no').val(data.no);
                 $('#slide').val(data.slide);
                 $('#judul').val(data.judul);  
-                $('#isi').val(data.isi);
+                $('#isi1').val(data.isi1);
+                $('#isi2').val(data.isi2);
+                $('#isi3').val(data.isi3);
+                $('#isi4').val(data.isi4);
+                $('#image_id').val(data.image_id);
                 $('#slideModal').modal('show');
             }
         });        
     }); 
 
     $("#saveSlide").click(function(){
+        var no = $("#no").val();
+        var slide = $("#slide").val();
         var judul = $("#judul").val();        
-        var isi = $("#isi").val(); 
+        var isi1 = $("#isi1").val();
+        var isi2 = $("#isi2").val(); 
+        var isi3 = $("#isi3").val(); 
+        var isi4 = $("#isi4").val();  
+        var image_id = $("#image_id").val();
+        
         $.ajax({
                 url:'updateSlide.php',
                 type:'POST',
                 data:{
-                    //no:no,
+                    no:no,
+                    slide:slide,
                     judul:judul, 
-                    isi:isi
+                    isi1:isi1,
+                    isi2:isi2,
+                    isi3:isi3,
+                    isi4:isi4,
+                    image_id:image_id
                 },
                 success:function(data){
                     alert(data);
@@ -144,8 +92,7 @@ $(document).ready(function() {
             });      
     });
 
-    //
-
+    // Images Table
     $('#uploadBtn').click(function() {              
       var fd = new FormData();
       var files = $('#file')[0].files[0];
@@ -167,8 +114,9 @@ $(document).ready(function() {
       });                
     });    
     
-    $("#simpan").click(function(){
-
+    //Settings Table    
+    $("#saveSetting").click(function(){
+        var setting_id = $("#setting_id").val();
         var nama_masjid = $("#nama_masjid").val();
         var alamat_masjid = $("#alamat_masjid").val();
         var running_teks = $("#running_teks").val();
@@ -187,9 +135,10 @@ $(document).ready(function() {
         var metode_perhitungan = $("#metode_perhitungan").val();        
         
         $.ajax({
-                url:'update.php',
+                url:'updateSetting.php',
                 type:'POST',
                 data:{
+                    setting_id:setting_id,
                     nama_masjid:nama_masjid,
                     alamat_masjid:alamat_masjid,
                     running_teks:running_teks,
@@ -208,12 +157,7 @@ $(document).ready(function() {
                     metode_perhitungan:metode_perhitungan
                 },
                     success:function(data){
-                        alert(data);
-                        $("#NamaMasjid").text('' + nama_masjid);
-                        $("#AlamatMasjid").text('' + alamat_masjid);
-                        $("#RunningTeks").text('' + running_teks);
-                        $("#KoreksiHijriah").text('' + koreksi_hijriah);
-                        $("#KecepatanTeks").text('' + kecepatan_teks);                     
+                        alert(data);                                       
                 }
         });
     });        
