@@ -1,40 +1,29 @@
 <?php
-  //https://makitweb.com/make-bootstrap-modal-file-upload-preview-jquery-ajax/
-  include("../scripts/db_connection.php");
-
-  //if(isset($_POST['uploadBtn'])) {
-    $name = $_FILES['file']['name'];
-    $target_file = '../assets/images/'.$name;
-
-    // file extension
-    $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
-    $file_extension = strtolower($file_extension);
-
-    // Valid image extensions
-    $image_ext = array("jpg","png","jpeg","gif");
   
-    $response = 0;
-    if (in_array($file_extension,$image_ext)) {
-      // Convert to base64 
-      $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']) );
-      $image = 'data:image/'.$file_extension.';base64,'.$image_base64;
+    /* Getting file name */
+    $filename = $_FILES['file']['name'];
+    /* Location */
+    $location = "../assets/images/".$filename;
+    $uploadOk = 1;
+    $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
 
-      // Insert record
-      $sql = "insert into images (name,image) values('".$name."','".$image."')";           
-      $result = $conn->query($sql);      
-      
-      if(move_uploaded_file($_FILES['file']['tmp_name'],$target_file)){
-        $response = $target_file;
+    /* Valid Extensions */
+    $valid_extensions = array("jpg","jpeg","png");
+    /* Check file extension */
+    if( !in_array(strtolower($imageFileType),$valid_extensions) ) {
+      $uploadOk = 0;
+    }
+
+    if($uploadOk == 0){
+      echo 0;
+    }else{
+    /* Upload file */
+      if(move_uploaded_file($_FILES['file']['tmp_name'],$location)){
+        echo $location;
+      }else{
+        echo 0;
       }
     }
-    echo $response;
-
-    // -----------
-  
 
 
-
-  //}
-
- 
   ?>

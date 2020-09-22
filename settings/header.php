@@ -27,6 +27,30 @@
 
 <script>
 $(document).ready(function() { 
+     
+    $('#uploadBtn').click(function() {  
+        var fd = new FormData();
+        var files = $('#file')[0].files[0];
+        fd.append('file',files);
+
+        $.ajax({
+            url: 'upload.php',
+            type: 'post',
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function(response){
+                if(response != 0){
+                    alert('File sudah diupload');
+                    $("#img").attr("src",response); 
+                    $("img").show();
+                }else{
+                    alert('file not uploaded');
+                }
+            },
+        });     
+    });    
+
     // Slides Table
     $.ajax({
         url: 'view_slides.php',
@@ -92,29 +116,7 @@ $(document).ready(function() {
                     $('#table').html(data);                    
                 }
             });      
-    });
-
-    // Images Table
-    $('#uploadBtn').click(function() {              
-      var fd = new FormData();
-      var files = $('#file')[0].files[0];
-      fd.append('file',files);
-
-      $.ajax({
-          url: 'upload.php',
-          type: 'post',
-          data: fd,
-          contentType: false,
-          processData: false,
-          success: function(response){
-              if (response != 0) {
-                  alert('File berhasil diupload');
-              }else{
-                  alert('File gagal diupload');
-              }
-          }
-      });                
-    });    
+    });   
     
     //Settings Table    
     $("#saveSetting").click(function(){

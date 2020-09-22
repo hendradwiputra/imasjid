@@ -29,11 +29,9 @@
         </div>
         <div class="form-group">
           <label>Pilih Gambar </label>
-          <input type="file" name="file" id="file" class="btn btn-sm btn-outline-success" onchange="previewImage();"/>          
+          
         </div>
-        <div class="form-group">
-          <img id="image-preview" alt="image preview" class="image-preview border border-dark">
-        </div>
+        
       </div>
       
       <div class="modal-footer">
@@ -45,16 +43,3 @@
   </div>
 </div>
 </form>
-
-<script type="text/javascript">
-    // https://agung-setiawan.com/preview-image-before-upload/
-    function previewImage() {
-      document.getElementById("image-preview").style.display = "block";
-      var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("file").files[0]);
- 
-      oFReader.onload = function(oFREvent) {
-        document.getElementById("image-preview").src = oFREvent.target.result;
-      };
-    };   
-</script>

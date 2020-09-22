@@ -11,7 +11,7 @@
           <a class="list-group-item list-group-item-action active" id="list-pengaturan-list" data-toggle="list" href="#list-pengaturan" role="tab" aria-controls="pengaturan">Pengaturan</a>
           <a class="list-group-item list-group-item-action" id="list-notifikasi-list" data-toggle="list" href="#list-notifikasi" role="tab" aria-controls="notifikasi">Notifikasi</a>
           <a class="list-group-item list-group-item-action" id="list-teks-list" data-toggle="list" href="#list-teks" role="tab" aria-controls="teks">Teks Berjalan</a>
-          <!--<a class="list-group-item list-group-item-action" id="list-upload-list" data-toggle="list" href="#list-upload" role="tab" aria-controls="upload">Upload</a>-->
+          <a class="list-group-item list-group-item-action" id="list-upload-list" data-toggle="list" href="#list-upload" role="tab" aria-controls="upload">Upload</a>
           <a class="list-group-item list-group-item-action" id="list-slides-list" data-toggle="list" href="#list-slides" role="tab" aria-controls="slides">Slide</a>
           <a class="list-group-item list-group-item-action" id="list-about-list" data-toggle="list" href="#list-about" role="tab" aria-controls="about">Tentang Aplikasi</a>
         </div>
@@ -169,34 +169,28 @@
           </div>
           <!-- Teks Berjalan -->          
 
-          <!-- Upload 
+          <!-- Upload --> 
           <div class="tab-pane fade" id="list-upload" role="tabpanel" aria-labelledby="list-upload-list">
             <div class="card">
             <h5 class="card-header">Upload Gambar</h5>
               <div class="card-body">
-                <div class="form-group">                  
-                  <div>
+                <div class="form-group"> 
+                  <div class="form-group">          
                     <img id="image-preview" alt="image preview" class="image-preview border border-dark">
-                  </div>                             
-                  <input type="file" name="file" id="file" class="btn btn-sm btn-outline-success"  onchange="previewImage();"/>                  
-                </div>
-                <div class="form-group">
-                  <label>Keterangan</label>
-                  <input type="text" name="description" id="description" class="form-control col-md-8">
-                </div>
+                  </div>                            
+                  <input type="file" name="file" id="file" class="btn btn-sm btn-outline-info" onchange="previewImage();"/>                  
+                </div>                
                 <div class="form-group">
                   <button type="button" class="btn btn-outline-success" id="uploadBtn">Upload</button>  
                 </div>                
                 <br>
                 <div class="form-group">
-                  <label for="exampleFormControlSelect1">Gallery</label>
-                  <div class="media">
-                    <?php include('../settings/view_images.php'); ?>                    
-                  </div> 
-                </div>       
+                  <label for="exampleFormControlSelect1">Gallery</label>   
+                  <?php include('dir_images.php'); ?> 
+                </div>                    
               </div>
             </div>
-          </div>-->
+          </div>
           <!-- Upload -->
 
           <!-- Slide -->
@@ -219,15 +213,15 @@
                   <button type="button" class="btn btn-success" id="addSlide">Tambah Slide</button>     
                 </div>
                 <div class="form-group">  
-                  <table class="table table-sm table-responsive">
-                    <thead>
+                  <table class="table table-sm table-responsive table-borderless">
+                    <thead class="thead-dark">
                       <tr>
                         <th>No</th>
                         <th>Judul</th>
                         <th>Isi</th>
                         <th>Gambar</th>
                         <th>Aktif</th>
-                        <th colspan="2"></th>
+                        <th colspan="2">#</th>
                       </tr>
                     </thead>
                     <tbody id="table"></tbody>                  

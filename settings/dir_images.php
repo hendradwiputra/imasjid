@@ -10,12 +10,11 @@
                 array_push($images, $image);
             }
         }        
-        
-        echo "<table id='gallery' cellpadding=5 width='100%' align = 'left'><tr>";
+                
+        echo "<table cellpadding='10' class='table-responsive' align = 'left'><tr>";
         $count = 0;
         foreach ($images as  $value) {           
-            echo "<td valign='bottom'><a href='#'><img src='thumbnails.php?image=".$value."' height='80px' width='120px'></a>\n<a href='".$image_dir.$value."'></a></td>";
-                    
+            echo "<td valign='bottom'><a href='#'><img id='img' src='thumbnails.php?image=".$value."' height='100px' width='140px'></a>\n<a href='".$image_dir.$value."'></a></td>";                    
             $count++;
             if($count >=6){
                 echo "</tr><tr>";                
