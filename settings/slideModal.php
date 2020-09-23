@@ -27,9 +27,23 @@
         <div class="form-group">
           <textarea class="form-control" name="isi4" id="isi4" rows="3"></textarea>
         </div>
-        <div class="form-group">
-          <label>Pilih Gambar </label>
-          
+        <div class="form-group row">
+          <div class="col-sm-3">
+            <label>Gambar</label>
+          </div>
+          <div class="col-sm-9">
+            <label>Ganti Gambar</label>
+          </div>
+        </div>
+        <div class="form-group row"> 
+          <div class="col-sm-3">
+            <img id="img" src="" width="160px" height="120px" class="img border border-dark">
+          </div>
+          <div class="col-sm-9">
+            <table class='table table-sm table-bordered table-responsive'>              
+              <tbody id="tableImage"></tbody>
+            </table> 
+          </div>
         </div>
         
       </div>
@@ -43,3 +57,4 @@
   </div>
 </div>
 </form>
+

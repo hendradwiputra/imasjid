@@ -14,8 +14,14 @@
           <a class="list-group-item list-group-item-action" id="list-upload-list" data-toggle="list" href="#list-upload" role="tab" aria-controls="upload">Upload</a>
           <a class="list-group-item list-group-item-action" id="list-slides-list" data-toggle="list" href="#list-slides" role="tab" aria-controls="slides">Slide</a>
           <a class="list-group-item list-group-item-action" id="list-about-list" data-toggle="list" href="#list-about" role="tab" aria-controls="about">Tentang Aplikasi</a>
+        </div><br>
+        <small>* Perubahan akan diupdate setiap 5 menit</small>        
+        <div class="form-group">
+          <div class="float-right">
+            <input type="hidden" name="setting_id" id="setting_id" value="<?php echo $setting_id; ?>">
+            <button type="button" class="btn btn-outline-success" id="saveSetting" class="float-right">Simpan</button>         
+          </div>
         </div>
-        <small>* Perubahan akan diupdate setiap 5 menit</small>
       </div>
 
       <div class="col-9">
@@ -184,9 +190,11 @@
                   <button type="button" class="btn btn-outline-success" id="uploadBtn">Upload</button>  
                 </div>                
                 <br>
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">Gallery</label>   
-                  <?php include('dir_images.php'); ?> 
+                <div class="form-group"> 
+                  <table class='table table-sm table-bordered table-responsive'>
+                    <thead class="thead-dark"><th colspan="6">Galery</th></thead>
+                    <tbody id="tableUpload"></tbody>
+                  </table>  
                 </div>                    
               </div>
             </div>
@@ -209,7 +217,7 @@
                     <option <?php if ($durasi_slide==21000) echo 'selected = "selected"'; ?> value="21000">21 Detik</option>              
                   </select> 
                 </div>
-                <div class="form-group float-right">
+                <div class="form-group">
                   <button type="button" class="btn btn-success" id="addSlide">Tambah Slide</button>     
                 </div>
                 <div class="form-group">  
@@ -244,20 +252,13 @@
                   <p><i class="fas fa-phone-square-alt"></i> 62-811-6077-81</p>                  
                   <p><i class="fab fa-github"></i> https://github.com/hendradwiputra/imasjid</p>                  
                 </div>
-                <br>
-                
+                <br>                
                 <h4>Copyright</h4>
                 <p>Aplikasi ini <strong>bebas</strong> dipakai/dikembangkan oleh siapa saja. <strong>Dilarang</strong> memperjualbelikan aplikasi ini.</p>
             </div>
             </div>
           </div>
           <!-- Tentang Aplikasi --> 
-
-          <br>
-          <div class="form-group">
-            <input type="hidden" name="setting_id" id="setting_id" value="<?php echo $setting_id; ?>">
-            <button type="button" class="btn btn-outline-success" id="saveSetting">Simpan</button>         
-          </div>
 
         </div>
       </div>
