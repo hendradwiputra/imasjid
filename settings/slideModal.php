@@ -27,29 +27,20 @@
         <div class="form-group">
           <textarea class="form-control" name="isi4" id="isi4" rows="3"></textarea>
         </div>
-        <div class="form-group row">
-          <div class="col-sm-3">
+        <div class="form-group">           
             <label>Gambar</label>
-          </div>
-          <div class="col-sm-9">
-            <label>Ganti Gambar</label>
-          </div>
+            <div>
+              <img id="img" src="" width="160px" height="120px" class="img border border-dark">
+            </div>
         </div>
-        <div class="form-group row"> 
-          <div class="col-sm-3">
-            <img id="img" src="" width="160px" height="120px" class="img border border-dark">
-          </div>
-          <div class="col-sm-9">
-            <table class='table table-sm table-bordered table-responsive'>              
-              <tbody id="tableImage"></tbody>
-            </table> 
-          </div>
+        <div class="form-group">
+            <input type="file" name="foto" id="foto" class="btn btn-sm btn-outline-info" onchange="previewImage2();"/>                              
         </div>
         
       </div>
       
       <div class="modal-footer">
-        <input type="hidden" name="slide_id" id="slide_id">      
+        <input type="text" name="slide_id" id="slide_id">      
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
         <button type="button" class="btn btn-success" id="saveSlide">Simpan</button>
       </div>
@@ -58,3 +49,15 @@
 </div>
 </form>
 
+<script type="text/javascript">
+    // https://agung-setiawan.com/preview-image-before-upload/
+    function previewImage2() {
+      document.getElementById("img").style.display = "block";
+      var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("foto").files[0]);
+ 
+      oFReader.onload = function(oFREvent) {
+        document.getElementById("img").src = oFREvent.target.result;
+      };
+    };   
+</script>

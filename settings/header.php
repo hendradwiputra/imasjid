@@ -61,9 +61,6 @@ $(document).ready(function() {
             success: function(response){
                 if(response != 0){
                     alert('File sudah diupload');
-                    //$("#img").attr("src",response); 
-                    //$("img").show();
-                    //$('#tableUpload').html(response);
                     $('#tableUpload').html(response); 
                 }else{
                     alert('File gagal diupload');
@@ -107,8 +104,10 @@ $(document).ready(function() {
         }
     });    
 
-    $(document).on('click', '.edit_data', function() {         
-        var slide_id = $(this).attr("id");        
+    $(document).on('click', '.edit_data', function() { 
+        var slide_id = $(this).attr("id");   
+        var data = new FormData();  //      
+       
         $.ajax({
             url:"fetch.php",
             method:"POST",
@@ -121,41 +120,37 @@ $(document).ready(function() {
                 $('#isi1').val(data.isi1);
                 $('#isi2').val(data.isi2);
                 $('#isi3').val(data.isi3);
-                $('#isi4').val(data.isi4);
-                $('#img').attr("src","../assets/images/" + data.filename);
+                $('#isi4').val(data.isi4);        
+                $('#img').attr("src","../assets/images/" + data.foto);             
                 $('#slideModal').modal('show');
             }
         });        
     });     
 
-    $("#saveSlide").click(function(){        
-        var slide_id = $("#slide_id").val();
-        var judul = $("#judul").val();        
-        var isi1 = $("#isi1").val();
-        var isi2 = $("#isi2").val(); 
-        var isi3 = $("#isi3").val(); 
-        var isi4 = $("#isi4").val(); 
-        var filename = $("#filename").val();
+    $("#saveSlide").click(function(){  
+        //https://www.mynotescode.com/cara-membuat-crud-plus-upload-gambar-dengan-php-ajax-bootstrap/ 
+        var data = new FormData();    
+        data.append('slide_id', $("#slide_id").val());
+        data.append('judul', $("#judul").val());
+        data.append('isi1', $("#isi1").val());
+        data.append('isi2', $("#isi2").val());
+        data.append('isi3', $("#isi3").val());
+        data.append('isi4', $("#isi4").val());
+        data.append('foto', $("#foto")[0].files[0]);
         
         $.ajax({
                 url:'updateSlide.php',
                 type:'POST',
-                data:{
-                    slide_id:slide_id,
-                    judul:judul, 
-                    isi1:isi1,
-                    isi2:isi2,
-                    isi3:isi3,
-                    isi4:isi4,
-                    filename:filename
-                },
-                success:function(data){
-                    alert(data);
+                contentType: false,
+                processData: false,
+                data:data,
+                success:function(response){
+                    alert(response);
                     $('#insert_form')[0].reset();                     
                     $('#slideModal').modal('hide');
-                    $('#table').html(data);                    
+                    $('#table').html(response);                    
                 }
-            });      
+        });
     });   
     
     //Settings Table    
