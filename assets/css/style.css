@@ -30,7 +30,7 @@ a:hover, a:active, a:focus {
 
 p {
   padding: 0;
-  margin: 0 0 0px 0;
+  margin: 0 0 0 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -296,9 +296,9 @@ label {
 
 #intro h2 {
   color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 700;;
 }
 
 @media (max-width: 768px) {
@@ -309,10 +309,10 @@ label {
 
 #intro p {
   width: 100%;
-  margin: 0 auto 30px auto;
+  margin: 0px auto 0px auto;
   color: #fff;
   font-size: 35px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 @media (min-width: 1024px) {
