@@ -17,7 +17,7 @@
 			$foto = $data['foto'];			
   	?>
 			<tr>
-				<td rowspan="4"><?php echo $count; ?></td>;	
+			<td rowspan="4"><?php echo $count; ?></td>;	
       			<td rowspan="4"><?php echo $judul; ?></td>;
       			<td><?php echo $isi1; ?></td>;
       			<td rowspan="4"><img src='../assets/images/<?php echo $foto; ?>' width='120px' height='80px'></td>;

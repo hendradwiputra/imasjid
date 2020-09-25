@@ -120,7 +120,7 @@ $(document).ready(function() {
                 $('#isi1').val(data.isi1);
                 $('#isi2').val(data.isi2);
                 $('#isi3').val(data.isi3);
-                $('#isi4').val(data.isi4);        
+                $('#isi4').val(data.isi4);    
                 $('#img').attr("src","../assets/images/" + data.foto);             
                 $('#slideModal').modal('show');
             }

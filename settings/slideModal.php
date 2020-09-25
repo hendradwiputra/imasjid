@@ -34,13 +34,12 @@
             </div>
         </div>
         <div class="form-group">
-            <input type="file" name="foto" id="foto" class="btn btn-sm btn-outline-info" onchange="previewImage2();"/>                              
-        </div>
-        
+            <input type="file" name="foto" id="foto" class="btn btn-sm btn-outline-info" onchange="previewImage2();"/>                           
+        </div>        
       </div>
       
       <div class="modal-footer">
-        <input type="text" name="slide_id" id="slide_id">      
+        <input type="hidden" name="slide_id" id="slide_id">      
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
         <button type="button" class="btn btn-success" id="saveSlide">Simpan</button>
       </div>

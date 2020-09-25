@@ -19,13 +19,17 @@
   }
   
   if($uploadOk == 0){
-      echo 0;
+    //echo 0;
+    // if no image selected the old image remain as it is.
+    $sql = "SELECT foto FROM slides where slide_id='".$_POST["slide_id"]."'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $foto = $row['foto']; 
   } else {
-    /* Upload file */
     if(move_uploaded_file($_FILES['foto']['tmp_name'],$location)){
-       echo $location;
+      echo $location;
     } else {
-       echo 0;
+      echo 0;
     }
   }
     
