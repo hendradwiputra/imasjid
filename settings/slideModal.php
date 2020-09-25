@@ -9,7 +9,16 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">        
+      <div class="modal-body"> 
+        <div class="form-group">           
+          <label>Gambar</label>
+          <div>
+              <img id="img" src="" width="160px" height="120px" class="img border border-dark">
+          </div>
+        </div>
+        <div class="form-group">
+            <input type="file" name="foto" id="foto" class="btn btn-sm btn-outline-info" onchange="previewImage2();"/>                           
+        </div>            
         <div class="form-group">
           <label>Judul</label>
           <input type="text" name="judul" id="judul" class="form-control col">
@@ -19,23 +28,14 @@
           <textarea class="form-control" name="isi1" id="isi1" rows="3"></textarea>
         </div>
         <div class="form-group">
-          <textarea class="form-control" name="isi2" id="isi2" rows="3"></textarea>
+          <textarea class="form-control" name="isi2" id="isi2" rows="2"></textarea>
         </div>
         <div class="form-group">
-          <textarea class="form-control" name="isi3" id="isi3" rows="3"></textarea>
+          <textarea class="form-control" name="isi3" id="isi3" rows="2"></textarea>
         </div>
         <div class="form-group">
-          <textarea class="form-control" name="isi4" id="isi4" rows="3"></textarea>
-        </div>
-        <div class="form-group">           
-            <label>Gambar</label>
-            <div>
-              <img id="img" src="" width="160px" height="120px" class="img border border-dark">
-            </div>
-        </div>
-        <div class="form-group">
-            <input type="file" name="foto" id="foto" class="btn btn-sm btn-outline-info" onchange="previewImage2();"/>                           
-        </div>        
+          <textarea class="form-control" name="isi4" id="isi4" rows="2"></textarea>
+        </div>           
       </div>
       
       <div class="modal-footer">
