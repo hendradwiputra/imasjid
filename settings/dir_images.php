@@ -15,7 +15,7 @@
         echo "<tr>";
         $count = 0;
         foreach ($images as  $value) {           
-            echo "<td valign='bottom'><a href='#'><img src='thumbnails.php?image=".$value."' height='100px' width='140px'></a>\n<a href='".$image_dir.$value."'></a></td>";                    
+            echo "<td valign='bottom'><a href='".$value."'><img src='thumbnails.php?image=".$value."' height='100px' width='140px'></a>\n<a href='".$image_dir.$value."'></a></td>";                    
             $count++;
             if($count >=6){
                 echo "</tr><tr>";                
