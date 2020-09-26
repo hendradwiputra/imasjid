@@ -9,7 +9,6 @@
 # General
 --------------------------------------------------------------*/
 
-
 body {
   
   /*font-family: "Open Sans", sans-serif;  */
@@ -30,7 +29,7 @@ a:hover, a:active, a:focus {
 
 p {
   padding: 0;
-  margin: 0 0 0 0;
+  margin: 0 0 0px 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -43,7 +42,6 @@ h1, h2, h3, h4, h5, h6 {
 label {
   font-weight: 700;
 }
-
 
 
 /*--------------------------------------------------------------
@@ -62,7 +60,7 @@ label {
 
 #header .logo {
   font-size: 40px;
-  color: #f7dc6f;  
+  color: #ffd152;  
   line-height: 1;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -295,10 +293,10 @@ label {
 }
 
 #intro h2 {
-  color: #fff;
-  margin-bottom: 25px;
-  font-size: 48px;
-  font-weight: 700;;
+  color: #ffd152;
+  margin-bottom: 30px;
+  font-size: 58px;
+  font-weight: 700;
 }
 
 @media (max-width: 768px) {
@@ -309,9 +307,9 @@ label {
 
 #intro p {
   width: 100%;
-  margin: 0px auto 0px auto;
+  margin: 0 auto 0 auto;
   color: #fff;
-  font-size: 35px;
+  font-size: 45px;
   font-weight: 600;
 }
 
@@ -383,7 +381,7 @@ label {
  
 #clock .left { 
   background: rgba(120, 175, 159, 0.3);  
-  color: #fff; 
+  color: #ffd152;
   position: absolute;  
   bottom: 50px;
   z-index: 2;  
@@ -396,7 +394,7 @@ label {
 
 #clock .right { 
   background: rgba(120, 175, 159, 0.3);
-  color: #fff; 
+  color: #ffd152; 
   position: absolute;  
   bottom: 50px;
   z-index: 2;  
@@ -493,7 +491,7 @@ label {
 }
 
 #prayer .selected {
-  color: #fff;
+  color: #ffd152;
   background: rgba(0,112,112);
   padding: 0px 20px 0px;  
   padding-top: 0px;
