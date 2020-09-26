@@ -4,7 +4,20 @@
 
 	$sql = "SELECT * FROM slides";
 	$result = $conn->query($sql);
-	
+?>    
+      <table  id="table" class="table table-sm table-responsive table-borderless">
+      <thead class="thead-dark">
+        <tr>
+            <th>No</th>
+            <th>Judul</th>
+            <th>Isi</th>
+            <th>Gambar</th>
+            <th>Aktif</th>
+            <th colspan="2">#</th>
+        </tr>
+      </thead>
+      <tbody>      
+<?php 
 	$count = 1;
 	if ($result->num_rows > 0) {
 		foreach ($result as $data) {	
@@ -15,7 +28,7 @@
 			$isi3 = $data['isi3'];
 			$isi4 = $data['isi4'];
 			$foto = $data['foto'];			
-  	?>
+?>
 			<tr>
 			<td rowspan="4"><?php echo $count; ?></td>;	
       			<td rowspan="4"><?php echo $judul; ?></td>;
@@ -35,9 +48,12 @@
       			<td><?php echo $isi4; ?></td>	
       		</tr>      		
       		
-    <?php
+<?php
 			$count++;
 		}				
-	}	
+	}
 ?>
+      </tbody>
+      </table> 	
+
 

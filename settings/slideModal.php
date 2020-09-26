@@ -1,3 +1,10 @@
+<?php
+    /*include("../scripts/db_connection.php");
+    $sql = "SELECT foto FROM slides where slide_id=1";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();*/
+    $foto = $row['foto']; 
+?>
 <!-- Modal -->
 <form method="POST" enctype="multipart/form-data" id="insert_form">
 <div class="modal fade" id="slideModal">
@@ -9,16 +16,19 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body"> 
+      <div class="modal-body">
         <div class="form-group">           
           <label>Gambar</label>
           <div>
-              <img id="img" src="" width="160px" height="120px" class="img border border-dark">
+            <img id="img" src="" width="160px" height="120px" class="img border border-dark">             
           </div>
+          <div><small>Ukuran file harus di bawah 1 MB.</small></div>
+          <div><small>Format file harus jpg, jpeg atau png.</small></div>
+          <div><input type="text" name="foto" id="foto" class="btn btn-sm btn-outline-info" value="<?php echo $foto; ?>"></div>
         </div>
         <div class="form-group">
             <input type="file" name="foto" id="foto" class="btn btn-sm btn-outline-info" onchange="previewImage2();"/>                           
-        </div>            
+        </div>         
         <div class="form-group">
           <label>Judul</label>
           <input type="text" name="judul" id="judul" class="form-control col">
@@ -28,14 +38,14 @@
           <textarea class="form-control" name="isi1" id="isi1" rows="3"></textarea>
         </div>
         <div class="form-group">
-          <textarea class="form-control" name="isi2" id="isi2" rows="2"></textarea>
+          <textarea class="form-control" name="isi2" id="isi2" rows="3"></textarea>
         </div>
         <div class="form-group">
-          <textarea class="form-control" name="isi3" id="isi3" rows="2"></textarea>
+          <textarea class="form-control" name="isi3" id="isi3" rows="3"></textarea>
         </div>
         <div class="form-group">
-          <textarea class="form-control" name="isi4" id="isi4" rows="2"></textarea>
-        </div>           
+          <textarea class="form-control" name="isi4" id="isi4" rows="3"></textarea>
+        </div>               
       </div>
       
       <div class="modal-footer">

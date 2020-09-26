@@ -28,47 +28,6 @@
 <script>
 $(document).ready(function() { 
     
-    // Images Table
-    $.ajax({
-        url: 'dir_images.php',
-        type: "POST",
-        cache: false,
-        success: function(data){
-            $('#tableUpload').html(data); 
-        }
-    });
-
-    $.ajax({
-        url: 'dir_images2.php',
-        type: "POST",
-        cache: false,
-        success: function(data){
-            $('#tableImage').html(data); 
-        }
-    });
-
-    $('#uploadBtn').click(function() {  
-        var fd = new FormData();
-        var files = $('#file')[0].files[0];
-        fd.append('file',files);
-
-        $.ajax({
-            url: 'upload.php',
-            type: 'post',
-            data: fd,
-            contentType: false,
-            processData: false,
-            success: function(response){
-                if(response != 0){
-                    alert('File sudah diupload');
-                    $('#tableUpload').html(response); 
-                }else{
-                    alert('File gagal diupload');
-                }
-            },
-        });     
-    });    
-
     // Slides Table
     $.ajax({
         url: 'view_slides.php',
@@ -94,8 +53,7 @@ $(document).ready(function() {
                 url:"hapusSlide.php",
                 method:"POST",
                 data:{slide_id:slide_id},
-                success:function(data) {                 
-                    alert(data);
+                success:function(data) {   
                     $('#table').html(data);
                 }
             })
@@ -103,10 +61,10 @@ $(document).ready(function() {
             return false;
         }
     });    
-
+    
     $(document).on('click', '.edit_data', function() { 
         var slide_id = $(this).attr("id");   
-        var data = new FormData();  //      
+        var data = new FormData();        
        
         $.ajax({
             url:"fetch.php",
@@ -114,14 +72,13 @@ $(document).ready(function() {
             data:{slide_id:slide_id},
             dataType:"json",
             success:function(data) {
-
                 $('#slide_id').val(data.slide_id);
                 $('#judul').val(data.judul);  
                 $('#isi1').val(data.isi1);
                 $('#isi2').val(data.isi2);
                 $('#isi3').val(data.isi3);
                 $('#isi4').val(data.isi4);    
-                $('#img').attr("src","../assets/images/" + data.foto);             
+                $('#img').attr("src","../assets/images/" + data.foto);
                 $('#slideModal').modal('show');
             }
         });        
@@ -145,7 +102,6 @@ $(document).ready(function() {
                 processData: false,
                 data:data,
                 success:function(response){
-                    alert(response);
                     $('#insert_form')[0].reset();                     
                     $('#slideModal').modal('hide');
                     $('#table').html(response);                    
