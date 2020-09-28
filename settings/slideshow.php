@@ -13,7 +13,7 @@
 			$isi2 = $data['isi2'];
 			$isi3 = $data['isi3'];
 			$isi4 = $data['isi4'];
-			$foto = $data['foto'];
+			$foto = rawurlencode($data['foto']);
 
 			if ($count == 0) { $class = 'carousel-item active';} else { $class = 'carousel-item'; }
 

@@ -38,11 +38,22 @@ $(document).ready(function() {
         }
     });
 
-    $("#addSlide").click(function(){
+    $("#batalBtn").click(function(){
         $('#insert_form')[0].reset();
-        $('#img').attr("src","");
-        $("#slideModal").modal('show'); 
+        $('#images').attr("src","");
+        $('#foto').attr(""); 
+    });
 
+    $("#addSlide").click(function(){
+        $("#modal-title").html("Tambah Slide");
+        $('#insert_form')[0].reset();
+        $('#images').attr("src","");
+        $('#foto').attr("");
+        $("#slideModal").modal('show');
+        $("#slide-id").html(""); 
+        $('#filename').html("");
+        $('#checkBox-form').hide();
+        $('#foto').show();
     });      
 
     $(document).on('click', '.hapus_data', function() {         
@@ -62,7 +73,8 @@ $(document).ready(function() {
         }
     });    
     
-    $(document).on('click', '.edit_data', function() { 
+    $(document).on('click', '.edit_data', function() {   
+        $("#modal-title").html("Edit Slide");      
         var slide_id = $(this).attr("id");   
         var data = new FormData();        
        
@@ -72,14 +84,18 @@ $(document).ready(function() {
             data:{slide_id:slide_id},
             dataType:"json",
             success:function(data) {
+                $("#slide-id").html("Slide id : " + slide_id);
                 $('#slide_id').val(data.slide_id);
                 $('#judul').val(data.judul);  
                 $('#isi1').val(data.isi1);
                 $('#isi2').val(data.isi2);
                 $('#isi3').val(data.isi3);
                 $('#isi4').val(data.isi4);    
-                $('#img').attr("src","../assets/images/" + data.foto);
+                $('#images').attr("src","../assets/images/" + data.foto);
+                $('#filename').html(data.foto);
                 $('#slideModal').modal('show');
+                $('#checkBox-form').show();  
+                $('#foto').hide();              
             }
         });        
     });     
@@ -94,6 +110,8 @@ $(document).ready(function() {
         data.append('isi3', $("#isi3").val());
         data.append('isi4', $("#isi4").val());
         data.append('foto', $("#foto")[0].files[0]);
+        data.append('filename', $("#filename").text());
+        data.append('checkBox', $("#checkBox").val());
         
         $.ajax({
                 url:'updateSlide.php',
