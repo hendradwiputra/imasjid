@@ -8,17 +8,17 @@
     <div class="row">      
       <div class="col-3">
         <div class="list-group" id="list-tab" role="tablist">
-          <a class="list-group-item list-group-item-action active" id="list-pengaturan-list" data-toggle="list" href="#list-pengaturan" role="tab" aria-controls="pengaturan">Pengaturan</a>
-          <a class="list-group-item list-group-item-action" id="list-notifikasi-list" data-toggle="list" href="#list-notifikasi" role="tab" aria-controls="notifikasi">Notifikasi</a>
-          <a class="list-group-item list-group-item-action" id="list-teks-list" data-toggle="list" href="#list-teks" role="tab" aria-controls="teks">Teks Berjalan</a>
-          <a class="list-group-item list-group-item-action" id="list-slides-list" data-toggle="list" href="#list-slides" role="tab" aria-controls="slides">Slide</a>
-          <a class="list-group-item list-group-item-action" id="list-about-list" data-toggle="list" href="#list-about" role="tab" aria-controls="about">Tentang Aplikasi</a>
+          <a class="list-group-item list-group-item-action active" id="list-pengaturan-list" data-toggle="list" href="#list-pengaturan" role="tab" aria-controls="pengaturan"><i class="fas fa-cog"></i> Pengaturan</a>
+          <a class="list-group-item list-group-item-action" id="list-notifikasi-list" data-toggle="list" href="#list-notifikasi" role="tab" aria-controls="notifikasi"><i class="fas fa-comment-dots"></i> Notifikasi</a>
+          <a class="list-group-item list-group-item-action" id="list-teks-list" data-toggle="list" href="#list-teks" role="tab" aria-controls="teks"><i class="fas fa-keyboard"></i> Teks Berjalan</a>
+          <a class="list-group-item list-group-item-action" id="list-slides-list" data-toggle="list" href="#list-slides" role="tab" aria-controls="slides"><i class="fas fa-tv"></i> Slide</a>
+          <a class="list-group-item list-group-item-action" id="list-about-list" data-toggle="list" href="#list-about" role="tab" aria-controls="about"><i class="fas fa-user-circle"></i> Tentang Aplikasi</a>
         </div>
         <small>* Perubahan akan diupdate setiap 5 menit</small>        
         <div class="form-group">
           <div class="float-right">
             <input type="hidden" name="setting_id" id="setting_id" value="<?php echo $setting_id; ?>">
-            <button type="button" class="btn btn-outline-success btn-sm" id="saveSetting" class="float-right">Simpan</button>         
+            <button type="button" class="btn btn-outline-success btn-sm" id="saveSetting" class="float-right"><i class="fas fa-save"></i> Simpan</button>         
           </div>
         </div>
       </div>
@@ -28,13 +28,13 @@
           <!-- Menu Pengaturan -->
           <div class="tab-pane fade show active" id="list-pengaturan" role="tabpanel" aria-labelledby="list-pengaturan-list">
             <div class="card">
-              <h5 class="card-header">Pengaturan Dasar</h5>
+              <h5 class="card-header"><i class="fas fa-cog"></i> Pengaturan Dasar</h5>
               <div class="card-body">
                 <div class="form-group">
-                  <label>Nama Masjid</label><input type="text" name="nama_masjid" id="nama_masjid" class="form-control form-control-sm col-md-6" value="<?php echo $nama_masjid; ?>">
+                  <label>Nama Masjid</label><input type="text" name="nama_masjid" id="nama_masjid" class="form-control form-control-sm col-md-6" value="<?php echo $nama_masjid; ?>" maxlength="100">
                 </div>
                 <div class="form-group">
-                  <label>Alamat</label><input type="text" name="alamat_masjid" id="alamat_masjid" class="form-control form-control-sm col-md-6" value="<?php echo $alamat_masjid; ?>">
+                  <label>Alamat</label><input type="text" name="alamat_masjid" id="alamat_masjid" class="form-control form-control-sm col-md-6" value="<?php echo $alamat_masjid; ?>" maxlength="100">
                 </div>
                 <div class="form-group">
                   <label>Koreksi Tanggal Hijriah</label>
@@ -79,7 +79,7 @@
           <!-- Notifikasi -->
           <div class="tab-pane fade" id="list-notifikasi" role="tabpanel" aria-labelledby="list-notifikasi-list">
             <div class="card">
-            <h5 class="card-header">Notifikasi Adzan & Iqomah</h5>
+            <h5 class="card-header"><i class="fas fa-comment-dots"></i> Notifikasi Adzan & Iqomah</h5>
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Durasi Adzan <small class="text-muted">(Hitungan menit)</small></label>
@@ -152,11 +152,11 @@
           <!-- Teks Berjalan -->
           <div class="tab-pane fade" id="list-teks" role="tabpanel" aria-labelledby="list-teks-list">
             <div class="card">
-            <h5 class="card-header">Pengaturan Teks Berjalan</h5>
+            <h5 class="card-header"><i class="fas fa-keyboard"></i> Pengaturan Teks Berjalan</h5>
             <div class="card-body">
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Atur Kecepatan Teks</label>
-                  <select name="kecepatan_teks" id="kecepatan_teks" class="form-control form-control-sm col-md-2">
+                  <select name="kecepatan_teks" id="kecepatan_teks" class="form-control form-control-sm col-md-2" maxlength="255">
                     <option <?php if ($kecepatan_teks==5) echo 'selected = "selected"'; ?> value="5">5</option>
                     <option <?php if ($kecepatan_teks==6) echo 'selected = "selected"'; ?> value="6">6</option>
                     <option <?php if ($kecepatan_teks==7) echo 'selected = "selected"'; ?> value="7">7</option>
@@ -177,7 +177,7 @@
           <!-- Slide -->
           <div class="tab-pane fade" id="list-slides" role="tabpanel" aria-labelledby="list-slides-list">
             <div class="card">
-            <h5 class="card-header">Pengaturan Slide</h5>
+            <h5 class="card-header"><i class="fas fa-tv"></i> Pengaturan Slide</h5>
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Durasi Pergantian Slide</label>
@@ -191,7 +191,7 @@
                   </select> 
                 </div>
                 <div class="form-group">
-                  <button type="button" class="btn btn-success btn-sm" id="addSlide">Tambah Slide</button>     
+                  <button type="button" class="btn btn-success btn-sm" id="addSlide"><i class="fas fa-plus-square"></i> Tambah Slide</button>     
                 </div>
                 <div class="form-group">  
                   <?php include('view_slides.php'); ?>
@@ -204,7 +204,7 @@
           <!-- Tentang Aplikasi -->
           <div class="tab-pane fade" id="list-about" role="tabpanel" aria-labelledby="list-about-list">
             <div class="card">
-            <h5 class="card-header">Tentang Aplikasi</h5>
+            <h5 class="card-header"><i class="fas fa-user-circle"></i> Tentang Aplikasi</h5>
             <div class="card-body">
                 <div class="form-group">
                   <h4>Developer</h4>

@@ -18,46 +18,50 @@
           </div>
           <div><small><label id="filename" name="filename"></label></small></div>                  
         </div>
-        <div class="form-group">
-          <div class="form-row">
-            <div class="col-auto my-1">
-              <input type="file" name="foto" id="foto" class="btn btn-sm btn-outline-info" onchange="previewImage2();" />
-            </div>                    
-            <div class="col-auto my-1">
-              <div class="custom-control custom-checkbox mr-sm-2" id="checkBox-form">
-                <input type="checkbox" class="form-check-input" id="checkBox" name="checkBox" value="1" onclick="myFunction()">                
-                <label class="form-check-label" for="checkBox">Ubah Gambar</label>
-              </div>  
-            </div>
-          </div>         
+        <div class="form-group">                                        
+          <div class="custom-control custom-checkbox mr-sm-2" id="checkBox-form">
+            <input type="checkbox" class="form-check-input" id="checkBox" name="checkBox" onclick="myFunction()" />                       
+            <label class="form-check-label" for="checkBox">Ubah Gambar</label>
+            <input type="hidden" name="checkBoxValue" id="checkBoxValue" class="form-control form-control-sm col" value=""> 
+          </div>              
         </div>
+        <div class="form-group">                      
+          <input type="file" name="foto" id="foto" class="btn btn-sm btn-outline-info" onchange="previewImage2();" />            
+        </div> 
         <div class="form-group">            
-            <div><small>* Ukuran file harus di bawah 1 MB.</small></div>
+            <div><small>* Ukuran file harus di bawah 2 MB.</small></div>
             <div><small>* Format file harus jpg, jpeg atau png.</small></div>                        
         </div>         
         <div class="form-group">
           <label>Judul</label>
-          <input type="text" name="judul" id="judul" class="form-control form-control-sm col">
+          <input type="text" name="judul" id="judul" class="form-control form-control-sm col" maxlength="100">
         </div>
         <div class="form-group">
           <label>Isi</label>
-          <textarea class="form-control form-control-sm" name="isi1" id="isi1" rows="3"></textarea>
+          <textarea class="form-control form-control-sm" name="isi1" id="isi1" rows="3" maxlength="255"></textarea>
         </div>
         <div class="form-group">
-          <textarea class="form-control form-control-sm" name="isi2" id="isi2" rows="2"></textarea>
+          <textarea class="form-control form-control-sm" name="isi2" id="isi2" rows="2" maxlength="255"></textarea>
         </div>
         <div class="form-group">
-          <textarea class="form-control form-control-sm" name="isi3" id="isi3" rows="2"></textarea>
+          <textarea class="form-control form-control-sm" name="isi3" id="isi3" rows="2" maxlength="255"></textarea>
         </div>
         <div class="form-group">
-          <textarea class="form-control form-control-sm" name="isi4" id="isi4" rows="2"></textarea>
-        </div>               
+          <textarea class="form-control form-control-sm" name="isi4" id="isi4" rows="2" maxlength="255"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Status Slide</label>
+          <select name="slide_status" id="slide_status" class="form-control form-control-sm col-md-2">
+            <option value="1">Aktif</option>
+            <option value="0">Tidak Aktif</option> 
+          </select>
+        </div>              
       </div>
       
-      <div class="modal-footer">
+      <div class="modal-footer">        
         <input type="hidden" name="slide_id" id="slide_id">      
-        <button type="button" class="btn btn-secondary btn-sm" id="batalBtn" data-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-success btn-sm" id="saveSlide">Simpan</button>
+        <button type="button" class="btn btn-secondary btn-sm" id="batalBtn" data-dismiss="modal"><i class="fas fa-times-circle"></i> Keluar</button>
+        <button type="button" class="btn btn-success btn-sm" id="saveSlide"><i class="fas fa-save"></i> Simpan</button>
       </div>
     </div>
   </div>
@@ -69,12 +73,13 @@
     function myFunction() {
       var checkBox_btn = document.getElementById("checkBox");
       var browseFoto = document.getElementById("foto");
+      var textBoxValue = document.getElementById("checkBoxValue");
       if (checkBox_btn.checked == true){
         browseFoto.style.display = "block";
-        //alert('checked');
+        textBoxValue.value = "checked";      
       } else {
-        browseFoto.style.display = "none";
-        //alert('unchecked');
+        browseFoto.style.display = "none";    
+        textBoxValue.value = "";
       }
     }
 

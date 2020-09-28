@@ -90,7 +90,8 @@ $(document).ready(function() {
                 $('#isi1').val(data.isi1);
                 $('#isi2').val(data.isi2);
                 $('#isi3').val(data.isi3);
-                $('#isi4').val(data.isi4);    
+                $('#isi4').val(data.isi4);
+                $('#slide_status').val(data.slide_status);                    
                 $('#images').attr("src","../assets/images/" + data.foto);
                 $('#filename').html(data.foto);
                 $('#slideModal').modal('show');
@@ -109,9 +110,11 @@ $(document).ready(function() {
         data.append('isi2', $("#isi2").val());
         data.append('isi3', $("#isi3").val());
         data.append('isi4', $("#isi4").val());
+        data.append('slide_status', $("#slide_status").val());
         data.append('foto', $("#foto")[0].files[0]);
-        data.append('filename', $("#filename").text());
+        data.append('filename', $("#filename").val());
         data.append('checkBox', $("#checkBox").val());
+        data.append('checkBoxValue', $("#checkBoxValue").val());
         
         $.ajax({
                 url:'updateSlide.php',

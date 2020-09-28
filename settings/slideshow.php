@@ -2,7 +2,7 @@
 
  	include("./scripts/db_connection.php");
 
-	$sql = "SELECT * FROM slides";
+	$sql = "SELECT * FROM slides where slide_status=1";
 	$result = $conn->query($sql);
 	
 	$count = 0;
