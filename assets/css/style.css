@@ -295,7 +295,7 @@ label {
 #intro h2 {
   color: #ffd152;
   margin-bottom: 30px;
-  font-size: 58px;
+  font-size: 42px;
   font-weight: 700;
 }
 
@@ -309,7 +309,7 @@ label {
   width: 100%;
   margin: 0 auto 0 auto;
   color: #fff;
-  font-size: 45px;
+  font-size: 35px;
   font-weight: 600;
 }
 
@@ -496,5 +496,3 @@ label {
   padding: 0px 20px 0px;  
   padding-top: 0px;
 }
-
-
