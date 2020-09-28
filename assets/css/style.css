@@ -43,6 +43,11 @@ label {
   font-weight: 700;
 }
 
+small,
+.small {
+  font-size: 80%;
+  font-weight: 700;
+}
 
 /*--------------------------------------------------------------
 # Header
