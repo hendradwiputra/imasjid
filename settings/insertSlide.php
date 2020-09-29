@@ -9,9 +9,7 @@
     $isi3 = mysqli_real_escape_string($conn, $_POST["isi3"]); 
     $isi4 = mysqli_real_escape_string($conn, $_POST["isi4"]);
     $slide_status = mysqli_real_escape_string($conn, $_POST["slide_status"]); 
-    
-    if($_POST["slide_id"] == '') {
-                           
+                              
       if(!empty($_POST["checkBoxValue"])) {
 
         $foto = $_FILES['foto']['name']; 
@@ -35,18 +33,14 @@
               VALUES ('$judul','$isi1','$isi2','$isi3','$isi4','$foto','$slide_status')
             ";
         
-      }      
-
-    } 
-
-    //--Query penyimpanan data ke database--//
-    if ($conn->query($sql) === TRUE) {
-      echo "<script>alert('Data berhasil disimpan.');</script>";                   
-    } else {
-      echo "<script>alert('Terjadi kegagalan dalam penyimpanan data : " . $conn->error . ". Cek koneksi database.)";
-    }     
-
-  }
+      }
+      //--Query penyimpanan data ke database--//
+      if ($conn->query($sql) === TRUE) {
+        echo "<script>alert('Data berhasil disimpan.');</script>";                   
+      } else {
+        echo "<script>alert('Terjadi kegagalan dalam penyimpanan data : " . $conn->error . ". Cek koneksi database.)";
+      }        
+    }       
   
   //--Load Table--//
   include('view_slides.php');    

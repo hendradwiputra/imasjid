@@ -178,7 +178,7 @@
           <!-- Slide -->
           <div class="tab-pane fade" id="list-slides" role="tabpanel" aria-labelledby="list-slides-list">
             <div class="card">
-            <h5 class="card-header"><i class="fas fa-tv"></i> Pengaturan Slide /*Under Maintenance*/</h5>
+            <h5 class="card-header"><i class="fas fa-tv"></i> Pengaturan Slide</h5>
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Durasi Pergantian Slide</label>

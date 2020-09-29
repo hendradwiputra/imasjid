@@ -42,19 +42,15 @@
         
       }      
 
-    } 
-  }  
-    
-
+    }
     //--Query penyimpanan data ke database--//
     if ($conn->query($sql) === TRUE) {
       echo "<script>alert('Data berhasil disimpan.');</script>";                   
     } else {
       echo "<script>alert('Terjadi kegagalan dalam penyimpanan data : " . $conn->error . ". Cek koneksi database.)";
-    }     
-         
-  
-
+    }   
+  }  
+    
   //--Load Table--//
   include('view_slides.php');    
 
