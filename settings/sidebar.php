@@ -55,6 +55,7 @@
                       <option <?php if ($metode_perhitungan==3) echo 'selected = "selected"'; ?> value="3">Muslim World League</option> 
                       <option <?php if ($metode_perhitungan==4) echo 'selected = "selected"'; ?> value="4">Umm al-Qura, Makkah</option>     
                       <option <?php if ($metode_perhitungan==5) echo 'selected = "selected"'; ?> value="5">Egyptian General Authority of Survey</option>  
+                      <!--<option <?php if ($metode_perhitungan==6) echo 'selected = "selected"'; ?> value="5">Custom</option>-->
                       <option <?php if ($metode_perhitungan==7) echo 'selected = "selected"'; ?> value="7">Institute of Geophysics, University of Tehran</option>                            
                   </select>
                 </div>
@@ -177,7 +178,7 @@
           <!-- Slide -->
           <div class="tab-pane fade" id="list-slides" role="tabpanel" aria-labelledby="list-slides-list">
             <div class="card">
-            <h5 class="card-header"><i class="fas fa-tv"></i> Pengaturan Slide</h5>
+            <h5 class="card-header"><i class="fas fa-tv"></i> Pengaturan Slide /*Under Maintenance*/</h5>
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Durasi Pergantian Slide</label>

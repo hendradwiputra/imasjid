@@ -60,8 +60,9 @@
       
       <div class="modal-footer">        
         <input type="hidden" name="slide_id" id="slide_id">      
-        <button type="button" class="btn btn-secondary btn-sm" id="batalBtn" data-dismiss="modal"><i class="fas fa-times-circle"></i> Keluar</button>
-        <button type="button" class="btn btn-success btn-sm" id="saveSlide"><i class="fas fa-save"></i> Simpan</button>
+        <input type="button" class="btn btn-secondary btn-sm" id="batalBtn" data-dismiss="modal" value="Keluar">
+        <input type="button" id="saveSlide" class="btn btn-success btn-sm" value="Simpan">
+        
       </div>
     </div>
   </div>

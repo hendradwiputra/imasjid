@@ -47,13 +47,13 @@ $(document).ready(function() {
     $("#addSlide").click(function(){
         $("#modal-title").html("Tambah Slide");
         $('#insert_form')[0].reset();
-        $('#images').attr("src","");
+        $('#images').attr("src","../assets/images/background.jpg");
         $('#foto').attr("");
         $("#slideModal").modal('show');
         $("#slide-id").html(""); 
-        $('#filename').html("");
-        $('#checkBox-form').hide();
-        $('#foto').show();
+        $('#filename').html("Default Background");
+        $('#foto').hide();
+        $('#saveSlide').val("Simpan");
     });      
 
     $(document).on('click', '.hapus_data', function() {         
@@ -96,7 +96,8 @@ $(document).ready(function() {
                 $('#filename').html(data.foto);
                 $('#slideModal').modal('show');
                 $('#checkBox-form').show();  
-                $('#foto').hide();              
+                $('#foto').hide();
+                $('#saveSlide').val("Update");                
             }
         });        
     });     
@@ -115,8 +116,22 @@ $(document).ready(function() {
         data.append('filename', $("#filename").val());
         data.append('checkBox', $("#checkBox").val());
         data.append('checkBoxValue', $("#checkBoxValue").val());
-        
-        $.ajax({
+
+        if($('#saveSlide').val() == "Simpan")  {  
+            $.ajax({
+                url:'insertSlide.php',
+                type:'POST',
+                contentType: false,
+                processData: false,
+                data:data,
+                success:function(response){
+                    $('#insert_form')[0].reset();                     
+                    $('#slideModal').modal('hide');
+                    $('#table').html(response);                    
+                }
+            });    
+        } else {
+            $.ajax({
                 url:'updateSlide.php',
                 type:'POST',
                 contentType: false,
@@ -127,7 +142,8 @@ $(document).ready(function() {
                     $('#slideModal').modal('hide');
                     $('#table').html(response);                    
                 }
-        });
+            });  
+        }       
     });   
     
     //Settings Table    
