@@ -9,11 +9,51 @@
 # General
 --------------------------------------------------------------*/
 
+@font-face {
+    font-family: 'montserratextrabold';
+    src: url('../fonts/montserrat/montserrat-extrabold.woff2') format('woff2'),
+         url('../fonts/montserrat/montserrat-extrabold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratbold';
+    src: url('../fonts/montserrat/montserrat-bold.woff2') format('woff2'),
+         url('../fonts/montserrat/montserrat-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratlight';
+    src: url('../fonts/montserrat/montserrat-light.woff2') format('woff2'),
+         url('../fonts/montserrat/montserrat-light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratmedium';
+    src: url('../fonts/montserrat/montserrat-medium.woff2') format('woff2'),
+         url('../fonts/montserrat/montserrat-medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat/montserrat-regular.woff2') format('woff2'),
+         url('../fonts/montserrat/montserrat-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-  
-  /*font-family: "Open Sans", sans-serif;  */
-  font-family: "Montserrat", sans-serif;
-  background: rgba(120, 175, 159, 0.3);
+  font-family: 'montserratmedium';
+  font-size: 15px;
+  background: rgba(120, 175, 159, 0.1);
+
 }
 
 a {
@@ -33,7 +73,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'montserratregular';
   font-weight: 400;
   margin: 0 0 20px 0;
   padding: 0;
@@ -41,12 +81,21 @@ h1, h2, h3, h4, h5, h6 {
 
 label {
   font-weight: 700;
+  font-family: 'montserratregular';
 }
 
 small,
 .small {
   font-size: 80%;
   font-weight: 700;
+}
+
+.table td, .table th {
+    border: none;
+}
+
+table.table.table-condensed {
+    border: 1px solid #eee;
 }
 
 /*--------------------------------------------------------------
@@ -67,7 +116,7 @@ small,
   font-size: 40px;
   color: #ffd152;  
   line-height: 1;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'montserratbold';
   font-weight: 700;
   letter-spacing: 3px;
   margin: 0;
@@ -82,8 +131,8 @@ small,
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
+  font-family: 'montserratextrabold';
+  font-weight: 900;
   letter-spacing: 3px;
   
 }
@@ -92,8 +141,8 @@ small,
   font-size: 18px;
   padding-top: 2px;  
   color: #fff;
-  letter-spacing: 1px;
-  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  font-family: 'montserratmedium';
   font-weight: 700;
 }
 
@@ -101,8 +150,8 @@ small,
   font-size: 18px;
   padding-top: 2px;  
   color: #fff;
-  letter-spacing: 1px;
-  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  font-family: 'montserratmedium';
   font-weight: 700;
 }
 
@@ -279,7 +328,7 @@ small,
 
 #intro .carousel-item::before {
   content: '';
-  background-color: rgba(0, 0, 0, 0.5); /* Pengaturan opacity */
+  background-color: rgba(0, 0, 0, 0.3); /* Pengaturan opacity */
 }
 
 #intro .carousel-container {
@@ -302,6 +351,7 @@ small,
   margin-bottom: 30px;
   font-size: 42px;
   font-weight: 700;
+  font-family: 'montserratbold';  
 }
 
 @media (max-width: 768px) {
@@ -316,6 +366,7 @@ small,
   color: #fff;
   font-size: 35px;
   font-weight: 600;
+  font-family: 'montserratlight';
 }
 
 @media (min-width: 1024px) {
@@ -395,6 +446,7 @@ small,
   left: 0px;
   margin: 5px 10px 0px -5px;
   padding-left: 8px;
+  
 } 
 
 #clock .right { 
@@ -407,44 +459,21 @@ small,
   width: 430px;
   right: 0px; 
   padding-left: 8px;
+
 } 
 
 #clock h2 {
   font-size: 50px;
   font-weight: 700;
+  font-family: 'montserratbold'; 
 }
 
 #clock h3 {
   font-size: 40px;
   font-weight: 700;
+  font-family: 'montserratbold'; 
 }
 
-
-/*--------------------------------------------------------------
-# Counter
---------------------------------------------------------------*/
-#counter {
-  padding-top: 0px;
-  position: relative;
-  background: rgb(120, 175, 159);   
-}
-
-#counter .text { 
-  background: rgba(120, 175, 159, 0.9);  
-  color: #fff; 
-  position: absolute;  
-  bottom: 200px;
-  z-index: 2;  
-  height: 50vh;
-  width: 70%; 
-  text-align: center;
-  
-} 
-
-#counter .text h2 {
-  font-size: 80px;
-  font-weight: 700;
-}
 
 /*--------------------------------------------------------------
 # Running-Text
@@ -468,6 +497,7 @@ small,
 #text .running-text h3 {
   font-size: 40px;
   font-weight: 700;
+  font-family: 'montserratmedium';
 }
 
 /*--------------------------------------------------------------
@@ -483,7 +513,8 @@ small,
   font-size: 45px;  
   bottom: 78px;
   margin-bottom: 0px; 
-  text-align: center;  
+  text-align: center; 
+  font-family: 'montserratbold';
 }
 
 #prayer h2 { 
@@ -492,7 +523,8 @@ small,
   font-size: 60px; 
   bottom: 25px;
   margin-bottom: 0px;
-  text-align: center;  
+  text-align: center;
+  font-family: 'montserratbold';  
 }
 
 #prayer .selected {
@@ -500,4 +532,5 @@ small,
   background: rgba(0,112,112);
   padding: 0px 20px 0px;  
   padding-top: 0px;
+  font-family: 'montserratextrabold';
 }
