@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>iMasjid - Konfigurasi</title>
+    <title>iMasjid - Konfigurasi</title>
 </head>
 <!-- FontAwesome -->
 <link rel="stylesheet" href="../assets/vendor/fontawesome/css/fontawesome.css"> 
@@ -10,14 +10,11 @@
 <link rel="stylesheet" href="../assets/vendor/fontawesome/css/solid.css">
 <link rel="stylesheet" href="../assets/vendor/fontawesome/css/brands.css">
 
-<!-- Google Fonts -->
-<!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">-->
-
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css"> 
 
 <!-- Custom styles for this template -->
-<link href="../assets/css/style2.css" rel="stylesheet">
+<link href="../assets/css/style.css" rel="stylesheet">
 
 <!-- Jquery -->
 <script src="../assets/js/jquery-3.5.1.min.js"></script>
@@ -199,4 +196,3 @@ $(document).ready(function() {
 
 </head>
 <body>
-   

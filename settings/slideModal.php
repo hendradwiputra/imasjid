@@ -14,7 +14,7 @@
           <label id="slide-id"></label><br>      
           <label>Gambar</label>
           <div>
-            <img id="images" width="180px" height="120px" class="img border border-dark">           
+            <img id="images" width="180px" height="120px" class="img border border-secondary">           
           </div>
           <div><small><label id="filename" name="filename"></label></small></div>                  
         </div>
@@ -61,16 +61,14 @@
       <div class="modal-footer">        
         <input type="hidden" name="slide_id" id="slide_id">      
         <input type="button" class="btn btn-secondary btn-sm" id="batalBtn" data-dismiss="modal" value="Keluar">
-        <input type="button" id="saveSlide" class="btn btn-success btn-sm" value="Simpan">
+        <input type="button" id="saveSlide" class="btn btn-primary btn-sm" value="Simpan">
         
       </div>
     </div>
   </div>
 </div>
 </form>
-
 <script type="text/javascript">
-
     function myFunction() {
       var checkBox_btn = document.getElementById("checkBox");
       var browseFoto = document.getElementById("foto");
@@ -83,7 +81,6 @@
         textBoxValue.value = "";
       }
     }
-
     // https://agung-setiawan.com/preview-image-before-upload/
     function previewImage2() {
       document.getElementById("images").style.display = "block";

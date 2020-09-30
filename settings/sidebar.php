@@ -4,7 +4,7 @@
 ?>
 <form method="POST" enctype="multipart/form-data">
   <div class="container-fluid">
-    <h1 class="card-header">iMasjid</h1><br>
+    <h1 class="card-header bg-secondary text-white">iMasjid</h1><br>
     <div class="row">      
       <div class="col-3">
         <div class="list-group" id="list-tab" role="tablist">
@@ -18,7 +18,7 @@
         <div class="form-group">
           <div class="float-right">
             <input type="hidden" name="setting_id" id="setting_id" value="<?php echo $setting_id; ?>">
-            <button type="button" class="btn btn-outline-success btn-sm" id="saveSetting" class="float-right"><i class="fas fa-save"></i> Simpan</button>         
+            <button type="button" class="btn btn-primary btn-sm" id="saveSetting" class="float-right"><i class="fas fa-save"></i> Simpan</button>         
           </div>
         </div>
       </div>
@@ -192,7 +192,7 @@
                   </select> 
                 </div>
                 <div class="form-group">
-                  <button type="button" class="btn btn-success btn-sm" id="addSlide"><i class="fas fa-plus-square"></i> Tambah Slide</button>     
+                  <button type="button" class="btn btn-primary btn-sm" id="addSlide"><i class="fas fa-plus-square"></i> Tambah Slide</button>     
                 </div>
                 <div class="form-group">  
                   <?php include('view_slides.php'); ?>
@@ -216,7 +216,42 @@
                 </div>
                 <br>                
                 <h4>Copyright</h4>
-                <p>Aplikasi ini <strong>bebas</strong> dipakai/dikembangkan oleh siapa saja. <strong>Dilarang</strong> memperjualbelikan aplikasi ini.</p>
+                <p>Aplikasi ini <strong>bebas</strong> dipakai/dikembangkan oleh siapa saja untuk kepentingan masjid. <strong>Dilarang</strong> memperjualbelikan aplikasi ini.</p>
+                <br>                
+                <h4>Contributor</h4>
+                <table class="table table-bordered table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                      <td>Hamid Zarrabi-Zadeh</td>
+                      <td>Creator PrayTime.php: Prayer Times Calculator (ver 1.2.2). Download link : <a href="http://praytimes.org">http://praytimes.org</a></td>      
+                  </tr>
+                </tbody>
+                </table>
+                <h4>Version</h4>
+                <table class="table table-bordered table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Version</th>
+                    <th scope="col">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                      <td>v1.0</td>
+                      <td>Create application.</td>      
+                  </tr>
+                </tbody>
+                </table>
             </div>
             </div>
           </div>
