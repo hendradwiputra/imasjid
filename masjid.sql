@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2020 at 04:03 PM
+-- Generation Time: Oct 02, 2020 at 02:39 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -53,7 +53,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`setting_id`, `nama_masjid`, `alamat_masjid`, `running_teks`, `kecepatan_teks`, `durasi_slide`, `koreksi_hijriah`, `metode_perhitungan`, `durasi_adzan`, `iqomah_shubuh`, `iqomah_dzuhur`, `iqomah_ashar`, `iqomah_maghrib`, `iqomah_isya`, `garis_lintang`, `garis_bujur`, `zona_waktu`) VALUES
-(1, 'MASJID RAYA NURUL MUBAROK', 'Kompleks PT.RAPP Town Site II Baru', 'Jamaah diharapkan agar menggunakan masker ketika solat di masjid # Tetap menjaga protokol kesehatan # Untuk sementara anak-anak di bawah 6 tahun agar tidak dibawa ke masjid # Cuci tangan sebelum masuk ke Masjid', 9, '18000', -1, 5, 5, 10, 5, 5, 5, 10, '0.406393', '101.845164', '+7');
+(1, 'Masjid Raya Nurul Mubarok', 'Kompleks PT. RAPP Townsite II Baru', 'Jamaah diharapkan agar menggunakan masker ketika solat di masjid # Tetap menjaga protokol kesehatan # Untuk sementara anak-anak SMP  kebawah  agar tidak dibawa ke masjid # Cuci tangan sebelum masuk ke Masjid', 9, '18000', -1, 6, 5, 10, 5, 5, 5, 10, '0.406393', '101.845164', '+7');
 
 -- --------------------------------------------------------
 
@@ -77,9 +77,13 @@ CREATE TABLE `slides` (
 --
 
 INSERT INTO `slides` (`slide_id`, `judul`, `isi1`, `isi2`, `isi3`, `isi4`, `foto`, `slide_status`) VALUES
-(1, '', '', '', '', '', 'kaaba-02.jpg', 1),
-(2, 'Keutamaan Membaca Surat Al Kahfi', 'â€œBarangsiapa yang membaca Surat Al Kahfi pada hari Jumâ€™at, dia akan disinari cahaya di antara dua Jumâ€™at.â€', '[ HR. An Nasaâ€™i dan Baihaqi ]\n\n', '', '', 'quran-01.jpg', 1),
-(3, 'Info Qurban Tahun 1442 H', 'Pendaftaran Qurban tahun 1442 H sudah dibuka. Hubungi panitia masjid untuk proses pendaftaran.', '', '', '', 'nurul-mubarok1.jpg', 1);
+(1, 'Info Qurban 1442 H', 'Pendaftaran bisa menghubungi panitia qurban', '', '', '', '20200930_062655_.jpg', 1),
+(2, 'Laporan Keuangan Masjid', 'Infaq Jumat yang lalu', 'Dana Masuk\n\n', 'Dana Keluar', 'Sisa Saldo sampai saat ini', '20200930_062732_.jpg', 1),
+(23, '', '', '', '', '', '20200930_062832_.jpg', 1),
+(24, '', '', '', '', '', '20200930_063137_.jpg', 1),
+(25, '', '', '', '', '', '20200930_063348_.jpg', 1),
+(26, '', '', '', '', '', '20200930_063542_.jpg', 1),
+(28, 'Membaca Surat Al Kahfi', 'â€œBarangsiapa yang membaca surat Al Kahfi pada hari Jumâ€™at, dia akan disinari cahaya di antara dua Jumâ€™at.â€', '(HR. An Nasaâ€™i dan Baihaqi)', '', '', 'quran-01.jpg', 1);
 
 --
 -- Indexes for dumped tables
@@ -111,7 +115,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `slides`
 --
 ALTER TABLE `slides`
-  MODIFY `slide_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `slide_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
