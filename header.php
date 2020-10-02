@@ -14,9 +14,6 @@
 	<title>iMasjid</title>
 </head>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
-
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css"> 
 <!-- FontAwesome -->
