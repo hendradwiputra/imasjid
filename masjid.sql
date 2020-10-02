@@ -79,11 +79,11 @@ CREATE TABLE `slides` (
 INSERT INTO `slides` (`slide_id`, `judul`, `isi1`, `isi2`, `isi3`, `isi4`, `foto`, `slide_status`) VALUES
 (1, 'Info Qurban 1442 H', 'Pendaftaran bisa menghubungi panitia qurban', '', '', '', '20200930_062655_.jpg', 1),
 (2, 'Laporan Keuangan Masjid', 'Infaq Jumat yang lalu', 'Dana Masuk\n\n', 'Dana Keluar', 'Sisa Saldo sampai saat ini', '20200930_062732_.jpg', 1),
-(23, '', '', '', '', '', '20200930_062832_.jpg', 1),
-(24, '', '', '', '', '', '20200930_063137_.jpg', 1),
-(25, '', '', '', '', '', '20200930_063348_.jpg', 1),
-(26, '', '', '', '', '', '20200930_063542_.jpg', 1),
-(28, 'Membaca Surat Al Kahfi', 'â€œBarangsiapa yang membaca surat Al Kahfi pada hari Jumâ€™at, dia akan disinari cahaya di antara dua Jumâ€™at.â€', '(HR. An Nasaâ€™i dan Baihaqi)', '', '', 'quran-01.jpg', 1);
+(3, '', '', '', '', '', '20200930_062832_.jpg', 1),
+(4, '', '', '', '', '', '20200930_063137_.jpg', 1),
+(5, '', '', '', '', '', '20200930_063348_.jpg', 1),
+(6, '', '', '', '', '', '20200930_063542_.jpg', 1),
+(7, 'Membaca Surat Al Kahfi', 'â€œBarangsiapa yang membaca surat Al Kahfi pada hari Jumâ€™at, dia akan disinari cahaya di antara dua Jumâ€™at.â€', '(HR. An Nasaâ€™i dan Baihaqi)', '', '', 'quran-01.jpg', 1);
 
 --
 -- Indexes for dumped tables
