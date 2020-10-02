@@ -55,7 +55,7 @@
                       <option <?php if ($metode_perhitungan==3) echo 'selected = "selected"'; ?> value="3">Muslim World League</option> 
                       <option <?php if ($metode_perhitungan==4) echo 'selected = "selected"'; ?> value="4">Umm al-Qura, Makkah</option>     
                       <option <?php if ($metode_perhitungan==5) echo 'selected = "selected"'; ?> value="5">Egyptian General Authority of Survey</option>  
-                      <!--<option <?php if ($metode_perhitungan==6) echo 'selected = "selected"'; ?> value="5">Custom</option>-->
+                      <option <?php if ($metode_perhitungan==6) echo 'selected = "selected"'; ?> value="6">Kementerian Agama Indonesia</option>
                       <option <?php if ($metode_perhitungan==7) echo 'selected = "selected"'; ?> value="7">Institute of Geophysics, University of Tehran</option>                            
                   </select>
                 </div>

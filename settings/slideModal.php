@@ -22,7 +22,7 @@
           <div class="custom-control custom-checkbox mr-sm-2" id="checkBox-form">
             <input type="checkbox" class="form-check-input" id="checkBox" name="checkBox" onclick="myFunction()" />                       
             <label class="form-check-label" for="checkBox">Ubah Gambar</label>
-            <input type="hidden" name="checkBoxValue" id="checkBoxValue" class="form-control form-control-sm col" value=""> 
+            <input type="text" name="checkBoxValue" id="checkBoxValue" class="form-control form-control-sm col" value=""> 
           </div>              
         </div>
         <div class="form-group">                      
