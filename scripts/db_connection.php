@@ -1,7 +1,7 @@
 <?php
 	$servername = "localhost";
-	$username = "root";
-	$password = "";
+	$username = "monitor";
+	$password = "monitor";
 	$dbname = "masjid";
 
 	// Create connection
