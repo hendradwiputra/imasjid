@@ -13,10 +13,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>iMasjid</title>
 </head>
-	
+<!--	
  <audio id="beepSound" > 
         <source src="./asset/sounds/sound1.wav" type="audio/mpeg"> 
- </audio> 
+ </audio>
+-->
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css"> 
@@ -416,7 +417,7 @@
 				//----Bunyi Beep ketika memasuki waktu adzan
 				//----Script beepSound hanya jalan di Microsoft Edge, di browser lain tidak jalan.
 				//----Mohon bantuan nya
-				document.getElementById("beepSound").play(); 
+				//document.getElementById("beepSound").play(); 
           			document.getElementById("timer").innerHTML = label; 
           		}          		
         	}  
@@ -452,7 +453,7 @@
 						      //----Bunyi Beep ketika counter iqomah selesai
 						      //----Script beepSound hanya jalan di Microsoft Edge, di browser lain tidak jalan.
 				                      //----Mohon bantuan nya
-						      document.getElementById("beepSound").play(); 	
+						      //document.getElementById("beepSound").play(); 	
 						      var label = "WAKTU " + nextprayer.toUpperCase(); 
 						      document.getElementById("timer").innerHTML = label;
 					      }    								
