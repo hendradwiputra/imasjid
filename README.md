@@ -37,5 +37,13 @@ Aplikasi ini menggunakan calculation method dari praytimes.org dan sudah di cust
         <li>create database masjid;</li>
         <li>quit</li>
       </ul>
+      <ul>
+        <li>6. Download dan extract folder imasjid.</li>
+        <ul>
+          <li>sudo cp -R imasjid /var/www/html</li>
+          <li>sudo chown pi /var/www/html/imasjid --> pi adalah nama user yang dipakai buat logon ke linux nya</li>
+          <li>sudo chmod -R 767 /var/www/html/imasjid</li>
+        </ul>
+      </ul>
     </ul>
 </ul>
