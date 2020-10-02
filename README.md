@@ -14,6 +14,12 @@ Aplikasi ini menggunakan calculation method dari praytimes.org dan sudah di cust
 
 <h2>Instalasi</h2>
 <ul>
-  <li><h3>Windows</h3></li>
-  
+  <li><h3>Linux</h3></li>
+    <ul>
+      <li>1. Install Apache https://pimylifeup.com/raspberry-pi-apache</li>
+      <li>2. Ubah permission</li>
+      <ul>
+        <li>sudo usermod -a -G www-data pi ----> [pi adalah nama user yang dipakai untuk login]</li>
+      </ul>
+    </ul>
 </ul>
