@@ -36,14 +36,24 @@ Aplikasi ini menggunakan calculation method dari praytimes.org dan sudah di cust
         <li>sudo mysql -u root</li>
         <li>create database masjid;</li>
         <li>quit</li>
-      </ul>
-      <ul>
-        <li>6. Download dan extract folder imasjid.</li>
+      </ul>      
+      <li>6. Download dan extract folder imasjid.</li>
         <ul>
           <li>sudo cp -R imasjid /var/www/html</li>
           <li>sudo chown pi /var/www/html/imasjid --> pi adalah nama user yang dipakai buat logon ke linux nya</li>
           <li>sudo chmod -R 767 /var/www/html/imasjid</li>
         </ul>
-      </ul>
+      </li>
+      <li>7. Restore database from file</li>
+        <ul>
+          <li>sudo mysql -u root masjid < masjid.sql  --> saya jalankan perintah ini dari folder /var/www/html/imasjid</li>
+        </ul>
+      </li>
+      <li>8. Grant user ke database masjid</li>
+        <ul>
+          <li>grant all on masjid.* to monitor@localhost identified by 'monitor';</li>
+          <li>flush privileges;</li>
+        </ul>
+      </li>
     </ul>
 </ul>
