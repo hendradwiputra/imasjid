@@ -24,6 +24,107 @@
 
 <script>
 $(document).ready(function() { 
+
+    // Hadist Table
+    $.ajax({
+        url: 'view_hadist.php',
+        type: "POST",
+        cache: false,
+        success: function(dataResult){
+            $('#table_hadist').html(dataResult); 
+        }
+    });
+
+    $("#cancel_hadist").click(function(){
+        $('#hadist_form')[0].reset();
+    });
+
+    $("#add_hadist").click(function(){
+        $("#hadist-modal-title").html("Tambah Hadist");
+        $('#hadist_form')[0].reset();        
+        $("#hadistModal").modal('show');
+        $("#hadist-id").html(""); 
+        $('#save_hadist').val("Simpan");
+    });   
+
+    $(document).on('click', '.hapus_hadist', function() {         
+        var hadist_id = $(this).attr("id");        
+        
+        if(confirm("Hapus hadist ini ?")) {        
+            $.ajax({
+                url:"hapusHadist.php",
+                method:"POST",
+                data:{hadist_id:hadist_id},
+                success:function(data) {   
+                    $('#table_hadist').html(data);
+                }
+            })
+        } else {
+            return false;
+        }
+    });  
+
+    $(document).on('click', '.edit_hadist', function() {   
+        $("#hadist-modal-title").html("Edit Hadist");      
+        var hadist_id = $(this).attr("id");   
+        var data = new FormData();        
+       
+        $.ajax({
+            url:"get_hadist.php",
+            method:"POST",
+            data:{hadist_id:hadist_id},
+            dataType:"json",
+            success:function(data) {
+                $("#hadist-id").html("Hadist id : " + hadist_id);
+                $('#hadist_id').val(data.hadist_id);
+                $('#hadist_judul').val(data.hadist_judul);  
+                $('#hadist_isi1').val(data.hadist_isi1);
+                $('#hadist_isi2').val(data.hadist_isi2);
+                $('#hadist_isi3').val(data.hadist_isi3);                
+                $('#hadistModal').modal('show');                
+                $('#save_hadist').val("Update");                
+            }
+        });        
+    });     
+
+    $("#save_hadist").click(function(){  
+        var data = new FormData();    
+        data.append('hadist_id', $("#hadist_id").val());
+        data.append('hadist_judul', $("#hadist_judul").val());
+        data.append('hadist_isi1', $("#hadist_isi1").val());
+        data.append('hadist_isi2', $("#hadist_isi2").val());
+        data.append('hadist_isi3', $("#hadist_isi3").val());
+        data.append('hadist_status', $("#hadist_status").val());        
+
+        if($('#save_hadist').val() == "Simpan")  { 
+
+            $.ajax({
+                url:'insertHadist.php',
+                type:'POST',
+                contentType: false,
+                processData: false,
+                data:data,
+                success:function(response){
+                    $('#hadist_form')[0].reset();                     
+                    $('#hadistModal').modal('hide');
+                    $('#table_hadist').html(response);                    
+                }
+            }); 
+        } else {
+            $.ajax({
+                url:'updateHadist.php',
+                type:'POST',
+                contentType: false,
+                processData: false,
+                data:data,
+                success:function(response){
+                    $('#hadist_form')[0].reset();                     
+                    $('#hadistModal').modal('hide');
+                    $('#table_hadist').html(response);                  
+                }
+            });  
+        }  
+    });   
     
     // Slides Table
     $.ajax({
@@ -31,38 +132,38 @@ $(document).ready(function() {
         type: "POST",
         cache: false,
         success: function(dataResult){
-            $('#table').html(dataResult); 
+            $('#table_slide').html(dataResult); 
         }
     });
 
-    $("#batalBtn").click(function(){
-        $('#insert_form')[0].reset();
+    $("#cancel_slide").click(function(){
+        $('#slide_form')[0].reset();
         $('#images').attr("src","");
         $('#foto').attr(""); 
     });
-
-    $("#addSlide").click(function(){
-        $("#modal-title").html("Tambah Slide");
-        $('#insert_form')[0].reset();
+    
+    $("#add_slide").click(function(){
+        $("#slide-modal-title").html("Tambah Slide");
+        $('#slide_form')[0].reset();
         $('#images').attr("src","../assets/images/background.jpg");
         $('#foto').attr("");
         $("#slideModal").modal('show');
         $("#slide-id").html(""); 
         $('#filename').html("Default Background");
         $('#foto').hide();
-        $('#saveSlide').val("Simpan");
-    });      
+        $('#save_slide').val("Simpan");
+    });     
 
-    $(document).on('click', '.hapus_data', function() {         
+    $(document).on('click', '.hapus_slide', function() {         
         var slide_id = $(this).attr("id");        
         
-        if(confirm("Hapus data ini ?")) {        
+        if(confirm("Hapus slide ini ?")) {        
             $.ajax({
                 url:"hapusSlide.php",
                 method:"POST",
                 data:{slide_id:slide_id},
                 success:function(data) {   
-                    $('#table').html(data);
+                    $('#table_slide').html(data);
                 }
             })
         } else {
@@ -70,13 +171,13 @@ $(document).ready(function() {
         }
     });    
     
-    $(document).on('click', '.edit_data', function() {   
-        $("#modal-title").html("Edit Slide");      
+    $(document).on('click', '.edit_slide', function() {   
+        $("#slide-modal-title").html("Edit Slide");      
         var slide_id = $(this).attr("id");   
         var data = new FormData();        
        
         $.ajax({
-            url:"fetch.php",
+            url:"get_slide.php",
             method:"POST",
             data:{slide_id:slide_id},
             dataType:"json",
@@ -94,12 +195,12 @@ $(document).ready(function() {
                 $('#slideModal').modal('show');
                 $('#checkBox-form').show();  
                 $('#foto').hide();
-                $('#saveSlide').val("Update");                
+                $('#save_slide').val("Update");                
             }
         });        
     });     
 
-    $("#saveSlide").click(function(){  
+    $("#save_slide").click(function(){  
         //https://www.mynotescode.com/cara-membuat-crud-plus-upload-gambar-dengan-php-ajax-bootstrap/ 
         var data = new FormData();    
         data.append('slide_id', $("#slide_id").val());
@@ -114,7 +215,7 @@ $(document).ready(function() {
         data.append('checkBox', $("#checkBox").val());
         data.append('checkBoxValue', $("#checkBoxValue").val());
 
-        if($('#saveSlide').val() == "Simpan")  {  
+        if($('#save_slide').val() == "Simpan")  {  
             $.ajax({
                 url:'insertSlide.php',
                 type:'POST',
@@ -122,9 +223,9 @@ $(document).ready(function() {
                 processData: false,
                 data:data,
                 success:function(response){
-                    $('#insert_form')[0].reset();                     
+                    $('#slide_form')[0].reset();                     
                     $('#slideModal').modal('hide');
-                    $('#table').html(response);                    
+                    $('#table_slide').html(response);                    
                 }
             });    
         } else {
@@ -135,9 +236,9 @@ $(document).ready(function() {
                 processData: false,
                 data:data,
                 success:function(response){
-                    $('#insert_form')[0].reset();                     
+                    $('#slide_form')[0].reset();                     
                     $('#slideModal').modal('hide');
-                    $('#table').html(response);                    
+                    $('#table_slide').html(response);                    
                 }
             });  
         }       

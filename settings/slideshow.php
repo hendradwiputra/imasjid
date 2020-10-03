@@ -1,7 +1,8 @@
 <?php 
 
  	include("./scripts/db_connection.php");
-
+ 	
+ 	//--Slide table
 	$sql = "SELECT * FROM slides where slide_status=1";
 	$result = $conn->query($sql);
 	
@@ -15,10 +16,10 @@
 			$isi4 = $data['isi4'];
 			$foto = rawurlencode($data['foto']);
 
-			if ($count == 0) { $class = 'carousel-item active';} else { $class = 'carousel-item'; }
+		if ($count == 0) { $class = 'carousel-item active';} else { $class = 'carousel-item'; }
 
-	    echo "<div class='$class' style='background-image: url(./assets/images/$foto)'>";
-	    echo "<div class='carousel-container'>";
+	    	echo "<div class='$class' style='background-image: url(./assets/images/$foto)'>";
+	    	echo "<div class='carousel-container'>";
             echo "<div class='container'>";
             echo "<h2 class='animate__animated animate__fadeInDown'>$judul</h2>";
             echo "<p class='animate__animated animate__fadeInUp'>$isi1</p>";
@@ -30,6 +31,7 @@
             echo "</div>";
 			$count++;
 		}		
-	}		
+	}
+	
 
 ?>

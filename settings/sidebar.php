@@ -1,6 +1,7 @@
 <?php 
   include('../scripts/view_settings.php'); 
   include('slideModal.php'); 
+  include('hadistModal.php'); 
 ?>
 <form method="POST" enctype="multipart/form-data">
   <div class="container-fluid">
@@ -12,9 +13,12 @@
           <a class="list-group-item list-group-item-action" id="list-notifikasi-list" data-toggle="list" href="#list-notifikasi" role="tab" aria-controls="notifikasi"><i class="fas fa-comment-dots"></i> Notifikasi</a>
           <a class="list-group-item list-group-item-action" id="list-teks-list" data-toggle="list" href="#list-teks" role="tab" aria-controls="teks"><i class="fas fa-keyboard"></i> Teks Berjalan</a>
           <a class="list-group-item list-group-item-action" id="list-slides-list" data-toggle="list" href="#list-slides" role="tab" aria-controls="slides"><i class="fas fa-tv"></i> Slide</a>
+          <a class="list-group-item list-group-item-action" id="list-hadist-list" data-toggle="list" href="#list-hadist" role="tab" aria-controls="hadist"><i class="fas fa-quran"></i></i> Database Hadist</a>
           <a class="list-group-item list-group-item-action" id="list-about-list" data-toggle="list" href="#list-about" role="tab" aria-controls="about"><i class="fas fa-user-circle"></i> Tentang Aplikasi</a>
         </div>
-        <small>* Perubahan akan diupdate setiap 5 menit</small>        
+        <div class="form-group">
+          <small>* Perubahan akan diupdate setiap 5 menit</small>
+        </div>       
         <div class="form-group">
           <div class="float-right">
             <input type="hidden" name="setting_id" id="setting_id" value="<?php echo $setting_id; ?>">
@@ -91,9 +95,8 @@
                     <option <?php if ($durasi_adzan==10) echo 'selected = "selected"'; ?> value="10">10</option>                    
                   </select>
                 </div>
-                <br>
                 <div class="form-group">
-                  <label for="exampleFormControlSelect1">Jarak Adzan ke Iqomah <small class="text-muted">(Hitungan menit)</small></label>                
+                  <label for="exampleFormControlSelect1">Jarak Adzan ke Iqomah <small class="text-muted">(Hitungan menit)</small></label>               
                   <div class="form-row">                  
                   <div class="form-group col-md-2">
                     <label for="exampleFormControlSelect1">Shubuh</label>
@@ -144,7 +147,14 @@
                     </select>
                     </div>
                   </div>
-                </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Pengaturan Suara</label>
+                  </div>
+
+                </div>  
+
+                
+
               </div>
             </div>
           </div>
@@ -192,7 +202,7 @@
                   </select> 
                 </div>
                 <div class="form-group">
-                  <button type="button" class="btn btn-primary btn-sm" id="addSlide"><i class="fas fa-plus-square"></i> Tambah Slide</button>     
+                  <button type="button" class="btn btn-primary btn-sm" id="add_slide">Tambah Slide</button>     
                 </div>
                 <div class="form-group">  
                   <?php include('view_slides.php'); ?>
@@ -202,58 +212,25 @@
           </div>          
           <!-- Slide --> 
 
+          <!-- Hadist -->
+          <div class="tab-pane fade" id="list-hadist" role="tabpanel" aria-labelledby="list-hadist-list">
+            <div class="card">
+            <h5 class="card-header"><i class="fas fa-quran"></i> Kumpulan Hadist Shahih</h5>
+              <div class="card-body">                
+                <div class="form-group">
+                  <button type="button" class="btn btn-primary btn-sm" id="add_hadist">Tambah Hadist</button>     
+                </div>
+                <div class="form-group">  
+                  <?php include('view_hadist.php'); ?>
+                </div>
+              </div>
+            </div>
+          </div>          
+          <!-- Hadist --> 
+
           <!-- Tentang Aplikasi -->
           <div class="tab-pane fade" id="list-about" role="tabpanel" aria-labelledby="list-about-list">
-            <div class="card">
-            <h5 class="card-header"><i class="fas fa-user-circle"></i> Tentang Aplikasi</h5>
-            <div class="card-body">
-                <div class="form-group">
-                  <h4>Developer</h4>
-                  <p><i class="fas fa-user-circle"></i> Hendra Dwi Putra</p>
-                  <p><i class="fas fa-envelope-open-text"></i> hendra.doank@gmail.com</p> 
-                  <p><i class="fas fa-phone-square-alt"></i> 62-811-6077-81</p>                  
-                  <p><i class="fab fa-github"></i> https://github.com/hendradwiputra/imasjid</p>                  
-                </div>
-                <br>                
-                <h4>Copyright</h4>
-                <p>Aplikasi ini <strong>bebas</strong> dipakai/dikembangkan oleh siapa saja untuk kepentingan masjid. <strong>Dilarang</strong> memperjualbelikan aplikasi ini.</p>
-                <br>                
-                <h4>Contributor</h4>
-                <table class="table table-bordered table-sm">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                      <td>Hamid Zarrabi-Zadeh</td>
-                      <td>Creator PrayTime.php: Prayer Times Calculator (ver 1.2.2). Download link : <a href="http://praytimes.org">http://praytimes.org</a></td>      
-                  </tr>
-                </tbody>
-                </table>
-                <h4>Version</h4>
-                <table class="table table-bordered table-sm">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Version</th>
-                    <th scope="col">Notes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                      <td>v1.0</td>
-                      <td>Create application.</td>      
-                  </tr>
-                </tbody>
-                </table>
-            </div>
-            </div>
+            <?php include('about.php'); ?>
           </div>
           <!-- Tentang Aplikasi --> 
 
