@@ -100,8 +100,11 @@ table.table.table-condensed {
 
 th, td {
     font-size: 13px;
-  }
+}
 
+.text-white {
+  font-family: 'montserratbold';
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
