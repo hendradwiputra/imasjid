@@ -31,13 +31,13 @@
                   $slide_status = $data['slide_status'];                  			
 ?>
 			<tr>
-			<td rowspan="4"><?php echo $count; ?></td>;	
-      			<td rowspan="4"><?php echo $judul; ?></td>;
-      			<td><?php echo $isi1; ?></td>;
-      			<td rowspan="4"><img src='../assets/images/<?php echo $foto; ?>' width='120px' height='80px' class="img border border-secondary"></td>;
-      			<td rowspan="4" class="text-justify"><?php if($slide_status==0) { echo "<i class='fas fa-times'></i>";} else { echo "<i class='far fa-check-circle'></i>"; } ?></td>;
-      			<td rowspan="4"><input type='button' name='edit' id='<?php echo $slide_id; ?>' value='Edit' class='btn btn-primary btn-sm edit_data'></td>;
-      			<td rowspan="4"><input type='button' name='hapus' id='<?php echo $slide_id; ?>' value='Hapus' class='btn btn-outline-primary btn-sm hapus_data'></td>;
+			<td rowspan="4"><?php echo $count; ?></td>	
+      			<td rowspan="4"><?php echo $judul; ?></td>
+      			<td><?php echo $isi1; ?></td>
+      			<td rowspan="4"><img src='../assets/images/<?php echo $foto; ?>' width='120px' height='80px' class="img border border-secondary"></td>
+      			<td rowspan="4" class="text-justify"><?php if($slide_status==0) { echo "<i class='fas fa-times'></i>";} else { echo "<i class='far fa-check-circle'></i>"; } ?></td>
+      			<td rowspan="4"><input type='button' name='edit' id='<?php echo $slide_id; ?>' value='Edit' class='btn btn-primary btn-sm edit_data'></td>
+      			<td rowspan="4"><input type='button' name='hapus' id='<?php echo $slide_id; ?>' value='Hapus' class='btn btn-outline-primary btn-sm hapus_data'></td>
       		</tr>
       		<tr>
       			<td><?php echo $isi2; ?></td>	
