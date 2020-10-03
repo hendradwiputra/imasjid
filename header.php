@@ -13,11 +13,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>iMasjid</title>
 </head>
-<!--	
- <audio id="beepSound" > 
-        <source src="./asset/sounds/sound1.wav" type="audio/mpeg"> 
- </audio>
--->
+
+<audio id="myAudio" autoplay>
+    <source src="./sounds/Sounds1.mp3" type="audio/mpeg">
+    <source src="./sounds/Sounds1.wav" type="audio/wav">
+    <object>
+        <param name="autostart" value="true">
+        <param name="src" value="sound1.wav">
+        <param name="autoplay" value="true">
+        <param name="controller" value="false">
+        <embed src="./sounds/Sounds1.wav" controller="false" autoplay="true" autostart="true" type="audio/mpeg"></embed>
+    </object>
+</audio>
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css"> 
@@ -411,13 +418,13 @@
 			// Mengganti Nama Solat Berikut nya dengan Label Adzan
         	if (distance < 0) {
           		clearInterval(x); 
+          		//----
+          		var mySound = document.getElementById("myAudio");
+				mySound.play();
+          		//----
           		if (durasiadzan == 0 ) { // command ini untuk mengabaikan perintah adzan untuk solat syuruq
           			document.getElementById("timer").innerHTML = "WAKTU " + nextprayer.toUpperCase(); 
           		} else {
-				//----Bunyi Beep ketika memasuki waktu adzan
-				//----Script beepSound hanya jalan di Microsoft Edge, di browser lain tidak jalan.
-				//----Mohon bantuan nya
-				//document.getElementById("beepSound").play(); 
           			document.getElementById("timer").innerHTML = label; 
           		}          		
         	}  
@@ -450,10 +457,10 @@
 
             		if (t < 0) {
 						      clearInterval(y); 
-						      //----Bunyi Beep ketika counter iqomah selesai
-						      //----Script beepSound hanya jalan di Microsoft Edge, di browser lain tidak jalan.
-				                      //----Mohon bantuan nya
-						      //document.getElementById("beepSound").play(); 	
+						      //----
+          					  var mySound = document.getElementById("myAudio");
+							  mySound.play();
+          					  //----
 						      var label = "WAKTU " + nextprayer.toUpperCase(); 
 						      document.getElementById("timer").innerHTML = label;
 					      }    								
