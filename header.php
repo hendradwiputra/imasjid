@@ -257,7 +257,7 @@
 			
         
 		} else if (currentminute <= waktudzuhur) {
-			if (hari == "JUM'AT") { var nextprayer = "JUM'AT"; var durasiiqomah = 0; var label = "WAKTU " + nextprayer;} else { var nextprayer = "DZUHUR"; var durasiiqomah = <?php echo $iqomah_dzuhur; ?>; var label = "ADZAN " + nextprayer;}  		
+			if (hari == "Jum'at") { var nextprayer = "JUM'AT"; var durasiiqomah = 0; var label = "WAKTU " + nextprayer;} else { var nextprayer = "DZUHUR"; var durasiiqomah = <?php echo $iqomah_dzuhur; ?>; var label = "ADZAN " + nextprayer;}  		
   		var nextcounter = dzuhur;  	
   		var starttime = waktudzuhur;
 			var endtime = batasdzuhur;			 
@@ -269,7 +269,7 @@
 			
         
   		} else if (batasdzuhur >= currentminute) {
-			if (hari == "JUM'AT") { var nextprayer = "JUM'AT"; var durasiiqomah = 0; var label = "WAKTU " + nextprayer;} else { var nextprayer = "DZUHUR"; var durasiiqomah = <?php echo $iqomah_dzuhur; ?>; var label = "ADZAN " + nextprayer;} 
+			if (hari == "Jum'at") { var nextprayer = "JUM'AT"; var durasiiqomah = 0; var label = "WAKTU " + nextprayer;} else { var nextprayer = "DZUHUR"; var durasiiqomah = <?php echo $iqomah_dzuhur; ?>; var label = "ADZAN " + nextprayer;} 
 			var nextcounter = dzuhur;    
 			var starttime = waktudzuhur;
 			var endtime = batasdzuhur; 
