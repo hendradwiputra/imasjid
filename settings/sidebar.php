@@ -3,7 +3,7 @@
   include('slideModal.php'); 
   include('hadistModal.php'); 
 ?>
-<form method="POST" enctype="multipart/form-data">
+<form method="POST" id="setting_form" enctype="multipart/form-data">
   <div class="container-fluid">
     <h1 class="card-header bg-secondary text-white">iMasjid</h1><br>
     <div class="row">      
@@ -145,16 +145,9 @@
                       <option <?php if ($iqomah_isya==25) echo 'selected = "selected"'; ?> value="25">25</option> 
                       <option <?php if ($iqomah_isya==30) echo 'selected = "selected"'; ?> value="30">30</option>                                      
                     </select>
-                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">Pengaturan Suara</label>
                   </div>
-
                 </div>  
-
-                
-
               </div>
             </div>
           </div>
@@ -167,7 +160,7 @@
             <div class="card-body">
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Atur Kecepatan Teks</label>
-                  <select name="kecepatan_teks" id="kecepatan_teks" class="form-control form-control-sm col-md-2" maxlength="255">
+                  <select name="kecepatan_teks" id="kecepatan_teks" class="form-control form-control-sm col-md-2">
                     <option <?php if ($kecepatan_teks==5) echo 'selected = "selected"'; ?> value="5">5</option>
                     <option <?php if ($kecepatan_teks==6) echo 'selected = "selected"'; ?> value="6">6</option>
                     <option <?php if ($kecepatan_teks==7) echo 'selected = "selected"'; ?> value="7">7</option>
@@ -178,7 +171,7 @@
                 </div>
                 <div class="form-group">
                   <label>Teks Berjalan</label>
-                  <textarea class="form-control form-control-sm" id="running_teks" name="running_teks" rows="6"><?php echo $running_teks; ?></textarea>
+                  <textarea class="form-control form-control-sm" id="running_teks" name="running_teks" rows="6" maxlength="255"><?php echo $running_teks; ?></textarea>
                 </div>
             </div>
             </div>

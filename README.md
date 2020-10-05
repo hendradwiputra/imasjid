@@ -1,4 +1,4 @@
-<h1>Jam Sholat Masjid [Moslem Prayer Time]</h1>
+<h1>Jam Sholat Masjid [Moslem Prayer Time] - Development</h1>
 
 <h2>Developer</h2>
 Aplikasi ini menggunakan calculation method dari praytimes.org dan sudah di custom sedemikian rupa sesuai kebutuhan. Note : Saya ada lakukan tambahan perhitungan sholat mengikuti ketentuan Kemenag dengan Sudut Fajr 20 dan Isya 18.

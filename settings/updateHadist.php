@@ -1,27 +1,23 @@
 <?php
-  include("../scripts/db_connection.php"); 
+  
+  include_once ("../scripts/db_connection.php");
+  $pdo = pdo_connect_mysql();
   
   if(isset($_POST["hadist_id"])) {
 
-    $hadist_judul = mysqli_real_escape_string($conn, $_POST["hadist_judul"]); 
-    $hadist_isi1 = mysqli_real_escape_string($conn, $_POST["hadist_isi1"]); 
-    $hadist_isi2 = mysqli_real_escape_string($conn, $_POST["hadist_isi2"]); 
-    $hadist_isi3 = mysqli_real_escape_string($conn, $_POST["hadist_isi3"]); 
-    $hadist_status = mysqli_real_escape_string($conn, $_POST["hadist_status"]); 
+    $hadist_judul = isset($_POST['hadist_judul']) ? $_POST['hadist_judul'] : '';
+    $hadist_isi1 = isset($_POST['hadist_isi1']) ? $_POST['hadist_isi1'] : '';
+    $hadist_isi2 = isset($_POST['hadist_isi2']) ? $_POST['hadist_isi2'] : '';
+    $hadist_isi3 = isset($_POST['hadist_isi3']) ? $_POST['hadist_isi3'] : '';
+    $hadist_status = isset($_POST['hadist_status']) ? $_POST['hadist_status'] : '';
 
-    $sql = "
-                UPDATE hadist SET
-                hadist_judul = '$hadist_judul',hadist_isi1 = '$hadist_isi1',hadist_isi2 = '$hadist_isi2',
-                hadist_isi3 = '$hadist_isi3'
-                WHERE hadist_id = '".$_POST['hadist_id']."'
-            ";
+    $query = $pdo->prepare("UPDATE hadist SET hadist_judul=?,hadist_isi1=?,hadist_isi2=?,hadist_isi3=?,hadist_status=? WHERE hadist_id=?");
+    $query->execute([$hadist_judul,$hadist_isi1,$hadist_isi2,$hadist_isi3,$hadist_status,$_POST['hadist_id']]); 
 
-    //--Query penyimpanan data ke database--//
-    if ($conn->query($sql) === TRUE) {
-      echo "<script>alert('Data berhasil disimpan.');</script>";                   
-    } else {
-      echo "<script>alert('Terjadi kegagalan dalam penyimpanan data : " . $conn->error . ". Cek koneksi database.)";
-    }   
+    if(!empty($query)) {
+      echo "<script>alert('Data berhasil disimpan.');</script>"; 
+    }  
+    
   }  
     
   //--Load Table--//
