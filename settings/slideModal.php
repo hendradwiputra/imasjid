@@ -10,8 +10,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="form-group">
-          <!--<label id="slide-id"></label><br>  -->    
+        <div class="form-group">    
           <label>Gambar</label>
           <div>
             <img id="images" width="180px" height="120px" class="img border border-secondary">           
@@ -22,7 +21,8 @@
           <div class="custom-control custom-checkbox mr-sm-2" id="checkBox-form">
             <input type="checkbox" class="form-check-input" id="checkBox" name="checkBox" onclick="myFunction()" />                       
             <label class="form-check-label" for="checkBox">Ubah Gambar</label>
-            <input type="hidden" name="checkBoxValue" id="checkBoxValue" class="form-control form-control-sm col" value=""> 
+            <input type="hidden" name="checkBoxValue" id="checkBoxValue" class="form-control form-control-sm col" value="" placeholder="checkBoxValue">
+            <input type="hidden" name="tmp_filename" id="tmp_filename" class="form-control form-control-sm col" placeholder="tmp_filename">  
           </div>              
         </div>
         <div class="form-group">                      
@@ -73,6 +73,7 @@
       var checkBox_btn = document.getElementById("checkBox");
       var browseFoto = document.getElementById("foto");
       var textBoxValue = document.getElementById("checkBoxValue");
+
       if (checkBox_btn.checked == true){
         browseFoto.style.display = "block";
         textBoxValue.value = "checked";      

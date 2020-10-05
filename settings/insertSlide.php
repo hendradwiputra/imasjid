@@ -16,8 +16,8 @@
 
         $foto = $_FILES['foto']['name']; 
         $size   = $_FILES['foto']['size'];
-        $location = "../assets/images/".$foto; //undefined index foto ketika edit setelah save data
-        $imageFileType = pathinfo($location,PATHINFO_EXTENSION); //undefined index foto ketika edit setelah save data
+        $location = "../assets/images/".$foto; 
+        $imageFileType = pathinfo($location,PATHINFO_EXTENSION); 
         $valid_extensions = array("jpg","jpeg","png");  
 
         $query = $pdo->prepare("INSERT INTO slides(judul,isi1,
@@ -25,15 +25,15 @@
               
         $query->execute([$judul,$isi1,$isi2,$isi3,$isi4,$foto,$slide_status]); 
 
-        move_uploaded_file($_FILES['foto']['tmp_name'],$location); //undefined index foto ketika edit setelah save data
+        move_uploaded_file($_FILES['foto']['tmp_name'],$location); 
 
       } else {
         
         $foto = "background.jpg";
         $query = $pdo->prepare("INSERT INTO slides(judul,isi1,
-                isi2,isi3,isi4,slide_status) VALUES(?,?,?,?,?,?)");
+                isi2,isi3,isi4,foto,slide_status) VALUES(?,?,?,?,?,?,?)");
               
-        $query->execute([$judul,$isi1,$isi2,$isi3,$isi4,$slide_status]); 
+        $query->execute([$judul,$isi1,$isi2,$isi3,$isi4,$foto,$slide_status]); 
         
       }
 

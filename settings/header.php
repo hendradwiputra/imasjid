@@ -26,7 +26,7 @@
 <script>
 $(document).ready(function() { 
 
-    // Hadist Table
+    //---Tabel Hadist---//
     $.ajax({
         url: 'view_hadist.php',
         type: "POST",
@@ -51,7 +51,7 @@ $(document).ready(function() {
     $(document).on('click', '.hapus_hadist', function() {         
         var hadist_id = $(this).attr("id");        
         
-        if(confirm("Hapus hadist ini ?")) {        
+        if(confirm("Antum yakin akan menghapus hadist ini ?")) {        
             $.ajax({
                 url:"hapusHadist.php",
                 method:"POST",
@@ -67,8 +67,7 @@ $(document).ready(function() {
 
     $(document).on('click', '.edit_hadist', function() {   
         $("#hadist-modal-title").html("Edit Hadist");      
-        var hadist_id = $(this).attr("id");   
-        var data = new FormData();        
+        var hadist_id = $(this).attr("id");     
        
         $.ajax({
             url:"get_hadist.php",
@@ -88,25 +87,15 @@ $(document).ready(function() {
         });        
     });     
 
-    $("#save_hadist").click(function(){  
-        var data = new FormData();    
-        data.append('hadist_id', $("#hadist_id").val());
-        data.append('hadist_judul', $("#hadist_judul").val());
-        data.append('hadist_isi1', $("#hadist_isi1").val());
-        data.append('hadist_isi2', $("#hadist_isi2").val());
-        data.append('hadist_isi3', $("#hadist_isi3").val());
-        data.append('hadist_status', $("#hadist_status").val());        
-
+    $("#save_hadist").click(function(){
+        var data = $("#hadist_form").serialize();
+        
         if($('#save_hadist').val() == "Simpan")  { 
-
             $.ajax({
                 url:'insertHadist.php',
                 type:'POST',
-                contentType: false,
-                processData: false,
                 data:data,
-                success:function(response){
-                    $('#hadist_form')[0].reset();                     
+                success:function(response){                   
                     $('#hadistModal').modal('hide');
                     $('#table_hadist').html(response);                    
                 }
@@ -115,11 +104,8 @@ $(document).ready(function() {
             $.ajax({
                 url:'updateHadist.php',
                 type:'POST',
-                contentType: false,
-                processData: false,
                 data:data,
-                success:function(response){
-                    $('#hadist_form')[0].reset();                     
+                success:function(response){                     
                     $('#hadistModal').modal('hide');
                     $('#table_hadist').html(response);                  
                 }
@@ -127,7 +113,7 @@ $(document).ready(function() {
         }  
     });   
     
-    // Slides Table
+    //---Tabel Slides---//
     $.ajax({
         url: 'view_slides.php',
         type: "POST",
@@ -158,7 +144,7 @@ $(document).ready(function() {
     $(document).on('click', '.hapus_slide', function() {         
         var slide_id = $(this).attr("id");        
         
-        if(confirm("Hapus slide ini ?")) {        
+        if(confirm("Antum yakin akan menghapus slide ini ?")) {        
             $.ajax({
                 url:"hapusSlide.php",
                 method:"POST",
@@ -193,6 +179,7 @@ $(document).ready(function() {
                 $('#slide_status').val(data.slide_status);                    
                 $('#images').attr("src","../assets/images/" + data.foto);
                 $('#filename').html(data.foto);
+                $('#tmp_filename').val(data.foto);
                 $('#slideModal').modal('show');
                 $('#checkBox-form').show();  
                 $('#foto').hide();
@@ -204,6 +191,7 @@ $(document).ready(function() {
     $("#save_slide").click(function(){  
         //https://www.mynotescode.com/cara-membuat-crud-plus-upload-gambar-dengan-php-ajax-bootstrap/ 
         var data = new FormData();    
+
         data.append('slide_id', $("#slide_id").val());
         data.append('judul', $("#judul").val());
         data.append('isi1', $("#isi1").val());
@@ -212,8 +200,7 @@ $(document).ready(function() {
         data.append('isi4', $("#isi4").val());
         data.append('slide_status', $("#slide_status").val());
         data.append('foto', $("#foto")[0].files[0]);
-        data.append('filename', $("#filename").val());
-        data.append('checkBox', $("#checkBox").val());
+        data.append('tmp_filename', $("#tmp_filename").val());
         data.append('checkBoxValue', $("#checkBoxValue").val());
 
         if($('#save_slide').val() == "Simpan")  {  
@@ -245,48 +232,14 @@ $(document).ready(function() {
         }       
     });   
     
-    //Settings Table    
+    //---Tabel Settings---//    
     $("#saveSetting").click(function(){
-        var setting_id = $("#setting_id").val();
-        var nama_masjid = $("#nama_masjid").val();
-        var alamat_masjid = $("#alamat_masjid").val();
-        var running_teks = $("#running_teks").val();
-        var kecepatan_teks = $("#kecepatan_teks").val();
-        var durasi_slide = $("#durasi_slide").val();
-        var koreksi_hijriah = $("#koreksi_hijriah").val();
-        var durasi_adzan = $("#durasi_adzan").val();
-        var iqomah_shubuh = $("#iqomah_shubuh").val();
-        var iqomah_dzuhur = $("#iqomah_dzuhur").val();
-        var iqomah_ashar = $("#iqomah_ashar").val();
-        var iqomah_maghrib = $("#iqomah_maghrib").val();
-        var iqomah_isya = $("#iqomah_isya").val();
-        var garis_lintang = $("#garis_lintang").val();
-        var garis_bujur = $("#garis_bujur").val();
-        var zona_waktu = $("#zona_waktu").val();
-        var metode_perhitungan = $("#metode_perhitungan").val();        
-        
+        var data = $("#setting_form").serialize();
+                
         $.ajax({
                 url:'updateSetting.php',
                 type:'POST',
-                data:{
-                    setting_id:setting_id,
-                    nama_masjid:nama_masjid,
-                    alamat_masjid:alamat_masjid,
-                    running_teks:running_teks,
-                    kecepatan_teks:kecepatan_teks,
-                    durasi_slide:durasi_slide,
-                    koreksi_hijriah:koreksi_hijriah,
-                    durasi_adzan:durasi_adzan,
-                    iqomah_shubuh:iqomah_shubuh,
-                    iqomah_dzuhur:iqomah_dzuhur,
-                    iqomah_ashar:iqomah_ashar,
-                    iqomah_maghrib:iqomah_maghrib,
-                    iqomah_isya:iqomah_isya,
-                    garis_lintang:garis_lintang,
-                    garis_bujur:garis_bujur,
-                    zona_waktu:zona_waktu,
-                    metode_perhitungan:metode_perhitungan
-                },
+                data:data,
                     success:function(data){
                         alert(data);                                       
                 }
