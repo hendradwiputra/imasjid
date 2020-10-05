@@ -1,11 +1,14 @@
 <?php 
 
- 	include("../scripts/db_connection.php");
+	include_once ("../scripts/db_connection.php");
 
-	$sql = "SELECT * FROM hadist";
-	$result = $conn->query($sql);
+	$pdo = pdo_connect_mysql();
+	$query = $pdo->prepare('SELECT * FROM hadist');
+	$query->execute();  
+	$result = $query->fetchAll(PDO::FETCH_ASSOC);
+
 ?>    
-      <table id="table_hadist" class="table table-sm table-responsive table-condensed">
+    <table id="table_hadist" class="table table-sm table-responsive table-condensed">
       <thead class="thead-light">
         <tr>
             <th>No</th>
@@ -17,13 +20,13 @@
       <tbody>      
 <?php 
 	$count = 1;
-	if ($result->num_rows > 0) {
-		foreach ($result as $data) {	
-                  $hadist_id = $data['hadist_id'];
-			$hadist_judul = $data['hadist_judul'];
-			$hadist_isi1 = $data['hadist_isi1'];
-			$hadist_isi2 = $data['hadist_isi2'];
-                  $hadist_isi3 = $data['hadist_isi3'];                 			
+	
+	foreach ($result as $row) {	
+            $hadist_id 		= $row['hadist_id'];
+			$hadist_judul 	= $row['hadist_judul'];
+			$hadist_isi1 	= $row['hadist_isi1'];
+			$hadist_isi2 	= $row['hadist_isi2'];
+            $hadist_isi3 	= $row['hadist_isi3'];                 			
 ?>
 			<tr>
 			    <td rowspan="3"><?php echo $count ."."; ?></td>	
@@ -40,11 +43,11 @@
       		</tr>     		   		
       		
 <?php
-			$count++;
-		}				
+		$count++;
+						
 	}
 ?>
       </tbody>
-      </table> 	
+    </table> 	
 
 

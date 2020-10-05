@@ -145,16 +145,9 @@
                       <option <?php if ($iqomah_isya==25) echo 'selected = "selected"'; ?> value="25">25</option> 
                       <option <?php if ($iqomah_isya==30) echo 'selected = "selected"'; ?> value="30">30</option>                                      
                     </select>
-                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">Pengaturan Suara</label>
                   </div>
-
                 </div>  
-
-                
-
               </div>
             </div>
           </div>

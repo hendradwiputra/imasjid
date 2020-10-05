@@ -46,5 +46,19 @@
                   </tr>
                 </tbody>
                 </table>
+
+                <?php
+                  $tahun = date('Y');
+                  $create_date = "2020";
+                
+                  if ($create_date == $tahun) {
+			              $copyright_years = $create_date;
+		              } else {
+			              $copyright_years = $create_date . " - " . $tahun;
+		              }
+                  
+                  echo "@copyright " .$copyright_years;
+                  
+                ?>
             </div>
 </div>

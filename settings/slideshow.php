@@ -1,20 +1,20 @@
 <?php 
 
- 	include("./scripts/db_connection.php");
- 	
- 	//--Slide table
-	$sql = "SELECT * FROM slides where slide_status=1";
-	$result = $conn->query($sql);
+	include_once ("./scripts/db_connection.php");
+
+  	$pdo = pdo_connect_mysql();
+  	$query = $pdo->prepare('SELECT * FROM slides where slide_status=1');
+  	$query->execute();  
+  	$result = $query->fetchAll(PDO::FETCH_ASSOC);
 	
 	$count = 0;
-	if ($result->num_rows > 0) {
-		foreach ($result as $data) { 
-			$judul = $data['judul'];
-			$isi1 = $data['isi1'];
-			$isi2 = $data['isi2'];
-			$isi3 = $data['isi3'];
-			$isi4 = $data['isi4'];
-			$foto = rawurlencode($data['foto']);
+	foreach ($result as $row) { 
+			$judul = $row['judul'];
+			$isi1 = $row['isi1'];
+			$isi2 = $row['isi2'];
+			$isi3 = $row['isi3'];
+			$isi4 = $row['isi4'];
+			$foto = rawurlencode($row['foto']);
 
 		if ($count == 0) { $class = 'carousel-item active';} else { $class = 'carousel-item'; }
 
@@ -30,8 +30,6 @@
             echo "</div>";
             echo "</div>";
 			$count++;
-		}		
-	}
+	}		
 	
-
 ?>
