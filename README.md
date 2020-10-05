@@ -1,5 +1,5 @@
 <h1>Jam Sholat Masjid [Moslem Prayer Time]</h1>
-<img src="https://github.com/hendradwiputra/imasjid/tree/1.0/assets/images/image1.jpg" height="180px" width="280px">
+<img src="https://github.com/hendradwiputra/imasjid/blob/1.0/assets/images/image1.JPG" height="380px" width="580px">
 <h2>Developer</h2>
 Aplikasi ini menggunakan calculation method dari praytimes.org dan sudah di custom sedemikian rupa sesuai kebutuhan. Note : Saya ada lakukan tambahan perhitungan sholat mengikuti ketentuan Kemenag dengan Sudut Fajr 20 dan Isya 18.
 <ul>
