@@ -180,7 +180,7 @@
   		var timershubuh = 30;
   		var timersyuruq = 15;
   		var timerdzuhur = 30;
-  		var timerashar = 80;
+  		var timerashar = 30;
   		var timermaghrib = 20;
   		var timerisya = 30;
 		
