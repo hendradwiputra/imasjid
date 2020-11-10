@@ -84,9 +84,9 @@ class PrayTime
     var $MWL        = 3;    // Muslim World League (MWL)
     var $Makkah     = 4;    // Umm al-Qura, Makkah
     var $Egypt      = 5;    // Egyptian General Authority of Survey
-    var $Kemenag    = 6;    // Custom Setting
-    //var $Custom     = 6;    // Custom Setting
+    var $Custom     = 6;    // Custom Setting
     var $Tehran     = 7;    // Institute of Geophysics, University of Tehran
+    var $Kemenag    = 8;    // Kementerian Agama Indonesia
 
     // Juristic Methods
     var $Shafii     = 0;    // Shafii (standard)
@@ -169,8 +169,8 @@ class PrayTime
         $this->methodParams[$this->Makkah]    = array(18.5, 1, 0, 1, 90);
         $this->methodParams[$this->Egypt]     = array(19.5, 1, 0, 0, 17.5);
         $this->methodParams[$this->Tehran]    = array(17.7, 0, 4.5, 0, 14);
+        $this->methodParams[$this->Custom]    = array(18, 1, 0, 0, 17);
         $this->methodParams[$this->Kemenag]   = array(20, 1, 0, 0, 18);
-        //$this->methodParams[$this->Custom]    = array(18, 1, 0, 0, 17);
 
         $this->setCalcMethod($methodID);
     }
