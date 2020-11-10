@@ -38,7 +38,7 @@
         </div>
         <div class="form-group">
           <label>Isi</label>
-          <textarea class="form-control form-control-sm" name="isi1" id="isi1" rows="3" maxlength="255"></textarea>
+          <textarea class="form-control form-control-sm" name="isi1" id="isi1" rows="2" maxlength="255"></textarea>
         </div>
         <div class="form-group">
           <textarea class="form-control form-control-sm" name="isi2" id="isi2" rows="2" maxlength="255"></textarea>

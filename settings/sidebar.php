@@ -58,9 +58,9 @@
                       <option <?php if ($metode_perhitungan==2) echo 'selected = "selected"'; ?> value="2">Islamic Society of North America (ISNA)</option>  
                       <option <?php if ($metode_perhitungan==3) echo 'selected = "selected"'; ?> value="3">Muslim World League</option> 
                       <option <?php if ($metode_perhitungan==4) echo 'selected = "selected"'; ?> value="4">Umm al-Qura, Makkah</option>     
-                      <option <?php if ($metode_perhitungan==5) echo 'selected = "selected"'; ?> value="5">Egyptian General Authority of Survey</option>  
-                      <option <?php if ($metode_perhitungan==6) echo 'selected = "selected"'; ?> value="6">Kementerian Agama Indonesia</option>
+                      <option <?php if ($metode_perhitungan==5) echo 'selected = "selected"'; ?> value="5">Egyptian General Authority of Survey</option>                      
                       <option <?php if ($metode_perhitungan==7) echo 'selected = "selected"'; ?> value="7">Institute of Geophysics, University of Tehran</option>                            
+                      <option <?php if ($metode_perhitungan==8) echo 'selected = "selected"'; ?> value="8">Kementerian Agama Indonesia</option>
                   </select>
                 </div>
                 <div class="form-group">
@@ -86,6 +86,7 @@
             <div class="card">
             <h5 class="card-header"><i class="fas fa-comment-dots"></i> Notifikasi Adzan & Iqomah</h5>
               <div class="card-body">
+
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Durasi Adzan <small class="text-muted">(Hitungan menit)</small></label>
                   <select name="durasi_adzan" id="durasi_adzan" class="form-control form-control-sm col-md-2">
@@ -94,7 +95,8 @@
                     <option <?php if ($durasi_adzan==5) echo 'selected = "selected"'; ?> value="5">5</option>
                     <option <?php if ($durasi_adzan==10) echo 'selected = "selected"'; ?> value="10">10</option>                    
                   </select>
-                </div>
+                </div><br>
+
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Jarak Adzan ke Iqomah <small class="text-muted">(Hitungan menit)</small></label>               
                   <div class="form-row">                  
@@ -145,9 +147,71 @@
                       <option <?php if ($iqomah_isya==25) echo 'selected = "selected"'; ?> value="25">25</option> 
                       <option <?php if ($iqomah_isya==30) echo 'selected = "selected"'; ?> value="30">30</option>                                      
                     </select>
+                  </div>                 
+                  </div>
+                </div> 
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Perpindahan Label Sholat ke Sholat Berikutnya <small class="text-muted">(Hitungan menit)</small></label>               
+                  <div class="form-row">                  
+                  <div class="form-group col-md-2">
+                    <label for="exampleFormControlSelect1">Shubuh</label>
+                    <select name="durasi_shubuh" id="durasi_shubuh" class="form-control form-control-sm">
+                      <option <?php if ($durasi_shubuh==0) echo 'selected = "selected"'; ?> value="0">0</option>
+                      <option <?php if ($durasi_shubuh==15) echo 'selected = "selected"'; ?> value="15">15</option>
+                      <option <?php if ($durasi_shubuh==30) echo 'selected = "selected"'; ?> value="30">30</option>
+                      <option <?php if ($durasi_shubuh==45) echo 'selected = "selected"'; ?> value="45">45</option>  
+                      <option <?php if ($durasi_shubuh==60) echo 'selected = "selected"'; ?> value="60">60</option>                                                              
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="exampleFormControlSelect1">Syuruq</label>
+                    <select name="durasi_syuruq" id="durasi_syuruq" class="form-control form-control-sm">
+                      <option <?php if ($durasi_syuruq==0) echo 'selected = "selected"'; ?> value="0">0</option>
+                      <option <?php if ($durasi_syuruq==15) echo 'selected = "selected"'; ?> value="15">15</option>                                                             
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="exampleFormControlSelect1">Dzuhur</label>
+                    <select name="durasi_dzuhur" id="durasi_dzuhur" class="form-control form-control-sm">
+                      <option <?php if ($durasi_dzuhur==0) echo 'selected = "selected"'; ?> value="0">0</option>
+                      <option <?php if ($durasi_dzuhur==15) echo 'selected = "selected"'; ?> value="15">15</option>
+                      <option <?php if ($durasi_dzuhur==30) echo 'selected = "selected"'; ?> value="30">30</option>
+                      <option <?php if ($durasi_dzuhur==45) echo 'selected = "selected"'; ?> value="45">45</option>  
+                      <option <?php if ($durasi_dzuhur==60) echo 'selected = "selected"'; ?> value="60">60</option>                                                              
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="exampleFormControlSelect1">Ashar</label>
+                    <select name="durasi_ashar" id="durasi_ashar" class="form-control form-control-sm">
+                      <option <?php if ($durasi_ashar==0) echo 'selected = "selected"'; ?> value="0">0</option>
+                      <option <?php if ($durasi_ashar==15) echo 'selected = "selected"'; ?> value="15">15</option>
+                      <option <?php if ($durasi_ashar==30) echo 'selected = "selected"'; ?> value="30">30</option>
+                      <option <?php if ($durasi_ashar==45) echo 'selected = "selected"'; ?> value="45">45</option>  
+                      <option <?php if ($durasi_ashar==60) echo 'selected = "selected"'; ?> value="60">60</option>                                                              
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="exampleFormControlSelect1">Maghrib</label>
+                    <select name="durasi_maghrib" id="durasi_maghrib" class="form-control form-control-sm">
+                      <option <?php if ($durasi_maghrib==0) echo 'selected = "selected"'; ?> value="0">0</option>
+                      <option <?php if ($durasi_maghrib==15) echo 'selected = "selected"'; ?> value="15">15</option>
+                      <option <?php if ($durasi_maghrib==30) echo 'selected = "selected"'; ?> value="30">30</option>                                                             
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="exampleFormControlSelect1">Isya</label>
+                    <select name="durasi_isya" id="durasi_isya" class="form-control form-control-sm">
+                      <option <?php if ($durasi_isya==0) echo 'selected = "selected"'; ?> value="0">0</option>
+                      <option <?php if ($durasi_isya==15) echo 'selected = "selected"'; ?> value="15">15</option>
+                      <option <?php if ($durasi_isya==30) echo 'selected = "selected"'; ?> value="30">30</option>
+                      <option <?php if ($durasi_isya==45) echo 'selected = "selected"'; ?> value="45">45</option>  
+                      <option <?php if ($durasi_isya==60) echo 'selected = "selected"'; ?> value="60">60</option>                                                              
+                    </select>
                   </div>
                   </div>
-                </div>  
+                </div>
+
               </div>
             </div>
           </div>
