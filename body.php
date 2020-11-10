@@ -67,3 +67,20 @@
     </div>
 </section>
 <!-- ======= Prayer Section ======= -->
+
+<!-- ======= Foot Note Section ======= -->
+  <?php
+    $tahun = date('Y');
+    $create_date = "2020";
+                
+    if ($create_date == $tahun) {
+		    $copyright_years = $create_date;
+		} else {
+		    $copyright_years = $create_date . " - " . $tahun;
+		}
+                  
+    echo "<p class='foot-note'>@copyright " .$copyright_years. ". " .$nama_masjid ."</p>";
+                  
+  ?>
+  
+<!-- ======= Foot Note Section ======= -->

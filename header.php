@@ -184,12 +184,12 @@
 		/* Variabel ini digunakan untuk menentukan perpindahan label sholat ke sholat berikut nya.
 		 * Misalkan : Label shubuh akan berpindah ke Syuruq setelah 30 menit
 		 */
-  		var timershubuh 	= 30;
-  		var timersyuruq 	= 15;
-  		var timerdzuhur 	= 30;
-  		var timerashar 		= 20;
-  		var timermaghrib 	= 20;
-  		var timerisya 		= 30;
+  		var timershubuh 	= <?php echo $durasi_shubuh; ?>;
+  		var timersyuruq 	= <?php echo $durasi_syuruq; ?>;
+  		var timerdzuhur 	= <?php echo $durasi_dzuhur; ?>;
+  		var timerashar 		= <?php echo $durasi_ashar; ?>;
+  		var timermaghrib 	= <?php echo $durasi_maghrib; ?>;
+  		var timerisya 		= <?php echo $durasi_isya; ?>;
 		
   		// Menentukan batas waktu solat ke solat yang lain nya  		
   		var batasshubuh = Number(waktushubuh) + Number(timershubuh);
@@ -490,7 +490,7 @@
 		}	
 
 		// Kombinasi kalender masehi dah hijriah  		
-		document.getElementById('penanggalan').innerHTML = hari + ", " + tanggal + " " + bulan + " " + tahun + " <i class='far fa-calendar-alt'></i> " + writeIslamicDate(<?php echo $koreksi_hijriah; ?>) + " H" + "***" + currentminute + "***" + adzan_to_iqomah + "***" + iqomah_to_solat;
+		document.getElementById('penanggalan').innerHTML = hari + ", " + tanggal + " " + bulan + " " + tahun + " <i class='far fa-calendar-alt'></i> " + writeIslamicDate(<?php echo $koreksi_hijriah; ?>) + " H";
 			  
 	}
 
@@ -511,4 +511,3 @@
 
 </script>
 <body onload="startTime()">
-	
