@@ -71,6 +71,12 @@ CREATE TABLE `settings` (
   `iqomah_ashar` int(2) NOT NULL,
   `iqomah_maghrib` int(2) NOT NULL,
   `iqomah_isya` int(2) NOT NULL,
+  `durasi_shubuh` int(2) NOT NULL,
+  `durasi_syuruq` int(2) NOT NULL,
+  `durasi_dzuhur` int(2) NOT NULL,
+  `durasi_ashar` int(2) NOT NULL,
+  `durasi_maghrib` int(2) NOT NULL,
+  `durasi_isya` int(2) NOT NULL,
   `garis_lintang` varchar(10) NOT NULL,
   `garis_bujur` varchar(10) NOT NULL,
   `zona_waktu` varchar(2) NOT NULL
@@ -80,8 +86,8 @@ CREATE TABLE `settings` (
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`setting_id`, `nama_masjid`, `alamat_masjid`, `running_teks`, `kecepatan_teks`, `durasi_slide`, `koreksi_hijriah`, `metode_perhitungan`, `durasi_adzan`, `iqomah_shubuh`, `iqomah_dzuhur`, `iqomah_ashar`, `iqomah_maghrib`, `iqomah_isya`, `garis_lintang`, `garis_bujur`, `zona_waktu`) VALUES
-(1, 'Masjid Raya Nurul Mubarok', 'Kompleks PT. RAPP Townsite II Baru', 'Jamaah agar selalu menggunakan masker ketika solat di Masjid # Anak-anak jangan ribut # HP mohon dinonaktifkan # Patuhi protokol kesehatan', 9, '6000', -1, 6, 5, 10, 5, 5, 5, 10, '0.406393', '101.845164', '+7');
+INSERT INTO `settings` (`setting_id`, `nama_masjid`, `alamat_masjid`, `running_teks`, `kecepatan_teks`, `durasi_slide`, `koreksi_hijriah`, `metode_perhitungan`, `durasi_adzan`, `iqomah_shubuh`, `iqomah_dzuhur`, `iqomah_ashar`, `iqomah_maghrib`, `iqomah_isya`, `durasi_shubuh`, `durasi_syuruq`, `durasi_dzuhur`, `durasi_ashar`, `durasi_maghrib`, `durasi_isya`, `garis_lintang`, `garis_bujur`, `zona_waktu`) VALUES
+(1, 'Masjid Raya Nurul Mubarok', 'Kompleks PT. RAPP Townsite II Baru', 'Jamaah agar selalu menggunakan masker ketika solat di Masjid # Anak-anak jangan ribut # HP mohon dinonaktifkan # Patuhi protokol kesehatan', 9, '6000', -1, 6, 5, 10, 5, 5, 5, 10, 30, 15, 30, 30, 30, 30, '0.406393', '101.845164', '+7');
 
 -- --------------------------------------------------------
 
