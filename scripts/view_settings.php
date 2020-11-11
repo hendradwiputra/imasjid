@@ -25,7 +25,12 @@
     $iqomah_ashar = $row['iqomah_ashar'];
     $iqomah_maghrib = $row['iqomah_maghrib'];
     $iqomah_isya = $row['iqomah_isya'];
-
+    $durasi_shubuh = $row['durasi_shubuh'];
+    $durasi_syuruq = $row['durasi_syuruq'];
+    $durasi_dzuhur = $row['durasi_dzuhur'];
+    $durasi_ashar = $row['durasi_ashar'];
+    $durasi_maghrib = $row['durasi_maghrib'];
+    $durasi_isya = $row['durasi_isya'];
   }
   
 
