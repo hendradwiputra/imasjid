@@ -445,13 +445,11 @@
             	document.getElementById("timer").innerHTML = "WAKTU " + nextprayer.toUpperCase(); 
             	
             } else {
-
-				// Avoid string and number in calculation. Using parseFloat to fix it
-				var min = parseFloat(min);
-				var durasiadzan = parseFloat(durasiadzan);
-				var durasiiqomah = parseFloat(durasiiqomah);
-
+		    
 				var time = hr + ":" + (Number(min) + Number(durasiadzan) + Number(durasiiqomah));
+		    
+		    		// Avoid string and number in calculation. Using parseFloat to fix it
+		    		var time = parseFloat(time);
 				       
             	var deadline = new Date(month + " " + nextdate + "," + tahun + " " + time + ":00").getTime();  
 
