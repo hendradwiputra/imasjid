@@ -449,7 +449,7 @@
 				var time = hr + ":" + (Number(min) + Number(durasiadzan) + Number(durasiiqomah));
 		    
 		    		// Avoid string and number in calculation. Using parseFloat to fix it
-		    		var time = parseFloat(time);
+		    		//var time = parseFloat(time);
 				       
             	var deadline = new Date(month + " " + nextdate + "," + tahun + " " + time + ":00").getTime();  
 
