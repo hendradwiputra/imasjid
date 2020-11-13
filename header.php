@@ -192,8 +192,8 @@
 			var endtime 	= batas_shubuh;  
 			var durasiiqomah = "<?php echo $iqomah_shubuh ?>"
 			var nextdate 	= tanggal;
-			var hr = '<?php echo substr($times[0],0,2); ?>';
-			var min = '<?php echo substr($times[0],3,4); ?>';        
+			var hr 		= "<?php echo substr($times[0],0,2) ?>"
+			var min 	= "<?php echo substr($times[0],3,4) ?>"        
 			document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + prayer1_name + "</h3>";
 			document.getElementById('time1').innerHTML = "<h2 " + selected + ">" + prayer1_time + "</h2>";
 			
@@ -203,9 +203,9 @@
   			var starttime 	= waktu_shubuh;
 			var endtime 	= batas_shubuh; 
 			var durasiiqomah = "<?php echo $iqomah_shubuh ?>"   
-			var nextdate = tanggal;
-			var hr = '<?php echo substr($times[0],0,2); ?>';
-			var min = '<?php echo substr($times[0],3,4); ?>';
+			var nextdate 	= tanggal;
+			var hr 		= "<?php echo substr($times[0],0,2) ?>"
+			var min 	= "<?php echo substr($times[0],3,4) ?>"
 			document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + prayer1_name + "</h3>";
 			document.getElementById('time1').innerHTML = "<h2 " + selected + ">" + prayer1_time + "</h2>";
 			
