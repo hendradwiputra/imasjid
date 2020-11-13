@@ -31,6 +31,12 @@
     $durasi_ashar = $row['durasi_ashar'];
     $durasi_maghrib = $row['durasi_maghrib'];
     $durasi_isya = $row['durasi_isya'];
+    $prayer1 = $row['prayer1'];
+    $prayer2 = $row['prayer2'];
+    $prayer3 = $row['prayer3'];
+    $prayer4 = $row['prayer4'];
+    $prayer5 = $row['prayer5'];
+    $prayer6 = $row['prayer6'];
   }
   
 
