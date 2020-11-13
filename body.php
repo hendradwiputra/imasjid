@@ -57,12 +57,12 @@
 <section id="prayer">
     <div class="intro-container">        
         <div class="d-flex bg1 justify-content-around">
-            <div class="p-2"><h3 id="prayer1"></h3><h2 id="shubuh"></h2></div>
-            <div class="p-2"><h3 id="prayer2"></h3><h2 id="syuruq"></h2></div>
-            <div class="p-2"><h3 id="prayer3"></h3><h2 id="dzuhur"></h2></div>
-            <div class="p-2"><h3 id="prayer4"></h3><h2 id="ashar"></h2></div>
-            <div class="p-2"><h3 id="prayer5"></h3><h2 id="maghrib"></h2></div>
-            <div class="p-2"><h3 id="prayer6"></h3><h2 id="isya"></h2></div>
+            <div class="p-2"><h3 id="prayer1"></h3><h2 id="time1"></h2></div>
+            <div class="p-2"><h3 id="prayer2"></h3><h2 id="time2"></h2></div>
+            <div class="p-2"><h3 id="prayer3"></h3><h2 id="time3"></h2></div>
+            <div class="p-2"><h3 id="prayer4"></h3><h2 id="time4"></h2></div>
+            <div class="p-2"><h3 id="prayer5"></h3><h2 id="time5"></h2></div>
+            <div class="p-2"><h3 id="prayer6"></h3><h2 id="time6"></h2></div>
         </div>
     </div>
 </section>
