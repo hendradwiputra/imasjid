@@ -78,9 +78,19 @@
 		} else {
 		    $copyright_years = $create_date . " - " . $tahun;
 		}
-                  
-    echo "<p class='foot-note'>@copyright " .$copyright_years. ". " .$nama_masjid ."</p>";
-                  
+                               
   ?>
-  
+
+<section id="topbar" class="d-none d-lg-block">
+    <div class="intro-container clearfix">
+      <div class="social-links float-left">
+        <a href="mailto:hendra.doank@gmail.com"><i class="far fa-copyright"></i> <?php echo " $copyright_years $nama_masjid "  ?>  </a>        
+      </div>
+      
+      <div class="social-links float-right">
+        <a href="mailto:hendra.doank@gmail.com"><i class="fas fa-phone-alt"></i> +62 811-6077-81. Made with <i class="fas fa-heart"></i> & <i class="fas fa-coffee"></i></a>
+      </div>
+    </div>
+</section>
+
 <!-- ======= Foot Note Section ======= -->

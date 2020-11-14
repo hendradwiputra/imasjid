@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="./assets/vendor/fontawesome/css/fontawesome.css"> 
 <link rel="stylesheet" href="./assets/vendor/fontawesome/css/regular.css">
 <link rel="stylesheet" href="./assets/vendor/fontawesome/css/solid.css">
+<link rel="stylesheet" href="./assets/vendor/fontawesome/css/brands.css">
 <!-- Ionicons -->
 <link href="./assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
@@ -101,7 +102,7 @@
         	case 9: bulan1 = "Oct"; break;
         	case 10: bulan1 = "Nov"; break;
         	case 11: bulan1 = "Dec"; break;
-		  }
+		}
 		  
       	switch(bulan2) {
         	case 0: bulan2 = "Januari"; break;
@@ -192,8 +193,8 @@
 			var endtime 	= batas_shubuh;  
 			var durasiiqomah = "<?php echo $iqomah_shubuh ?>"
 			var nextdate 	= tanggal;
-			var hr 		= "<?php echo substr($times[0],0,2) ?>"
-			var min 	= "<?php echo substr($times[0],3,4) ?>"        
+			var hr 			= "<?php echo substr($times[0],0,2) ?>"
+			var min 		= "<?php echo substr($times[0],3,4) ?>"        
 			document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + prayer1_name + "</h3>";
 			document.getElementById('time1').innerHTML = "<h2 " + selected + ">" + prayer1_time + "</h2>";
 			
@@ -204,8 +205,8 @@
 			var endtime 	= batas_shubuh; 
 			var durasiiqomah = "<?php echo $iqomah_shubuh ?>"   
 			var nextdate 	= tanggal;
-			var hr 		= "<?php echo substr($times[0],0,2) ?>"
-			var min 	= "<?php echo substr($times[0],3,4) ?>"
+			var hr 			= "<?php echo substr($times[0],0,2) ?>"
+			var min 		= "<?php echo substr($times[0],3,4) ?>"
 			document.getElementById('prayer1').innerHTML = "<h3 " + selected + ">" + prayer1_name + "</h3>";
 			document.getElementById('time1').innerHTML = "<h2 " + selected + ">" + prayer1_time + "</h2>";
 			
@@ -241,6 +242,7 @@
 				var durasiiqomah 	= "<?php echo $iqomah_dzuhur ?>" 
 				document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + prayer3_name + "</h3>";
 			}  		
+			
   			var nextcounter = prayer3_time;  	
   			var starttime 	= waktu_dzuhur;
 			var endtime 	= batas_dzuhur;			 
@@ -347,12 +349,47 @@
 			document.getElementById('time1').innerHTML = "<h2 " + selected + ">" + prayer1_time + "</h2>";			
         
 		} 	
-
-		/*
-		 * Dynamic clock
-		 */
+		
+		// Dynamic clock		 
 		document.getElementById('jam').innerHTML = h + ":" + m + ".<small>" + s + "</small>";		
 		var t = setTimeout(startTime, 500);
+		
+		
+		if ( nextprayer == prayer2_name ) {
+			// Abaikan lock screen untuk waktu syuruq
+		} else if ( nextprayer == hari ) {
+			// Abaikan lock screen untuk waktu jum'at
+		} else {
+			// Tampilkan lock screen untuk sholat 5 waktu
+			var lockScreen = "<?php echo $kunci_layar ?>";
+		
+			if ( current_minute == Number(starttime) - Number(lockScreen) ) {
+				var val1 = new URLSearchParams();
+				var val2 = new URLSearchParams();
+
+				val1.append("prayer", nextprayer);
+				val2.append("time", nextcounter);
+
+				location.href = "http://localhost/imasjid/timer.php?" + val1.toString() + "&" + val2.toString();
+			}	
+
+		}
+
+		
+		
+		
+		// Testing
+		/* 
+		if ( h == 9 && m == 5  ) {
+			var val1 = new URLSearchParams();
+			var val2 = new URLSearchParams();
+
+			val1.append("prayer", nextprayer);
+			val2.append("time", nextcounter);
+
+			location.href = "http://localhost/imasjid/timer.php?" + val1.toString() + "&" + val2.toString();
+		}	
+		*/
 
 		/*--------------------------------------------------------------------------------------
 		 *   Original https://www.geeksforgeeks.org/create-countdown-timer-using-javascript/
@@ -477,16 +514,15 @@
 			  
 	}
 
+	/*
 	function playBeep(){
 		
 		document.getElementById("timer-beep").play();		
 				
 	}
-	
-	//----------------------- Copyright Block ----------------------
-	// http://w3schools.com/js/tryit.asp?filename=tryjs_timing_clock
-	// Add zero in front of numbers < 10
-	
+	*/
+
+	// Add zero in front of numbers < 10	
 	function checkTime(i) {
   		  if (i < 10) {i = "0" + i}; 
   		  return i;
