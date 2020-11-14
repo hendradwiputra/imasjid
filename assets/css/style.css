@@ -111,6 +111,11 @@ th, td {
   text-align: center;
 }
 
+.contact {
+  font-size: 13px;
+  text-align: right;
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -133,6 +138,7 @@ th, td {
   font-weight: 700;
   letter-spacing: 3px;
   margin: 0;
+  margin-left: -50px;
   padding: 0;
   padding-left: 8px;
   border-left: 8px solid #ffd152;
@@ -341,7 +347,7 @@ th, td {
 
 #intro .carousel-item::before {
   content: '';
-  background-color: rgba(0, 0, 0, 0.3); /* Pengaturan opacity */
+  background-color: rgba(0, 0, 0, 0.5); /* Pengaturan opacity */
 }
 
 #intro .carousel-container {
@@ -364,7 +370,8 @@ th, td {
   margin-bottom: 30px;
   font-size: 42px;
   font-weight: 700;
-  font-family: 'montserratbold';  
+  font-family: 'montserratbold'; 
+  padding: 10px; 
 }
 
 @media (max-width: 768px) {
@@ -546,4 +553,46 @@ th, td {
   padding: 0px 20px 0px;  
   padding-top: 0px;
   font-family: 'montserratbold';
+}
+
+/*--------------------------------------------------------------
+# Top Bar
+--------------------------------------------------------------*/
+#topbar {
+  background: #fff;
+  padding: 0 0;  
+  font-size: 12px;
+  font-family: 'montserratbold';
+}
+
+#topbar .contact-info a {
+  line-height: 1;
+  color: #444;
+  transition: 0.3s;
+}
+
+#topbar .contact-info a:hover {
+  color: #444;
+}
+
+#topbar .contact-info i {
+  color: #444;
+  padding: 4px 4px;
+}
+
+#topbar .contact-info .icofont-phone {
+  padding-left: 20px;
+  margin-left: 10px;
+}
+
+#topbar .social-links a {
+  color: #444;
+  padding: 4px 4px;
+  display: inline-block;
+  line-height: 1px;
+  transition: 0.3s;
+}
+
+#topbar .social-links a:hover {
+  color: #428bca;
 }
