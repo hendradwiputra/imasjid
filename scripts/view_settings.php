@@ -37,6 +37,7 @@
     $prayer4 = $row['prayer4'];
     $prayer5 = $row['prayer5'];
     $prayer6 = $row['prayer6'];
+    $kunci_layar = $row['kunci_layar'];
   }
   
 
