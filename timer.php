@@ -11,7 +11,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>OnePage Bootstrap Template - Index</title>
+  <title>iMasjid Timer</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -19,10 +19,10 @@
   <!-- Vendor CSS Files -->
   <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- FontAwesome -->
+  <!-- FontAwesome / ionicons-->
   <link rel="stylesheet" href="./assets/vendor/fontawesome/css/fontawesome.css"> 
   <link rel="stylesheet" href="./assets/vendor/fontawesome/css/regular.css">
-  <link rel="stylesheet" href="./assets/vendor/fontawesome/css/solid.css">
+  <link rel="stylesheet" href="./assets/vendor/fontawesome/css/solid.css">  
   
   <!-- Template Main CSS File -->
   <link href="./assets/css/timer.css" rel="stylesheet">
@@ -85,7 +85,7 @@
 		var tanggal = today.getDate();
 		var bulan	  = today.getMonth();		
 		var tahun 	= today.getFullYear();	
-    var hari	  = today.getDay();  
+    
 
     switch(bulan) {
         	case 0: bulan = "Jan"; break;
@@ -104,12 +104,16 @@
      
     var val1 = new URLSearchParams(window.location.search);
     var val2 = new URLSearchParams(window.location.search);
+    var val3 = new URLSearchParams(window.location.search);
 
     var icon = "<i class='fas fa-hourglass-end'></i>";
 
     var prayername = val1.get("prayer").toLowerCase();    
-    var prayertime = val2.get("time");    
-    //var prayertime = "16:12";
+    var prayertime = val2.get("time");  
+    var day        = val3.get("day");
+
+    // Testing only
+    //var prayertime = "13:11";
         
     var countDownDate = new Date(bulan + " " + tanggal + "," + tahun + " " + prayertime + ":00").getTime();   
     //var countDownDate = new Date(bulan + " " + tanggal + "," + tahun + " " + "12:02" + ":00").getTime();  
@@ -125,14 +129,31 @@
         minutes1 = checkTime(minutes1);
 				seconds1 = checkTime(seconds1); 
 
-        document.getElementById("label").innerHTML = "Menanti Adzan " + prayername;
-        document.getElementById("message").innerHTML = ""; 
+        //
+        var syuruq = "<?php echo $prayer2 ?>"
+
+        if (prayername == syuruq.toLowerCase() ) {
+          document.getElementById("label").innerHTML = "Memasuki waktu " + prayername;
+          document.getElementById("message").innerHTML = ""; 
+        } else {
+          document.getElementById("label").innerHTML = "Menanti adzan " + prayername;
+          document.getElementById("message").innerHTML = "";
+
+        }
+                
         document.getElementById("menit").innerHTML = minutes1; 
         document.getElementById("detik").innerHTML = seconds1; 
                 
         if (t < 0) { 
         
             clearInterval(w); 
+
+            if (prayername == syuruq.toLowerCase()) {
+
+                var timer = setTimeout(function() {
+                    window.location='http://localhost/imasjid'
+                }, 500);
+            }
 
             document.getElementById("label").innerHTML = icon;
             document.getElementById("message").innerHTML = ""; 
@@ -183,16 +204,24 @@
               document.getElementById("label").innerHTML = "Adzan " + prayername;
               document.getElementById("message").innerHTML = "";
               document.getElementById("menit").innerHTML = minutes2; 
-              document.getElementById("detik").innerHTML = seconds2; 
+              document.getElementById("detik").innerHTML = seconds2;          
 
               if (t < 0) { 
         
                 clearInterval(x); 
+
+                if (day == "Jum'at") {
+
+                    var timer = setTimeout(function() {
+                        window.location='http://localhost/imasjid'
+                    }, 500);
+                }
                             
                 document.getElementById("label").innerHTML = icon; 
                 document.getElementById("message").innerHTML = "";
                 document.getElementById("menit").innerHTML = icon; 
-                document.getElementById("detik").innerHTML = icon; 
+                document.getElementById("detik").innerHTML = icon;          
+                
                 
                 // Counter Iqomah berdasarkan nama sholat                    
                 var prayer1 = "<?php echo $prayer1 ?>"                
@@ -203,19 +232,19 @@
 
                 if(prayername == prayer1.toLowerCase() ) {
                   var durasi = "<?php echo $iqomah_shubuh ?>"
-                  var msg = "1";
+                  
                 } else if(prayername == prayer3.toLowerCase() ) {
                   var durasi = "<?php echo $iqomah_dzuhur ?>"
-                  var msg = "3";
+                  
                 } else if(prayername == prayer4.toLowerCase() ) {
                   var durasi = "<?php echo $iqomah_ashar ?>"
-                  var msg = "4";
+                  
                 } else if(prayername == prayer5.toLowerCase() ) {
                   var durasi = "<?php echo $iqomah_maghrib ?>" 
-                  var msg = "5";
+                  
                 } else if(prayername == prayer6.toLowerCase() ) {
                   var durasi = "<?php echo $iqomah_isya ?>" 
-                  var msg = "6";
+                  
                 }               
 
                 var first2digitTime = counter1.toString().substr(0,2);
@@ -256,7 +285,7 @@
                   minutes3 = checkTime(minutes3);
 				          seconds3 = checkTime(seconds3);       
                   
-                  document.getElementById("label").innerHTML = "Waktu Iqomah";
+                  document.getElementById("label").innerHTML = "IQOMAH";
                   document.getElementById("message").innerHTML = ""; 
                   document.getElementById("menit").innerHTML = minutes3; 
                   document.getElementById("detik").innerHTML = seconds3; 
@@ -264,15 +293,15 @@
                   if (t < 0) { 
         
                     clearInterval(y); 
-                    
+                    var icon2 = "<i class='fas fa-volume-mute'></i>";
                     document.getElementById("label").innerHTML = "Memasuki waktu sholat"; 
-                    document.getElementById("message").innerHTML = "HP mohon dinonaktifkan sebelum sholat";
+                    document.getElementById("message").innerHTML = icon2 + " Handphone mohon dinonaktifkan demi ketenangan & kekhusyukan ibadah sholat kita";
                     document.getElementById("menit").innerHTML = ""; 
                     document.getElementById("detik").innerHTML = ""; 
 
                     var timer = setTimeout(function() {
                         window.location='http://localhost/imasjid'
-                    }, 60000);
+                    }, 120000);
 
 
                   } // End 3rd t statement
