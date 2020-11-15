@@ -10,8 +10,8 @@
       <div class="col-3">
         <div class="list-group" id="list-tab" role="tablist">
           <a class="list-group-item list-group-item-action active" id="list-pengaturan-list" data-toggle="list" href="#list-pengaturan" role="tab" aria-controls="pengaturan"><i class="fas fa-cog"></i> Pengaturan</a>
-          <a class="list-group-item list-group-item-action" id="list-notifikasi-list" data-toggle="list" href="#list-notifikasi" role="tab" aria-controls="notifikasi"><i class="fas fa-comment-dots"></i> Notifikasi</a>
-          <a class="list-group-item list-group-item-action" id="list-teks-list" data-toggle="list" href="#list-teks" role="tab" aria-controls="teks"><i class="fas fa-keyboard"></i> Teks Berjalan</a>
+          <a class="list-group-item list-group-item-action" id="list-notifikasi-list" data-toggle="list" href="#list-notifikasi" role="tab" aria-controls="notifikasi"><i class="fas fa-list"></i> Notifikasi</a>
+          <a class="list-group-item list-group-item-action" id="list-teks-list" data-toggle="list" href="#list-teks" role="tab" aria-controls="teks"><i class="fas fa-running"></i> Teks Berjalan</a>
           <a class="list-group-item list-group-item-action" id="list-slides-list" data-toggle="list" href="#list-slides" role="tab" aria-controls="slides"><i class="fas fa-tv"></i> Slide</a>
           <a class="list-group-item list-group-item-action" id="list-hadist-list" data-toggle="list" href="#list-hadist" role="tab" aria-controls="hadist"><i class="fas fa-quran"></i></i> Database Hadist</a>
           <a class="list-group-item list-group-item-action" id="list-about-list" data-toggle="list" href="#list-about" role="tab" aria-controls="about"><i class="fas fa-user-circle"></i> Tentang Aplikasi</a>
@@ -58,7 +58,7 @@
                       <option <?php if ($metode_perhitungan==2) echo 'selected = "selected"'; ?> value="2">Islamic Society of North America (ISNA)</option>  
                       <option <?php if ($metode_perhitungan==3) echo 'selected = "selected"'; ?> value="3">Muslim World League</option> 
                       <option <?php if ($metode_perhitungan==4) echo 'selected = "selected"'; ?> value="4">Umm al-Qura, Makkah</option>     
-                      <option <?php if ($metode_perhitungan==5) echo 'selected = "selected"'; ?> value="5">Egyptian General Authority of Survey</option>                        
+                      <option <?php if ($metode_perhitungan==5) echo 'selected = "selected"'; ?> value="5">Egyptian General Authority of Survey</option>                      
                       <option <?php if ($metode_perhitungan==7) echo 'selected = "selected"'; ?> value="7">Institute of Geophysics, University of Tehran</option>                            
                       <option <?php if ($metode_perhitungan==8) echo 'selected = "selected"'; ?> value="8">Kementerian Agama Indonesia</option>
                   </select>
@@ -84,20 +84,33 @@
           <!-- Notifikasi -->
           <div class="tab-pane fade" id="list-notifikasi" role="tabpanel" aria-labelledby="list-notifikasi-list">
             <div class="card">
-            <h5 class="card-header"><i class="fas fa-comment-dots"></i> Notifikasi Adzan & Iqomah</h5>
+            <h5 class="card-header"><i class="fas fa-list"></i> Notifikasi Adzan & Iqomah</h5>
               <div class="card-body">
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1"><i class="fas fa-list"></i> Tampilkan Layar Hitung Mundur Sebelum Masuk Waktu Adzan <small class="text-muted">(Hitungan menit)</small></label>
+                  <select name="kunci_layar" id="kunci_layar" class="form-control form-control-sm col-md-2">
+                    <option <?php if ($kunci_layar==1) echo 'selected = "selected"'; ?> value="1">1</option>
+                    <option <?php if ($kunci_layar==2) echo 'selected = "selected"'; ?> value="2">2</option>
+                    <option <?php if ($kunci_layar==3) echo 'selected = "selected"'; ?> value="3">3</option>
+                    <option <?php if ($kunci_layar==4) echo 'selected = "selected"'; ?> value="4">4</option>
+                    <option <?php if ($kunci_layar==5) echo 'selected = "selected"'; ?> value="5">5</option>                    
+                  </select>
+                </div><br>
+
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Durasi Adzan <small class="text-muted">(Hitungan menit)</small></label>
                   <select name="durasi_adzan" id="durasi_adzan" class="form-control form-control-sm col-md-2">
                     <option <?php if ($durasi_adzan==3) echo 'selected = "selected"'; ?> value="3">3</option>
                     <option <?php if ($durasi_adzan==4) echo 'selected = "selected"'; ?> value="4">4</option>
                     <option <?php if ($durasi_adzan==5) echo 'selected = "selected"'; ?> value="5">5</option>
+                    <option <?php if ($durasi_adzan==7) echo 'selected = "selected"'; ?> value="7">7</option>
                     <option <?php if ($durasi_adzan==10) echo 'selected = "selected"'; ?> value="10">10</option>                    
                   </select>
-                </div>
-                <br>
+                </div><br>
+
                 <div class="form-group">
-                  <label for="exampleFormControlSelect1">Jarak Adzan ke Iqomah <small class="text-muted">(Hitungan menit)</small></label>               
+                  <label for="exampleFormControlSelect1"><i class="fas fa-list"></i> Jarak Adzan ke Iqomah <small class="text-muted">(Hitungan menit)</small></label>               
                   <div class="form-row">                  
                   <div class="form-group col-md-2">
                     <label for="exampleFormControlSelect1">Shubuh</label>
@@ -146,11 +159,12 @@
                       <option <?php if ($iqomah_isya==25) echo 'selected = "selected"'; ?> value="25">25</option> 
                       <option <?php if ($iqomah_isya==30) echo 'selected = "selected"'; ?> value="30">30</option>                                      
                     </select>
-                  </div>
+                  </div>                 
                   </div>
                 </div> 
+
                 <div class="form-group">
-                  <label for="exampleFormControlSelect1">Perpindahan Label Sholat ke Sholat Berikutnya <small class="text-muted">(Hitungan menit)</small></label>               
+                  <label for="exampleFormControlSelect1"><i class="fas fa-list"></i> Perpindahan Label Sholat ke Sholat Berikutnya <small class="text-muted">(Hitungan menit)</small></label>               
                   <div class="form-row">                  
                   <div class="form-group col-md-2">
                     <label for="exampleFormControlSelect1">Shubuh</label>
@@ -178,7 +192,7 @@
                       <option <?php if ($durasi_dzuhur==45) echo 'selected = "selected"'; ?> value="45">45</option>  
                       <option <?php if ($durasi_dzuhur==60) echo 'selected = "selected"'; ?> value="60">60</option>                                                              
                     </select>
-                  </div>                
+                  </div>
                   <div class="form-group col-md-2">
                     <label for="exampleFormControlSelect1">Ashar</label>
                     <select name="durasi_ashar" id="durasi_ashar" class="form-control form-control-sm">
@@ -210,6 +224,63 @@
                   </div>
                 </div>
 
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1"><i class="fas fa-list"></i> Nama Sholat</label>               
+                  <div class="form-row">                  
+                  <div class="form-group col-md-2">
+                    <label for="exampleFormControlSelect1">Prayer1</label>
+                    <input type="text" name="prayer1" id="prayer1" class="form-control form-control-sm" value="<?php echo $prayer1; ?>">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="exampleFormControlSelect1">Prayer2</label>
+                    <input type="text" name="prayer2" id="prayer2" class="form-control form-control-sm" value="<?php echo $prayer2; ?>">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="exampleFormControlSelect1">Prayer3</label>
+                    <input type="text" name="prayer3" id="prayer3" class="form-control form-control-sm" value="<?php echo $prayer3; ?>">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="exampleFormControlSelect1">Prayer4</label>
+                    <input type="text" name="prayer4" id="prayer4" class="form-control form-control-sm" value="<?php echo $prayer4; ?>">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="exampleFormControlSelect1">Prayer5</label>
+                    <input type="text" name="prayer5" id="prayer5" class="form-control form-control-sm" value="<?php echo $prayer5; ?>">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="exampleFormControlSelect1">Prayer6</label>
+                    <input type="text" name="prayer6" id="prayer6" class="form-control form-control-sm" value="<?php echo $prayer6; ?>">
+                  </div>
+                  </div>
+                </div> 
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1"><i class="fas fa-list"></i> Pesan Teks</label>               
+                  <div class="form-row">   
+                    <div class="form-group col-md-6">
+                      <label for="exampleFormControlSelect1">Teks Sebelum Adzan</label>
+                      <textarea class="form-control form-control-sm" name="teks_pra_adzan" id="teks_pra_adzan" rows="2" maxlength="255"></textarea>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="exampleFormControlSelect1">Teks Ketika Adzan</label>
+                      <textarea class="form-control form-control-sm" name="teks_adzan" id="teks_adzan" rows="2" maxlength="255"></textarea>
+                    </div>                  
+                  </div>
+
+                  <div class="form-row">   
+                    <div class="form-group col-md-6">
+                      <label for="exampleFormControlSelect1">Teks Ketika Iqomah</label>
+                      <textarea class="form-control form-control-sm" name="teks_iqomah" id="teks_iqomah" rows="2" maxlength="255"></textarea>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="exampleFormControlSelect1">Teks Setelah Iqomah</label>
+                      <textarea class="form-control form-control-sm" name="teks_selesai_iqomah" id="teks_selesai_iqomah" rows="2" maxlength="255"></textarea>
+                    </div>                  
+                  </div>
+
+                </div> 
+
+
               </div>
             </div>
           </div>
@@ -218,7 +289,7 @@
           <!-- Teks Berjalan -->
           <div class="tab-pane fade" id="list-teks" role="tabpanel" aria-labelledby="list-teks-list">
             <div class="card">
-            <h5 class="card-header"><i class="fas fa-keyboard"></i> Pengaturan Teks Berjalan</h5>
+            <h5 class="card-header"><i class="fas fa-running"></i> Pengaturan Teks Berjalan</h5>
             <div class="card-body">
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Atur Kecepatan Teks</label>

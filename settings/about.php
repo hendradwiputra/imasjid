@@ -5,7 +5,7 @@
                   <h4>Developer</h4>
                   <p><i class="fas fa-user-circle"></i> Hendra Dwi Putra</p>
                   <p><i class="fas fa-envelope-open-text"></i> hendra.doank@gmail.com</p> 
-                  <p><i class="fas fa-phone-square-alt"></i> 62-811-6077-81</p>                  
+                  <p><i class="fas fa-phone-square-alt"></i> +62-811-6077-81</p>                  
                   <p><i class="fab fa-github"></i> <a href="#" onClick="window.open('https://github.com/hendradwiputra/imasjid');">https://github.com/hendradwiputra/imasjid</a></p>                  
                 </div>
                 <br>                
@@ -43,6 +43,11 @@
                     <th scope="row">1</th>
                       <td>v1.0</td>
                       <td>Create application.</td>      
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                      <td>v1.1</td>
+                      <td>Add Prayer Lock Screen.</td>      
                   </tr>
                 </tbody>
                 </table>
