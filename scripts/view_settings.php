@@ -38,10 +38,10 @@
     $prayer5 = $row['prayer5'];
     $prayer6 = $row['prayer6'];
     $kunci_layar = $row['kunci_layar'];
-    $teks_pra_adzan = $row['teks_pra_adzan'];
+    $teks_sebelum_adzan = $row['teks_sebelum_adzan'];
     $teks_adzan = $row['teks_adzan'];
     $teks_iqomah = $row['teks_iqomah'];
-    $teks_selesai_iqomah = $row['teks_selesai_iqomah'];
+    $teks_sebelum_sholat = $row['teks_sebelum_sholat'];
   }
   
 

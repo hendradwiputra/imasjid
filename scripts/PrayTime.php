@@ -2,70 +2,47 @@
 
 //--------------------- Copyright Block ----------------------
 /*
-
 PrayTime.php: Prayer Times Calculator (ver 1.2.2)
 Copyright (C) 2007-2010 PrayTimes.org
-
 Developer: Hamid Zarrabi-Zadeh
 License: GNU LGPL v3.0
-
 TERMS OF USE:
     Permission is granted to use this code, with or
     without modification, in any website or application
     provided that credit is given to the original work
     with a link back to PrayTimes.org.
-
 This program is distributed in the hope that it will
 be useful, but WITHOUT ANY WARRANTY.
-
 PLEASE DO NOT REMOVE THIS COPYRIGHT BLOCK.
-
 */
 
 
 //--------------------- Help and Manual ----------------------
 /*
-
 User's Manual:
 http://praytimes.org/manual
-
 Calculating Formulas:
 http://praytimes.org/calculation
-
-
-
 //------------------------ User Interface -------------------------
-
-
     getPrayerTimes (timestamp, latitude, longitude, timeZone)
     getDatePrayerTimes (year, month, day, latitude, longitude, timeZone)
-
     setCalcMethod (methodID)
     setAsrMethod (methodID)
-
     setFajrAngle (angle)
     setMaghribAngle (angle)
     setIshaAngle (angle)
     setDhuhrMinutes (minutes)    // minutes after mid-day
     setMaghribMinutes (minutes)  // minutes after sunset
     setIshaMinutes (minutes)     // minutes after maghrib
-
     setHighLatsMethod (methodID) // adjust method for higher latitudes
-
     setTimeFormat (timeFormat)
     floatToTime24 (time)
     floatToTime12 (time)
     floatToTime12NS (time)
-
-
 //------------------------- Sample Usage --------------------------
-
-
     $prayTime->setCalcMethod($prayTime->ISNA);
     $times = $prayTime->getPrayerTimes(time(), 43, -80, -5);
     print('Sunrise = '. $times[1]);
-
-
 */
 
 
@@ -147,7 +124,6 @@ class PrayTime
     var $methodParams = array();
 
     /*  var $methodParams[methodNum] = array(fa, ms, mv, is, iv);
-
             fa : fajr angle
             ms : maghrib selector (0 = angle; 1 = minutes after sunset)
             mv : maghrib parameter value (in angle or minutes)
