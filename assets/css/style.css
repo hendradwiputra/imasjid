@@ -559,7 +559,7 @@ th, td {
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
-  background: #fff;
+  background: rgba(120, 175, 159, 1);
   padding: 0 0;  
   font-size: 12px;
   font-family: 'montserratbold';
@@ -567,16 +567,16 @@ th, td {
 
 #topbar .contact-info a {
   line-height: 1;
-  color: #444;
+  color: #fff;
   transition: 0.3s;
 }
 
 #topbar .contact-info a:hover {
-  color: #444;
+  color: #fff;
 }
 
 #topbar .contact-info i {
-  color: #444;
+  color: #fff;
   padding: 4px 4px;
 }
 
@@ -586,7 +586,7 @@ th, td {
 }
 
 #topbar .social-links a {
-  color: #444;
+  color: #fff;
   padding: 4px 4px;
   display: inline-block;
   line-height: 1px;
@@ -594,5 +594,5 @@ th, td {
 }
 
 #topbar .social-links a:hover {
-  color: #428bca;
+  color: #fff;
 }
