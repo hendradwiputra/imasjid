@@ -15,13 +15,12 @@
 <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css"> 
 
 <!-- Custom styles for this template -->
-<link href="../assets/css/style.css" rel="stylesheet">
+<link href="../assets/css/dashboard.css" rel="stylesheet">
 
 <!-- Jquery -->
 <script src="../assets/js/jquery-3.5.1.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-
 
 <script>
 $(document).ready(function() { 
@@ -80,7 +79,8 @@ $(document).ready(function() {
                 $('#hadist_judul').val(data.hadist_judul);  
                 $('#hadist_isi1').val(data.hadist_isi1);
                 $('#hadist_isi2').val(data.hadist_isi2);
-                $('#hadist_isi3').val(data.hadist_isi3);                
+                $('#hadist_isi3').val(data.hadist_isi3);  
+                $('#hadist_status').val(data.hadist_status);                                
                 $('#hadistModal').modal('show');                
                 $('#save_hadist').val("Update");                
             }

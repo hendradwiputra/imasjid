@@ -12,12 +12,12 @@
    		$result = $query->fetchAll();
 	 
    		foreach($result as $row) {
-	   		$output["hadist_id"] = $row["hadist_id"];
-	   		$output["hadist_judul"] = $row["hadist_judul"];
-	   		$output["hadist_isi1"] = $row["hadist_isi1"];
-	   		$output["hadist_isi2"] = $row["hadist_isi2"];
-	   		$output["hadist_isi3"] = $row["hadist_isi3"];
-	   		$output["hadist_status"] = $row["hadist_status"];	   
+	   		$output["hadist_id"] 		= $row["hadist_id"];
+	   		$output["hadist_judul"] 	= $row["hadist_judul"];
+	   		$output["hadist_isi1"] 		= $row["hadist_isi1"];
+	   		$output["hadist_isi2"] 		= $row["hadist_isi2"];
+	   		$output["hadist_isi3"] 		= $row["hadist_isi3"];
+	   		$output["hadist_status"] 	= $row["hadist_status"];	   
    		}
  
    		echo json_encode($output);  

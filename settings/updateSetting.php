@@ -31,12 +31,16 @@
   $garis_bujur      = isset($_POST['garis_bujur']) ? $_POST['garis_bujur'] : '';
   $garis_lintang    = isset($_POST['garis_lintang']) ? $_POST['garis_lintang'] : '';
   $metode_perhitungan = isset($_POST['metode_perhitungan']) ? $_POST['metode_perhitungan'] : '';
-  $kunci_layar      = isset($_POST['kunci_layar']) ? $_POST['kunci_layar'] : '';
+  $kunci_layar        = isset($_POST['kunci_layar']) ? $_POST['kunci_layar'] : '';
+  $teks_sebelum_adzan = isset($_POST['teks_sebelum_adzan']) ? $_POST['teks_sebelum_adzan'] : '';
+  $teks_adzan         = isset($_POST['teks_adzan']) ? $_POST['teks_adzan'] : '';
+  $teks_iqomah        = isset($_POST['teks_iqomah']) ? $_POST['teks_iqomah'] : '';
+  $teks_sebelum_sholat= isset($_POST['teks_sebelum_sholat']) ? $_POST['teks_sebelum_sholat'] : '';
 
   if(isset($_POST["setting_id"])) { 
 
-    $query = $pdo->prepare("UPDATE settings SET nama_masjid=?,alamat_masjid=?,running_teks=?,kecepatan_teks=?,durasi_slide=?,koreksi_hijriah=?,durasi_adzan=?,iqomah_shubuh=?,iqomah_dzuhur=?,iqomah_ashar=?,iqomah_maghrib=?,iqomah_isya=?,durasi_shubuh=?,durasi_syuruq=?,durasi_dzuhur=?,durasi_ashar=?,durasi_maghrib=?,durasi_isya=?,prayer1=?,prayer2=?,prayer3=?,prayer4=?,prayer5=?,prayer6=?,garis_lintang=?,garis_bujur=?,zona_waktu=?,metode_perhitungan=?,kunci_layar=? WHERE setting_id=?");    
-    $query->execute([$nama_masjid,$alamat_masjid,$running_teks,$kecepatan_teks,$durasi_slide,$koreksi_hijriah,$durasi_adzan,$iqomah_shubuh,$iqomah_dzuhur,$iqomah_ashar,$iqomah_maghrib,$iqomah_isya,$durasi_shubuh,$durasi_syuruq,$durasi_dzuhur,$durasi_ashar,$durasi_maghrib,$durasi_isya,$prayer1,$prayer2,$prayer3,$prayer4,$prayer5,$prayer6,$garis_lintang,$garis_bujur,$zona_waktu,$metode_perhitungan,$kunci_layar,$_POST['setting_id']]); 
+    $query = $pdo->prepare("UPDATE settings SET nama_masjid=?,alamat_masjid=?,running_teks=?,kecepatan_teks=?,durasi_slide=?,koreksi_hijriah=?,durasi_adzan=?,iqomah_shubuh=?,iqomah_dzuhur=?,iqomah_ashar=?,iqomah_maghrib=?,iqomah_isya=?,durasi_shubuh=?,durasi_syuruq=?,durasi_dzuhur=?,durasi_ashar=?,durasi_maghrib=?,durasi_isya=?,prayer1=?,prayer2=?,prayer3=?,prayer4=?,prayer5=?,prayer6=?,garis_lintang=?,garis_bujur=?,zona_waktu=?,metode_perhitungan=?,kunci_layar=?,teks_sebelum_adzan=?,teks_adzan=?,teks_iqomah=?,teks_sebelum_sholat=? WHERE setting_id=?");    
+    $query->execute([$nama_masjid,$alamat_masjid,$running_teks,$kecepatan_teks,$durasi_slide,$koreksi_hijriah,$durasi_adzan,$iqomah_shubuh,$iqomah_dzuhur,$iqomah_ashar,$iqomah_maghrib,$iqomah_isya,$durasi_shubuh,$durasi_syuruq,$durasi_dzuhur,$durasi_ashar,$durasi_maghrib,$durasi_isya,$prayer1,$prayer2,$prayer3,$prayer4,$prayer5,$prayer6,$garis_lintang,$garis_bujur,$zona_waktu,$metode_perhitungan,$kunci_layar,$teks_sebelum_adzan,$teks_adzan,$teks_iqomah,$teks_sebelum_sholat,$_POST['setting_id']]); 
     
   }
 

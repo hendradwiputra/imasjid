@@ -12,7 +12,7 @@
       <div class="modal-body">                       
         <div class="form-group">
           <label>Judul</label>
-          <input type="text" name="hadist_judul" id="hadist_judul" class="form-control form-control-sm col" maxlength="100">
+          <input type="text" class="form-control form-control-sm col" name="hadist_judul" id="hadist_judul"  maxlength="100">
         </div>
         <div class="form-group">
           <label>Isi</label>
@@ -23,15 +23,22 @@
         </div>
         <div class="form-group">
           <textarea class="form-control form-control-sm" name="hadist_isi3" id="hadist_isi3" rows="2" maxlength="255"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Status Hadist</label>
+            <select name="hadist_status" id="hadist_status" class="form-control form-control-sm col-md-2">
+              <option value="1">Aktif</option>
+              <option value="0">Tidak Aktif</option> 
+            </select>
         </div>             
       </div>
       
       <div class="modal-footer">        
         <input type="hidden" name="hadist_id" id="hadist_id">      
-        <input type="button" class="btn btn-secondary btn-sm" id="cancel_hadist" data-dismiss="modal" value="Keluar">
-        <input type="button" id="save_hadist" class="btn btn-primary btn-sm" value="Simpan">
-        
+        <input type="button" class="btn btn-sm btn-outline-pastel" id="cancel_hadist" data-dismiss="modal" value="Keluar">
+        <input type="button" class="btn btn-sm btn-outline-pastel" id="save_hadist" value="Simpan">        
       </div>
+
     </div>
   </div>
 </div>
