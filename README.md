@@ -1,5 +1,5 @@
 <h1>Jam Sholat Masjid 'Prayer Time'</h1>
-<img src="https://github.com/hendradwiputra/imasjid/blob/1.0/assets/images/image3.jpg" height="300px" width="600px">
+
 <img src="https://github.com/hendradwiputra/imasjid/blob/1.0/assets/images/image1.jpg" height="300px" width="600px">
 <img src="https://github.com/hendradwiputra/imasjid/blob/1.0/assets/images/image2.jpg" height="300px" width="600px">
 
