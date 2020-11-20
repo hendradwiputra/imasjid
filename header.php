@@ -225,25 +225,28 @@
 			
 		} else if (current_minute <= waktu_dzuhur) {
 			if (hari == "Jum'at") { 
-				var nextprayer 		= hari; 				
+				var nextprayer 		= hari; 
+				var durasi_iqomah = 0;
 				document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + nextprayer + "</h3>";
 			} else { 
-				var nextprayer 		= prayer3_name; 				
+				var nextprayer 		= prayer3_name; 	
+				var durasi_iqomah = "<?php echo $iqomah_dzuhur ?>";
 				document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + prayer3_name + "</h3>";
 			}  				
   			var nextcounter = prayer3_time;  	
   			var starttime 	= waktu_dzuhur;
 			var endtime 	= batas_dzuhur;			 
-			var nextdate 	= tanggal;
-			var durasi_iqomah = "<?php echo $iqomah_dzuhur ?>";	
+			var nextdate 	= tanggal;				
 			document.getElementById('time3').innerHTML = "<h2 " + selected + ">" + prayer3_time + "</h2>";
 			
   		} else if (batas_dzuhur >= current_minute) {
 			if (hari == "Jum'at") { 
-				var nextprayer 		= hari; 				
+				var nextprayer 		= hari; 
+				var durasi_iqomah = 0;
 				document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + nextprayer + "</h3>";
 			} else {
-				var nextprayer 		= prayer3_name; 				
+				var nextprayer 		= prayer3_name; 	
+				var durasi_iqomah = "<?php echo $iqomah_dzuhur ?>";
 				document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + prayer3_name + "</h3>";  
 			} 
 			var nextcounter = prayer3_time;    

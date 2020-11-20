@@ -1,9 +1,11 @@
-<h1>Jam Sholat Masjid [Moslem Prayer Time]</h1>
+<h1>Jam Sholat Masjid 'Prayer Time'</h1>
+<img src="https://github.com/hendradwiputra/imasjid/blob/1.0/assets/images/image3.jpg" height="300px" width="600px">
 <img src="https://github.com/hendradwiputra/imasjid/blob/1.0/assets/images/image1.jpg" height="300px" width="600px">
 <img src="https://github.com/hendradwiputra/imasjid/blob/1.0/assets/images/image2.jpg" height="300px" width="600px">
-
-<h2>Developer</h2>
-Aplikasi ini menggunakan calculation method dari praytimes.org dan sudah di custom sedemikian rupa sesuai kebutuhan. Note : Saya ada lakukan tambahan perhitungan sholat mengikuti ketentuan Kemenag dengan Sudut Fajr 20 dan Isya 18.
+<br>
+<p>Aplikasi ini menggunakan algoritma perhitungan sholat dari Hamid Zarrabi-Zadeh. File bisa didownload di http://praytimes.org</p>
+<br>
+<h2>UX & UI Designer</h2>
 <ul>
 <li> Hendra Dwi Putra</li>
 <li> hendra.doank@gmail.com</li> 
@@ -11,8 +13,11 @@ Aplikasi ini menggunakan calculation method dari praytimes.org dan sudah di cust
 <li> https://github.com/hendradwiputra/imasjid</li>
 </ul>
 
-<h2>Catatan Penting</h2>
-<p>Aplikasi ini <strong><u>BEBAS</u></strong> dipakai/dikembangkan oleh siapa saja dengan harapan saya bisa mendapatkan pahala jariyah dari aplikasi ini. <strong><u>DILARANG</u></strong> memperjualbelikan aplikasi ini.
+<h2>Tentang Hak Cipta</h2>
+<p>Aplikasi ini <u>bebas</u> dipakai/dikembangkan oleh siapa saja semata-mata hanya untuk kepentingan masjid. <u>Dilarang</u> memperjualbelikan aplikasi ini dengan <u>alasan   apapun</u>.</p>
+<p>Mohon <u>tetap mencantumkan nama saya</u> jika ada modifikasi di aplikasi ini.</p>
+<p>Jika ke depannya aplikasi ini dipakai di suatu masjid, mohon informasikan ke saya nama masjid, alamat, beserta tampilan akhirnya. Ini hanya sebagai tracking agar saya tahu berapa banyak masjid yg menggunakan aplikasi ini.</p>
+
 
 <h2>Instalasi</h2>
 <ul>
