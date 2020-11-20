@@ -225,25 +225,28 @@
 			
 		} else if (current_minute <= waktu_dzuhur) {
 			if (hari == "Jum'at") { 
-				var nextprayer 		= hari; 				
+				var nextprayer 		= hari; 
+				var durasi_iqomah = 0;
 				document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + nextprayer + "</h3>";
 			} else { 
-				var nextprayer 		= prayer3_name; 				
+				var nextprayer 		= prayer3_name; 	
+				var durasi_iqomah = "<?php echo $iqomah_dzuhur ?>";
 				document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + prayer3_name + "</h3>";
 			}  				
   			var nextcounter = prayer3_time;  	
   			var starttime 	= waktu_dzuhur;
 			var endtime 	= batas_dzuhur;			 
-			var nextdate 	= tanggal;
-			var durasi_iqomah = "<?php echo $iqomah_dzuhur ?>";	
+			var nextdate 	= tanggal;				
 			document.getElementById('time3').innerHTML = "<h2 " + selected + ">" + prayer3_time + "</h2>";
 			
   		} else if (batas_dzuhur >= current_minute) {
 			if (hari == "Jum'at") { 
-				var nextprayer 		= hari; 				
+				var nextprayer 		= hari; 
+				var durasi_iqomah = 0;
 				document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + nextprayer + "</h3>";
 			} else {
-				var nextprayer 		= prayer3_name; 				
+				var nextprayer 		= prayer3_name; 	
+				var durasi_iqomah = "<?php echo $iqomah_dzuhur ?>";
 				document.getElementById('prayer3').innerHTML = "<h3 " + selected + ">" + prayer3_name + "</h3>";  
 			} 
 			var nextcounter = prayer3_time;    
@@ -332,7 +335,7 @@
 		// Tampilkan lock screen untuk sholat 5 waktu
 		var lockScreen = "<?php echo $kunci_layar ?>";
 
-		if ( current_minute >= Number(starttime) - Number(lockScreen) && current_minute < Number(starttime) + Number(durasiadzan) + Number(durasi_iqomah) ) {
+		if ( current_minute > Number(starttime) - Number(lockScreen) && current_minute < Number(starttime) + Number(durasiadzan) + Number(durasi_iqomah) ) {
 
 			var val1 = new URLSearchParams();
 			var val2 = new URLSearchParams();
@@ -353,7 +356,7 @@
 		var starttime = 630;		
 		var lockScreen = 5;
 		
-		if ( current_minute >= Number(starttime) - Number(lockScreen) && current_minute < Number(starttime) + Number(durasiadzan) + Number(durasi_iqomah) ) {
+		if ( current_minute > Number(starttime) - Number(lockScreen) && current_minute < Number(starttime) + Number(durasiadzan) + Number(durasi_iqomah) ) {
 			var val1 = new URLSearchParams();
 			var val2 = new URLSearchParams();
 			var val3 = new URLSearchParams();
