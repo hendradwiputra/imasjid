@@ -4,7 +4,7 @@
       <h4><span><u>UI & UX</u></span> Designer</h4>
       <p><i class="fas fa-envelope-open-text"></i> hendra.doank@gmail.com</p> 
       <p><i class="fas fa-phone-square-alt"></i> +62-811-6077-81</p>                  
-      <p><i class="fab fa-github"></i> <a href="#" onClick="window.open('https://github.com/hendradwiputra/imasjid');">https://github.com/hendradwiputra/imasjid</a></p>                  
+      <p><i class="fab fa-github"></i> <a href="https://github.com/hendradwiputra/imasjid">https://github.com/hendradwiputra/imasjid</a></p>                  
     </div>
     
     <br>                

@@ -3,12 +3,13 @@
     include('../scripts/view_settings.php'); 
     include('slideModal.php'); 
     include('hadistModal.php'); 
+    $url = "http://" .$_SERVER["HTTP_HOST"] . "/imasjid" ;
 
 ?>
 <form method="POST" id="setting_form" enctype="multipart/form-data">
     <body>
         <nav class="navbar navbar-dark sticky-top bg-pastel flex-md-nowrap p-0 shadow">
-            <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">iMasjid</a>
+            <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="<?php echo $url ?>">iMasjid</a>
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
