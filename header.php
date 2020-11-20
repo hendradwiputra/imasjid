@@ -335,7 +335,7 @@
 		// Tampilkan lock screen untuk sholat 5 waktu
 		var lockScreen = "<?php echo $kunci_layar ?>";
 
-		if ( current_minute > Number(starttime) - Number(lockScreen) && current_minute < Number(starttime) + Number(durasiadzan) + Number(durasi_iqomah) ) {
+		if ( current_minute >= Number(starttime) - Number(lockScreen) && current_minute < Number(starttime) + Number(durasiadzan) + Number(durasi_iqomah) ) {
 
 			var val1 = new URLSearchParams();
 			var val2 = new URLSearchParams();
@@ -356,7 +356,7 @@
 		var starttime = 630;		
 		var lockScreen = 5;
 		
-		if ( current_minute > Number(starttime) - Number(lockScreen) && current_minute < Number(starttime) + Number(durasiadzan) + Number(durasi_iqomah) ) {
+		if ( current_minute >= Number(starttime) - Number(lockScreen) && current_minute < Number(starttime) + Number(durasiadzan) + Number(durasi_iqomah) ) {
 			var val1 = new URLSearchParams();
 			var val2 = new URLSearchParams();
 			var val3 = new URLSearchParams();
