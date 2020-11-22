@@ -84,11 +84,11 @@
 <section id="topbar" class="d-none d-lg-block">
     <div class="intro-container clearfix">
       <div class="social-links float-left">
-        <a href="mailto:hendra.doank@gmail.com">iMasjid versi 1.1 <i class="far fa-copyright"></i> <?php echo " $copyright_years $nama_masjid "  ?>  </a>        
+        <p>iMasjid versi 1.1 <i class="far fa-copyright"></i> <?php echo " $copyright_years $nama_masjid "  ?>  </p>        
       </div>
       
       <div class="social-links float-right">
-        <a href="mailto:hendra.doank@gmail.com"><i class="fas fa-phone-alt"></i> +62 811-6077-81 </a>
+        <p><i class="fas fa-phone-alt"></i> +62 811-6077-81</p>
       </div>
     </div>
 </section>

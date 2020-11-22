@@ -559,23 +559,13 @@ th, td {
 }
 
 /*--------------------------------------------------------------
-# Top Bar
+# Foot Note
 --------------------------------------------------------------*/
 #topbar {
   background: rgba(120, 175, 159, 1);
   padding: 0 0;  
   font-size: 12px;
   font-family: 'montserratbold';
-}
-
-#topbar .contact-info a {
-  line-height: 1;
-  color: #fff;
-  transition: 0.3s;
-}
-
-#topbar .contact-info a:hover {
-  color: #fff;
 }
 
 #topbar .contact-info i {
@@ -588,15 +578,8 @@ th, td {
   margin-left: 10px;
 }
 
-#topbar .social-links a {
-  color: #fff;
-  padding: 4px 4px;
-  display: inline-block;
-  line-height: 1px;
-  transition: 0.3s;
-}
 
-#topbar .social-links a:hover {
+#topbar .social-links {
   color: #fff;
 }
 
