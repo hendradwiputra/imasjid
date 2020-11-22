@@ -1,8 +1,8 @@
 <?php 
     
     include('../scripts/view_settings.php'); 
-    include('slideModal.php'); 
-    include('hadistModal.php'); 
+    include('slide1_modal.php'); 
+    include('slide2_modal.php'); 
     $url = "http://" .$_SERVER["HTTP_HOST"] . "/imasjid" ;
 
 ?>
@@ -17,10 +17,10 @@
             <ul class="navbar-nav px-3">
                 <li class="nav-item text-nowrap">
                     <!--<a class="nav-link" href="#">Sign out</a>-->
-                    <button type="button" class="btn btn-md btn-pastel" id="saveSetting"><i class="far fa-save"></i> Update Data</button>            
+                    <button type="button" class="btn btn-md btn-pastel" id="save_setting"><i class="fas fa-edit"></i> Update Data</button>            
                 </li>
             </ul>
-            
+         
         </nav>
 
         <div class="container-fluid">
@@ -45,13 +45,18 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="list-slide-list" data-toggle="list" href="#list-slide" role="tab" aria-controls="slide">
-                                    <i class="far fa-file-powerpoint"></i> Slide
+                                <a class="nav-link" id="list-slide1-list" data-toggle="list" href="#list-slide1" role="tab" aria-controls="slide1">
+                                    <i class="far fa-file-powerpoint"></i> Slide-1
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="list-hadist-list" data-toggle="list" href="#list-hadist" role="tab" aria-controls="hadist">
-                                    <i class="fas fa-database"></i> Kumpulan Hadist
+                                <a class="nav-link" id="list-slide2-list" data-toggle="list" href="#list-slide2" role="tab" aria-controls="slide2">
+                                    <i class="far fa-file-powerpoint"></i> Slide-2
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="list-atur-slide-list" data-toggle="list" href="#list-atur-slide" role="tab" aria-controls="atur-slide">
+                                <i class="fab fa-slideshare"></i> Pengaturan Slide
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -95,44 +100,55 @@
                         <?php include("teks_berjalan.php") ?>      
                     </div>
 
-                    <div class="tab-pane fade" id="list-slide" role="tabpanel" aria-labelledby="list-slide-list">
+                    <div class="tab-pane fade" id="list-slide1" role="tabpanel" aria-labelledby="list-slide1-list">
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 class="h2">Pengaturan Slide</h1> 
+                            <h1 class="h2">Data Slide-1</h1> 
                             <div class="btn-toolbar mb-2 mb-md-0">
                                 <div class="btn-group mr-2">
                                     <button type="button" class="btn btn-md btn-outline-pastel" id="add_slide">Tambah Slide</button> 
                                 </div>          
                             </div>                    
                         </div>  
-                        <?php include("slide.php") ?>     
+                        <div class="col-md-12 order-md-1">                            
+                            <div class="form-group">  
+                                <?php include('view_slides1.php'); ?>
+                            </div>
+                        </div>     
                     </div> 
 
-                    <div class="tab-pane fade" id="list-hadist" role="tabpanel" aria-labelledby="list-hadist-list">
+                    <div class="tab-pane fade" id="list-slide2" role="tabpanel" aria-labelledby="list-slide2-list">
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 class="h2">Kumpulan Hadist</h1> 
+                            <h1 class="h2">Data Slide-2</h1> 
                             <div class="btn-toolbar mb-2 mb-md-0">
                                 <div class="btn-group mr-2">
-                                    <button type="button" class="btn btn-md btn-outline-pastel" id="add_hadist">Tambah Hadist</button> 
+                                    <button type="button" class="btn btn-md btn-outline-pastel" id="add_slide2">Tambah Slide</button> 
                                 </div>          
                             </div>                           
                         </div> 
                         
                         <div class="col-md-12 order-md-1">                            
                             <div class="form-group">  
-                                <?php include('view_hadist.php'); ?>
+                                <?php include('view_slides2.php'); ?>
                             </div>
                         </div>
                     </div> 
 
+                    <div class="tab-pane fade" id="list-atur-slide" role="tabpanel" aria-labelledby="list-atur-slide-list">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">Pengaturan Slide</h1>                            
+                        </div>
+                        <?php include('pengaturan_slide.php'); ?>      
+                    </div>
+
                     <div class="tab-pane fade" id="list-about" role="tabpanel" aria-labelledby="list-about-list">
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                            <!--<h1 class="h2">Informasi</h1>-->                            
+                                                      
                         </div>
                         <?php include('about.php'); ?>     
                     </div> 
-
+                
+                </div>  
                 </main>
-
 
             </div>
         </div>

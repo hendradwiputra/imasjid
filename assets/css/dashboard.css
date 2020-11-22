@@ -73,8 +73,6 @@ th, td {
   background-color: #fff;
 }
 
-
-  
   /*
    * Sidebar
    */
@@ -128,19 +126,12 @@ th, td {
   }
   
   .sidebar .nav-item .nav-link.active {
-    color: #fff;
-    font-weight: 700;
+    color: #fff;    
     font-size: 15px;
-    font-family: 'montserratextrabold';
+    font-family: 'montserratregular';
     background-color: rgba(120, 175, 159, 1.25);
   }
-  /*
-  .sidebar .nav-link:hover .feather,
-  .sidebar .nav-link.active .feather {
-    color: inherit;
-    
-  }
-  */
+  
   .sidebar-heading {
     font-size: .75rem;
     text-transform: uppercase;
@@ -164,12 +155,7 @@ th, td {
   .navbar .navbar-nav .nav-item .nav-link {
       color: #333;
   }
-  /*
-  .navbar .navbar-nav a:hover {
-    font-weight: 700;
-    
-}
-  */
+  
   .navbar .navbar-toggler {
     top: .25rem;
     right: 1rem;

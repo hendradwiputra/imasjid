@@ -112,8 +112,8 @@
     var url = "<?php echo $_SERVER['HTTP_HOST'] ?>";
 
     var prayername = val1.get("prayer").toLowerCase();    
-    var prayertime = val2.get("time");      
-    //var prayertime = "13:51"; /*Testing only*/
+    //var prayertime = val2.get("time");      
+    var prayertime = "19:49"; /*Testing only*/
     var day        = val3.get("day").toLowerCase();
 
     var teks_sebelum_adzan  = "<?php echo $teks_sebelum_adzan ?>"
@@ -305,8 +305,8 @@
 
                     document.getElementById("label").innerHTML = "Memasuki waktu sholat " + prayername; 
                     document.getElementById("message").innerHTML = icon2 + " " + teks_sebelum_sholat;
-                    document.getElementById("menit").innerHTML = ""; 
-                    document.getElementById("detik").innerHTML = ""; 
+                    document.getElementById("menit").innerHTML = "--"; 
+                    document.getElementById("detik").innerHTML = "--"; 
 
                     var timer = setTimeout(function() {
                         window.location="http://" + url + "/imasjid"

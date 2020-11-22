@@ -53,6 +53,7 @@ body {
   font-family: 'montserratmedium';
   font-size: 15px;
   background: rgba(120, 175, 159, 0.1);
+  background-color: #333333;
 
 }
 
@@ -123,7 +124,7 @@ th, td {
   transition: all 0.5s;
   z-index: 997;
   padding: 5px 0;
-  background: rgba(0, 0, 0, 0.9);
+  background-color: rgba(30, 35, 40, 0.3);
 }
 
 #header.header-transparent {
@@ -325,12 +326,6 @@ th, td {
   position: relative;
 }
 
-@media (max-height: 500px) {
-  #intro {
-    height: 150vh;
-  }
-}
-
 #intro .carousel, #intro .carousel-inner, #intro .carousel-item, #intro .carousel-item::before {
   position: absolute;
   top: 0;
@@ -347,7 +342,7 @@ th, td {
 
 #intro .carousel-item::before {
   content: '';
-  background-color: rgba(0, 0, 0, 0.3); /* Pengaturan opacity */
+  background-color: rgba(30, 35, 40, 0.5); /* Pengaturan opacity */
 }
 
 #intro .carousel-container {
@@ -368,31 +363,21 @@ th, td {
 #intro h2 {
   color: #ffd152;
   margin-bottom: 30px;
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 700;
   font-family: 'montserratbold'; 
   padding: 10px; 
 }
 
-@media (max-width: 768px) {
-  #intro h2 {
-    font-size: 28px;
-  }
-}
-
 #intro p {
-  width: 100%;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 30px auto;
+  line-height: 1.1;
   color: #fff;
-  font-size: 35px;
+  font-size: 32px;
   font-weight: 600;
   font-family: 'montserratbold';
-}
-
-@media (min-width: 1024px) {
-  #intro p {
-    width: 100%;
-  }
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 
 #intro .carousel-fade {
@@ -429,12 +414,6 @@ th, td {
   width: 10%;
 }
 
-@media (min-width: 1024px) {
-  #intro .carousel-control-prev, #intro .carousel-control-next {
-    width: 5%;
-  }
-}
-
 #intro .carousel-control-next-icon, #intro .carousel-control-prev-icon {
   background: none;
   font-size: 32px;
@@ -443,6 +422,30 @@ th, td {
 
 #intro .carousel-indicators li {
   cursor: pointer;
+}
+
+@media (max-height: 500px) {
+  #intro {
+    height: 150vh;
+  }
+}
+
+@media (max-width: 768px) {
+  #intro h2 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #intro p {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  #intro .carousel-control-prev, #intro .carousel-control-next {
+    width: 5%;
+  }
 }
 
 
@@ -596,3 +599,4 @@ th, td {
 #topbar .social-links a:hover {
   color: #fff;
 }
+

@@ -14,6 +14,7 @@
     $running_teks = $row['running_teks'];
     $kecepatan_teks = $row['kecepatan_teks'];
     $durasi_slide = $row['durasi_slide'];
+    $slide_aktif = $row['slide_aktif'];
     $koreksi_hijriah = $row['koreksi_hijriah'];
     $metode_perhitungan = $row['metode_perhitungan'];
     $garis_lintang = $row['garis_lintang'];

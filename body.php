@@ -1,11 +1,12 @@
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top header-transparent">
+<!--<header id="header" class="fixed-top header-transparent">-->
+<header id="header" class="fixed-top">
       <div class="row justify-content-center">
         <div class="col-xl-11 col-lg-11 col-md-11 d-flex align-items-center">
           <span class="logo mr-auto">
             <p class="nama"><?php echo $nama_masjid; ?></p>
             <p class="alamat"><?php echo $alamat_masjid; ?></p>
-            <p class="tanggal" id="penanggalan">[KALENDER]</p>
+            <p class="tanggal" id="penanggalan"></p>
           </span>
         </div>
         <nav class="nav-menu d-none d-lg-block">
@@ -19,14 +20,13 @@
 <!-- ======= Header ======= -->
 
 <!-- ======= Intro ======= -->
-<section id="intro">
-    <div class="intro-container">
+<section id="intro">    
       <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel" data-interval="<?php echo $durasi_slide; ?>">
-        <ol class="carousel-indicators"></ol>
+        <ol class="carousel-indicators" id="introCarouselIndicators"></ol>
         <div class="carousel-inner" role="listbox">
-          <?php include('./settings/slideshow.php'); ?>
+          <?php include('./settings/display.php'); ?>
         </div>     
-    </div>
+      </div>
 </section>
 <!-- ======= Intro ======= -->
 
@@ -34,10 +34,10 @@
 <section id="clock">
   <div class="intro-container">               
       <div class="left">
-        <h2 id="jam">[CLOCK]</h2>            
+        <h2 id="jam"></h2>            
       </div>    
       <div class="right">
-        <h3 id="timer">[TIMER]</h3>            
+        <h3 id="timer"></h3>            
       </div> 
   </div>
 </section>

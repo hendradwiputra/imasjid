@@ -350,26 +350,6 @@
 
 		} 
 		
-		/*
-		// Testing formula	
-		//var nextprayer = "Syuruq";
-		var starttime = 630;		
-		var lockScreen = 5;
-		
-		if ( current_minute >= Number(starttime) - Number(lockScreen) && current_minute < Number(starttime) + Number(durasiadzan) + Number(durasi_iqomah) ) {
-			var val1 = new URLSearchParams();
-			var val2 = new URLSearchParams();
-			var val3 = new URLSearchParams();
-
-			val1.append("prayer", nextprayer);
-			val2.append("time", nextcounter);
-			val3.append("day", hari);
-
-			location.href = "http://localhost/imasjid/timer.php?" + val1.toString() + "&" + val2.toString() + "&" + val3.toString();
-
-		} 	
-		*/
-
 		// Hitung mundur waktu sholat		 				
 		var countDownDate = new Date(bulan1 + " " + nextdate + "," + tahun + " " + nextcounter + ":00").getTime();   
 				  

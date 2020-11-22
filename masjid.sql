@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5deb2
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Nov 16, 2020 at 06:37 PM
--- Server version: 10.3.22-MariaDB-1ubuntu1
--- PHP Version: 7.4.3
+-- Host: 127.0.0.1
+-- Generation Time: Nov 22, 2020 at 03:09 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,34 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hadist`
---
-
-CREATE TABLE `hadist` (
-  `hadist_id` int(3) NOT NULL,
-  `hadist_judul` varchar(100) NOT NULL,
-  `hadist_isi1` varchar(255) NOT NULL,
-  `hadist_isi2` varchar(255) NOT NULL,
-  `hadist_isi3` varchar(255) NOT NULL,
-  `hadist_status` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `hadist`
---
-
-INSERT INTO `hadist` (`hadist_id`, `hadist_judul`, `hadist_isi1`, `hadist_isi2`, `hadist_isi3`, `hadist_status`) VALUES
-(1, 'Amal Itu Tergantung Niat', '\"Amal itu tergantung niatnya, dan seseorang mendapatkan (balasan) sesuai niatnya.\"', '(HR. Bukhari No.1 & Muslim No.3530)', '', 1),
-(2, 'Di Balik Musibah', '\"Barangsiapa yang dikehendaki kebaikan oleh Allah, maka Allah akan mengujinya dengan musibah.\"', '(HR. Bukhari No.5645)', '', 1),
-(3, 'Istiqomah Ya', '\"Amalan yang paling dicintai Allah adalah amalan yang rutin dilakukan meskipun sedikit.\"', '(HR. Bukhari No.6464 & Muslim No.783)', '', 0),
-(4, 'Jangan Mencela Seorang Muslim', '\"Mencela seorang muslim adalah kefasikan sedang membunuhnya adalah kekafiran.\"', '(HR. Ahmad | Shahih Al Jaami\' No.3595)', '', 0),
-(5, 'Memutus Silaturahmi', '\"Tidak akan masuk surga orang yang memutuskan tali silaturahmi.\"', '(HR. Bukhari No.5984 & Muslim No.2556)', '', 0),
-(6, 'Belajar Al-Quran', '\"Sebaik-baik kalian adalah yang mempelajari Al-Quran dan mengajarkannya.\"', '(HR. Bukhari No.5027)', '', 0),
-(7, 'Allah Itu Maha Indah', '\"Sesungguhnya Allah itu maha indah dan menyukai keindahan.\"', '(HR. Muslim No.91)', '', 0);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `settings`
 --
 
@@ -63,6 +34,7 @@ CREATE TABLE `settings` (
   `running_teks` varchar(255) NOT NULL,
   `kecepatan_teks` int(2) NOT NULL,
   `durasi_slide` varchar(5) NOT NULL,
+  `slide_aktif` int(11) NOT NULL,
   `koreksi_hijriah` int(2) NOT NULL,
   `metode_perhitungan` int(1) NOT NULL,
   `durasi_adzan` int(2) NOT NULL,
@@ -97,47 +69,67 @@ CREATE TABLE `settings` (
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`setting_id`, `nama_masjid`, `alamat_masjid`, `running_teks`, `kecepatan_teks`, `durasi_slide`, `koreksi_hijriah`, `metode_perhitungan`, `durasi_adzan`, `iqomah_shubuh`, `iqomah_dzuhur`, `iqomah_ashar`, `iqomah_maghrib`, `iqomah_isya`, `durasi_shubuh`, `durasi_syuruq`, `durasi_dzuhur`, `durasi_ashar`, `durasi_maghrib`, `durasi_isya`, `prayer1`, `prayer2`, `prayer3`, `prayer4`, `prayer5`, `prayer6`, `garis_lintang`, `garis_bujur`, `zona_waktu`, `kunci_layar`, `teks_sebelum_adzan`, `teks_adzan`, `teks_iqomah`, `teks_sebelum_sholat`) VALUES
-(1, 'Masjid Raya Nurul Mubarok', 'Kompleks PT. RAPP Townsite II Baru', 'Jamaah agar selalu menggunakan masker ketika solat di Masjid # Anak-anak jangan ribut # HP mohon dinonaktifkan # Patuhi protokol kesehatan', 7, '12000', -1, 8, 5, 10, 5, 5, 5, 5, 30, 15, 45, 45, 30, 60, 'shubuh', 'syuruq', 'dzuhur', 'ashar', 'maghrib', 'isya', '0.406393', '101.845164', '+7', 5, '“Barangsiapa duduk di masjid dalam rangka menunggu sholat, maka dia terhitung dalam keadaan sholat.” <br>(HR. an-Nasa’i dan Ahmad)', '“Ucapkanlah sebagaimana disebutkan oleh muadzin. Lalu jika sudah selesai kumandang adzan, berdoalah, maka akan diijabahi (dikabulkan).” <br>(HR. Abu Daud no. 524)', '“Sesungguhnya doa yang tidak tertolak adalah doa (yang dipanjatkan) di antara adzan dan iqomah, maka berdoalah (di waktu itu).” <br>(HR. Ahmad no. 12584)', 'Mohon untuk menonaktifkan handphone selama sholat berjamaah di masjid');
+INSERT INTO `settings` (`setting_id`, `nama_masjid`, `alamat_masjid`, `running_teks`, `kecepatan_teks`, `durasi_slide`, `slide_aktif`, `koreksi_hijriah`, `metode_perhitungan`, `durasi_adzan`, `iqomah_shubuh`, `iqomah_dzuhur`, `iqomah_ashar`, `iqomah_maghrib`, `iqomah_isya`, `durasi_shubuh`, `durasi_syuruq`, `durasi_dzuhur`, `durasi_ashar`, `durasi_maghrib`, `durasi_isya`, `prayer1`, `prayer2`, `prayer3`, `prayer4`, `prayer5`, `prayer6`, `garis_lintang`, `garis_bujur`, `zona_waktu`, `kunci_layar`, `teks_sebelum_adzan`, `teks_adzan`, `teks_iqomah`, `teks_sebelum_sholat`) VALUES
+(1, 'Masjid Raya Nurul Mubarok', 'Kompleks PT. RAPP Townsite II Baru', 'Jamaah agar selalu menggunakan masker ketika sholat di Masjid # Anak-anak jangan ribut # HP mohon dinonaktifkan # Patuhi protokol kesehatan', 7, '6000', 2, -1, 8, 5, 10, 5, 5, 5, 5, 30, 15, 45, 45, 30, 60, 'shubuh', 'syuruq', 'dzuhur', 'ashar', 'maghrib', 'isya', '0.406393', '101.845164', '+7', 5, '“Barangsiapa duduk di masjid dalam rangka menunggu sholat, maka dia terhitung dalam keadaan sholat.” <br>(HR. an-Nasa’i dan Ahmad)', '“Ucapkanlah sebagaimana disebutkan oleh muadzin. Lalu jika sudah selesai kumandang adzan, berdoalah, maka akan diijabahi (dikabulkan).” <br>(HR. Abu Daud no. 524)', '“Sesungguhnya doa yang tidak tertolak adalah doa (yang dipanjatkan) di antara adzan dan iqomah, maka berdoalah (di waktu itu).” <br>(HR. Ahmad no. 12584)', 'Mohon untuk menonaktifkan handphone selama sholat berjamaah di masjid');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slides`
+-- Table structure for table `slides1`
 --
 
-CREATE TABLE `slides` (
+CREATE TABLE `slides1` (
   `slide_id` int(3) NOT NULL,
   `judul` varchar(100) NOT NULL,
   `isi1` varchar(255) NOT NULL,
   `isi2` varchar(255) NOT NULL,
   `isi3` varchar(255) NOT NULL,
-  `isi4` varchar(255) NOT NULL,
   `foto` varchar(50) NOT NULL,
   `slide_status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `slides`
+-- Dumping data for table `slides1`
 --
 
-INSERT INTO `slides` (`slide_id`, `judul`, `isi1`, `isi2`, `isi3`, `isi4`, `foto`, `slide_status`) VALUES
-(1, 'Info Pendaftaran Qurban Tahun 2021', 'Diinformasikan kepada seluruh warga Townsite II Baru yang ingin mendaftarkan diri sebagai peserta qurban tahun 2021 agar mendaftarkan diri dengan panitia yang telah terbentuk.', '', '', '', '20200930_062655_.jpg', 1),
-(2, '', '', '', '', '', '20200930_062732_.jpg', 1),
-(3, '', '', '', '', '', '20200930_062832_.jpg', 1),
-(4, '', '', '', '', '', '20200930_063137_.jpg', 1),
-(5, '', '', '', '', '', '20200930_063348_.jpg', 1),
-(6, '', '', '', '', '', '20200930_063542_.jpg', 1);
+INSERT INTO `slides1` (`slide_id`, `judul`, `isi1`, `isi2`, `isi3`, `foto`, `slide_status`) VALUES
+(2, 'Info Haji Tahun 2021 PT. Riau Andalan Pulp And Paper', 'Jamaah sudah bisa mendaftarkan haji sama panitia BKM yang telah terbentuk di masjid kita ini. Semoga banyak yang daftar', '', '', 'arafah-01.jpg', 1),
+(3, 'Info Qurban 1442 H', '', '', '', 'madina-02.jpg', 0),
+(12, '', '', '', '', '20200930_062655_.jpg', 0),
+(15, '', '', '', '', 'kaaba-02.jpg', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slides2`
+--
+
+CREATE TABLE `slides2` (
+  `slide2_id` int(3) NOT NULL,
+  `slide2_judul` varchar(100) NOT NULL,
+  `slide2_isi1` varchar(255) NOT NULL,
+  `slide2_isi2` varchar(255) NOT NULL,
+  `slide2_isi3` varchar(255) NOT NULL,
+  `slide2_foto` varchar(50) NOT NULL,
+  `slide2_status` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `slides2`
+--
+
+INSERT INTO `slides2` (`slide2_id`, `slide2_judul`, `slide2_isi1`, `slide2_isi2`, `slide2_isi3`, `slide2_foto`, `slide2_status`) VALUES
+(1, 'Amal Itu Tergantung Niat', '\"Amal itu tergantung niatnya, dan seseorang mendapatkan (balasan) sesuai niatnya.\"', '(HR. Bukhari No.1 & Muslim No.3530)', '', '', 1),
+(2, 'Di Balik Musibah', '\"Barangsiapa yang dikehendaki kebaikan oleh Allah, maka Allah akan mengujinya dengan musibah.\"', '(HR. Bukhari No.5645)', '', '', 1),
+(3, 'Istiqomah Ya', '\"Amalan yang paling dicintai Allah adalah amalan yang rutin dilakukan meskipun sedikit.\"', '(HR. Bukhari No.6464 & Muslim No.783)', '', '', 1),
+(4, 'Jangan Mencela Seorang Muslim', '\"Mencela seorang muslim adalah kefasikan sedang membunuhnya adalah kekafiran.\"', '(HR. Ahmad | Shahih Al Jaami\' No.3595)', '', '', 1),
+(5, 'Memutus Silaturahmi', '\"Tidak akan masuk surga orang yang memutuskan tali silaturahmi.\"', '(HR. Bukhari No.5984 & Muslim No.2556)', '', '', 1),
+(6, 'Belajar Al-Quran', '\"Sebaik-baik kalian adalah yang mempelajari Al-Quran dan mengajarkannya.\"', '(HR. Bukhari No.5027)', '', '', 1),
+(7, 'Allah Itu Maha Indah', '\"Sesungguhnya Allah itu maha indah dan menyukai keindahan.\"', '(HR. Muslim No.91)', '', '', 1);
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `hadist`
---
-ALTER TABLE `hadist`
-  ADD PRIMARY KEY (`hadist_id`);
 
 --
 -- Indexes for table `settings`
@@ -146,20 +138,20 @@ ALTER TABLE `settings`
   ADD PRIMARY KEY (`setting_id`);
 
 --
--- Indexes for table `slides`
+-- Indexes for table `slides1`
 --
-ALTER TABLE `slides`
+ALTER TABLE `slides1`
   ADD PRIMARY KEY (`slide_id`);
+
+--
+-- Indexes for table `slides2`
+--
+ALTER TABLE `slides2`
+  ADD PRIMARY KEY (`slide2_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `hadist`
---
-ALTER TABLE `hadist`
-  MODIFY `hadist_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `settings`
@@ -168,10 +160,16 @@ ALTER TABLE `settings`
   MODIFY `setting_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `slides`
+-- AUTO_INCREMENT for table `slides1`
 --
-ALTER TABLE `slides`
-  MODIFY `slide_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `slides1`
+  MODIFY `slide_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `slides2`
+--
+ALTER TABLE `slides2`
+  MODIFY `slide2_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

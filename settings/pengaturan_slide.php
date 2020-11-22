@@ -12,9 +12,13 @@
         </select> 
     </div>       
     
-    <div class="form-group">  
-        <?php include('view_slides.php'); ?>
-    </div>
-    
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Pilih Slide Yang Akan Ditampilkan</label>
+        <select name="slide_aktif" id="slide_aktif" class="form-control form-control-sm col-md-2">
+            <option <?php if ($slide_aktif==1) echo 'selected = "selected"'; ?> value="1">Slide 1</option>
+            <option <?php if ($slide_aktif==2) echo 'selected = "selected"'; ?> value="2">Slide 2</option>
+            <option <?php if ($slide_aktif==3) echo 'selected = "selected"'; ?> value="3">Slide 1 & Slide 2</option>             
+        </select> 
+    </div>      
 
 </div>
