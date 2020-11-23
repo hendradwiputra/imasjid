@@ -6,19 +6,19 @@
 	$pdo = pdo_connect_mysql();
 	  
 	if ($slide_aktif==1) {
-		// slide_aktif = 1
+		/*slide_aktif = 1*/
 		$query = $pdo->prepare('SELECT judul as title,isi1 as content1,isi2 as content2,isi3 as content3,foto as picture from slides1 where slide_status=1');  
 	
 	} else if ($slide_aktif==2) {
-		// slide_aktif = 2
+		/*slide_aktif = 2*/
 		$query = $pdo->prepare('SELECT slide2_judul as title,slide2_isi1 as content1,slide2_isi2 as content2,slide2_isi3 as content3,slide2_foto as picture from slides2 where slide2_status=1');  
 	
 	} else {
-		// slide_aktif = 3 (both)
+		/*slide_aktif = 3 (tampilkan isi kedua slide)*/
 		$query = $pdo->prepare(' 
 			(SELECT judul as title,isi1 as content1,isi2 as content2,isi3 as content3,foto as picture FROM slides1 WHERE slide_status=1) 
-			union 
-			(SELECT slide2_judul as title,slide2_isi1 as content1,slide2_isi2 as content2,slide2_isi3 as content3,slide2_foto as picture FROM slides2 WHERE slide2_status=1 ORDER BY rand() limit 3)  
+			UNION 
+			(SELECT slide2_judul as title,slide2_isi1 as content1,slide2_isi2 as content2,slide2_isi3 as content3,slide2_foto as picture FROM slides2 WHERE slide2_status=1 ORDER BY rand() limit 1)  
 			');
 	}
 		

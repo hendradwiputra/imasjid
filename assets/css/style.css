@@ -559,27 +559,18 @@ th, td {
 }
 
 /*--------------------------------------------------------------
-# Foot Note
+# Footer Section
 --------------------------------------------------------------*/
-#topbar {
+#footer {
   background: rgba(120, 175, 159, 1);
   padding: 0 0;  
   font-size: 12px;
   font-family: 'montserratbold';
 }
 
-#topbar .contact-info i {
+#footer .social-links {
   color: #fff;
-  padding: 4px 4px;
-}
-
-#topbar .contact-info .icofont-phone {
-  padding-left: 20px;
-  margin-left: 10px;
-}
-
-
-#topbar .social-links {
-  color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 

@@ -37,7 +37,7 @@
 				<td rowspan="3"><img src='../assets/images/slide1/<?php echo $foto; ?>' width='120px' height='80px' class="img border border-secondary"></td>				
       	      	<td rowspan="3"><?php echo $judul; ?></td>
       	      	<td><?php echo $isi1; ?></td>      	      	
-      	      	<td rowspan="3" class="text-justify"><?php if($slide_status==0) { echo "<i class='fas fa-times'></i>";} else { echo "<i class='far fa-check-circle'></i>"; } ?></td>
+      	      	<td rowspan="3" class="text-justify"><?php if($slide_status==0) { echo "<i class='fas fa-times'></i>";} else { echo "<i class='far fa-check-square'></i>"; } ?></td>
       			<td rowspan="3"><input type='button' name='edit' id='<?php echo $slide_id; ?>' value='Edit' class='btn btn-sm btn-outline-pastel edit_slide'></td>
       			<td rowspan="3"><input type='button' name='hapus' id='<?php echo $slide_id; ?>' value='Hapus' class='btn btn-sm btn-outline-pastel hapus_slide'></td>
       		</tr>

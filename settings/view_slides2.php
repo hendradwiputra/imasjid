@@ -34,7 +34,7 @@
 			    <td rowspan="3"><?php echo $count ."."; ?></td>	
       		    <td rowspan="3"><?php echo $slide2_judul; ?></td>
 				<td><?php echo $slide2_isi1; ?></td>  				  
-				<td rowspan="3" class="text-justify"><?php if ($slide2_status==0) { echo "<i class='fas fa-times'></i>"; } else { echo "<i class='far fa-check-circle'></i>"; } ?></td>    			
+				<td rowspan="3" class="text-justify"><?php if ($slide2_status==0) { echo "<i class='fas fa-times'></i>"; } else { echo "<i class='far fa-check-square'></i>"; } ?></td>    			
       		    <td rowspan="3"><input type='button' name='edit' id='<?php echo $slide2_id; ?>' value='Edit' class='btn btn-sm btn-outline-pastel edit_slide2'></td>
       		    <td rowspan="3"><input type='button' name='hapus' id='<?php echo $slide2_id; ?>' value='Hapus' class='btn btn-sm btn-outline-pastel btn-sm hapus_slide2'></td>
       		</tr>

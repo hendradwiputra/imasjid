@@ -1,5 +1,4 @@
 <!-- ======= Header ======= -->
-<!--<header id="header" class="fixed-top header-transparent">-->
 <header id="header" class="fixed-top">
       <div class="row justify-content-center">
         <div class="col-xl-11 col-lg-11 col-md-11 d-flex align-items-center">
@@ -68,7 +67,7 @@
 </section>
 <!-- ======= Prayer Section ======= -->
 
-<!-- ======= Foot Note Section ======= -->
+<!-- ======= Footer Section ======= -->
   <?php
     $tahun = date('Y');
     $create_date = "2020";
@@ -81,7 +80,7 @@
                                
   ?>
 
-<section id="topbar" class="d-none d-lg-block">
+<section id="footer" class="d-none d-lg-block">
     <div class="intro-container clearfix">
       <div class="social-links float-left">
         <p>iMasjid versi 1.1 <i class="far fa-copyright"></i> <?php echo " $copyright_years $nama_masjid "  ?>  </p>        
@@ -93,4 +92,4 @@
     </div>
 </section>
 
-<!-- ======= Foot Note Section ======= -->
+<!-- ======= Footer Section ======= -->
