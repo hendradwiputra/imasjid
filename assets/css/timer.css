@@ -190,14 +190,13 @@
     width: 100%;
     height: 100vh;
     position: relative;
-    background: url("../images/timer-bg.jpg") top center;
     background-size: cover;
-    position: relative;
+    background-repeat: no-repeat;
   }
   
   #hero:before {
     content: "";
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.8);
     position: absolute;
     bottom: 0;
     top: 0;
@@ -225,34 +224,16 @@
     font-family: 'montserratbold';    
     color: #f77f00;        
   }
-
-  #hero .btn-get-started {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    display: inline-block;
-    padding: 14px 50px;
-    border-radius: 5px;
-    transition: 0.5s;
-    margin-top: 30px;
-    color: #fff;
-    background: #2487ce;
-  }
-  
-  #hero .btn-get-started:hover {
-    background: #3194db;
-  }
-  
+    
   #hero .icon-boxes {
     margin-top: 100px;
+    background: rgba(255, 255, 255, 0.5);
   }
   
   #hero .icon-box {
     padding: 50px 30px;
     position: relative;
     overflow: hidden;
-    background: #fff;
     box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.2);
     transition: all 0.3s ease-in-out;
     border-radius: 8px;
