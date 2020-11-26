@@ -22,10 +22,10 @@
 			(SELECT slide2_judul as title,slide2_isi1 as content1,slide2_isi2 as content2,slide2_isi3 as content3,slide2_foto as picture FROM slides2 WHERE slide2_status=1 ORDER BY rand() limit 1)  
 			');
 	}
-		
+	
 	$query->execute();  
   	$result = $query->fetchAll(PDO::FETCH_ASSOC);
-	
+		
 	$count = 0;
 	foreach ($result as $row) { 
 		$judul = $row['title'];
@@ -33,14 +33,14 @@
 		$isi2 = $row['content2'];
 		$isi3 = $row['content3'];			
 		$foto = rawurlencode($row['picture']);
-
+		
 		/* Random Image from folder */
 		$imgList = getImagesFromDir($root . $path);
-		$img = getRandomFromArray($imgList);			
+		$img = getRandomFromArray($imgList);
 			
 		if ($count == 0) { $class = 'carousel-item active';} else { $class = 'carousel-item'; }
 			
-			if ($foto == "") {
+			if ($foto == "") {				
 				echo "<div class='$class' style='background-image: url(./assets/images/slide2/$img)'>";
 			} else {
 				echo "<div class='$class' style='background-image: url(./assets/images/slide1/$foto)'>";
