@@ -2,8 +2,11 @@
 
 	include_once ("./scripts/db_connection.php");
 	include ('./scripts/view_settings.php');
+	include ('./scripts/random_image.php');
 
 	$pdo = pdo_connect_mysql();
+
+	$count = 1;
 	  
 	if ($slide_aktif==1) {
 		/*slide_aktif = 1*/
@@ -18,34 +21,28 @@
 		$query = $pdo->prepare(' 
 			(SELECT judul as title,isi1 as content1,isi2 as content2,isi3 as content3,foto as picture FROM slides1 WHERE slide_status=1) 
 			UNION 
-			(SELECT slide2_judul as title,slide2_isi1 as content1,slide2_isi2 as content2,slide2_isi3 as content3,slide2_foto as picture FROM slides2 WHERE slide2_status=1 ORDER BY rand() limit 1)  
+			(SELECT slide2_judul as title,slide2_isi1 as content1,slide2_isi2 as content2,slide2_isi3 as content3,slide2_foto as picture FROM slides2 WHERE slide2_status=1 ORDER BY rand() limit 3)  
 			');
 	}
 		
 	$query->execute();  
   	$result = $query->fetchAll(PDO::FETCH_ASSOC);
-	
-	$count = 0;
+		
 	foreach ($result as $row) { 
-			$judul = $row['title'];
-			$isi1 = $row['content1'];			
-			$isi2 = $row['content2'];
-			$isi3 = $row['content3'];			
-			$foto = rawurlencode($row['picture']);
+		$judul = $row['title'];
+		$isi1 = $row['content1'];			
+		$isi2 = $row['content2'];
+		$isi3 = $row['content3'];			
+		$foto = rawurlencode($row['picture']);
 
-			/*Randomize Background*/
-			$bg = array('bg1.jpg', 'bg2.jpg', 'bg3.jpg', 'bg4.jpg', 'bg5.jpg', 'bg6.jpg', 'bg7.jpg', 'bg8.jpg', 'bg9.jpg', 'bg10.jpg', 
-						'bg11.jpg','bg12.jpg','bg13.jpg','bg14.jpg','bg15.jpg','bg16.jpg','bg17.jpg','bg18.jpg','bg19.jpg','bg20.jpg',
-						'bg21.jpg', 
-					); 
-			$i = rand(0, count($bg)-1);
-            $selectedBg = "$bg[$i]"; 
-            /*End Randomize Background*/
+		/* Random Image from folder */
+		$imgList = getImagesFromDir($root . $path);
+		$img = getRandomFromArray($imgList);
 			
-		if ($count == 0) { $class = 'carousel-item active';} else { $class = 'carousel-item'; }
+		if ($count == 1) { $class = 'carousel-item active';} else { $class = 'carousel-item'; }
 			
 			if ($foto == "") {
-				echo "<div class='$class' style='background-image: url(./assets/images/slide2/$selectedBg)' no-repeat>";
+				echo "<div class='$class' style='background-image: url(./assets/images/slide2/$img)'>";
 			} else {
 				echo "<div class='$class' style='background-image: url(./assets/images/slide1/$foto)'>";
 			}		

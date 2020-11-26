@@ -54,11 +54,11 @@
                                     <i class="far fa-file-powerpoint"></i> Slide-2
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="list-atur-slide-list" data-toggle="list" href="#list-atur-slide" role="tab" aria-controls="atur-slide">
-                                <i class="fab fa-slideshare"></i> Pengaturan Slide
+                            <!--<li class="nav-item">
+                                <a class="nav-link" id="list-upload-list" data-toggle="list" href="#list-upload" role="tab" aria-controls="upload">
+                                <i class="fab fa-slideshare"></i> Upload Gambar
                                 </a>
-                            </li>
+                            </li>-->
                             <li class="nav-item">
                                 <a class="nav-link" id="list-about-list" data-toggle="list" href="#list-about" role="tab" aria-controls="about">
                                     <i class="fab fa-slack"></i> Tentang Aplikasi
@@ -74,21 +74,13 @@
 
                 <div class="tab-content" id="nav-tabContent">
           
-                    <div class="tab-pane fade show active" id="list-pengaturan" role="tabpanel" aria-labelledby="list-pengaturan-list">
-                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 class="h2">Pengaturan Dasar</h1>
-                            <div class="btn-toolbar mb-2 mb-md-0">
-                                <div class="btn-group mr-2">
-                                    <input type="hidden" name="setting_id" id="setting_id" value="<?php echo $setting_id; ?>">                                    
-                                </div>          
-                            </div>                            
-                        </div>
+                    <div class="tab-pane fade show active" id="list-pengaturan" role="tabpanel" aria-labelledby="list-pengaturan-list">                        
                         <?php include("pengaturan.php") ?>      
                     </div>
 
                     <div class="tab-pane fade" id="list-notifikasi" role="tabpanel" aria-labelledby="list-notifikasi-list">
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 class="h2">Pengaturan Adzan, Iqomah & Informasi</h1>                            
+                            <h1 class="h2">Pengaturan Adzan & Iqomah</h1>                            
                         </div> 
                         <?php include("notifikasi.php") ?>       
                     </div> 
@@ -132,14 +124,11 @@
                             </div>
                         </div>
                     </div> 
-
-                    <div class="tab-pane fade" id="list-atur-slide" role="tabpanel" aria-labelledby="list-atur-slide-list">
-                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 class="h2">Pengaturan Slide</h1>                            
-                        </div>
-                        <?php include('pengaturan_slide.php'); ?>      
+                    <!--
+                    <div class="tab-pane fade" id="list-upload" role="tabpanel" aria-labelledby="list-upload-list">                        
+                        <?php include('view_images.php'); ?> 
                     </div>
-
+                    -->
                     <div class="tab-pane fade" id="list-about" role="tabpanel" aria-labelledby="list-about-list">
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
                                                       
