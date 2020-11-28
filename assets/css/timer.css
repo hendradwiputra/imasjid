@@ -17,7 +17,13 @@
     font-style: normal;
 }
 
- 
+@font-face {
+  font-family: 'montserratregular';
+  src: url('../fonts/montserrat/montserrat-regular.woff2') format('woff2'),
+       url('../fonts/montserrat/montserrat-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
   
   /*--------------------------------------------------------------
   # Preloader
@@ -216,6 +222,11 @@
     color: #124265;
     font-family: 'montserratbold';
   }
+
+  #hero h1 span {    
+    border-bottom: 8px solid #f77f00;
+    line-height: 10px;
+  }
   
   #hero h2 {    
     margin: 40px 0 0 0;
@@ -253,7 +264,7 @@
   #hero .icon-box h4 span {    
     border-bottom: 8px solid #f77f00;
   }
-  
+ 
   #hero .icon-box .description {
     font-family: 'montserratbold';
     font-size: 270px;
@@ -261,23 +272,37 @@
     margin-bottom: 50px;    
     text-align: left;
   }
-  
-  #hero .icon-box .icon {
-    margin-bottom: 20px;
-    padding-top: 10px;
-    display: inline-block;
-    transition: all 0.3s ease-in-out;
-    font-size: 36px;
-    line-height: 1;
-    color: #2487ce;
-  }
-  
+
   #hero .icon-box:hover {
     transform: scale(1.08);
   }
   
   #hero .icon-box:hover .title h4 {
     color: #2487ce;
+  }
+
+  #hero .icon-boxes2 {
+    margin-top: 40px;
+    background: rgba(144, 224, 239, 0.9);
+  }
+
+  #hero .icon-box2 h4 {
+    padding: 30px 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 29px 0 rgba(202, 240, 248);
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    z-index: 1;
+  }
+
+  #hero .icon-box2 .description {
+    color: #124265;
+    font-family: 'montserratregular';
+    font-size: 38px;
+    line-height: 40px;
+    margin-bottom: 15px;    
+    text-align: center;
   }
   
   @media (min-width: 1024px) {

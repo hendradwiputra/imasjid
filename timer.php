@@ -219,7 +219,7 @@
                 if (prayername == day) {
 
                     var timer = setTimeout(function() {
-                        window.location="http://" + url + "/imasjid"
+                        window.location="http://" + url + "/imasjid/message.php"
                     }, 500);
                 }
                             

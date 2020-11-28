@@ -43,6 +43,9 @@
     $teks_adzan = $row['teks_adzan'];
     $teks_iqomah = $row['teks_iqomah'];
     $teks_sebelum_sholat = $row['teks_sebelum_sholat'];
+    $teks_khutbah = $row['teks_khutbah'];
+    $teks_khutbah1 = $row['teks_khutbah1'];
+    $teks_khutbah2 = $row['teks_khutbah2'];
   }
   
 
