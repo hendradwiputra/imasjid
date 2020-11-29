@@ -14,7 +14,7 @@
         $image_id    = $row['image_id'];
 		$foto_slide2 = $row['foto_slide2'];			               			
         			
-		echo "<a href='../assets/images/slides2/$foto_slide2' id='$foto_slide2' class='hapus_image2' ><img src='../assets/images/slides2/$foto_slide2' alt='' title='$foto_slide2 berhasil dihapus' width='120px' height='80px' class='image border border-light'></a>";
+		echo "<a href='../assets/images/slide2/$foto_slide2' id='$foto_slide2' class='hapus_image2' ><img src='../assets/images/slide2/$foto_slide2' alt='' title='$foto_slide2' width='120px' height='80px' class='image border border-light'></a>";
                   
     }    
 

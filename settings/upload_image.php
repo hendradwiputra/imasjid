@@ -8,7 +8,7 @@
      
         $foto   = $_FILES['foto_slide2']['name']; 
         $size   = $_FILES['foto_slide2']['size'];
-        $location = "../assets/images/slides2/".$foto; 
+        $location = "../assets/images/slide2/".$foto; 
         $imageFileType = pathinfo($location,PATHINFO_EXTENSION); 
         $valid_extensions = array("jpg","jpeg","png");  
 
