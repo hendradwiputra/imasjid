@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2020 at 03:09 PM
+-- Generation Time: Nov 30, 2020 at 01:23 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -20,6 +20,54 @@ SET time_zone = "+00:00";
 --
 -- Database: `masjid`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `image_id` int(3) NOT NULL,
+  `foto_slide2` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`image_id`, `foto_slide2`) VALUES
+(1, 'bg1.jpg'),
+(2, 'bg2.jpg'),
+(3, 'bg3.jpg'),
+(4, 'bg4.jpg'),
+(5, 'bg5.jpg'),
+(6, 'bg6.jpg'),
+(7, 'bg7.jpg'),
+(8, 'bg8.jpg'),
+(9, 'bg9.jpg'),
+(10, 'bg10.jpg'),
+(11, 'bg11.jpg'),
+(12, 'bg12.jpg'),
+(13, 'bg13.jpg'),
+(14, 'bg14.jpg'),
+(15, 'bg15.jpg'),
+(16, 'bg16.jpg'),
+(17, 'bg17.jpg'),
+(18, 'bg18.jpg'),
+(19, 'bg19.jpg'),
+(20, 'bg20.jpg'),
+(21, 'bg21.jpg'),
+(22, 'bg22.jpg'),
+(23, 'bg23.jpg'),
+(24, 'bg24.jpg'),
+(25, 'bg25.jpg'),
+(26, 'bg26.jpg'),
+(27, 'bg27.jpg'),
+(28, 'bg28.jpg'),
+(29, 'bg29.jpg'),
+(30, 'bg30.jpg'),
+(31, 'bg31.jpg');
 
 -- --------------------------------------------------------
 
@@ -62,15 +110,18 @@ CREATE TABLE `settings` (
   `teks_sebelum_adzan` varchar(255) NOT NULL,
   `teks_adzan` varchar(255) NOT NULL,
   `teks_iqomah` varchar(255) NOT NULL,
-  `teks_sebelum_sholat` varchar(255) NOT NULL
+  `teks_sebelum_sholat` varchar(255) NOT NULL,
+  `teks_khutbah` varchar(100) NOT NULL,
+  `teks_khutbah1` varchar(255) NOT NULL,
+  `teks_khutbah2` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`setting_id`, `nama_masjid`, `alamat_masjid`, `running_teks`, `kecepatan_teks`, `durasi_slide`, `slide_aktif`, `koreksi_hijriah`, `metode_perhitungan`, `durasi_adzan`, `iqomah_shubuh`, `iqomah_dzuhur`, `iqomah_ashar`, `iqomah_maghrib`, `iqomah_isya`, `durasi_shubuh`, `durasi_syuruq`, `durasi_dzuhur`, `durasi_ashar`, `durasi_maghrib`, `durasi_isya`, `prayer1`, `prayer2`, `prayer3`, `prayer4`, `prayer5`, `prayer6`, `garis_lintang`, `garis_bujur`, `zona_waktu`, `kunci_layar`, `teks_sebelum_adzan`, `teks_adzan`, `teks_iqomah`, `teks_sebelum_sholat`) VALUES
-(1, 'Masjid Raya Nurul Mubarok', 'Kompleks PT. RAPP Townsite II Baru', 'Jamaah agar selalu menggunakan masker ketika sholat di Masjid # Anak-anak jangan ribut # HP mohon dinonaktifkan # Patuhi protokol kesehatan', 7, '6000', 2, -1, 8, 5, 10, 5, 5, 5, 5, 30, 15, 45, 45, 30, 60, 'shubuh', 'syuruq', 'dzuhur', 'ashar', 'maghrib', 'isya', '0.406393', '101.845164', '+7', 5, '“Barangsiapa duduk di masjid dalam rangka menunggu sholat, maka dia terhitung dalam keadaan sholat.” <br>(HR. an-Nasa’i dan Ahmad)', '“Ucapkanlah sebagaimana disebutkan oleh muadzin. Lalu jika sudah selesai kumandang adzan, berdoalah, maka akan diijabahi (dikabulkan).” <br>(HR. Abu Daud no. 524)', '“Sesungguhnya doa yang tidak tertolak adalah doa (yang dipanjatkan) di antara adzan dan iqomah, maka berdoalah (di waktu itu).” <br>(HR. Ahmad no. 12584)', 'Mohon untuk menonaktifkan handphone selama sholat berjamaah di masjid');
+INSERT INTO `settings` (`setting_id`, `nama_masjid`, `alamat_masjid`, `running_teks`, `kecepatan_teks`, `durasi_slide`, `slide_aktif`, `koreksi_hijriah`, `metode_perhitungan`, `durasi_adzan`, `iqomah_shubuh`, `iqomah_dzuhur`, `iqomah_ashar`, `iqomah_maghrib`, `iqomah_isya`, `durasi_shubuh`, `durasi_syuruq`, `durasi_dzuhur`, `durasi_ashar`, `durasi_maghrib`, `durasi_isya`, `prayer1`, `prayer2`, `prayer3`, `prayer4`, `prayer5`, `prayer6`, `garis_lintang`, `garis_bujur`, `zona_waktu`, `kunci_layar`, `teks_sebelum_adzan`, `teks_adzan`, `teks_iqomah`, `teks_sebelum_sholat`, `teks_khutbah`, `teks_khutbah1`, `teks_khutbah2`) VALUES
+(1, 'Masjid Jannatul Firdaus', 'Kompleks PT. RAPP Townsite II Baru', 'Jama\'ah dihimbau untuk tetap mengenakan masker ketika berada di dalam Masjid.', 7, '6000', 2, -1, 8, 5, 10, 5, 5, 5, 5, 30, 15, 45, 45, 30, 60, 'shubuh', 'syuruq', 'dzuhur', 'ashar', 'maghrib', 'isya', '0.406393', '101.845164', '+7', 5, '“Barangsiapa duduk di masjid dalam rangka menunggu sholat, maka dia terhitung dalam keadaan sholat.” <br>(HR. an-Nasa’i dan Ahmad)', '“Ucapkanlah sebagaimana disebutkan oleh muadzin. Lalu jika sudah selesai kumandang adzan, berdoalah, maka akan diijabahi (dikabulkan).” <br>(HR. Abu Daud no. 524)', '“Sesungguhnya doa yang tidak tertolak adalah doa (yang dipanjatkan) di antara adzan dan iqomah, maka berdoalah (di waktu itu).” <br>(HR. Ahmad no. 12584)', 'Mohon untuk menonaktifkan handphone selama sholat berjamaah di masjid', 'Adab Ketika Mendengar <span>Khutbah</span> Jum\'at', 'Saat khutbah jum\'at sedang berlangsung, seorang dilarang menyibukkan diri dengan hal-hal yang bisa memalingkan konsentrasinya dari menyimak khutbah. Sebagaimana disebutkan dalam sabda Rasulullah Shallallahu‘alaihi Wasallam:', '“Jika engkau berkata pada sahabatmu pada hari Jum’at, <u>‘Diamlah, khotib sedang berkhutbah!’</u>. Sungguh engkau telah berkata sia-sia.” <br>(HR. Bukhari no. 934 dan Muslim no. 851).');
 
 -- --------------------------------------------------------
 
@@ -93,10 +144,12 @@ CREATE TABLE `slides1` (
 --
 
 INSERT INTO `slides1` (`slide_id`, `judul`, `isi1`, `isi2`, `isi3`, `foto`, `slide_status`) VALUES
-(2, 'Info Haji Tahun 2021 PT. Riau Andalan Pulp And Paper', 'Jamaah sudah bisa mendaftarkan haji sama panitia BKM yang telah terbentuk di masjid kita ini. Semoga banyak yang daftar', '', '', 'arafah-01.jpg', 1),
-(3, 'Info Qurban 1442 H', '', '', '', 'madina-02.jpg', 0),
-(12, '', '', '', '', '20200930_062655_.jpg', 0),
-(15, '', '', '', '', 'kaaba-02.jpg', 0);
+(1, '', '', '', '', '20200930_062655_.jpg', 0),
+(2, '', '', '', '', '20200930_062732_.jpg', 1),
+(3, '', '', '', '', '20200930_062832_.jpg', 0),
+(4, '', '', '', '', '20200930_063348_.jpg', 0),
+(5, '', '', '', '', 'covid prevention.jpg', 0),
+(6, '', '', '', '', 'kamb.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -125,11 +178,22 @@ INSERT INTO `slides2` (`slide2_id`, `slide2_judul`, `slide2_isi1`, `slide2_isi2`
 (4, 'Jangan Mencela Seorang Muslim', '\"Mencela seorang muslim adalah kefasikan sedang membunuhnya adalah kekafiran.\"', '(HR. Ahmad | Shahih Al Jaami\' No.3595)', '', '', 1),
 (5, 'Memutus Silaturahmi', '\"Tidak akan masuk surga orang yang memutuskan tali silaturahmi.\"', '(HR. Bukhari No.5984 & Muslim No.2556)', '', '', 1),
 (6, 'Belajar Al-Quran', '\"Sebaik-baik kalian adalah yang mempelajari Al-Quran dan mengajarkannya.\"', '(HR. Bukhari No.5027)', '', '', 1),
-(7, 'Allah Itu Maha Indah', '\"Sesungguhnya Allah itu maha indah dan menyukai keindahan.\"', '(HR. Muslim No.91)', '', '', 1);
+(7, 'Allah Itu Maha Indah', '\"Sesungguhnya Allah itu maha indah dan menyukai keindahan.\"', '(HR. Muslim No.91)', '', '', 1),
+(8, 'Hukum Riba', '\"Dan Allah menghalalkan jual beli dan mengharamkan riba\"', '(QS. Al-Baqarah: 275)', '', '', 1),
+(9, 'Riba Jahiliyah', '\"Hai orang-orang yang beriman, janganlah kamu memakan riba dengan berlipat ganda dan bertakwalah kamu kepada Allah supaya kamu mendapat keberuntungan.\"', '(QS. Ali \'Imran: 130)', '', '', 1),
+(10, 'Taubat Dari Riba', '\"Sesungguhnya Allah \'Azza wa Jalla senantiasa menerima taubat hamba, selagi nafas belum sampai tenggorokan.\"', '(HR. Ibnu Majah dan dihasankan oleh Al-Albani\"', '', '', 1),
+(11, 'Larangan Menasabkan Diri Kepada Selain Ayah', '\"Barang siapa mengaku (menasabkan diri) kepada selain ayahnya, padahal ia tahu bahwa dia bukan ayahnya, maka surga haram baginya.\"', '(HR. Bukhari No.6766) dan Muslim No.63)', '', '', 1),
+(12, 'tes', '', '', '', '', 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`image_id`);
 
 --
 -- Indexes for table `settings`
@@ -154,6 +218,12 @@ ALTER TABLE `slides2`
 --
 
 --
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `image_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
@@ -163,13 +233,13 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `slides1`
 --
 ALTER TABLE `slides1`
-  MODIFY `slide_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `slide_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `slides2`
 --
 ALTER TABLE `slides2`
-  MODIFY `slide2_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `slide2_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
