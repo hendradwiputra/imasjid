@@ -12,11 +12,11 @@
     <thead class="thead-dark">
         <tr>
             <th>No</th>
-            <th>Judul</th>
-            <th>Isi</th>
-            <th>Gambar</th>
-            <th>Aktif</th>
-            <th colspan="2"></th>
+            <th width="10%">Gambar</th>
+            <th width="30%">Judul</th>
+            <th width="45%">Isi</th>
+            <th width="5%">Aktif</th>
+            <th width="10%" colspan="2"></th>
         </tr>
       </thead>
     <tbody>      
@@ -34,7 +34,7 @@
 ?>
 			<tr>
 				<td rowspan="3"><?php echo $count ."."; ?></td>	
-				<td rowspan="3"><img src='../assets/images/slide1/<?php echo $foto; ?>' width='120px' height='80px' class="img border border-secondary"></td>				
+				<td rowspan="3"><img src='../assets/images/slide1/<?php echo $foto; ?>' width='120px' height='80px' class="img border border-light"></td>				
       	      	<td rowspan="3"><?php echo $judul; ?></td>
       	      	<td><?php echo $isi1; ?></td>      	      	
       	      	<td rowspan="3" class="text-justify"><?php if($slide_status==0) { echo "<i class='fas fa-times'></i>";} else { echo "<i class='far fa-check-square'></i>"; } ?></td>

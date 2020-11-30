@@ -2,7 +2,9 @@
     
     include('../scripts/view_settings.php'); 
     include('slide1_modal.php'); 
-    include('slide2_modal.php'); 
+    include('slide2_modal.php');     
+    include('upload_modal.php');
+
     $url = "http://" .$_SERVER["HTTP_HOST"] . "/imasjid" ;
 
 ?>
@@ -124,11 +126,20 @@
                             </div>
                         </div>
                     </div> 
-
+                    
                     <div class="tab-pane fade" id="list-upload" role="tabpanel" aria-labelledby="list-upload-list">                        
-                        <?php include('view_images.php'); ?> 
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">                           
+                            <h1 class="h2">Direktori Gambar Slide-2</h1> 
+                            <div class="btn-toolbar mb-2 mb-md-0">
+                                <div class="btn-group mr-2">
+                                    <button type="button" class="btn btn-md btn-outline-pastel" id="add_image">Upload Gambar</button> 
+                                </div>          
+                            </div>  
+                                                                    
+                        </div>  
+                        <?php include('view_images2.php'); ?>                
                     </div>
-
+                    
                     <div class="tab-pane fade" id="list-about" role="tabpanel" aria-labelledby="list-about-list">
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
                                                       

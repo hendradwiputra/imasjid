@@ -12,10 +12,10 @@
       <thead class="thead-dark">
         <tr>
             <th>No</th>
-            <th>Judul</th>
-			<th>Isi</th>
-			<th>Aktif</th>
-            <th colspan="2"></th>
+            <th width="30%">Judul</th>
+			<th width="55%">Isi</th>
+			<th width="5%">Aktif</th>
+            <th width="10%" colspan="2"></th>
         </tr>
       </thead>
       <tbody>      

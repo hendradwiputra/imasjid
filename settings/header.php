@@ -15,7 +15,13 @@
 <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css"> 
 
 <!-- Custom styles for this template -->
-<link href="../assets/css/dashboard.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+
+<!-- Simplelightbox -->
+<link rel="stylesheet" href="../assets/vendor/simplelightbox/simple-lightbox.css">
+
+<!-- Simplelightbox -->
+<script src="../assets/vendor/simplelightbox/simple-lightbox.js"></script>
 
 <!-- Jquery -->
 <script src="../assets/js/jquery-3.5.1.min.js"></script>
@@ -26,7 +32,7 @@
 <script>
 $(document).ready(function() { 
 
-    //---Slides1---//
+    /* Slides1 */
     $.ajax({
         url: 'view_slides1.php',
         type: "POST",
@@ -145,7 +151,7 @@ $(document).ready(function() {
         }       
     });   
 
-    //---Slides2---//
+    /* Slides2 */
     $.ajax({
         url: 'view_slides2.php',
         type: "POST",
@@ -233,7 +239,7 @@ $(document).ready(function() {
         }  
     });   
        
-    //---Tabel Settings---//    
+    /* Tabel Settings */    
     $("#save_setting").click(function(){
         var data = $("#setting_form").serialize();
                 
@@ -245,7 +251,62 @@ $(document).ready(function() {
                         alert(data);                                       
                 }
         });
-    });        
+    });     
+
+    /* Upload Image */   
+
+    $("#add_image").click(function(){     
+        $('#upload_form')[0].reset();  
+        $("#upload_modal").modal('show');
+        $('#image_slide2').attr("src","");
+        $('#foto_slide2').attr("");
+        $("#upload_image").attr("disabled", true);
+    });  
+
+    $("#cancel_upload").click(function(){
+        $('#upload_form')[0].reset(); 
+        $('#image_slide2').attr("src","");
+        $('#foto_slide2').attr("test"); 
+    });
+
+    $("#upload_image").click(function(){  
+        
+        var data = new FormData();    
+
+        data.append('image_id', $("#image_id").val());        
+        data.append('foto_slide2', $("#foto_slide2")[0].files[0]);
+       
+        $.ajax({
+                url:'upload_image.php',
+                type:'POST',
+                contentType: false,
+                processData: false,
+                data:data,
+                success:function(response){
+                    $('#upload_form')[0].reset();                     
+                    $('#upload_modal').modal('hide');
+                    $('#table_images').html(response);                    
+                }
+        });    
+            
+    });   
+
+    $(document).on('click', '.hapus_image2', function() {         
+        var foto_slide2 = $(this).attr("id");        
+        
+        if(confirm("Anda yakin akan menghapus gambar ini ?")) {        
+            $.ajax({
+                url:"hapus_image2.php",
+                method:"POST",
+                data:{foto_slide2:foto_slide2},
+                success:function(data) {   
+                    $('#table_images').html(data);
+                }
+            })
+        } else {
+            return false;
+        }
+    });
 
 });
 </script>

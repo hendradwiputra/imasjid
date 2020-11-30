@@ -190,7 +190,7 @@
     </div> 
 
     <div class="form-group">
-        <label for="exampleFormControlSelect1"><i class="fas fa-list"></i> Informasi Tambahan</label>               
+        <label for="exampleFormControlSelect1"><i class="fas fa-list"></i> Informasi Tambahan Ketika Adzan & Iqomah</label>               
         <div class="form-row">       
             <div class="form-group col-md-6">
                 <label for="exampleFormControlSelect1">Sebelum Adzan</label>
@@ -212,6 +212,29 @@
             <div class="form-group col-md-6">
                 <label for="exampleFormControlSelect1">Sebelum Sholat</label>
                 <textarea class="form-control form-control-sm" name="teks_sebelum_sholat" id="teks_sebelum_sholat" rows="4" maxlength="255"><?php echo $teks_sebelum_sholat; ?></textarea>
+            </div>                  
+        </div>
+
+    </div> 
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1"><i class="fas fa-list"></i> Informasi Ketika Masuk Waktu Jum'at</label>               
+        <div class="form-row">       
+            <div class="form-group col-md-6">
+                <label for="exampleFormControlSelect1">Judul</label>
+                <input type="text" name="teks_khutbah" id="teks_khutbah" class="form-control form-control-sm" value="<?php echo $teks_khutbah ?>">
+            </div>                            
+        </div>
+
+        <div class="form-row">   
+            <div class="form-group col-md-6">
+                <label for="exampleFormControlSelect1">Informasi 1</label>
+                <textarea class="form-control form-control-sm" name="teks_khutbah1" id="teks_khutbah1" rows="5" maxlength="255"><?php echo $teks_khutbah1 ?></textarea>
+            </div>
+        
+            <div class="form-group col-md-6">
+                <label for="exampleFormControlSelect1">Informasi 2</label>
+                <textarea class="form-control form-control-sm" name="teks_khutbah2" id="teks_khutbah2" rows="5" maxlength="255"><?php echo $teks_khutbah2 ?></textarea>
             </div>                  
         </div>
 
