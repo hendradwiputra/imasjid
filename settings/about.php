@@ -73,6 +73,11 @@
             <td>versi 1.1</td>
             <td>Tambah fitur lock screen & ubah tampilan dashboard</td>      
         </tr>
+        <tr>
+            <td scope="row">3</td>
+            <td>versi 1.2</td>
+            <td>Tambah fitur lock screen sholat 5 waktu dan sholat jum'at</td>      
+        </tr>
       </tbody>
     </table>
     <br>

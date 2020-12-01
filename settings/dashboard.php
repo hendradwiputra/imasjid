@@ -58,7 +58,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="list-upload-list" data-toggle="list" href="#list-upload" role="tab" aria-controls="upload">
-                                <i class="fab fa-slideshare"></i> Upload Gambar
+                                <i class="fas fa-upload"></i> Upload Gambar
                                 </a>
                             </li>
                             <li class="nav-item">

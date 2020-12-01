@@ -79,7 +79,7 @@
 <section id="footer" class="d-none d-lg-block">
     <div class="intro-container clearfix">
       <div class="social-links float-left">
-        <p>iMasjid versi 1.1 <i class="far fa-copyright"></i> <?php echo " $copyright_years $nama_masjid "  ?>  </p>        
+        <p>iMasjid versi 1.2 <i class="far fa-copyright"></i> <?php echo " $copyright_years $nama_masjid "  ?>  </p>        
       </div>
       
       <div class="social-links float-right">
