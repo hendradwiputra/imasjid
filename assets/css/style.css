@@ -336,7 +336,7 @@ th, td {
 
 #intro .carousel-item::before {
   content: '';
-  background-color: rgba(30, 35, 40, 0.5); /* Pengaturan opacity */
+  background-color: rgba(30, 35, 40, 0.3); /* Pengaturan opacity */
 }
 
 #intro .carousel-container {

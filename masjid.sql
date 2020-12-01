@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2020 at 01:23 AM
+-- Generation Time: Dec 01, 2020 at 03:15 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -106,22 +106,25 @@ CREATE TABLE `settings` (
   `garis_lintang` varchar(10) NOT NULL,
   `garis_bujur` varchar(10) NOT NULL,
   `zona_waktu` varchar(2) NOT NULL,
-  `kunci_layar` int(2) NOT NULL,
   `teks_sebelum_adzan` varchar(255) NOT NULL,
   `teks_adzan` varchar(255) NOT NULL,
   `teks_iqomah` varchar(255) NOT NULL,
   `teks_sebelum_sholat` varchar(255) NOT NULL,
   `teks_khutbah` varchar(100) NOT NULL,
   `teks_khutbah1` varchar(255) NOT NULL,
-  `teks_khutbah2` varchar(255) NOT NULL
+  `teks_khutbah2` varchar(255) NOT NULL,
+  `header_position` varchar(6) NOT NULL,
+  `kunci_layar` int(2) NOT NULL,
+  `kunci_layar_sholat` int(2) NOT NULL,
+  `kunci_layar_jumat` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`setting_id`, `nama_masjid`, `alamat_masjid`, `running_teks`, `kecepatan_teks`, `durasi_slide`, `slide_aktif`, `koreksi_hijriah`, `metode_perhitungan`, `durasi_adzan`, `iqomah_shubuh`, `iqomah_dzuhur`, `iqomah_ashar`, `iqomah_maghrib`, `iqomah_isya`, `durasi_shubuh`, `durasi_syuruq`, `durasi_dzuhur`, `durasi_ashar`, `durasi_maghrib`, `durasi_isya`, `prayer1`, `prayer2`, `prayer3`, `prayer4`, `prayer5`, `prayer6`, `garis_lintang`, `garis_bujur`, `zona_waktu`, `kunci_layar`, `teks_sebelum_adzan`, `teks_adzan`, `teks_iqomah`, `teks_sebelum_sholat`, `teks_khutbah`, `teks_khutbah1`, `teks_khutbah2`) VALUES
-(1, 'Masjid Jannatul Firdaus', 'Kompleks PT. RAPP Townsite II Baru', 'Jama\'ah dihimbau untuk tetap mengenakan masker ketika berada di dalam Masjid.', 7, '6000', 2, -1, 8, 5, 10, 5, 5, 5, 5, 30, 15, 45, 45, 30, 60, 'shubuh', 'syuruq', 'dzuhur', 'ashar', 'maghrib', 'isya', '0.406393', '101.845164', '+7', 5, '“Barangsiapa duduk di masjid dalam rangka menunggu sholat, maka dia terhitung dalam keadaan sholat.” <br>(HR. an-Nasa’i dan Ahmad)', '“Ucapkanlah sebagaimana disebutkan oleh muadzin. Lalu jika sudah selesai kumandang adzan, berdoalah, maka akan diijabahi (dikabulkan).” <br>(HR. Abu Daud no. 524)', '“Sesungguhnya doa yang tidak tertolak adalah doa (yang dipanjatkan) di antara adzan dan iqomah, maka berdoalah (di waktu itu).” <br>(HR. Ahmad no. 12584)', 'Mohon untuk menonaktifkan handphone selama sholat berjamaah di masjid', 'Adab Ketika Mendengar <span>Khutbah</span> Jum\'at', 'Saat khutbah jum\'at sedang berlangsung, seorang dilarang menyibukkan diri dengan hal-hal yang bisa memalingkan konsentrasinya dari menyimak khutbah. Sebagaimana disebutkan dalam sabda Rasulullah Shallallahu‘alaihi Wasallam:', '“Jika engkau berkata pada sahabatmu pada hari Jum’at, <u>‘Diamlah, khotib sedang berkhutbah!’</u>. Sungguh engkau telah berkata sia-sia.” <br>(HR. Bukhari no. 934 dan Muslim no. 851).');
+INSERT INTO `settings` (`setting_id`, `nama_masjid`, `alamat_masjid`, `running_teks`, `kecepatan_teks`, `durasi_slide`, `slide_aktif`, `koreksi_hijriah`, `metode_perhitungan`, `durasi_adzan`, `iqomah_shubuh`, `iqomah_dzuhur`, `iqomah_ashar`, `iqomah_maghrib`, `iqomah_isya`, `durasi_shubuh`, `durasi_syuruq`, `durasi_dzuhur`, `durasi_ashar`, `durasi_maghrib`, `durasi_isya`, `prayer1`, `prayer2`, `prayer3`, `prayer4`, `prayer5`, `prayer6`, `garis_lintang`, `garis_bujur`, `zona_waktu`, `teks_sebelum_adzan`, `teks_adzan`, `teks_iqomah`, `teks_sebelum_sholat`, `teks_khutbah`, `teks_khutbah1`, `teks_khutbah2`, `header_position`, `kunci_layar`, `kunci_layar_sholat`, `kunci_layar_jumat`) VALUES
+(1, 'Masjid Raya Nurul Mubarok', 'Kompleks PT. RAPP Townsite II Baru', 'Jama\'ah dihimbau untuk tetap mengenakan masker ketika berada di dalam Masjid.', 10, '6000', 3, -1, 8, 5, 10, 5, 5, 5, 5, 30, 15, 45, 45, 30, 60, 'shubuh', 'syuruq', 'dzuhur', 'ashar', 'maghrib', 'isya', '0.406393', '101.845164', '+7', '“Barangsiapa duduk di masjid dalam rangka menunggu sholat, maka dia terhitung dalam keadaan sholat.” <br>(HR. an-Nasa’i dan Ahmad)', '“Ucapkanlah sebagaimana disebutkan oleh muadzin. Lalu jika sudah selesai kumandang adzan, berdoalah, maka akan diijabahi (dikabulkan).” <br>(HR. Abu Daud no. 524)', '“Sesungguhnya doa yang tidak tertolak adalah doa (yang dipanjatkan) di antara adzan dan iqomah, maka berdoalah (di waktu itu).” <br>(HR. Ahmad no. 12584)', 'Demi ketenangan dan kekhusyukan ibadah sholat kita, handphone mohon dinonaktifkan selama sholat berjama\'ah.<br><u>Terima Kasih</u>', 'Adab Ketika Mendengar <span>Khutbah</span> Jum\'at', 'Saat khutbah jum\'at sedang berlangsung, seorang dilarang menyibukkan diri dengan hal-hal yang bisa memalingkan konsentrasinya dari menyimak khutbah. Sebagaimana disebutkan dalam sabda Rasulullah Shallallahu‘alaihi Wasallam:', '“Jika engkau berkata pada sahabatmu pada hari Jum’at, <span>‘Diamlah, khotib sedang berkhutbah!’</span>. Sungguh engkau telah berkata sia-sia.” <br>(<u>HR. Bukhari no. 934 dan Muslim no. 851</u>)', 'start', 5, 20, 40);
 
 -- --------------------------------------------------------
 
@@ -144,12 +147,11 @@ CREATE TABLE `slides1` (
 --
 
 INSERT INTO `slides1` (`slide_id`, `judul`, `isi1`, `isi2`, `isi3`, `foto`, `slide_status`) VALUES
-(1, '', '', '', '', '20200930_062655_.jpg', 0),
-(2, '', '', '', '', '20200930_062732_.jpg', 1),
+(1, 'Info Saldo Masjid', '<h1>Total saldo saat ini Rp. <u>25.000.000</u></h1>', '', '', '20200930_062655_.jpg', 1),
+(2, 'Pendaftaran Qurban 1443 H', 'Diinfokan kepada para jama\'ah masjid Nurul Mubarok bahwa pendaftaran qurban sudah dibuka. Harap mendaftarkan diri dengan panitia yang sudah terbentuk.', 'Biaya Qurban tahun ini Rp. 2.500.000 /orang', '', '20200930_062732_.jpg', 1),
 (3, '', '', '', '', '20200930_062832_.jpg', 0),
 (4, '', '', '', '', '20200930_063348_.jpg', 0),
-(5, '', '', '', '', 'covid prevention.jpg', 0),
-(6, '', '', '', '', 'kamb.jpg', 0);
+(5, '', '', '', '', 'covid prevention.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -181,8 +183,8 @@ INSERT INTO `slides2` (`slide2_id`, `slide2_judul`, `slide2_isi1`, `slide2_isi2`
 (7, 'Allah Itu Maha Indah', '\"Sesungguhnya Allah itu maha indah dan menyukai keindahan.\"', '(HR. Muslim No.91)', '', '', 1),
 (8, 'Hukum Riba', '\"Dan Allah menghalalkan jual beli dan mengharamkan riba\"', '(QS. Al-Baqarah: 275)', '', '', 1),
 (9, 'Riba Jahiliyah', '\"Hai orang-orang yang beriman, janganlah kamu memakan riba dengan berlipat ganda dan bertakwalah kamu kepada Allah supaya kamu mendapat keberuntungan.\"', '(QS. Ali \'Imran: 130)', '', '', 1),
-(10, 'Taubat Dari Riba', '\"Sesungguhnya Allah \'Azza wa Jalla senantiasa menerima taubat hamba, selagi nafas belum sampai tenggorokan.\"', '(HR. Ibnu Majah dan dihasankan oleh Al-Albani\"', '', '', 1),
-(11, 'Larangan Menasabkan Diri Kepada Selain Ayah', '\"Barang siapa mengaku (menasabkan diri) kepada selain ayahnya, padahal ia tahu bahwa dia bukan ayahnya, maka surga haram baginya.\"', '(HR. Bukhari No.6766) dan Muslim No.63)', '', '', 1),
+(10, 'Taubat Dari Riba', '\"Sesungguhnya Allah \'Azza wa Jalla senantiasa menerima taubat hamba, selagi nafas belum sampai tenggorokan.\"', '(HR. Ibnu Majah dan dihasankan oleh Al-Albani)', '', '', 1),
+(11, 'Larangan Menasabkan Diri Kepada Selain Ayah', '\"Barang siapa mengaku (menasabkan diri) kepada selain ayahnya, padahal ia tahu bahwa dia bukan ayahnya, maka surga haram baginya.\"', '(HR. Bukhari No.6766 dan Muslim No.63)', '', '', 1),
 (12, 'tes', '', '', '', '', 0);
 
 --
