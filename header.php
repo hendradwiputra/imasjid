@@ -372,9 +372,9 @@
   			minutes = checkTime(minutes);
   			seconds = checkTime(seconds);
 
-  			// Hitung mundur waktu solat berikut nya dari waktu saat ini    			
-  			document.getElementById("timer").innerHTML = nextprayer + " - " + hours + ":" + minutes + ".<small>" +  seconds + "</small>";  			
-						
+  			// Hitung mundur waktu solat berikut nya dari waktu saat ini  
+  			document.getElementById("timer").innerHTML = nextprayer + " - " + hours + ":" + minutes;  			
+			
 			// Jika selisih waktu sholat dengan waktu saat ini < 0, clear timer
         	if (distance < 0) {
           		clearInterval(x);    

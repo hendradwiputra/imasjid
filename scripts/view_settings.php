@@ -37,8 +37,7 @@
     $prayer3 = $row['prayer3'];
     $prayer4 = $row['prayer4'];
     $prayer5 = $row['prayer5'];
-    $prayer6 = $row['prayer6'];
-    $kunci_layar = $row['kunci_layar'];
+    $prayer6 = $row['prayer6'];    
     $teks_sebelum_adzan = $row['teks_sebelum_adzan'];
     $teks_adzan = $row['teks_adzan'];
     $teks_iqomah = $row['teks_iqomah'];
@@ -46,6 +45,10 @@
     $teks_khutbah = $row['teks_khutbah'];
     $teks_khutbah1 = $row['teks_khutbah1'];
     $teks_khutbah2 = $row['teks_khutbah2'];
+    $header_position = $row['header_position'];
+    $kunci_layar = $row['kunci_layar'];
+    $kunci_layar_sholat = $row['kunci_layar_sholat'];
+    $kunci_layar_jumat = $row['kunci_layar_jumat'];
   }
   
 

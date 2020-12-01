@@ -49,16 +49,23 @@
     font-style: normal;
 }
 
+@font-face {
+  font-family: 'Lato-Black';
+  src: url('../fonts/lato/Lato-Black.woff2') format('woff2'),
+       url('../fonts/lato/Lato-Black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: 'montserratmedium';
   font-size: 15px;
   background: rgba(120, 175, 159, 0.1);
   background-color: #333333;
-
 }
 
 a {
-  color: #2b2e42;
+  color: #fff1e6;
   transition: 0.5s;
 }
 
@@ -87,8 +94,9 @@ label {
 
 small,
 .small {
-  font-size: 80%;
+  font-size: 60%;
   font-weight: 700;
+  color: #fff1e6;
 }
 
 .table td, .table th {
@@ -107,17 +115,6 @@ th, td {
   font-family: 'montserratbold';
 }
 
-.foot-note {
-  font-size: 13px;
-  text-align: center;
-}
-
-.contact {
-  font-size: 13px;
-  text-align: right;
-}
-
-
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -125,7 +122,7 @@ th, td {
   transition: all 0.5s;
   z-index: 997;
   padding: 5px 0;
-  background-color: rgba(30, 35, 40, 0.3);
+  background-color: rgba(52, 58, 64, 0.5);
 }
 
 #header.header-transparent {
@@ -140,10 +137,8 @@ th, td {
   font-weight: 700;
   letter-spacing: 3px;
   margin: 0;
-  margin-left: -50px;
-  padding: 0;
   padding-left: 8px;
-  border-left: 8px solid #ffd152;
+  padding-right: 8px;
 }
 
 #header .nama {
@@ -155,13 +150,12 @@ th, td {
   font-family: 'montserratextrabold';
   font-weight: 900;
   letter-spacing: 3px;
-  
 }
 
 #header .alamat {
   font-size: 25px;
   padding-top: 5px;  
-  color: #fff;
+  color: #fff1e6;
   letter-spacing: 2px;
   font-family: 'montserratmedium';
   font-weight: 700;
@@ -170,7 +164,7 @@ th, td {
 #header .tanggal {
   font-size: 25px;
   padding-top: 2px;  
-  color: #fff;
+  color: #fff1e6;
   letter-spacing: 2px;
   font-family: 'montserratmedium';
   font-weight: 700;
@@ -316,13 +310,12 @@ th, td {
   }
 }
 
-
 /*--------------------------------------------------------------
 # Intro Section
 --------------------------------------------------------------*/
 #intro {
   width: 100%;
-  height: 83vh;  
+  height: 84vh;  
   overflow: hidden;
   position: relative;
 }
@@ -343,7 +336,7 @@ th, td {
 
 #intro .carousel-item::before {
   content: '';
-  background-color: rgba(30, 35, 40, 0.3); /* Pengaturan opacity */
+  background-color: rgba(30, 35, 40, 0.5); /* Pengaturan opacity */
 }
 
 #intro .carousel-container {
@@ -357,8 +350,17 @@ th, td {
   right: 50px;
 }
 
-#intro .container {
+#intro .container-fluid {
   text-align: center;
+}
+
+#intro h1 {
+  color: #fff1e6;
+  margin-bottom: 30px;
+  font-size: 80px;
+  font-weight: 700;
+  font-family: 'montserratbold'; 
+  padding: 10px; 
 }
 
 #intro h2 {
@@ -373,7 +375,7 @@ th, td {
 #intro p {
   margin: 0 auto 30px auto;
   line-height: 1.1;
-  color: #fff;
+  color: #fff1e6;
   font-size: 50px;
   font-weight: 600;
   font-family: 'montserratbold';
@@ -456,45 +458,45 @@ th, td {
 #clock {
   padding-top: 0px;
   position: relative;
-  background: rgb(120, 175, 159);   
+  background: rgb(52, 58, 64);   
 }
  
 #clock .left { 
-  background: rgba(120, 175, 159, 0.3);  
+  background: rgba(52, 58, 64, 0);
   color: #ffd152;
   position: absolute;  
   bottom: 60px;
   z-index: 2;  
-  height: 100px;
-  width: 470px;
+  height: 120px;
+  width: 480px;
   left: 0px;
-  margin: 5px 5px 0px -5px;
   padding-left: 8px;
 } 
 
 #clock .right { 
-  background: rgba(120, 175, 159, 0.3);
+  background: rgba(52, 58, 64, 0);
   color: #ffd152; 
   position: absolute;  
   bottom: 60px;
   z-index: 2;  
-  height: 100px;
-  width:800px;
+  height: 75px;
+  width:700px;
   right: 0px; 
   padding-left: 8px;
-
+  text-align: right;
+  padding-right: 20px;
 } 
 
 #clock h2 {
-  font-size: 100px;
+  font-size: 120px;
   font-weight: 700;
   font-family: 'montserratbold'; 
 }
 
 #clock h3 {
-  font-size: 80px;
+  font-size: 65px;
   font-weight: 700;
-  font-family: 'montserratbold'; 
+  font-family: 'Lato-Black'; 
 }
 
 
@@ -504,18 +506,17 @@ th, td {
 #text {
   padding-top: 0;
   position: relative;
-  background: rgb(120, 175, 159);   
+  background: rgb(52, 58, 64);   
 }
  
 #text .running-text { 
-  background: rgba(120, 175, 159, 0.3);  
-  color: #fff; 
+  background: rgba(52, 58, 64, 0.4);  
+  color: #fff1e6; 
   position: absolute;  
   bottom: 0;
   z-index: 2;  
   height: 60px;
-  width: 100%;  
-  
+  width: 100%;   
 } 
 
 #text .running-text h3 {
@@ -529,50 +530,56 @@ th, td {
 # Prayer Section
 --------------------------------------------------------------*/
 #prayer .bg1 {
-  background: rgba(120, 175, 159, 0.7);
+  background: rgba(73, 80, 87);
+  height: 145px;
 }
 
-#prayer h3 {  
-  color: #fff;
-  font-weight: 700;
-  font-size: 60px;  
-  bottom: 78px;
-  margin-bottom: 0px; 
-  text-align: center; 
-  font-family: 'montserratbold';
-}
-
+/*prayer time*/
 #prayer h2 { 
-  color: #fff;
+  color: #ddb892;
   font-weight: 700;
   font-size: 60px; 
   bottom: 25px;
   margin-bottom: 0px;
   text-align: center;
-  font-family: 'montserratbold';  
+  font-family: 'montserratbold';   
+}
+
+/*prayer name*/
+#prayer h3 {  
+  color: #fff1e6;
+  font-weight: 700;
+  font-size: 55px;  
+  bottom: 78px;
+  margin-bottom: 0px; 
+  text-align: center; 
+  font-family: 'montserratbold';
+  margin-bottom: -10px;  
 }
 
 #prayer .selected {
-  color: #ffd152;
-  background: rgba(0,112,112);
-  padding: 0px 20px 0px;  
-  padding-top: 0px;
+  color: #495057;
+  background:#ffd152;
+  padding: 0 50px;    
   font-family: 'montserratbold';
+  margin-bottom: -10px;
 }
 
 /*--------------------------------------------------------------
 # Footer Section
 --------------------------------------------------------------*/
 #footer {
-  background: rgba(120, 175, 159, 1);
+  background:#343a40;
   padding: 0 0;  
-  font-size: 12px;
+  font-size: 15px;
   font-family: 'montserratbold';
+  height: 28px;
 }
 
 #footer .social-links {
-  color: #fff;
-  padding-left: 10px;
-  padding-right: 10px;
+  color: #fff1e6;
+  padding-left: 7px;
+  padding-right: 7px;
+  letter-spacing: 1px;
 }
 

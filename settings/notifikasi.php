@@ -1,18 +1,4 @@
-<div class="col-md-12 order-md-1">
-
-    <div class="form-group">
-        <label for="exampleFormControlSelect1"><i class="fas fa-list"></i> Tampilkan Layar Hitung Mundur Sebelum Masuk Waktu Adzan <small class="text-muted">(Hitungan menit)</small></label>
-        <select name="kunci_layar" id="kunci_layar" class="form-control form-control-sm col-md-2">
-            <option <?php if ($kunci_layar==1) echo 'selected = "selected"'; ?> value="1">1</option>
-            <option <?php if ($kunci_layar==2) echo 'selected = "selected"'; ?> value="2">2</option>
-            <option <?php if ($kunci_layar==3) echo 'selected = "selected"'; ?> value="3">3</option>
-            <option <?php if ($kunci_layar==4) echo 'selected = "selected"'; ?> value="4">4</option>
-            <option <?php if ($kunci_layar==5) echo 'selected = "selected"'; ?> value="5">5</option>
-            <option <?php if ($kunci_layar==10) echo 'selected = "selected"'; ?> value="10">10</option>
-            <option <?php if ($kunci_layar==15) echo 'selected = "selected"'; ?> value="15">15</option>
-           <option <?php if ($kunci_layar==20) echo 'selected = "selected"'; ?> value="20">20</option>
-        </select>
-    </div><br>
+<div class="col-md-12 order-md-1">   
 
     <div class="form-group">
         <label for="exampleFormControlSelect1">Durasi Adzan <small class="text-muted">(Hitungan menit)</small></label>

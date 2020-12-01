@@ -1,7 +1,7 @@
 <?php 
     
-    include('./scripts/view_settings.php');     
-
+    include('./scripts/view_settings.php'); 
+    
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center" style="background-image: url(./assets/images/background/timer-bg.jpg)">
     
-      <div class="container">
+      <div class="container-fluid">
         <div class="row justify-content-center">
 
           <div class="col-xl-12 col-lg-12 text-center">
@@ -41,7 +41,7 @@
         </div>
         <br>
         <div class="row icon-boxes2">
-          <div class="col-md-12 col-lg-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+          <div class="col-md-12 col-lg-12 d-flex align-items-stretch">
             <div class="icon-box2">            
                 <h4 class="description"><?php echo $teks_khutbah1 ?></h4>
             </div>
@@ -49,7 +49,7 @@
         </div>
 
         <div class="row icon-boxes2">
-          <div class="col-md-12 col-lg-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+          <div class="col-md-12 col-lg-12 d-flex align-items-stretch">
             <div class="icon-box2">            
                 <h4 class="description"><?php echo $teks_khutbah2 ?></h4>
             </div>
@@ -64,11 +64,12 @@
 </body>
 <script>
 
+        var lock_jumat = ("<?php echo $kunci_layar_jumat ?>" * 1000 * 60);
         var url = "<?php echo $_SERVER['HTTP_HOST'] ?>";
 
         var timer = setTimeout(function() {
             window.location="http://" + url + "/imasjid"
-        }, 600000);
+        }, lock_jumat);
 
 </script>
 </html>

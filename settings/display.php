@@ -48,7 +48,7 @@
 			}		
 			
 	    	echo "<div class='carousel-container'>";
-            echo "<div class='container'>";
+            echo "<div class='container-fluid'>";
             echo "<h2 class='animate__animated animate__fadeInDown'>$judul</h2>";
             echo "<p class='animate__animated animate__fadeInUp'>$isi1</p>";			
 			echo "<p class='animate__animated animate__fadeInUp'>$isi2</p>";

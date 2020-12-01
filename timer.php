@@ -37,41 +37,52 @@
 </audio>
 
 <body onload="startTime()">
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center" style="background-image: url(./assets/images/background/timer-bg.jpg)">
-    
-      <div class="container">
-        <div class="row justify-content-center">
 
+<section id="hero" class="d-flex align-items-center" style="background-image: url(./assets/images/background/timer-bg.jpg)">
+      
+      <div class="container-fluid">
+        <div class="row justify-content-center">
           <div class="col-xl-12 col-lg-12 text-center">
-            <h1 id="label"></h1>         
+            <h1 id="label"></h1>  
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          
+            <div class="col-sm-4">
+              <div class="card text-center">
+                <div class="card-header">
+                  Menit
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title" id="menit"></h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="card text-center">
+                <div class="card-header">
+                  Detik
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title" id="detik"></h3>
+                </div>             
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-xl-12 col-lg-12 text-center">       
             <h2 id="message"></h2>
           </div>
-
         </div>
+    
+      </div> 
       
-        <div class="row icon-boxes">
-
-          <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box">            
-              <h4><span>Menit</span></h4>
-              <h1 id="menit" class="description"></h1>
-            </div>
-          </div>       
-
-          <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="500">
-            <div class="icon-box">            
-              <h4 class="title"><span>Detik</span></h4>
-              <h1 id="detik" class="description"></h1>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
   </section>
-  <!-- ======= Hero Section ======= -->
-
+  
 </body>
 
 <script>
@@ -158,7 +169,7 @@
 
                 var timer = setTimeout(function() {
                     window.location="http://" + url + "/imasjid"
-                }, 500);
+                }, 1000);
             }
 
             document.getElementById("label").innerHTML = icon;
@@ -219,8 +230,8 @@
                 if (prayername == day) {
 
                     var timer = setTimeout(function() {
-                        window.location="http://" + url + "/imasjid/message.php"
-                    }, 500);
+                        window.location="http://" + url + "/imasjid/message_jumat.php"
+                    }, 1000);
                 }
                             
                 document.getElementById("label").innerHTML = icon; 
@@ -301,17 +312,14 @@
                     
                     playBeep2();
 
-                    var icon2 = "<i class='fas fa-volume-mute'></i>";
-
-                    document.getElementById("label").innerHTML = "Memasuki waktu sholat " + prayername; 
-                    document.getElementById("message").innerHTML = icon2 + " " + teks_sebelum_sholat;
-                    document.getElementById("menit").innerHTML = "--"; 
-                    document.getElementById("detik").innerHTML = "--"; 
-
                     var timer = setTimeout(function() {
-                        window.location="http://" + url + "/imasjid"
-                    }, 120000);
+                        window.location="http://" + url + "/imasjid/message_sholat.php"
+                    }, 1000);
 
+                    document.getElementById("label").innerHTML = icon; 
+                    document.getElementById("message").innerHTML = "";
+                    document.getElementById("menit").innerHTML = ""; 
+                    document.getElementById("detik").innerHTML = "";                    
 
                   } // End 3rd t statement
 

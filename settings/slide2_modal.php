@@ -30,7 +30,15 @@
               <option value="1">Aktif</option>
               <option value="0">Tidak Aktif</option> 
             </select>
-        </div>             
+        </div>   
+        <div class="form-group">
+          <small><strong>HTML Style:</strong></small>
+          <ul>
+            <li>Tulisan lebih besar, gunakan sintaks &#60h1&#62Contoh teks&#60&#47h1&#62</li>
+            <li>Tambah garis bawah, gunakan sintaks &#60u&#62<u>Contoh teks</u>&#60&#47u&#62</li>
+            <li>Tulisan miring, gunakan sintaks &#60i&#62<i>Contoh teks</i>&#60&#47i&#62</li>
+          </ul>
+        </div>          
       </div>
       
       <div class="modal-footer">        

@@ -24,170 +24,34 @@
   font-weight: normal;
   font-style: normal;
 }
-  
-  /*--------------------------------------------------------------
-  # Preloader
-  --------------------------------------------------------------*/
-  #preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    overflow: hidden;
-    background: #fff;
+
+@font-face {
+  font-family: 'Lato-Black';
+  src: url('../fonts/lato/Lato-Black.woff2') format('woff2'),
+       url('../fonts/lato/Lato-Black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+ 
+  .card {
+    box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.5);
+    background: rgba(168, 218, 220, 0.5); 
   }
-  
-  #preloader:before {
-    content: "";
-    position: fixed;
-    top: calc(50% - 30px);
-    left: calc(50% - 30px);
-    border: 6px solid #2487ce;
-    border-top-color: #fff;
-    border-bottom-color: #fff;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    -webkit-animation: animate-preloader 1s linear infinite;
-    animation: animate-preloader 1s linear infinite;
+
+  .card-header {
+    background: #1d3557;
+    color: white;
+    font-size: 70px;
+    font-family: 'montserratbold';
   }
-  
-  @-webkit-keyframes animate-preloader {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  @keyframes animate-preloader {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  /*--------------------------------------------------------------
-  # Disable aos animation delay on mobile devices
-  --------------------------------------------------------------*/
-  @media screen and (max-width: 768px) {
-    [data-aos-delay] {
-      transition-delay: 0 !important;
-    }
-  }
-  
-  
-  /* Mobile Navigation */
-  .mobile-nav-toggle {
-    position: fixed;
-    right: 15px;
-    top: 18px;
-    z-index: 9998;
-    border: 0;
-    background: none;
-    font-size: 24px;
-    transition: all 0.4s;
-    outline: none !important;
-    line-height: 1;
-    cursor: pointer;
-    text-align: right;
-  }
-  
-  .mobile-nav-toggle i {
-    color: #124265;
-  }
-  
-  .mobile-nav {
-    position: fixed;
-    top: 55px;
-    right: 15px;
-    bottom: 15px;
-    left: 15px;
-    z-index: 9999;
-    overflow-y: auto;
-    background: #fff;
-    transition: ease-in-out 0.2s;
-    opacity: 0;
-    visibility: hidden;
-    border-radius: 10px;
-    padding: 10px 0;
-  }
-  
-  .mobile-nav * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  .mobile-nav a {
-    display: block;
-    position: relative;
-    color: #124265;
-    padding: 10px 20px;
-    font-weight: 500;
-    outline: none;
-  }
-  
-  .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
-    color: #2487ce;
-    text-decoration: none;
-  }
-  
-  .mobile-nav .drop-down > a:after {
-    content: "\ea99";
-    font-family: IcoFont;
-    padding-left: 10px;
-    position: absolute;
-    right: 15px;
-  }
-  
-  .mobile-nav .active.drop-down > a:after {
-    content: "\eaa1";
-  }
-  
-  .mobile-nav .drop-down > a {
-    padding-right: 35px;
-  }
-  
-  .mobile-nav .drop-down ul {
-    display: none;
-    overflow: hidden;
-  }
-  
-  .mobile-nav .drop-down li {
-    padding-left: 20px;
-  }
-  
-  .mobile-nav-overly {
-    width: 100%;
-    height: 100%;
-    z-index: 9997;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background: rgba(10, 38, 58, 0.6);
-    overflow: hidden;
-    display: none;
-    transition: ease-in-out 0.2s;
-  }
-  
-  .mobile-nav-active {
-    overflow: hidden;
-  }
-  
-  .mobile-nav-active .mobile-nav {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .mobile-nav-active .mobile-nav-toggle i {
-    color: #fff;
-  }
+
+  .card-title {
+    font-size: 270px;
+    font-weight: 700;
+    font-family: 'montserratbold'; 
+    color: #495057;    
+  } 
   
   /*--------------------------------------------------------------
   # Hero Section
@@ -214,12 +78,12 @@
     padding-top: 60px;
   }
   
-  #hero h1 {
-    margin: 0;
-    font-size: 78px;
+  #hero h1 {    
+    margin-bottom: 50px;
+    font-size: 120px;
     font-weight: 700;
-    line-height: 62px;
-    color: #124265;
+    line-height: 100px;
+    color: #1d3557;
     font-family: 'montserratbold';
   }
 
@@ -229,11 +93,20 @@
   }
   
   #hero h2 {    
-    margin: 40px 0 0 0;
-    font-size: 36px;
+    margin: 50px 0 0 0;
+    font-size: 50px;
     font-weight: 700;
     font-family: 'montserratbold';    
-    color: #f77f00;        
+    color: #4a4e69; 
+    line-height: 50px;         
+  }
+
+  #hero h3 {        
+    font-size: 350px;
+    font-weight: 700;
+    font-family: 'Lato-Black';    
+    color: #1d3557;  
+    background: rgba(168, 218, 220, 0.4);       
   }
     
   #hero .icon-boxes {
@@ -262,7 +135,7 @@
   }
 
   #hero .icon-box h4 span {    
-    border-bottom: 8px solid #f77f00;
+    border-bottom: 40px solid #f77f00;
   }
  
   #hero .icon-box .description {
@@ -283,7 +156,7 @@
 
   #hero .icon-boxes2 {
     margin-top: 40px;
-    background: rgba(144, 224, 239, 0.9);
+    background: rgba(144, 224, 239, 0.8);
   }
 
   #hero .icon-box2 h4 {
@@ -296,11 +169,16 @@
     z-index: 1;
   }
 
+  #hero .icon-box2 h4 span {    
+    border-bottom: 4px solid #f77f00;
+  }
+
   #hero .icon-box2 .description {
     color: #124265;
-    font-family: 'montserratregular';
-    font-size: 38px;
-    line-height: 40px;
+    font-family: 'montserratbold';
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
     margin-bottom: 15px;    
     text-align: center;
   }
@@ -326,3 +204,5 @@
   }
   
   
+
+ 
