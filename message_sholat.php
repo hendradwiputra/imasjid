@@ -49,9 +49,9 @@
         </div>
         <br><br>
         <div class="row justify-content-center">
-          <div class="col-md-2">
-            <img src="./assets/images/background/mute.png" width="120px" height="100px">
-            <img src="./assets/images/background/mute2.png" width="160px" height="140px">
+          <div class="col-md-3">
+            <img src="./assets/images/background/mute1.png" width="160px" height="140px">
+            <img src="./assets/images/background/mute2.png" width="200px" height="180px">
           </div>          
         </div>
 
