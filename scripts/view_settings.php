@@ -49,6 +49,8 @@
     $kunci_layar = $row['kunci_layar'];
     $kunci_layar_sholat = $row['kunci_layar_sholat'];
     $kunci_layar_jumat = $row['kunci_layar_jumat'];
+    $teks_syuruq1 = $row['teks_syuruq1'];
+    $teks_syuruq2 = $row['teks_syuruq2'];
   }
   
 

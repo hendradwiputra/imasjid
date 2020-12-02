@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2020 at 03:15 PM
+-- Generation Time: Dec 02, 2020 at 12:43 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -116,15 +116,18 @@ CREATE TABLE `settings` (
   `header_position` varchar(6) NOT NULL,
   `kunci_layar` int(2) NOT NULL,
   `kunci_layar_sholat` int(2) NOT NULL,
-  `kunci_layar_jumat` int(2) NOT NULL
+  `kunci_layar_jumat` int(2) NOT NULL,
+  `teks_syuruq1` varchar(150) NOT NULL,
+  `teks_syuruq2` varchar(255) NOT NULL,
+  `teks_syuruq3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`setting_id`, `nama_masjid`, `alamat_masjid`, `running_teks`, `kecepatan_teks`, `durasi_slide`, `slide_aktif`, `koreksi_hijriah`, `metode_perhitungan`, `durasi_adzan`, `iqomah_shubuh`, `iqomah_dzuhur`, `iqomah_ashar`, `iqomah_maghrib`, `iqomah_isya`, `durasi_shubuh`, `durasi_syuruq`, `durasi_dzuhur`, `durasi_ashar`, `durasi_maghrib`, `durasi_isya`, `prayer1`, `prayer2`, `prayer3`, `prayer4`, `prayer5`, `prayer6`, `garis_lintang`, `garis_bujur`, `zona_waktu`, `teks_sebelum_adzan`, `teks_adzan`, `teks_iqomah`, `teks_sebelum_sholat`, `teks_khutbah`, `teks_khutbah1`, `teks_khutbah2`, `header_position`, `kunci_layar`, `kunci_layar_sholat`, `kunci_layar_jumat`) VALUES
-(1, 'Masjid Raya Nurul Mubarok', 'Kompleks PT. RAPP Townsite II Baru', 'Jama\'ah dihimbau untuk tetap mengenakan masker ketika berada di dalam Masjid.', 10, '6000', 3, -1, 8, 5, 10, 5, 5, 5, 5, 30, 15, 45, 45, 30, 60, 'shubuh', 'syuruq', 'dzuhur', 'ashar', 'maghrib', 'isya', '0.406393', '101.845164', '+7', '“Barangsiapa duduk di masjid dalam rangka menunggu sholat, maka dia terhitung dalam keadaan sholat.” <br>(HR. an-Nasa’i dan Ahmad)', '“Ucapkanlah sebagaimana disebutkan oleh muadzin. Lalu jika sudah selesai kumandang adzan, berdoalah, maka akan diijabahi (dikabulkan).” <br>(HR. Abu Daud no. 524)', '“Sesungguhnya doa yang tidak tertolak adalah doa (yang dipanjatkan) di antara adzan dan iqomah, maka berdoalah (di waktu itu).” <br>(HR. Ahmad no. 12584)', 'Demi ketenangan dan kekhusyukan ibadah sholat kita, handphone mohon dinonaktifkan selama sholat berjama\'ah.<br><u>Terima Kasih</u>', 'Adab Ketika Mendengar <span>Khutbah</span> Jum\'at', 'Saat khutbah jum\'at sedang berlangsung, seorang dilarang menyibukkan diri dengan hal-hal yang bisa memalingkan konsentrasinya dari menyimak khutbah. Sebagaimana disebutkan dalam sabda Rasulullah Shallallahu‘alaihi Wasallam:', '“Jika engkau berkata pada sahabatmu pada hari Jum’at, <span>‘Diamlah, khotib sedang berkhutbah!’</span>. Sungguh engkau telah berkata sia-sia.” <br>(<u>HR. Bukhari no. 934 dan Muslim no. 851</u>)', 'start', 5, 20, 40);
+INSERT INTO `settings` (`setting_id`, `nama_masjid`, `alamat_masjid`, `running_teks`, `kecepatan_teks`, `durasi_slide`, `slide_aktif`, `koreksi_hijriah`, `metode_perhitungan`, `durasi_adzan`, `iqomah_shubuh`, `iqomah_dzuhur`, `iqomah_ashar`, `iqomah_maghrib`, `iqomah_isya`, `durasi_shubuh`, `durasi_syuruq`, `durasi_dzuhur`, `durasi_ashar`, `durasi_maghrib`, `durasi_isya`, `prayer1`, `prayer2`, `prayer3`, `prayer4`, `prayer5`, `prayer6`, `garis_lintang`, `garis_bujur`, `zona_waktu`, `teks_sebelum_adzan`, `teks_adzan`, `teks_iqomah`, `teks_sebelum_sholat`, `teks_khutbah`, `teks_khutbah1`, `teks_khutbah2`, `header_position`, `kunci_layar`, `kunci_layar_sholat`, `kunci_layar_jumat`, `teks_syuruq1`, `teks_syuruq2`, `teks_syuruq3`) VALUES
+(1, 'Masjid Raya Nurul Mubarok', 'Kompleks PT. RAPP Townsite II Baru', 'Jama\'ah dihimbau untuk tetap mengenakan masker ketika berada di dalam Masjid.', 10, '6000', 3, -1, 8, 5, 10, 5, 5, 5, 5, 30, 15, 45, 45, 30, 60, 'shubuh', 'syuruq', 'dzuhur', 'ashar', 'maghrib', 'isya', '0.406393', '101.845164', '+7', '“Barangsiapa duduk di masjid dalam rangka menunggu sholat, maka dia terhitung dalam keadaan sholat.” <br>(HR. an-Nasa’i dan Ahmad)', '“Ucapkanlah sebagaimana disebutkan oleh muadzin. Lalu jika sudah selesai kumandang adzan, berdoalah, maka akan diijabahi (dikabulkan).” <br>(HR. Abu Daud no. 524)', '“Sesungguhnya doa yang tidak tertolak adalah doa (yang dipanjatkan) di antara adzan dan iqomah, maka berdoalah (di waktu itu).” <br>(HR. Ahmad no. 12584)', 'Demi ketenangan dan kekhusyukan ibadah sholat kita, handphone mohon <span>dinonaktifkan/silent</span> selama sholat berjama\'ah.<br><u>Terima Kasih</u>', 'Adab Ketika Mendengar <span>Khutbah</span> Jum\'at', 'Saat khutbah jum\'at sedang berlangsung, seorang dilarang menyibukkan diri dengan hal-hal yang bisa memalingkan konsentrasinya dari menyimak khutbah. Sebagaimana disebutkan dalam sabda Rasulullah Shallallahu‘alaihi Wasallam:', '“Jika engkau berkata pada sahabatmu pada hari Jum’at, <span>‘Diamlah, khotib sedang berkhutbah!’</span>. Sungguh engkau telah berkata sia-sia.” <br>(<u>HR. Bukhari no. 934 dan Muslim no. 851</u>)', 'start', 5, 15, 30, 'Meraih Pahala Haji dan Umroh Melalui Shalat Isyroq', '“Barangsiapa yang melaksanakan shalat shubuh secara berjama’ah lalu ia duduk sambil berdzikir pada Allah hingga matahari terbit, kemudian ia melaksanakan shalat dua raka’at, maka ia seperti memperoleh pahala haji dan umroh.” ', '(HR. Tirmidzi no. 586. Syaikh Al Albani mengatakan bahwa hadits ini hasan)');
 
 -- --------------------------------------------------------
 

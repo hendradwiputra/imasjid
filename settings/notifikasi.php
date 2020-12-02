@@ -226,5 +226,23 @@
 
     </div> 
 
+    <div class="form-group">
+        <label for="exampleFormControlSelect1"><i class="fas fa-list"></i> Informasi Ketika Masuk Waktu Syuruq</label>               
+        <div class="form-row">       
+            <div class="form-group col-md-6">
+                <label for="exampleFormControlSelect1">Judul</label>
+                <input type="text" name="teks_syuruq1" id="teks_syuruq1" class="form-control form-control-sm" value="<?php echo $teks_syuruq1 ?>">
+            </div>                            
+        </div>
+
+        <div class="form-row">   
+            <div class="form-group col-md-6">
+                <label for="exampleFormControlSelect1">Informasi</label>
+                <textarea class="form-control form-control-sm" name="teks_syuruq2" id="teks_syuruq2" rows="5" maxlength="255"><?php echo $teks_syuruq2 ?></textarea>
+            </div>                     
+        </div>
+
+    </div> 
+
 
 </div>
