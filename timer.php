@@ -51,9 +51,7 @@
           
             <div class="col-sm-4">
               <div class="card text-center">
-                <div class="card-header">
-                  Menit
-                </div>
+                <div class="card-header">Menit</div>
                 <div class="card-body">
                   <h3 class="card-title" id="menit"></h3>
                 </div>
@@ -62,9 +60,7 @@
 
             <div class="col-sm-4">
               <div class="card text-center">
-                <div class="card-header">
-                  Detik
-                </div>
+                <div class="card-header">Detik</div>
                 <div class="card-body">
                   <h3 class="card-title" id="detik"></h3>
                 </div>             
