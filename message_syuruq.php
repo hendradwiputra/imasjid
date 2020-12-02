@@ -41,11 +41,18 @@
         </div>
         <br>
         <div class="row icon-boxes2">
-          <div class="col-md-12 col-lg-12 d-flex align-items-stretch">
+          <div class="col-md-12 col-lg-12 d-flex justify-content-center">
             <div class="icon-box2">            
                 <h4 class="description"><?php echo $teks_syuruq2 ?></h4>
             </div>
-          </div>
+          </div>          
+        </div>
+        <div class="row icon-boxes2">
+          <div class="col-md-12 col-lg-12 d-flex justify-content-center">
+            <div class="icon-box2">            
+                <h4 class="description"><?php echo $teks_syuruq3 ?></h4>
+            </div>
+          </div>          
         </div>
         <br><br>
         <div class="row justify-content-center">

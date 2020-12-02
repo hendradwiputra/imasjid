@@ -41,7 +41,7 @@
         </div>
         <br>
         <div class="row icon-boxes2">
-          <div class="col-md-12 col-lg-12 d-flex align-items-stretch">
+          <div class="col-md-12 col-lg-12 d-flex justify-content-center">
             <div class="icon-box2">            
                 <h4 class="description"><?php echo $teks_sebelum_sholat ?></h4>
             </div>
@@ -49,10 +49,12 @@
         </div>
         <br><br>
         <div class="row justify-content-center">
-          <div class="col-md-3">
-            <img src="./assets/images/background/mute1.png" width="160px" height="140px">
+          <div class="col-md-2">
+            <img src="./assets/images/background/mute1.png" width="180px" height="160px">
+          </div>  
+          <div class="col-md-2">
             <img src="./assets/images/background/mute2.png" width="200px" height="180px">
-          </div>          
+          </div>         
         </div>
 
       </div>

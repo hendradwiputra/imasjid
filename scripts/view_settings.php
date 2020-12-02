@@ -51,6 +51,7 @@
     $kunci_layar_jumat = $row['kunci_layar_jumat'];
     $teks_syuruq1 = $row['teks_syuruq1'];
     $teks_syuruq2 = $row['teks_syuruq2'];
+    $teks_syuruq3 = $row['teks_syuruq3'];
   }
   
 

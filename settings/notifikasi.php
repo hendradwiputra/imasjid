@@ -237,9 +237,13 @@
 
         <div class="form-row">   
             <div class="form-group col-md-6">
-                <label for="exampleFormControlSelect1">Informasi</label>
+                <label for="exampleFormControlSelect1">Informasi 1</label>
                 <textarea class="form-control form-control-sm" name="teks_syuruq2" id="teks_syuruq2" rows="5" maxlength="255"><?php echo $teks_syuruq2 ?></textarea>
-            </div>                     
+            </div>  
+            <div class="form-group col-md-6">
+                <label for="exampleFormControlSelect1">Informasi 2</label>
+                <textarea class="form-control form-control-sm" name="teks_syuruq3" id="teks_syuruq3" rows="5" maxlength="255"><?php echo $teks_syuruq3 ?></textarea>
+            </div>                    
         </div>
 
     </div> 
