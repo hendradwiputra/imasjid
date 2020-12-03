@@ -21,12 +21,22 @@
         $size   = $_FILES['foto']['size']; 
         $location = "../assets/images/slide1/".$foto;
         $imageFileType = pathinfo($location,PATHINFO_EXTENSION);  
-        $valid_extensions = array("jpg","jpeg","png");        
+        $valid_extensions = array("jpg","jpeg","png");      
 
         $query = $pdo->prepare("UPDATE slides1 SET judul=?,isi1=?,isi2=?,isi3=?,foto=?,slide_status=? WHERE slide_id=?");
         $query->execute([$judul,$isi1,$isi2,$isi3,$foto,$slide_status,$_POST['slide_id']]); 
         
+        // Upload foto
         move_uploaded_file($_FILES['foto']['tmp_name'],$location); 
+
+        // Hapus foto lama jika berbeda dengan foto yang baru
+        if ($tmp_filename != $foto) {
+          $location = "../assets/images/slide1/"; 
+          $filename = $location.$tmp_filename;
+          if (file_exists($filename)) {
+              unlink($filename);
+          } 
+        }
         
       } else {
 
