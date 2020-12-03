@@ -29,14 +29,14 @@
         // Upload foto
         move_uploaded_file($_FILES['foto']['tmp_name'],$location); 
 
-        // Hapus foto lama jika berbeda dengan foto yang baru
-        if ($tmp_filename != $foto) {
-          $location = "../assets/images/slide1/"; 
-          $filename = $location.$tmp_filename;
-          if (file_exists($filename)) {
-              unlink($filename);
-          } 
-        }
+        // Default background tidak boleh dihapus
+        if ($tmp_filename != "background.jpg") {
+            $location = "../assets/images/slide1/"; 
+            $filename = $location.$tmp_filename;
+            if (file_exists($filename)) {
+                unlink($filename);
+            } 
+        } 
         
       } else {
 

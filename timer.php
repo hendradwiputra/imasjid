@@ -120,7 +120,8 @@
     var url = "<?php echo $_SERVER['HTTP_HOST'] ?>";
 
     var prayername = val1.get("prayer").toLowerCase();    
-    var prayertime = val2.get("time"); 
+    //var prayertime = val2.get("time"); 
+    var prayertime = "21:12"; 
     var day        = val3.get("day").toLowerCase();
 
     var teks_sebelum_adzan  = "<?php echo $teks_sebelum_adzan ?>"
@@ -154,11 +155,11 @@
                 
         document.getElementById("menit").innerHTML = minutes1; 
         document.getElementById("detik").innerHTML = seconds1; 
-                
+               
         if (t < 0) { 
-        
+            
             clearInterval(w); 
-		        
+
             if (prayername == syuruq.toLowerCase()) {
 
                 var timer = setTimeout(function() {
@@ -173,7 +174,7 @@
             document.getElementById("menit").innerHTML = ""; 
             document.getElementById("detik").innerHTML = "";
             
-            // Counter Adzan
+            // Hitung mundur Adzan
             var durasi = "<?php echo $durasi_adzan ?>"
             
             var first2digitTime = prayertime.toString().substr(0,2);
@@ -310,7 +311,7 @@
 
                     var timer = setTimeout(function() {
                         window.location="http://" + url + "/imasjid/message_sholat.php"
-                    }, 1000);
+                    }, 500);
 
                     document.getElementById("label").innerHTML = icon; 
                     document.getElementById("message").innerHTML = "";
