@@ -29,11 +29,11 @@
 </head>
 
 <audio id="timer-beep">
-    <source src="./sounds/Sounds-1.mp3" type="audio/mpeg"> 
+    <source src="./sounds/Sounds-4.mp3" type="audio/mpeg"> 
 </audio>
 
 <audio id="timer-beep2">
-    <source src="./sounds/Sounds-1.mp3" type="audio/mpeg">
+    <source src="./sounds/Sounds-3.mp3" type="audio/mpeg">
 </audio>
 
 <body onload="startTime()">
@@ -120,8 +120,8 @@
     var url = "<?php echo $_SERVER['HTTP_HOST'] ?>";
 
     var prayername = val1.get("prayer").toLowerCase();    
-    var prayertime = val2.get("time"); 
-    //var prayertime = "21:12"; 
+    //var prayertime = val2.get("time"); 
+    var prayertime = "21:51"; 
     var day        = val3.get("day").toLowerCase();
 
     var teks_sebelum_adzan  = "<?php echo $teks_sebelum_adzan ?>"
