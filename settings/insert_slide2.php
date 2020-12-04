@@ -10,11 +10,12 @@
     $slide2_isi2    = isset($_POST['slide2_isi2']) ? $_POST['slide2_isi2'] : '';
     $slide2_isi3    = isset($_POST['slide2_isi3']) ? $_POST['slide2_isi3'] : '';
     $slide2_status  = isset($_POST['slide2_status']) ? $_POST['slide2_status'] : '';
+    $slide2_foto    = isset($_POST['slide2_foto']) ? $_POST['slide2_foto'] : '';
       
     $query = $pdo->prepare("INSERT INTO slides2(slide2_judul,slide2_isi1,
-                    slide2_isi2,slide2_isi3,slide2_status) VALUES(?,?,?,?,?)");
+                    slide2_isi2,slide2_isi3,slide2_status,slide2_foto) VALUES(?,?,?,?,?,?)");
               
-    $query->execute([$slide2_judul,$slide2_isi1,$slide2_isi2,$slide2_isi3,$slide2_status]); 
+    $query->execute([$slide2_judul,$slide2_isi1,$slide2_isi2,$slide2_isi3,$slide2_status,$slide2_foto]); 
 
     if(!empty($query)) {
       echo "<script>alert('Data berhasil disimpan.');</script>"; 

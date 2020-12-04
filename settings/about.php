@@ -76,7 +76,7 @@
         <tr>
             <td scope="row">3</td>
             <td>versi 1.2</td>
-            <td>Tambah fitur lock screen sholat 5 waktu, sholat isyroq dan sholat jum'at</td>      
+            <td>Tambah fitur lock screen sholat 5 waktu, sholat isyroq, sholat jum'at & ganti themes</td>      
         </tr>
       </tbody>
     </table>
