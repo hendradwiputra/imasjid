@@ -47,13 +47,13 @@
 
 		$prayTime = new PrayTime($method);
 
-		// The correct way to change prayertime 
-		$prayTime->setFajrAngle(19.7);
+		/* The correct way to change prayertime */
+		//$prayTime->setFajrAngle(19.7);
 		//$prayTime->setMaghribAngle(angle);
     		//$prayTime->setIshaAngle(angle);
-		$prayTime->setDhuhrMinutes(1);
-		$prayTime->setMaghribMinutes(1);
-		$prayTime->setIshaMinutes(16);
+		//$prayTime->setDhuhrMinutes(1);
+		//$prayTime->setMaghribMinutes(1);
+		//$prayTime->setIshaMinutes(16);
 
 		$day = date('d M Y');
 		$date = strtotime($year);
